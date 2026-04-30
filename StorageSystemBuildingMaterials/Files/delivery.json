@@ -1,0 +1,26 @@
+﻿[
+  {
+    "ProductName": "Вода",
+    "Quantity": 1000,
+    "Price": 500,
+    "ExpirationDate": "2026-05-01"
+  },
+  {
+    "ProductName": "Колесо",
+    "Quantity": 2000,
+    "Price": 30,
+    "ExpirationDate": "2026-06-15"
+  },
+  {
+    "ProductName": "Колесо",
+    "Quantity": 2000,
+    "Price": 30,
+    "ExpirationDate": "2026-04-24"
+  },
+  {
+    "ProductName": "Вода",
+    "Quantity": 1000,
+    "Price": 500,
+    "ExpirationDate": "2026-04-21"
+  }
+]
