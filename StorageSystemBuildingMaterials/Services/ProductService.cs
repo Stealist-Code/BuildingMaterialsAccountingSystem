@@ -275,7 +275,7 @@ namespace StorageSystemBuildingMaterials.Services
             var supplies = await _db.SupplyItems
                 .Include(x => x.Product)
                     .ThenInclude(p => p.Category)
-                .Where(x => x.ExpirationDate >= today)
+                .Where(x => x.ExpirationDate.Date > today)
                 .ToListAsync();
 
             var result = supplies

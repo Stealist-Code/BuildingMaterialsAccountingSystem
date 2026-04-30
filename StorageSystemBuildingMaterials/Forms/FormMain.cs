@@ -102,7 +102,6 @@ namespace StorageSystemBuildingMaterials.Forms
                 _bindingSource.DataSource = products;
                 dgvProducts.Columns["Id"].Visible = false;
                 dgvProducts.Columns["CategoryId"].Visible = false;
-
                 dgvProducts.Columns["Article"].HeaderText = Resources.Article;
                 dgvProducts.Columns["Name"].HeaderText = Resources.Name;
                 dgvProducts.Columns["CategoryName"].HeaderText = Resources.CategoryName;
@@ -168,6 +167,7 @@ namespace StorageSystemBuildingMaterials.Forms
             var products = await _productService.GetActualProducts();
             ApplyCurrency(products);
             _bindingSource.DataSource = products.Where(x => x.CategoryId == categoryId).ToList();
+            dgvProducts.Columns["DaysLeft"].Visible = true;
         }
 
         /// <summary>
@@ -182,6 +182,7 @@ namespace StorageSystemBuildingMaterials.Forms
                     var products = await _productService.GetActualProducts();
                     ApplyCurrency(products);
                     _bindingSource.DataSource = products;
+                    dgvProducts.Columns["DaysLeft"].Visible = true;
                 }
                 catch (Exception ex)
                 {
@@ -301,6 +302,7 @@ namespace StorageSystemBuildingMaterials.Forms
                 var products = await _productService.GetExpiredProducts();
                 ApplyCurrency(products);
                 _bindingSource.DataSource = products;
+                dgvProducts.Columns["DaysLeft"].Visible = false;
             }
             catch (Exception ex)
             {

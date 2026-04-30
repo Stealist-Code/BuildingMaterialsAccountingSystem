@@ -125,6 +125,7 @@ namespace StorageSystemBuildingMaterials.Forms
             {
                 var productId = (Guid)cbProducts.SelectedValue;
                 var quantity = (int)nudQuantity.Value;
+                //var purchasePrice = (decimal)nudPrice.Value;
 
                 if (quantity <= 0)
                 {
@@ -139,6 +140,7 @@ namespace StorageSystemBuildingMaterials.Forms
                         Id = Guid.NewGuid(),
                         ProductId = productId,
                         Quantity = quantity,
+                        //PurchasePrice = purchasePrice,
                         ExpirationDate = DateTime.SpecifyKind(dtpExpirationDate.Value, DateTimeKind.Utc),
                         ReceivedDate = DateTime.UtcNow
                     }
