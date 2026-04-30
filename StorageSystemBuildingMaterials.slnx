@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="StorageSystemBuildingMaterials.Tests/StorageSystemBuildingMaterials.Tests.csproj" />
-  <Project Path="StorageSystemBuildingMaterials/StorageSystemBuildingMaterials.csproj" />
-</Solution>
