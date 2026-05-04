@@ -12,8 +12,8 @@ using StorageSystemBuildingMaterials.Data;
 namespace StorageSystemBuildingMaterials.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260422160400_FixCustomerNullable")]
-    partial class FixCustomerNullable
+    [Migration("20260504145812_Init1234")]
+    partial class Init1234
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -244,6 +244,34 @@ namespace StorageSystemBuildingMaterials.Migrations
                     b.ToTable("ShipmentItems");
                 });
 
+            modelBuilder.Entity("StorageSystemBuildingMaterials.Models.SupplyItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("ExpirationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("PurchasePrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("ReceivedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("SupplyItems");
+                });
+
             modelBuilder.Entity("StorageSystemBuildingMaterials.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -348,6 +376,17 @@ namespace StorageSystemBuildingMaterials.Migrations
                     b.Navigation("Product");
 
                     b.Navigation("Shipment");
+                });
+
+            modelBuilder.Entity("StorageSystemBuildingMaterials.Models.SupplyItem", b =>
+                {
+                    b.HasOne("StorageSystemBuildingMaterials.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("StorageSystemBuildingMaterials.Models.User", b =>

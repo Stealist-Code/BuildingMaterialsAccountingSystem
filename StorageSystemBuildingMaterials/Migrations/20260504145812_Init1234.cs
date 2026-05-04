@@ -5,25 +5,18 @@
 namespace StorageSystemBuildingMaterials.Migrations
 {
     /// <inheritdoc />
-    public partial class AddIsSupplyToShipment : Migration
+    public partial class Init1234 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<bool>(
-                name: "IsSupply",
-                table: "Shipments",
-                type: "boolean",
-                nullable: false,
-                defaultValue: false);
+
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "IsSupply",
-                table: "Shipments");
+
         }
     }
 }

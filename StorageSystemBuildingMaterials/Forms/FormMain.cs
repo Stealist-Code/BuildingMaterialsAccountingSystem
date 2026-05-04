@@ -25,6 +25,7 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly IShipmentService _shipmentService;
         private readonly IUserService _userService;
         private readonly ICurrencyService _currencyService;
+        private readonly ISupplyService _supplyService;
         private readonly Func<FormLogin> _loginForm;
         private readonly CurrencyState _currencyState;
 
@@ -40,7 +41,8 @@ namespace StorageSystemBuildingMaterials.Forms
                         IReportService reportService,
                         Func<FormLogin> loginForm,
                         CurrencyState currencyState,
-                        ICurrencyService currencyService)
+                        ICurrencyService currencyService,
+                        ISupplyService supplyService)
         {
             InitializeComponent();
 
@@ -54,6 +56,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _reportService = reportService;
             _currencyState = currencyState;
             _currencyService = currencyService;
+            _supplyService = supplyService;
 
             if (!Enum.TryParse(user.Role.Title, out Roles _role))
             {
@@ -95,7 +98,7 @@ namespace StorageSystemBuildingMaterials.Forms
         {
             try
             {
-                var products = await _productService.GetActualProducts();
+                var products = await _supplyService.GetActualProducts();
 
                 ApplyCurrency(products);
 
@@ -164,7 +167,7 @@ namespace StorageSystemBuildingMaterials.Forms
         /// </summary>
         private async Task LoadProductsByCategoryId(Guid categoryId)
         {
-            var products = await _productService.GetActualProducts();
+            var products = await _supplyService.GetActualProducts();
             ApplyCurrency(products);
             _bindingSource.DataSource = products.Where(x => x.CategoryId == categoryId).ToList();
             dgvProducts.Columns["DaysLeft"].Visible = true;
@@ -179,7 +182,7 @@ namespace StorageSystemBuildingMaterials.Forms
             {
                 try
                 {
-                    var products = await _productService.GetActualProducts();
+                    var products = await _supplyService.GetActualProducts();
                     ApplyCurrency(products);
                     _bindingSource.DataSource = products;
                     dgvProducts.Columns["DaysLeft"].Visible = true;
@@ -299,7 +302,7 @@ namespace StorageSystemBuildingMaterials.Forms
         {
             try
             {
-                var products = await _productService.GetExpiredProducts();
+                var products = await _supplyService.GetExpiredProducts();
                 ApplyCurrency(products);
                 _bindingSource.DataSource = products;
                 dgvProducts.Columns["DaysLeft"].Visible = false;

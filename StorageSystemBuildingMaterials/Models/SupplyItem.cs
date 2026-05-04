@@ -29,10 +29,10 @@ namespace StorageSystemBuildingMaterials.Models
         /// </summary>
         public int Quantity { get; set; }
 
-        ///// <summary>
-        ///// Цена закупки
-        ///// </summary>
-        //public decimal PurchasePrice { get; set; }
+        /// <summary>
+        /// Цена закупки
+        /// </summary>
+        public decimal PurchasePrice { get; set; }
 
         /// <summary>
         /// Срок годности

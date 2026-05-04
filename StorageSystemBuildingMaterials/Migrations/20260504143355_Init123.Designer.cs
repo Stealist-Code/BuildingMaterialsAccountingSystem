@@ -12,8 +12,8 @@ using StorageSystemBuildingMaterials.Data;
 namespace StorageSystemBuildingMaterials.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260422154927_AddIsSupplyToShipment")]
-    partial class AddIsSupplyToShipment
+    [Migration("20260504143355_Init123")]
+    partial class Init123
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -193,7 +193,7 @@ namespace StorageSystemBuildingMaterials.Migrations
                     b.Property<Guid>("AddressId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("CustomerId")
+                    b.Property<Guid?>("CustomerId")
                         .HasColumnType("uuid");
 
                     b.Property<bool>("IsSupply")
@@ -242,6 +242,34 @@ namespace StorageSystemBuildingMaterials.Migrations
                     b.HasIndex("ShipmentId");
 
                     b.ToTable("ShipmentItems");
+                });
+
+            modelBuilder.Entity("StorageSystemBuildingMaterials.Models.SupplyItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("ExpirationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("PurchasePrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("ReceivedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("SupplyItems");
                 });
 
             modelBuilder.Entity("StorageSystemBuildingMaterials.Models.User", b =>
@@ -316,8 +344,7 @@ namespace StorageSystemBuildingMaterials.Migrations
                     b.HasOne("StorageSystemBuildingMaterials.Models.Customer", "Customer")
                         .WithMany("Shipments")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("StorageSystemBuildingMaterials.Models.User", "User")
                         .WithMany()
@@ -349,6 +376,17 @@ namespace StorageSystemBuildingMaterials.Migrations
                     b.Navigation("Product");
 
                     b.Navigation("Shipment");
+                });
+
+            modelBuilder.Entity("StorageSystemBuildingMaterials.Models.SupplyItem", b =>
+                {
+                    b.HasOne("StorageSystemBuildingMaterials.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("StorageSystemBuildingMaterials.Models.User", b =>

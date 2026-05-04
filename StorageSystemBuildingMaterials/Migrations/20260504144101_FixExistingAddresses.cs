@@ -5,7 +5,7 @@
 namespace StorageSystemBuildingMaterials.Migrations
 {
     /// <inheritdoc />
-    public partial class InitMigrationFirst : Migration
+    public partial class FixExistingAddresses : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

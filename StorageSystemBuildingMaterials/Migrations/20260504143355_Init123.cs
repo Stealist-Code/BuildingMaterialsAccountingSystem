@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace StorageSystemBuildingMaterials.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class Init123 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -76,7 +76,9 @@ namespace StorageSystemBuildingMaterials.Migrations
                     CategoryId = table.Column<Guid>(type: "uuid", nullable: false),
                     Unit = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: false),
                     PurchasePrice = table.Column<decimal>(type: "numeric(18,2)", nullable: false),
-                    CurrentStock = table.Column<int>(type: "integer", nullable: false)
+                    CurrentStock = table.Column<int>(type: "integer", nullable: false),
+                    ExpirationDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    ReceivedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -114,6 +116,28 @@ namespace StorageSystemBuildingMaterials.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "SupplyItems",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Quantity = table.Column<int>(type: "integer", nullable: false),
+                    PurchasePrice = table.Column<decimal>(type: "numeric(18,2)", nullable: false),
+                    ExpirationDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    ReceivedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SupplyItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SupplyItems_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Shipments",
                 columns: table => new
                 {
@@ -121,8 +145,9 @@ namespace StorageSystemBuildingMaterials.Migrations
                     UserId = table.Column<Guid>(type: "uuid", nullable: false),
                     ShipmentDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     AddressId = table.Column<Guid>(type: "uuid", nullable: false),
-                    CustomerId = table.Column<Guid>(type: "uuid", nullable: false),
-                    PriceForSell = table.Column<decimal>(type: "numeric(18,2)", nullable: false)
+                    CustomerId = table.Column<Guid>(type: "uuid", nullable: true),
+                    PriceForSell = table.Column<decimal>(type: "numeric(18,2)", nullable: false),
+                    IsSupply = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -228,6 +253,11 @@ namespace StorageSystemBuildingMaterials.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SupplyItems_ProductId",
+                table: "SupplyItems",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Users_Email",
                 table: "Users",
                 column: "Email",
@@ -246,13 +276,13 @@ namespace StorageSystemBuildingMaterials.Migrations
                 name: "ShipmentItems");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "SupplyItems");
 
             migrationBuilder.DropTable(
                 name: "Shipments");
 
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Addresses");
@@ -262,6 +292,9 @@ namespace StorageSystemBuildingMaterials.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "Roles");

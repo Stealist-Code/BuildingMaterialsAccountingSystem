@@ -52,20 +52,20 @@ namespace StorageSystemBuildingMaterials.Data
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            try
-            {
-                if (Database.IsRelational())
-                {
-                    Database.OpenConnection();
-                    _logger.Debug("Установлено соединение с бд");
-                    Database.CloseConnection();
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.Fatal(ex, "Не удалось установить связь с бд");
-                throw;
-            }
+            //try
+            //{
+            //    if (Database.IsRelational())
+            //    {
+            //        //Database.OpenConnection();
+            //        _logger.Debug("Установлено соединение с бд");
+            //        //Database.CloseConnection();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.Fatal(ex, "Не удалось установить связь с бд");
+            //    //throw;
+            //}
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -188,6 +188,7 @@ namespace StorageSystemBuildingMaterials.Data
                     .OnDelete(DeleteBehavior.Cascade);
 
                 entity.Property(x => x.Quantity).IsRequired();
+                entity.Property(x => x.PurchasePrice).HasColumnType("decimal(18,2)"); ;
                 entity.Property(x => x.ExpirationDate).IsRequired();
                 entity.Property(x => x.ReceivedDate).IsRequired();
             });
