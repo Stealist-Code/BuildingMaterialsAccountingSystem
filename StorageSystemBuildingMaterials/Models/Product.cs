@@ -33,11 +33,6 @@ namespace StorageSystemBuildingMaterials.Models
         public string Unit { get; set; }
 
         /// <summary>
-        /// Цена закупки
-        /// </summary>
-        public decimal PurchasePrice { get; set; }
-
-        /// <summary>
         /// Текущий остаток
         /// </summary>
         public int CurrentStock { get; set; } 
@@ -46,15 +41,5 @@ namespace StorageSystemBuildingMaterials.Models
         /// Свойство
         /// </summary>
         public Category Category { get; set; }
-
-        /// <summary>
-        /// Годен до
-        /// </summary>
-        public DateTime ExpirationDate { get; set; }
-
-        /// <summary>
-        /// Дата приемки
-        /// </summary>
-        public DateTime ReceivedDate { get; set; }
     }
 }

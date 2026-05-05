@@ -37,10 +37,26 @@ namespace StorageSystemBuildingMaterials.Controls
             dgvProducts.Columns["Name"].HeaderText = Resources.Name;
             dgvProducts.Columns["CategoryName"].HeaderText = Resources.Category;
             dgvProducts.Columns["Unit"].HeaderText = Resources.Unit;
-            dgvProducts.Columns["PurchasePrice"].HeaderText = Resources.PurchasePrice;
+            dgvProducts.Columns["PurchasePrice"].Visible = false;
             dgvProducts.Columns["CurrentStock"].HeaderText = Resources.CurrentStock;
-            dgvProducts.Columns["ExpirationDate"].HeaderText = Resources.ExpirationDate;
-            dgvProducts.Columns["DaysLeft"].HeaderText = Resources.DaysLeft;
+            dgvProducts.Columns["ExpirationDate"].Visible = false;
+            dgvProducts.Columns["DaysLeft"].Visible = false;
+            dgvProducts.Columns["ReceivedDate"].Visible = false;
+        }
+
+        private async Task LoadDataForAdminPanel()
+        {
+            var products = await _productService.GetActualProducts();
+
+            dgvProducts.DataSource = products;
+            dgvProducts.Columns["Id"].Visible = false;
+            dgvProducts.Columns["CategoryId"].Visible = false;
+
+            dgvProducts.Columns["Article"].HeaderText = Resources.Article;
+            dgvProducts.Columns["Name"].HeaderText = Resources.Name;
+            dgvProducts.Columns["CategoryName"].HeaderText = Resources.Category;
+            dgvProducts.Columns["Unit"].HeaderText = Resources.Unit;
+            dgvProducts.Columns["CurrentStock"].HeaderText = Resources.CurrentStock;
             dgvProducts.Columns["ReceivedDate"].Visible = false;
         }
 
@@ -206,7 +222,7 @@ namespace StorageSystemBuildingMaterials.Controls
                     await _productService.CreateProduct(addForm.ResultProduct);
 
                     MessageBox.Show(Resources.AddProductSuccessfully);
-                    await LoadData(); // обновить таблицу
+                    await LoadDataForAdminPanel(); // обновить таблицу
                 }
                 catch (Exception ex)
                 {
@@ -238,9 +254,6 @@ namespace StorageSystemBuildingMaterials.Controls
                 Article = selectedProduct.Article,
                 CategoryId = selectedProduct.CategoryId,
                 Unit = selectedProduct.Unit,
-                PurchasePrice = selectedProduct.PurchasePrice,
-                CurrentStock = selectedProduct.CurrentStock,
-                ExpirationDate = selectedProduct.ExpirationDate
             };
 
             try

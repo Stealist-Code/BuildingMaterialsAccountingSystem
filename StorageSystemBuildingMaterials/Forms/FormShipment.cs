@@ -147,7 +147,8 @@ namespace StorageSystemBuildingMaterials.Forms
                 {
                     Id = Guid.NewGuid(),
                     ProductId = c.ProductId,
-                    Quantity = c.Quantity
+                    Quantity = c.Quantity,
+                    
                 }).ToList();
 
                 var customer = new Customer

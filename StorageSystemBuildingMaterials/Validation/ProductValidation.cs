@@ -21,7 +21,7 @@ namespace StorageSystemBuildingMaterials.Validation
                 throw new Exception("ProductNameRequired");
             }
 
-            if (product.PurchasePrice < 0)
+            if (product.CurrentStock < 0)
             {
                 throw new Exception("InvalidPrice");
             }

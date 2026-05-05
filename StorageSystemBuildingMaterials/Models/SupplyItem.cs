@@ -30,6 +30,11 @@ namespace StorageSystemBuildingMaterials.Models
         public int Quantity { get; set; }
 
         /// <summary>
+        /// Текущий остаток
+        /// </summary>
+        public int CurrentStock { get; set; }
+
+        /// <summary>
         /// Цена закупки
         /// </summary>
         public decimal PurchasePrice { get; set; }

@@ -93,6 +93,7 @@ namespace StorageSystemBuildingMaterials.Forms
                         Id = Guid.NewGuid(),
                         ProductId = product.Id,
                         Quantity = item.Quantity,
+                        CurrentStock = item.Quantity,
                         ExpirationDate = DateTime.SpecifyKind(item.ExpirationDate, DateTimeKind.Utc),
                         ReceivedDate = DateTime.UtcNow
                     });
@@ -140,6 +141,7 @@ namespace StorageSystemBuildingMaterials.Forms
                         Id = Guid.NewGuid(),
                         ProductId = productId,
                         Quantity = quantity,
+                        CurrentStock = quantity,
                         PurchasePrice = purchasePrice,
                         ExpirationDate = DateTime.SpecifyKind(dtpExpirationDate.Value, DateTimeKind.Utc),
                         ReceivedDate = DateTime.UtcNow

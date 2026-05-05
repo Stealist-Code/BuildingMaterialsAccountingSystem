@@ -24,5 +24,14 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
         /// </summary>
         /// <returns></returns>
         public Task<List<ProductDto>> GetExpiredProducts();
+
+        /// <summary>
+        /// Поиск товаров по артикулу, названию, категории
+        /// </summary>
+        /// <param name="article"></param>
+        /// <param name="name"></param>
+        /// <param name="categoryId"></param>
+        /// <returns></returns>
+        public Task<List<ProductDto>> SearchProductsAdvanced(string article, string name, Guid? categoryId);
     }
 }

@@ -199,7 +199,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
                 if (searchForm.ShowDialog() == DialogResult.OK)
                 {
-                    var products = await _productService.SearchProductsAdvanced(
+                    var products = await _supplyService.SearchProductsAdvanced(
                         searchForm.Article,
                         searchForm.NameFilter,
                         searchForm.CategoryId);

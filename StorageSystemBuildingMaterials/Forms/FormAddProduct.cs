@@ -22,7 +22,6 @@ namespace StorageSystemBuildingMaterials.Forms
         /// </summary>
         public Product ResultProduct { get; private set; }
 
-
         public FormAddProduct(FormAddProductsModeEnum mode, ICategoryService categoryService, Product product = null)
         {
             InitializeComponent();
@@ -53,12 +52,8 @@ namespace StorageSystemBuildingMaterials.Forms
             {
                 Name = txtName.Text.Trim(),
                 Unit = comboBoxUnit.SelectedItem?.ToString(),
-                PurchasePrice = nudPrice.Value,
                 CategoryId = (Guid)cbCategory.SelectedValue,
-                ExpirationDate = DateTime.SpecifyKind(
-                    dtpExpirationDate.Value.Date,
-                    DateTimeKind.Utc
-                )
+                CurrentStock = 0
             };
 
             DialogResult = DialogResult.OK;
@@ -92,7 +87,6 @@ namespace StorageSystemBuildingMaterials.Forms
             txtName.Text = _product.Name;
             cbCategory.SelectedValue = _product.CategoryId;
             comboBoxUnit.SelectedItem = _product.Unit;
-            nudPrice.Value = _product.PurchasePrice;
         }
 
         private void SetupForm()

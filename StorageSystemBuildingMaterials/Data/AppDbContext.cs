@@ -52,20 +52,20 @@ namespace StorageSystemBuildingMaterials.Data
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            //try
-            //{
-            //    if (Database.IsRelational())
-            //    {
-            //        //Database.OpenConnection();
-            //        _logger.Debug("Установлено соединение с бд");
-            //        //Database.CloseConnection();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    _logger.Fatal(ex, "Не удалось установить связь с бд");
-            //    //throw;
-            //}
+            try
+            {
+                if (Database.IsRelational())
+                {
+                    Database.OpenConnection();
+                    _logger.Debug("Установлено соединение с бд");
+                    Database.CloseConnection();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.Fatal(ex, "Не удалось установить связь с бд");
+                throw;
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -115,7 +115,6 @@ namespace StorageSystemBuildingMaterials.Data
                 entity.HasIndex(p => p.Article).IsUnique(); // уникальный артикул
                 entity.Property(p => p.Name).IsRequired().HasMaxLength(200);
                 entity.Property(p => p.Unit).HasMaxLength(20);
-                entity.Property(p => p.PurchasePrice).HasColumnType("decimal(18,2)");
                 entity.Property(p => p.CurrentStock).IsRequired();
                 // Связь с Category
                 entity.HasOne(p => p.Category).WithMany(c => c.Products).HasForeignKey(p => p.CategoryId).OnDelete(DeleteBehavior.Restrict);
@@ -161,6 +160,7 @@ namespace StorageSystemBuildingMaterials.Data
                 entity.HasOne(si => si.Shipment).WithMany(s => s.ShipmentItems).HasForeignKey(si => si.ShipmentId).OnDelete(DeleteBehavior.Cascade);
                 // Связь с Product
                 entity.HasOne(si => si.Product).WithMany().HasForeignKey(si => si.ProductId).OnDelete(DeleteBehavior.Restrict);
+                entity.Property(x => x.TotalPurchasePrice).HasColumnType("decimal(18,2)").IsRequired();
             });
 
             // Покупатели

@@ -13,7 +13,7 @@ namespace StorageSystemBuildingMaterials.Data
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
 
             optionsBuilder.UseNpgsql(
-                "Host=localhost;Port=5432;Database=DB;Username=postgres;Password=1245admin"
+                DatabaseConfig.ConnectionString
             );
 
             return new AppDbContext(optionsBuilder.Options);

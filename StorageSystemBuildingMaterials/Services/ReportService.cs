@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StorageSystemBuildingMaterials.Data;
 using StorageSystemBuildingMaterials.DTO;
+using StorageSystemBuildingMaterials.Models;
 using StorageSystemBuildingMaterials.Services.Interfaces;
 using System;
 
@@ -43,8 +44,8 @@ namespace StorageSystemBuildingMaterials.Services
                 {
                     Date = x.ShipmentDate,
                     CustomerName = x.Customer.FullName,
-                    ShipmentAmount = x.ShipmentItems.Sum(i => i.Quantity * i.Product.PurchasePrice),
-                    Profit = x.ShipmentItems.Sum(i => x.PriceForSell - i.Quantity * i.Product.PurchasePrice),
+                    ShipmentAmount = x.PriceForSell,
+                    Profit = x.ShipmentItems.Sum(i => x.PriceForSell - x.ShipmentItems.Sum(y => y.TotalPurchasePrice)),
                     CustomerEmail = x.Customer.Email
                 })
                 .OrderBy(x => x.Date)

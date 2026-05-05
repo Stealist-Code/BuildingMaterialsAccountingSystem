@@ -31,6 +31,7 @@ namespace StorageSystemBuildingMaterials.DTO
         /// Идентификатор категории, к которой относится товар
         /// </summary>
         public Guid CategoryId { get; set; }
+
         /// <summary>
         /// Единица измерения
         /// </summary>

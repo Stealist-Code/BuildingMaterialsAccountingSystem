@@ -56,7 +56,6 @@ namespace StorageSystemBuildingMaterials.Services
             }
         }
 
-
         /// <summary>
         /// Получить непросроченные товары 
         /// </summary>
@@ -115,6 +114,60 @@ namespace StorageSystemBuildingMaterials.Services
                     })
                     .OrderBy(x => x.Name)
                     .ToListAsync();
+        }
+
+        /// <summary>
+        /// Поиск товаров по названию/артикулу/названию категории (или сразу все вместе)
+        /// </summary>
+        /// <param name="article"></param>
+        /// <param name="name"></param>
+        /// <param name="categoryId"></param>
+        /// <returns></returns>
+        public async Task<List<ProductDto>> SearchProductsAdvanced(string articleStr, string name, Guid? categoryId)
+        {
+            try
+            {
+                var supply = _db.SupplyItems.AsNoTracking().AsQueryable();
+
+                if (!string.IsNullOrWhiteSpace(articleStr) && long.TryParse(articleStr, out long articleNum))
+                {
+                    supply = supply.Where(x => x.Product.Article.ToLower() == $"art-" + articleNum);
+                }
+
+                if (!string.IsNullOrWhiteSpace(name))
+                {
+                    supply = supply.Where(x => x.Product.Name.ToLower() == name.ToLower());
+                }
+
+                if (categoryId.HasValue)
+                {
+                    supply = supply.Where(x => x.Product.CategoryId == categoryId.Value);
+                }
+
+                var now = DateTime.UtcNow;
+
+                return await supply
+                    .Select(x => new ProductDto
+                    {
+                        Id = x.Id,
+                        Article = x.Product.Article,
+                        Name = x.Product.Name,
+
+                        ExpirationDate = x.ExpirationDate,
+                        DaysLeft = (x.ExpirationDate - now).Days,
+                        CategoryName = x.Product.Category.Name,
+                        Unit = x.Product.Unit,
+                        PurchasePrice = x.PurchasePrice,
+                        CurrentStock = x.Quantity
+                    })
+                    .OrderBy(x => x.Name)
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex, "Ошибка поиска товаров");
+                throw;
+            }
         }
     }
 }

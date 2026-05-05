@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StorageSystemBuildingMaterials.DTO;
+using System;
 
 namespace StorageSystemBuildingMaterials.Models
 {
@@ -26,6 +27,11 @@ namespace StorageSystemBuildingMaterials.Models
         /// Количество отгруженного товара
         /// </summary>
         public int Quantity { get; set; }
+
+        /// <summary>
+        /// Общая сумма покупки (поставок)
+        /// </summary>
+        public decimal TotalPurchasePrice { get; set; }
 
         /// <summary>
         /// Навигационное свойство – сама отгрузка

@@ -41,11 +41,7 @@ namespace StorageSystemBuildingMaterials.Services
                         Name = x.Name,
                         CategoryName = x.Category.Name,
                         Unit = x.Unit,
-                        PurchasePrice = x.PurchasePrice,
                         CurrentStock = x.CurrentStock,
-                        ExpirationDate = x.ExpirationDate,
-                        ReceivedDate = x.ReceivedDate,
-                        DaysLeft = (x.ExpirationDate - DateTime.UtcNow).Days,
                     })
                     .OrderBy(x => x.Name)
                     .ToListAsync();
@@ -74,11 +70,7 @@ namespace StorageSystemBuildingMaterials.Services
                         CategoryName = x.Category.Name,
                         CategoryId = x.CategoryId,
                         Unit = x.Unit,
-                        PurchasePrice = x.PurchasePrice,
                         CurrentStock = x.CurrentStock,
-                        ExpirationDate = x.ExpirationDate,
-                        ReceivedDate = x.ReceivedDate,
-                        DaysLeft = (x.ExpirationDate - DateTime.UtcNow).Days,
                     })
                     .OrderBy(x => x.Name)
                     .ToListAsync();
@@ -127,11 +119,8 @@ namespace StorageSystemBuildingMaterials.Services
                         Article = x.Article,
                         Name = x.Name,
 
-                        ExpirationDate = x.ExpirationDate,
-                        DaysLeft = (x.ExpirationDate - now).Days,
                         CategoryName = x.Category.Name,
                         Unit = x.Unit,
-                        PurchasePrice = x.PurchasePrice,
                         CurrentStock = x.CurrentStock
                     })
                     .OrderBy(x => x.Name)
@@ -166,7 +155,6 @@ namespace StorageSystemBuildingMaterials.Services
 
                 product.Id = Guid.NewGuid();
                 product.Article = await GenerateArticle();
-                product.ReceivedDate = DateTime.UtcNow;
                 await _db.Products.AddAsync(product);
                 await _db.SaveChangesAsync();
 
@@ -209,7 +197,6 @@ namespace StorageSystemBuildingMaterials.Services
                 existing.Name = updated.Name;
                 existing.CategoryId = updated.CategoryId;
                 existing.Unit = updated.Unit;
-                existing.PurchasePrice = updated.PurchasePrice;
                 existing.CurrentStock = updated.CurrentStock;
 
                 await _db.SaveChangesAsync();
@@ -292,14 +279,7 @@ namespace StorageSystemBuildingMaterials.Services
                         CategoryName = g.Key.Category.Name,
                         CategoryId = g.Key.CategoryId,
                         Unit = g.Key.Unit,
-                        PurchasePrice = g.Key.PurchasePrice,
-
                         CurrentStock = g.Sum(x => x.Quantity),
-
-                        ExpirationDate = minExpiration,
-                        ReceivedDate = g.Max(x => x.ReceivedDate),
-
-                        DaysLeft = (minExpiration.Date - today).Days
                     };
                 })
                 .ToList();
@@ -335,7 +315,6 @@ namespace StorageSystemBuildingMaterials.Services
                         CategoryName = g.Key.Category.Name,
                         CategoryId = g.Key.CategoryId,
                         Unit = g.Key.Unit,
-                        PurchasePrice = g.Key.PurchasePrice,
 
                         CurrentStock = g.Sum(x => x.Quantity),
 
