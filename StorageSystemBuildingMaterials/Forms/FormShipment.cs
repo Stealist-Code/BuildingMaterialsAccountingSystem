@@ -129,12 +129,17 @@ namespace StorageSystemBuildingMaterials.Forms
             {
                 var address = new Address
                 {
-                    Id = Guid.NewGuid(),
-                    Country = txtCountry.Text.Trim(),
-                    City = txtCity.Text.Trim(),
-                    Region = txtRegion.Text.Trim(),
-                    Street = txtStreet.Text.Trim(),
-                    Building = txtBuilding.Text.Trim()
+                    //Id = Guid.NewGuid(),
+                    //Country = txtCountry.Text.Trim(),
+                    //City = txtCity.Text.Trim(),
+                    //Region = txtRegion.Text.Trim(),
+                    //Street = txtStreet.Text.Trim(),
+                    //Building = txtBuilding.Text.Trim()
+                    Country = "Россия",
+                    Region = "Татарстан",
+                    City = "Казань",
+                    Street = "Склад",
+                    Building = "1"
                 };
 
                 var totalPrice = nudTotalPrice.Value;
@@ -153,11 +158,15 @@ namespace StorageSystemBuildingMaterials.Forms
 
                 var customer = new Customer
                 {
-                    Id = Guid.NewGuid(),
-                    FirstName = txtFirstName.Text.Trim(),
-                    LastName = txtLastName.Text.Trim(),
-                    MiddleName = txtMiddleName.Text.Trim(),
-                    Email = txtEmail.Text.Trim(),
+                    //Id = Guid.NewGuid(),
+                    //FirstName = txtFirstName.Text.Trim(),
+                    //LastName = txtLastName.Text.Trim(),
+                    //MiddleName = txtMiddleName.Text.Trim(),
+                    //Email = txtEmail.Text.Trim(),
+                    FirstName = "q",
+                    LastName = "q",
+                    MiddleName = "q",
+                    Email = "admin123@admin.admin",
                 };
 
                 await _shipmentService.CreateShipment(

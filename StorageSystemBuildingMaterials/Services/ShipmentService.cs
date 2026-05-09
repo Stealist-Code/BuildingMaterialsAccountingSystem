@@ -2,6 +2,7 @@
 using NLog;
 using StorageSystemBuildingMaterials.Data;
 using StorageSystemBuildingMaterials.DTO;
+using StorageSystemBuildingMaterials.HelperClasses;
 using StorageSystemBuildingMaterials.Models;
 using StorageSystemBuildingMaterials.Services.Interfaces;
 using StorageSystemBuildingMaterials.Validation.Interfaces;
@@ -92,6 +93,8 @@ namespace StorageSystemBuildingMaterials.Services
                     .OrderBy(x => x.ExpirationDate)
                     .ToListAsync();
 
+                await DiscountHelper.ApplyDiscount(_db, supply);
+
                 var existingCustomer = await _db.Customers.FirstOrDefaultAsync(x => x.Email.ToLower() == customer.Email.ToLower());
 
                 if (existingCustomer is null)
@@ -127,18 +130,19 @@ namespace StorageSystemBuildingMaterials.Services
                         throw new Exception("ProductNotFound");
                     }
 
-                    var product = products.FirstOrDefault(x => x.Id == item.Id);
+                    var product = products.FirstOrDefault(x => x.Id == item.ProductId);
 
-                    if (!(product is null && product.CurrentStock >= item.Quantity))
+                    if (product is null || product is not null && product.CurrentStock < item.Quantity)
                     {
                         throw new Exception("InsufficientProduct");
                     }
 
                     foreach (var supplyItemProduct in supplyItemProducts)
                     {
-                        supplyItemProduct.Product = products.FirstOrDefault(x => x.Id == supplyItemProduct.ProductId && x.CurrentStock > 0);
+                        supplyItemProduct.Product = products
+                            .FirstOrDefault(x => x.Id == supplyItemProduct.ProductId && x.CurrentStock > 0);
 
-                        item.Id = item.Id == Guid.Empty ? Guid.NewGuid() : item.Id;
+                        item.Id = (item.Id == Guid.Empty) ? Guid.NewGuid() : item.Id;
                         item.ShipmentId = shipment.Id;
 
                         _logger.Info($"Товар зарезервирован: {supplyItemProduct.Product.Name}, количество: {item.Quantity}");

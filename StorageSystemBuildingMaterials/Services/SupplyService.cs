@@ -36,7 +36,7 @@ namespace StorageSystemBuildingMaterials.Services
                         .ThenInclude(x => x.StateRule)
                     .ToListAsync();
 
-                DiscountHelper.ApplyDiscount(supplyItems);
+                await DiscountHelper.ApplyDiscount(_db, supplyItems);
 
                 return supplyItems
                     .Select(x => new ProductDto
@@ -73,14 +73,14 @@ namespace StorageSystemBuildingMaterials.Services
             
             var supplyItems = await _db.SupplyItems
                     .AsNoTracking()
-                    .Where(x => x.ExpirationDate.Date > today)
+                    .Where(x => x.ExpirationDate.Date > today && x.CurrentStock > 0)
                     .Include(x => x.Product)
                         .ThenInclude(x => x.Category)
                     .Include(x => x.ProductState)
                         .ThenInclude(x => x.StateRule)
                     .ToListAsync();
 
-            DiscountHelper.ApplyDiscount(supplyItems);
+            await DiscountHelper.ApplyDiscount(_db, supplyItems);
 
             return supplyItems
                     .Select(x => new ProductDto
@@ -111,14 +111,14 @@ namespace StorageSystemBuildingMaterials.Services
 
             var supplyItems = await _db.SupplyItems
                     .AsNoTracking()
-                    .Where(x => x.ExpirationDate.Date <= today)
+                    .Where(x => x.ExpirationDate.Date <= today || x.CurrentStock <= 0)
                     .Include(x => x.Product)
                         .ThenInclude(x => x.Category)
                     .Include(x => x.ProductState)
                         .ThenInclude(x => x.StateRule)
                     .ToListAsync();
 
-            DiscountHelper.ApplyDiscount(supplyItems);
+            await DiscountHelper.ApplyDiscount(_db, supplyItems);
 
             return supplyItems
                     .Select(x => new ProductDto

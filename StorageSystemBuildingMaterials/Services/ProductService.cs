@@ -261,14 +261,14 @@ namespace StorageSystemBuildingMaterials.Services
 
             var supplies = await _db.SupplyItems
                 .Include(x => x.Product)
-                .Where(x => x.ExpirationDate.Date > today)
+                .Where(x => x.ExpirationDate.Date > today && x.CurrentStock > 0)
                 .ToListAsync();
 
             var suppliesDict = supplies
                 .GroupBy(x => x.ProductId)
                 .ToDictionary(
                     y => y.Key,
-                    y => y.Sum(x => x.Quantity)
+                    y => y.Sum(x => x.CurrentStock)
                 );
 
             var products = await _db.Products

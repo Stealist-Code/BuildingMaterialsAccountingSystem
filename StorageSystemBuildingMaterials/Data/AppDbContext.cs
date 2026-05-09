@@ -228,12 +228,6 @@ namespace StorageSystemBuildingMaterials.Data
 
                 entity.Property(x => x.Discount).HasColumnType("decimal(5,2)").IsRequired();
                 entity.Property(x => x.DaysBeforeDiscount).IsRequired();
-
-                //entity.HasMany(x => x.ProductStates)
-                //    .WithOne(x => x.StateRule)
-                //    .HasForeignKey(x => x.StateRuleId)
-                //    .IsRequired();
-
             });
         }
     }

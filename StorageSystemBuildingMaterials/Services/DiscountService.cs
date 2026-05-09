@@ -34,9 +34,8 @@ namespace StorageSystemBuildingMaterials.Services
                 var stateRule = await CreateStateRule();
                 productState = new ProductState()
                 {
-                    //Id = Guid.NewGuid(),
                     StateRuleId = stateRule.Id,
-                    //StateRule = stateRule
+                    StateRule = stateRule
                 };
                 await _db.ProductStates.AddAsync(productState);
                 await _db.SaveChangesAsync();
@@ -54,7 +53,6 @@ namespace StorageSystemBuildingMaterials.Services
             {
                 stateRule = new StateRule()
                 {
-                    //Id = Guid.NewGuid(),
                     DaysBeforeDiscount = 14,
                     Discount = 30m
                 };
