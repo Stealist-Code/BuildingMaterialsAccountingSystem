@@ -23,6 +23,7 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly IUserService _userService;
         private readonly IReportService _reportService;
         private readonly ISupplyService _supplyService;
+        private readonly IDiscountService _discountService;
         private readonly CurrencyState _currencyState;
         private readonly ICurrencyService _currencyService;
 
@@ -39,7 +40,8 @@ namespace StorageSystemBuildingMaterials.Forms
                          IUserService userService,
                          CurrencyState currencyState,
                          ICurrencyService currencyService,
-                         ISupplyService supplyService)
+                         ISupplyService supplyService,
+                         IDiscountService discountService)
         {
             InitializeComponent();
             _authService = authService;
@@ -53,6 +55,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _currencyState = currencyState;
             _currencyService = currencyService;
             _supplyService = supplyService;
+            _discountService = discountService;
         }
 
         /// <summary>
@@ -90,10 +93,11 @@ namespace StorageSystemBuildingMaterials.Forms
                                                 _shipmentValidation,
                                                 _userService,
                                                 _reportService,
-                                                () => new FormLogin(_authService, _authValidation, _categoryService, _productService, _shipmentService, _shipmentValidation, _reportService, _userService, _currencyState, _currencyService, _supplyService),
+                                                () => new FormLogin(_authService, _authValidation, _categoryService, _productService, _shipmentService, _shipmentValidation, _reportService, _userService, _currencyState, _currencyService, _supplyService, _discountService),
                                                 _currencyState,
                                                 _currencyService,
-                                                _supplyService);
+                                                _supplyService,
+                                                _discountService);
                     mainForm.Show();
                     this.Hide();
                 }

@@ -12,15 +12,17 @@ namespace StorageSystemBuildingMaterials.Forms
     {
         private readonly IProductService _productService;
         private readonly IShipmentService _shipmentService;
+        private readonly IDiscountService _discountService;
         private readonly Guid _userId;
 
-        public FormDelivery(IProductService productService, IShipmentService shipmentService, Guid userId)
+        public FormDelivery(IProductService productService, IShipmentService shipmentService, IDiscountService discountService, Guid userId)
         {
             InitializeComponent();
 
             _productService = productService;
             _shipmentService = shipmentService;
             _userId = userId;
+            _discountService = discountService;
 
             this.Load += async (s, e) => await LoadProducts();
         }
@@ -88,6 +90,8 @@ namespace StorageSystemBuildingMaterials.Forms
                         throw new Exception(Resources.NoExpirationDate);
                     }
 
+                    var productState = await _discountService.CreateProductState();
+
                     supplyItems.Add(new SupplyItem
                     {
                         Id = Guid.NewGuid(),
@@ -95,7 +99,9 @@ namespace StorageSystemBuildingMaterials.Forms
                         Quantity = item.Quantity,
                         CurrentStock = item.Quantity,
                         ExpirationDate = DateTime.SpecifyKind(item.ExpirationDate, DateTimeKind.Utc),
-                        ReceivedDate = DateTime.UtcNow
+                        ReceivedDate = DateTime.UtcNow,
+                        ProductState = productState,
+                        ProductStateId = productState.Id
                     });
                 }
 
@@ -134,6 +140,8 @@ namespace StorageSystemBuildingMaterials.Forms
                     return;
                 }
 
+                var productState = await _discountService.CreateProductState();
+
                 var supplyItems = new List<SupplyItem>
                 {
                     new SupplyItem
@@ -144,7 +152,9 @@ namespace StorageSystemBuildingMaterials.Forms
                         CurrentStock = quantity,
                         PurchasePrice = purchasePrice,
                         ExpirationDate = DateTime.SpecifyKind(dtpExpirationDate.Value, DateTimeKind.Utc),
-                        ReceivedDate = DateTime.UtcNow
+                        ReceivedDate = DateTime.UtcNow,
+                        //ProductState = productState,
+                        ProductStateId = productState.Id
                     }
                 };
 

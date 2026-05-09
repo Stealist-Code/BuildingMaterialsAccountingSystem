@@ -92,8 +92,6 @@ namespace StorageSystemBuildingMaterials.Services
                     .OrderBy(x => x.ExpirationDate)
                     .ToListAsync();
 
-                var supplyDict = supply.ToDictionary(x => x.ProductId);
-
                 var existingCustomer = await _db.Customers.FirstOrDefaultAsync(x => x.Email.ToLower() == customer.Email.ToLower());
 
                 if (existingCustomer is null)
@@ -102,6 +100,8 @@ namespace StorageSystemBuildingMaterials.Services
                     await _db.Customers.AddAsync(customer);
                     existingCustomer = customer;
                 }
+
+                var products = await _db.Products.ToListAsync();
 
                 await _db.Addresses.AddAsync(address);
 
@@ -120,39 +120,51 @@ namespace StorageSystemBuildingMaterials.Services
 
                 foreach (var item in items)
                 {
-                    if (!supplyDict.TryGetValue(item.ProductId, out var supplyItemProduct))
+                    var supplyItemProducts = supply.Where(x => x.ProductId == item.ProductId);
+
+                    if (!supplyItemProducts.Any())
                     {
                         throw new Exception("ProductNotFound");
                     }
 
-                    supplyItemProduct.Product = _db.Products.FirstOrDefault(x => x.Id == supplyItemProduct.ProductId);
+                    var product = products.FirstOrDefault(x => x.Id == item.Id);
 
-                    item.Id = item.Id == Guid.Empty ? Guid.NewGuid() : item.Id;
-                    item.ShipmentId = shipment.Id;
-
-                    _logger.Info($"Товар зарезервирован: {supplyItemProduct.Product.Name}, количество: {item.Quantity}");
-
-                    decimal totalPurchasePrice = 0;
-
-                    foreach (var supplyItem in supply)
+                    if (!(product is null && product.CurrentStock >= item.Quantity))
                     {
-                        if (supplyItem.CurrentStock <=  item.Quantity)
-                        {
-                            item.Quantity -= supplyItem.CurrentStock;
-                            totalPurchasePrice += supplyItem.CurrentStock * supplyItem.PurchasePrice; 
-                            supplyItem.CurrentStock = 0;
-                        }
-                        else
-                        {
-                            supplyItem.CurrentStock -= item.Quantity;
-                            totalPurchasePrice += item.Quantity * supplyItem.PurchasePrice;
-                            item.Quantity = 0;
-                        }   
+                        throw new Exception("InsufficientProduct");
                     }
 
-                    item.TotalPurchasePrice = totalPurchasePrice;
+                    foreach (var supplyItemProduct in supplyItemProducts)
+                    {
+                        supplyItemProduct.Product = products.FirstOrDefault(x => x.Id == supplyItemProduct.ProductId && x.CurrentStock > 0);
 
-                    _logger.Info($"Остаток товара уменьшен: {supplyItemProduct.Product.Name}");
+                        item.Id = item.Id == Guid.Empty ? Guid.NewGuid() : item.Id;
+                        item.ShipmentId = shipment.Id;
+
+                        _logger.Info($"Товар зарезервирован: {supplyItemProduct.Product.Name}, количество: {item.Quantity}");
+
+                        decimal totalPurchasePrice = 0;
+
+                        foreach (var supplyItem in supply)
+                        {
+                            if (supplyItem.CurrentStock <= item.Quantity)
+                            {
+                                item.Quantity -= supplyItem.CurrentStock;
+                                totalPurchasePrice += supplyItem.CurrentStock * supplyItem.PurchasePrice;
+                                supplyItem.CurrentStock = 0;
+                            }
+                            else
+                            {
+                                supplyItem.CurrentStock -= item.Quantity;
+                                totalPurchasePrice += item.Quantity * supplyItem.PurchasePrice;
+                                item.Quantity = 0;
+                            }
+                        }
+
+                        item.TotalPurchasePrice = totalPurchasePrice;
+
+                        _logger.Info($"Остаток товара уменьшен: {supplyItemProduct.Product.Name}");
+                    }
                 }
 
                 await _db.Shipments.AddAsync(shipment);
@@ -202,7 +214,6 @@ namespace StorageSystemBuildingMaterials.Services
                 await _db.SupplyItems.AddAsync(item);
 
                 product.CurrentStock += item.Quantity;
-                
             }
 
             await _db.Shipments.AddAsync(shipment);

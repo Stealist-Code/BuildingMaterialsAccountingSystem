@@ -261,28 +261,31 @@ namespace StorageSystemBuildingMaterials.Services
 
             var supplies = await _db.SupplyItems
                 .Include(x => x.Product)
-                    .ThenInclude(p => p.Category)
                 .Where(x => x.ExpirationDate.Date > today)
                 .ToListAsync();
 
-            var result = supplies
-                .GroupBy(x => x.Product)
-                .Select(g =>
-                {
-                    var minExpiration = g.Min(x => x.ExpirationDate);
+            var suppliesDict = supplies
+                .GroupBy(x => x.ProductId)
+                .ToDictionary(
+                    y => y.Key,
+                    y => y.Sum(x => x.Quantity)
+                );
 
-                    return new ProductDto
-                    {
-                        Id = g.Key.Id,
-                        Article = g.Key.Article,
-                        Name = g.Key.Name,
-                        CategoryName = g.Key.Category.Name,
-                        CategoryId = g.Key.CategoryId,
-                        Unit = g.Key.Unit,
-                        CurrentStock = g.Sum(x => x.Quantity),
-                    };
-                })
-                .ToList();
+            var products = await _db.Products
+                .Include(x => x.Category)
+                .ToListAsync();
+
+            var result = products
+                .Select(x => new ProductDto
+                {
+                    Id = x.Id,
+                    Article = x.Article,
+                    Name = x.Name,
+                    CategoryName = x.Category.Name,
+                    CategoryId = x.Category.Id,
+                    Unit = x.Unit,
+                    CurrentStock = suppliesDict.ContainsKey(x.Id) ? suppliesDict[x.Id] : 0
+                }).OrderBy(x => x.Article).ToList();
 
             return result;
         }

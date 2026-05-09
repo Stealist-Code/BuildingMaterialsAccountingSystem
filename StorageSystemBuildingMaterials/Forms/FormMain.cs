@@ -26,6 +26,7 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly IUserService _userService;
         private readonly ICurrencyService _currencyService;
         private readonly ISupplyService _supplyService;
+        private readonly IDiscountService _discountService;
         private readonly Func<FormLogin> _loginForm;
         private readonly CurrencyState _currencyState;
 
@@ -42,7 +43,8 @@ namespace StorageSystemBuildingMaterials.Forms
                         Func<FormLogin> loginForm,
                         CurrencyState currencyState,
                         ICurrencyService currencyService,
-                        ISupplyService supplyService)
+                        ISupplyService supplyService,
+                        IDiscountService discountService)
         {
             InitializeComponent();
 
@@ -57,6 +59,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _currencyState = currencyState;
             _currencyService = currencyService;
             _supplyService = supplyService;
+            _discountService = discountService;
 
             if (!Enum.TryParse(user.Role.Title, out Roles _role))
             {
@@ -68,7 +71,7 @@ namespace StorageSystemBuildingMaterials.Forms
             SetupDataGridView();
 
             this.Load += FormMain_Load;
-            SubscribeButtons();
+            SubscribeButtons(); 
         }
 
         private async void FormMain_Load(object sender, EventArgs e)
@@ -89,7 +92,6 @@ namespace StorageSystemBuildingMaterials.Forms
 
             LoadCategoryButtons(categories);
         }
-
 
         /// <summary>
         /// Загрузка всех товаров
@@ -293,7 +295,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
         private void buttonDelivery_Click(object sender, EventArgs e)
         {
-            var deliveryForm = new FormDelivery(_productService, _shipmentService, _user.Id);
+            var deliveryForm = new FormDelivery(_productService, _shipmentService, _discountService, _user.Id);
 
             deliveryForm.ShowDialog();
         }

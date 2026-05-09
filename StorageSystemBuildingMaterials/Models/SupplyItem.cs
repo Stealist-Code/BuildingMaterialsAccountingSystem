@@ -48,5 +48,15 @@ namespace StorageSystemBuildingMaterials.Models
         /// Дата приема
         /// </summary>
         public DateTime ReceivedDate { get; set; }
+
+        /// <summary>
+        /// Навигационное свойство состояния товарной позиции
+        /// </summary>
+        public Guid ProductStateId { get; set; }
+
+        /// <summary>
+        /// Навигационное свойство состояния товарной позиции
+        /// </summary>
+        public ProductState ProductState { get; set; } 
     }
 }

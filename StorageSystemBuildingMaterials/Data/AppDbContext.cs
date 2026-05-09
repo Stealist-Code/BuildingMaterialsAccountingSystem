@@ -50,6 +50,16 @@ namespace StorageSystemBuildingMaterials.Data
         /// </summary>
         public DbSet<SupplyItem> SupplyItems { get; set; }
 
+        /// <summary>
+        /// Модель таблицы состояния товарной позиции
+        /// </summary>
+        public DbSet<ProductState> ProductStates { get; set; }
+
+        /// <summary>
+        /// Модель таблицы правил состояния товарной позиции
+        /// </summary>
+        public DbSet<StateRule> StateRules { get; set; }
+
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
             try
@@ -191,6 +201,39 @@ namespace StorageSystemBuildingMaterials.Data
                 entity.Property(x => x.PurchasePrice).HasColumnType("decimal(18,2)"); ;
                 entity.Property(x => x.ExpirationDate).IsRequired();
                 entity.Property(x => x.ReceivedDate).IsRequired();
+
+                entity.HasOne(x => x.ProductState)
+                    .WithMany()
+                    .HasForeignKey(x => x.ProductStateId)
+                    .IsRequired();
+            });
+
+            // состояние товарной позиции
+            modelBuilder.Entity<ProductState>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+                entity.Property(x => x.Id).HasDefaultValueSql("gen_random_uuid()");
+
+                entity.HasOne(x => x.StateRule)
+                    .WithMany(x => x.ProductStates)
+                    .HasForeignKey(x => x.StateRuleId)
+                    .IsRequired();
+            });
+
+            // правила состояния товарной позиции
+            modelBuilder.Entity<StateRule>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+                entity.Property(x => x.Id).HasDefaultValueSql("gen_random_uuid()");
+
+                entity.Property(x => x.Discount).HasColumnType("decimal(5,2)").IsRequired();
+                entity.Property(x => x.DaysBeforeDiscount).IsRequired();
+
+                //entity.HasMany(x => x.ProductStates)
+                //    .WithOne(x => x.StateRule)
+                //    .HasForeignKey(x => x.StateRuleId)
+                //    .IsRequired();
+
             });
         }
     }

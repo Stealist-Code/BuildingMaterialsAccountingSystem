@@ -1,4 +1,5 @@
 ﻿using StorageSystemBuildingMaterials.DTO;
+using StorageSystemBuildingMaterials.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,5 +34,7 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
         /// <param name="categoryId"></param>
         /// <returns></returns>
         public Task<List<ProductDto>> SearchProductsAdvanced(string article, string name, Guid? categoryId);
+
+        
     }
 }

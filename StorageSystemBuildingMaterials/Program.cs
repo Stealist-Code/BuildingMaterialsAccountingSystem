@@ -38,6 +38,7 @@ namespace StorageSystemBuildingMaterials
                 var reportService = container.Resolve<IReportService>();
                 var currencyService = container.Resolve<ICurrencyService>();
                 var supplyService = container.Resolve<ISupplyService>();
+                var discountService = container.Resolve<IDiscountService>();
                 var currencyState = container.Resolve<CurrencyState>();
 
                 Application.Run(new FormLogin(
@@ -51,7 +52,8 @@ namespace StorageSystemBuildingMaterials
                     userService,
                     currencyState,
                     currencyService,
-                    supplyService
+                    supplyService,
+                    discountService
                 ));
             }
             catch (Exception ex)

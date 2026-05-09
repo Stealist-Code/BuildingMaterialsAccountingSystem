@@ -2,11 +2,10 @@
 using NLog;
 using StorageSystemBuildingMaterials.Data;
 using StorageSystemBuildingMaterials.DTO;
+using StorageSystemBuildingMaterials.HelperClasses;
+using StorageSystemBuildingMaterials.Models;
 using StorageSystemBuildingMaterials.Services.Interfaces;
 using StorageSystemBuildingMaterials.Validation.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace StorageSystemBuildingMaterials.Services
 {
@@ -29,9 +28,17 @@ namespace StorageSystemBuildingMaterials.Services
         {
             try
             {
-                return await _db.SupplyItems
+                var supplyItems = await _db.SupplyItems
                     .AsNoTracking()
                     .Include(x => x.Product)
+                        .ThenInclude(x => x.Category)
+                    .Include(x => x.ProductState)
+                        .ThenInclude(x => x.StateRule)
+                    .ToListAsync();
+
+                DiscountHelper.ApplyDiscount(supplyItems);
+
+                return supplyItems
                     .Select(x => new ProductDto
                     {
                         Id = x.Product.Id,
@@ -47,7 +54,7 @@ namespace StorageSystemBuildingMaterials.Services
                         DaysLeft = (x.ExpirationDate - DateTime.UtcNow).Days,
                     })
                     .OrderBy(x => x.Name)
-                    .ToListAsync();
+                    .ToList();
             }
             catch (Exception ex)
             {
@@ -63,11 +70,19 @@ namespace StorageSystemBuildingMaterials.Services
         public async Task<List<ProductDto>> GetActualProducts()
         {
             var today = DateTime.UtcNow.Date;
-
-            return await _db.SupplyItems
+            
+            var supplyItems = await _db.SupplyItems
                     .AsNoTracking()
                     .Where(x => x.ExpirationDate.Date > today)
                     .Include(x => x.Product)
+                        .ThenInclude(x => x.Category)
+                    .Include(x => x.ProductState)
+                        .ThenInclude(x => x.StateRule)
+                    .ToListAsync();
+
+            DiscountHelper.ApplyDiscount(supplyItems);
+
+            return supplyItems
                     .Select(x => new ProductDto
                     {
                         Id = x.Product.Id,
@@ -77,13 +92,13 @@ namespace StorageSystemBuildingMaterials.Services
                         CategoryId = x.Product.CategoryId,
                         Unit = x.Product.Unit,
                         PurchasePrice = x.PurchasePrice,
-                        CurrentStock = x.Quantity,
+                        CurrentStock = x.CurrentStock,
                         ExpirationDate = x.ExpirationDate,
                         ReceivedDate = x.ReceivedDate,
                         DaysLeft = (x.ExpirationDate - DateTime.UtcNow).Days,
                     })
                     .OrderBy(x => x.Name)
-                    .ToListAsync();
+                    .ToList();
         }
 
         /// <summary>
@@ -94,10 +109,18 @@ namespace StorageSystemBuildingMaterials.Services
         {
             var today = DateTime.UtcNow.Date;
 
-            return await _db.SupplyItems
+            var supplyItems = await _db.SupplyItems
                     .AsNoTracking()
                     .Where(x => x.ExpirationDate.Date <= today)
                     .Include(x => x.Product)
+                        .ThenInclude(x => x.Category)
+                    .Include(x => x.ProductState)
+                        .ThenInclude(x => x.StateRule)
+                    .ToListAsync();
+
+            DiscountHelper.ApplyDiscount(supplyItems);
+
+            return supplyItems
                     .Select(x => new ProductDto
                     {
                         Id = x.Product.Id,
@@ -107,13 +130,13 @@ namespace StorageSystemBuildingMaterials.Services
                         CategoryId = x.Product.CategoryId,
                         Unit = x.Product.Unit,
                         PurchasePrice = x.PurchasePrice,
-                        CurrentStock = x.Quantity,
+                        CurrentStock = x.CurrentStock,
                         ExpirationDate = x.ExpirationDate,
                         ReceivedDate = x.ReceivedDate,
                         DaysLeft = (x.ExpirationDate - today).Days,
                     })
                     .OrderBy(x => x.Name)
-                    .ToListAsync();
+                    .ToList();
         }
 
         /// <summary>
@@ -158,7 +181,7 @@ namespace StorageSystemBuildingMaterials.Services
                         CategoryName = x.Product.Category.Name,
                         Unit = x.Product.Unit,
                         PurchasePrice = x.PurchasePrice,
-                        CurrentStock = x.Quantity
+                        CurrentStock = x.CurrentStock
                     })
                     .OrderBy(x => x.Name)
                     .ToListAsync();
