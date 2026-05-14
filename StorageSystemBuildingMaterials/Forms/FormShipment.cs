@@ -13,6 +13,8 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly IShipmentService _shipmentService;
         private readonly IShipmentValidation _shipmentValidation;
         private readonly Guid _userId;
+        private readonly Address _address;
+        private readonly Customer _customer;
         private List<CartItemDto> cart = new List<CartItemDto>();
 
         public FormShipment(Guid currentUserId, IProductService productService, IShipmentService shipmentService, IShipmentValidation shipmentValidation)

@@ -44,10 +44,10 @@
             labelTextVisualEditCategory.BackColor = Color.Transparent;
             labelTextVisualEditCategory.Font = new Font("Microsoft Sans Serif", 25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualEditCategory.ForeColor = Color.Black;
-            labelTextVisualEditCategory.Location = new Point(227, 89);
+            labelTextVisualEditCategory.Location = new Point(259, 119);
             labelTextVisualEditCategory.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualEditCategory.Name = "labelTextVisualEditCategory";
-            labelTextVisualEditCategory.Size = new Size(451, 39);
+            labelTextVisualEditCategory.Size = new Size(546, 48);
             labelTextVisualEditCategory.TabIndex = 18;
             labelTextVisualEditCategory.Text = "Редактирование категории";
             labelTextVisualEditCategory.TextAlign = ContentAlignment.TopCenter;
@@ -59,10 +59,10 @@
             labelTextVisualNameCategory.BackColor = Color.Transparent;
             labelTextVisualNameCategory.Font = new Font("Microsoft Sans Serif", 19F);
             labelTextVisualNameCategory.ForeColor = Color.Black;
-            labelTextVisualNameCategory.Location = new Point(196, 237);
+            labelTextVisualNameCategory.Location = new Point(224, 316);
             labelTextVisualNameCategory.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualNameCategory.Name = "labelTextVisualNameCategory";
-            labelTextVisualNameCategory.Size = new Size(130, 30);
+            labelTextVisualNameCategory.Size = new Size(154, 37);
             labelTextVisualNameCategory.TabIndex = 20;
             labelTextVisualNameCategory.Text = "Название";
             // 
@@ -70,10 +70,10 @@
             // 
             cbCategory.Font = new Font("Microsoft Sans Serif", 17F);
             cbCategory.FormattingEnabled = true;
-            cbCategory.Location = new Point(352, 237);
-            cbCategory.Margin = new Padding(2);
+            cbCategory.Location = new Point(402, 316);
+            cbCategory.Margin = new Padding(2, 3, 2, 3);
             cbCategory.Name = "cbCategory";
-            cbCategory.Size = new Size(308, 37);
+            cbCategory.Size = new Size(351, 40);
             cbCategory.TabIndex = 21;
             // 
             // btnCancel
@@ -85,10 +85,10 @@
             btnCancel.FlatStyle = FlatStyle.Popup;
             btnCancel.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(31, 392);
-            btnCancel.Margin = new Padding(2);
+            btnCancel.Location = new Point(35, 523);
+            btnCancel.Margin = new Padding(2, 3, 2, 3);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(234, 54);
+            btnCancel.Size = new Size(267, 72);
             btnCancel.TabIndex = 23;
             btnCancel.Text = "Отменить";
             btnCancel.UseVisualStyleBackColor = false;
@@ -103,10 +103,10 @@
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(608, 392);
-            btnDelete.Margin = new Padding(2);
+            btnDelete.Location = new Point(695, 523);
+            btnDelete.Margin = new Padding(2, 3, 2, 3);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(234, 54);
+            btnDelete.Size = new Size(267, 72);
             btnDelete.TabIndex = 24;
             btnDelete.Text = "Удалить";
             btnDelete.UseVisualStyleBackColor = false;
@@ -121,10 +121,10 @@
             btnSave.FlatStyle = FlatStyle.Popup;
             btnSave.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(608, 392);
-            btnSave.Margin = new Padding(2);
+            btnSave.Location = new Point(695, 523);
+            btnSave.Margin = new Padding(2, 3, 2, 3);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(234, 54);
+            btnSave.Size = new Size(267, 72);
             btnSave.TabIndex = 25;
             btnSave.Text = "Сохранить";
             btnSave.UseVisualStyleBackColor = false;
@@ -132,12 +132,12 @@
             // 
             // FormEditCategory
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(875, 537);
+            ClientSize = new Size(1000, 716);
             Controls.Add(btnSave);
             Controls.Add(btnDelete);
             Controls.Add(btnCancel);
@@ -146,7 +146,7 @@
             Controls.Add(labelTextVisualEditCategory);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "FormEditCategory";
             Text = "FormAddCategory";
             Load += FormEditCategory_Load;

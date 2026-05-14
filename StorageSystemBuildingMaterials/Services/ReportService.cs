@@ -45,7 +45,7 @@ namespace StorageSystemBuildingMaterials.Services
                     Date = x.ShipmentDate,
                     CustomerName = x.Customer.FullName,
                     ShipmentAmount = x.PriceForSell,
-                    Profit = x.ShipmentItems.Sum(i => x.PriceForSell - x.ShipmentItems.Sum(y => y.TotalPurchasePrice)),
+                    Profit = x.PriceForSell - x.ShipmentItems.Sum(i => i.TotalPurchasePrice),
                     CustomerEmail = x.Customer.Email
                 })
                 .OrderBy(x => x.Date)

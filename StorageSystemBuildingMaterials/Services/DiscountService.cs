@@ -13,13 +13,11 @@ namespace StorageSystemBuildingMaterials.Services
     public class DiscountService : IDiscountService
     {
         private readonly AppDbContext _db;
-        private readonly ISupplyService _supplyService;
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-        public DiscountService(AppDbContext db, ISupplyService supplyService)
+        public DiscountService(AppDbContext db)
         {
             _db = db;
-            _supplyService = supplyService;
         }
 
         public async Task<ProductState> CreateProductState()

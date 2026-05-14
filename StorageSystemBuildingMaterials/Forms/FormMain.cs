@@ -27,6 +27,7 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly ICurrencyService _currencyService;
         private readonly ISupplyService _supplyService;
         private readonly IDiscountService _discountService;
+        private readonly ITINService _tINService;
         private readonly Func<FormLogin> _loginForm;
         private readonly CurrencyState _currencyState;
 
@@ -44,7 +45,8 @@ namespace StorageSystemBuildingMaterials.Forms
                         CurrencyState currencyState,
                         ICurrencyService currencyService,
                         ISupplyService supplyService,
-                        IDiscountService discountService)
+                        IDiscountService discountService,
+                        ITINService tINService)
         {
             InitializeComponent();
 
@@ -60,6 +62,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _currencyService = currencyService;
             _supplyService = supplyService;
             _discountService = discountService;
+            _tINService = tINService;
 
             if (!Enum.TryParse(user.Role.Title, out Roles _role))
             {
@@ -71,7 +74,7 @@ namespace StorageSystemBuildingMaterials.Forms
             SetupDataGridView();
 
             this.Load += FormMain_Load;
-            SubscribeButtons(); 
+            SubscribeButtons();
         }
 
         private async void FormMain_Load(object sender, EventArgs e)
@@ -212,11 +215,17 @@ namespace StorageSystemBuildingMaterials.Forms
 
             buttonShipment.Click += async (s, e) =>
             {
-                var shipmentForm = new FormShipment(_user.Id, _productService, _shipmentService, _shipmentValidation);
+                //var shipmentForm = new FormShipment(_user.Id, _productService, _shipmentService, _shipmentValidation);
 
-                shipmentForm.ShowDialog();
+                //shipmentForm.ShowDialog();
 
-                await LoadAllProducts();
+                //await LoadAllProducts();
+
+                //var tinForm = new FormCheckTIN(_tINService);
+
+                //tinForm.ShowDialog();
+
+                //await LoadAllProducts();
             };
 
             buttonAdmin.Click += async (s, e) =>
@@ -324,6 +333,13 @@ namespace StorageSystemBuildingMaterials.Forms
                     p.PurchasePrice = Math.Round(p.PurchasePrice / _currencyState.CurrentRate, 2);
                 }
             }
+        }
+
+        private void buttonShipment_Click(object sender, EventArgs e)
+        {
+            var checkTINForm = new FormCheckTIN(_tINService, _user.Id, _productService, _shipmentService, _shipmentValidation);
+
+            checkTINForm.ShowDialog();
         }
     }
 }

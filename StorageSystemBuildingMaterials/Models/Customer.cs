@@ -8,9 +8,14 @@ namespace StorageSystemBuildingMaterials.Models
     public class Customer
     {
         /// <summary>
-        /// Айди покупателя
+        /// Id покупателя
         /// </summary>
         public Guid Id { get; set; }
+
+        /// <summary>
+        /// ИНН покупателя
+        /// </summary>
+        public string TIN {  get; set; }
 
         /// <summary>
         /// Имя 
@@ -30,7 +35,17 @@ namespace StorageSystemBuildingMaterials.Models
         /// <summary>
         /// Электронная почта 
         /// </summary>
-        public string Email { get; set; }
+        public string? Email { get; set; }
+
+        /// <summary>
+        /// Внешний ключ - id адреса
+        /// </summary>
+        public Guid AddressId { get; set; }
+
+        /// <summary>
+        /// Навигационной свойство - объект адреса
+        /// </summary>
+        public Address Address { get; set; }
 
         /// <summary>
         /// Вычисляемое поле ФИО

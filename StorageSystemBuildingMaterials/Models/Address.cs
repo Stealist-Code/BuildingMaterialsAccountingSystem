@@ -16,14 +16,14 @@ namespace StorageSystemBuildingMaterials.Models
         public string Country { get; set; }
 
         /// <summary>
-        /// Город для отгрузки
-        /// </summary>
-        public string City { get; set; }
-
-        /// <summary>
         /// Регион для отгрузки
         /// </summary>
         public string Region { get; set; }
+
+        /// <summary>
+        /// Город для отгрузки
+        /// </summary>
+        public string City { get; set; }
 
         /// <summary>
         /// Улица для отгрузки
@@ -34,6 +34,11 @@ namespace StorageSystemBuildingMaterials.Models
         /// Здание для отгрузки
         /// </summary>
         public string Building { get; set; }
+
+        /// <summary>
+        /// Навигационное свойство - объект покупателя
+        /// </summary>
+        public Customer Customer { get; set; }
 
         /// <summary>
         /// Полный адрес до пользователя, кому отгружаем
