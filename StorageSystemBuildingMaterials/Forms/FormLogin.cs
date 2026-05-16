@@ -6,6 +6,8 @@ using StorageSystemBuildingMaterials.Services.State;
 using StorageSystemBuildingMaterials.Validation.Interfaces;
 using System;
 using System.Windows.Forms;
+using System.Drawing;
+
 
 namespace StorageSystemBuildingMaterials.Forms
 {
@@ -143,4 +145,50 @@ namespace StorageSystemBuildingMaterials.Forms
             ApplyLocalization();
         }
     }
+
+    public class HalfHighlightButton : Button
+    {
+        private bool isMouseOver = false; 
+
+        public HalfHighlightButton()
+        {
+            this.FlatStyle = FlatStyle.Flat;
+            this.BackColor = SystemColors.Control;
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            if (this.ContainsFocus || isMouseOver)
+            {
+                using (Brush highlightBrush = new SolidBrush(Color.LightBlue))
+                {
+                    Rectangle highlightRect = new Rectangle(
+                        0,
+                        0,
+                        this.Width / 2,
+                        this.Height
+                    );
+                    e.Graphics.FillRectangle(highlightBrush, highlightRect);
+                }
+            }
+        }
+
+        protected override void OnMouseEnter(EventArgs e)
+        {
+            base.OnMouseEnter(e);
+            isMouseOver = true;
+            this.Invalidate(); 
+        }
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            base.OnMouseLeave(e);
+            isMouseOver = false; 
+            this.Invalidate();  
+        }
+    }
+
+
 }

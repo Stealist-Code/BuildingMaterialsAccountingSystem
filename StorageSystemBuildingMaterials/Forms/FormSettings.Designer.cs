@@ -46,7 +46,7 @@
             // 
             // panelSettings
             // 
-            panelSettings.BackColor = Color.LightGray;
+            panelSettings.BackColor = Color.Gold;
             panelSettings.Controls.Add(buttonBack);
             panelSettings.Controls.Add(textBoxDecorLine1);
             panelSettings.Controls.Add(buttonSettings);
@@ -54,8 +54,9 @@
             panelSettings.Controls.Add(pictureBox1);
             panelSettings.Dock = DockStyle.Left;
             panelSettings.Location = new Point(0, 0);
+            panelSettings.Margin = new Padding(3, 4, 3, 4);
             panelSettings.Name = "panelSettings";
-            panelSettings.Size = new Size(198, 497);
+            panelSettings.Size = new Size(226, 663);
             panelSettings.TabIndex = 0;
             // 
             // buttonBack
@@ -65,9 +66,10 @@
             buttonBack.FlatStyle = FlatStyle.Flat;
             buttonBack.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             buttonBack.ImageAlign = ContentAlignment.TopCenter;
-            buttonBack.Location = new Point(35, 15);
+            buttonBack.Location = new Point(40, 20);
+            buttonBack.Margin = new Padding(3, 4, 3, 4);
             buttonBack.Name = "buttonBack";
-            buttonBack.Size = new Size(140, 53);
+            buttonBack.Size = new Size(160, 71);
             buttonBack.TabIndex = 3;
             buttonBack.Text = "Назад";
             buttonBack.UseVisualStyleBackColor = false;
@@ -78,9 +80,10 @@
             textBoxDecorLine1.BackColor = SystemColors.MenuText;
             textBoxDecorLine1.BorderStyle = BorderStyle.None;
             textBoxDecorLine1.Font = new Font("Segoe UI", 1F);
-            textBoxDecorLine1.Location = new Point(35, 71);
+            textBoxDecorLine1.Location = new Point(40, 95);
+            textBoxDecorLine1.Margin = new Padding(3, 4, 3, 4);
             textBoxDecorLine1.Name = "textBoxDecorLine1";
-            textBoxDecorLine1.Size = new Size(125, 2);
+            textBoxDecorLine1.Size = new Size(143, 3);
             textBoxDecorLine1.TabIndex = 0;
             // 
             // buttonSettings
@@ -89,9 +92,10 @@
             buttonSettings.FlatAppearance.BorderSize = 0;
             buttonSettings.FlatStyle = FlatStyle.Flat;
             buttonSettings.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            buttonSettings.Location = new Point(35, 79);
+            buttonSettings.Location = new Point(40, 105);
+            buttonSettings.Margin = new Padding(3, 4, 3, 4);
             buttonSettings.Name = "buttonSettings";
-            buttonSettings.Size = new Size(125, 44);
+            buttonSettings.Size = new Size(143, 59);
             buttonSettings.TabIndex = 2;
             buttonSettings.Text = "Общие";
             buttonSettings.UseVisualStyleBackColor = false;
@@ -101,17 +105,19 @@
             textBoxDecorLine2.BackColor = SystemColors.MenuText;
             textBoxDecorLine2.BorderStyle = BorderStyle.None;
             textBoxDecorLine2.Font = new Font("Segoe UI", 1F);
-            textBoxDecorLine2.Location = new Point(35, 129);
+            textBoxDecorLine2.Location = new Point(40, 172);
+            textBoxDecorLine2.Margin = new Padding(3, 4, 3, 4);
             textBoxDecorLine2.Name = "textBoxDecorLine2";
-            textBoxDecorLine2.Size = new Size(125, 2);
+            textBoxDecorLine2.Size = new Size(143, 3);
             textBoxDecorLine2.TabIndex = 1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Arrow;
-            pictureBox1.Location = new Point(12, 35);
+            pictureBox1.Location = new Point(14, 47);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(25, 30);
+            pictureBox1.Size = new Size(29, 40);
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
@@ -120,9 +126,9 @@
             labelGeneral.AutoSize = true;
             labelGeneral.BackColor = Color.Transparent;
             labelGeneral.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelGeneral.Location = new Point(217, 15);
+            labelGeneral.Location = new Point(248, 20);
             labelGeneral.Name = "labelGeneral";
-            labelGeneral.Size = new Size(143, 50);
+            labelGeneral.Size = new Size(180, 62);
             labelGeneral.TabIndex = 1;
             labelGeneral.Text = "Общие";
             // 
@@ -131,9 +137,10 @@
             comboBoxLanguage.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxLanguage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             comboBoxLanguage.FormattingEnabled = true;
-            comboBoxLanguage.Location = new Point(376, 94);
+            comboBoxLanguage.Location = new Point(430, 125);
+            comboBoxLanguage.Margin = new Padding(3, 4, 3, 4);
             comboBoxLanguage.Name = "comboBoxLanguage";
-            comboBoxLanguage.Size = new Size(220, 33);
+            comboBoxLanguage.Size = new Size(251, 40);
             comboBoxLanguage.TabIndex = 2;
             comboBoxLanguage.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
             // 
@@ -142,9 +149,9 @@
             labelLanguage.AutoSize = true;
             labelLanguage.BackColor = Color.Transparent;
             labelLanguage.Font = new Font("Segoe UI", 20F);
-            labelLanguage.Location = new Point(217, 87);
+            labelLanguage.Location = new Point(248, 116);
             labelLanguage.Name = "labelLanguage";
-            labelLanguage.Size = new Size(77, 37);
+            labelLanguage.Size = new Size(96, 46);
             labelLanguage.TabIndex = 3;
             labelLanguage.Text = "Язык";
             // 
@@ -153,9 +160,9 @@
             labelCurrency.AutoSize = true;
             labelCurrency.BackColor = Color.Transparent;
             labelCurrency.Font = new Font("Segoe UI", 20F);
-            labelCurrency.Location = new Point(217, 155);
+            labelCurrency.Location = new Point(248, 207);
             labelCurrency.Name = "labelCurrency";
-            labelCurrency.Size = new Size(107, 37);
+            labelCurrency.Size = new Size(133, 46);
             labelCurrency.TabIndex = 4;
             labelCurrency.Text = "Валюта";
             // 
@@ -164,9 +171,10 @@
             comboBoxCurrency.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxCurrency.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             comboBoxCurrency.FormattingEnabled = true;
-            comboBoxCurrency.Location = new Point(376, 162);
+            comboBoxCurrency.Location = new Point(430, 216);
+            comboBoxCurrency.Margin = new Padding(3, 4, 3, 4);
             comboBoxCurrency.Name = "comboBoxCurrency";
-            comboBoxCurrency.Size = new Size(220, 33);
+            comboBoxCurrency.Size = new Size(251, 40);
             comboBoxCurrency.TabIndex = 5;
             // 
             // btnSave
@@ -178,10 +186,10 @@
             btnSave.FlatStyle = FlatStyle.Popup;
             btnSave.Font = new Font("Segoe UI", 17.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(230, 396);
-            btnSave.Margin = new Padding(2);
+            btnSave.Location = new Point(263, 528);
+            btnSave.Margin = new Padding(2, 3, 2, 3);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(276, 49);
+            btnSave.Size = new Size(322, 65);
             btnSave.TabIndex = 7;
             btnSave.Text = "Сохранить изменения";
             btnSave.UseVisualStyleBackColor = false;
@@ -189,11 +197,10 @@
             // 
             // FormSettings
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
-            BackgroundImage = Properties.Resources.Fon;
-            ClientSize = new Size(813, 497);
+            BackColor = Color.Gold;
+            ClientSize = new Size(929, 663);
             Controls.Add(btnSave);
             Controls.Add(comboBoxCurrency);
             Controls.Add(labelCurrency);
@@ -201,8 +208,10 @@
             Controls.Add(comboBoxLanguage);
             Controls.Add(labelGeneral);
             Controls.Add(panelSettings);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormSettings";
             Text = "Настройки";
+
             Load += FormSettings_Load;
             panelSettings.ResumeLayout(false);
             panelSettings.PerformLayout();

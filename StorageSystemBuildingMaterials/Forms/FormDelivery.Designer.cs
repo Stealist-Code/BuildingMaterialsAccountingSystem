@@ -43,6 +43,8 @@
             dtpExpirationDate = new DateTimePicker();
             nudQuantity = new NumericUpDown();
             nudPrice = new NumericUpDown();
+            cbTransportation = new ComboBox();
+            labelTransportation = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPrice).BeginInit();
@@ -53,9 +55,9 @@
             labelDelivery.AutoSize = true;
             labelDelivery.BackColor = Color.Transparent;
             labelDelivery.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            labelDelivery.Location = new Point(263, 34);
+            labelDelivery.Location = new Point(301, 9);
             labelDelivery.Name = "labelDelivery";
-            labelDelivery.Size = new Size(272, 37);
+            labelDelivery.Size = new Size(341, 46);
             labelDelivery.TabIndex = 0;
             labelDelivery.Text = "Оформить поставку";
             // 
@@ -64,9 +66,9 @@
             labelProduct.AutoSize = true;
             labelProduct.BackColor = Color.Transparent;
             labelProduct.Font = new Font("Segoe UI", 16F);
-            labelProduct.Location = new Point(197, 105);
+            labelProduct.Location = new Point(365, 107);
             labelProduct.Name = "labelProduct";
-            labelProduct.Size = new Size(74, 30);
+            labelProduct.Size = new Size(91, 37);
             labelProduct.TabIndex = 1;
             labelProduct.Text = "Товар";
             // 
@@ -74,9 +76,10 @@
             // 
             cbProducts.Font = new Font("Segoe UI", 15F);
             cbProducts.FormattingEnabled = true;
-            cbProducts.Location = new Point(359, 106);
+            cbProducts.Location = new Point(502, 101);
+            cbProducts.Margin = new Padding(3, 4, 3, 4);
             cbProducts.Name = "cbProducts";
-            cbProducts.Size = new Size(247, 36);
+            cbProducts.Size = new Size(282, 43);
             cbProducts.TabIndex = 2;
             // 
             // labelExpirationDate
@@ -84,9 +87,9 @@
             labelExpirationDate.AutoSize = true;
             labelExpirationDate.BackColor = Color.Transparent;
             labelExpirationDate.Font = new Font("Segoe UI", 16F);
-            labelExpirationDate.Location = new Point(197, 165);
+            labelExpirationDate.Location = new Point(327, 175);
             labelExpirationDate.Name = "labelExpirationDate";
-            labelExpirationDate.Size = new Size(104, 30);
+            labelExpirationDate.Size = new Size(129, 37);
             labelExpirationDate.TabIndex = 3;
             labelExpirationDate.Text = "Годен до";
             // 
@@ -95,9 +98,9 @@
             labelAmount.AutoSize = true;
             labelAmount.BackColor = Color.Transparent;
             labelAmount.Font = new Font("Segoe UI", 16F);
-            labelAmount.Location = new Point(197, 225);
+            labelAmount.Location = new Point(311, 253);
             labelAmount.Name = "labelAmount";
-            labelAmount.Size = new Size(132, 30);
+            labelAmount.Size = new Size(161, 37);
             labelAmount.TabIndex = 5;
             labelAmount.Text = "Количество";
             // 
@@ -106,9 +109,9 @@
             labelPurchasePrice.AutoSize = true;
             labelPurchasePrice.BackColor = Color.Transparent;
             labelPurchasePrice.Font = new Font("Segoe UI", 16F);
-            labelPurchasePrice.Location = new Point(197, 285);
+            labelPurchasePrice.Location = new Point(287, 318);
             labelPurchasePrice.Name = "labelPurchasePrice";
-            labelPurchasePrice.Size = new Size(151, 30);
+            labelPurchasePrice.Size = new Size(185, 37);
             labelPurchasePrice.TabIndex = 7;
             labelPurchasePrice.Text = "Цена закупки";
             // 
@@ -117,9 +120,9 @@
             labelOr.AutoSize = true;
             labelOr.BackColor = Color.Transparent;
             labelOr.Font = new Font("Segoe UI", 16F);
-            labelOr.Location = new Point(369, 338);
+            labelOr.Location = new Point(301, 521);
             labelOr.Name = "labelOr";
-            labelOr.Size = new Size(51, 30);
+            labelOr.Size = new Size(63, 37);
             labelOr.TabIndex = 9;
             labelOr.Text = "или";
             // 
@@ -128,9 +131,9 @@
             labelUploadFile.AutoSize = true;
             labelUploadFile.BackColor = Color.Transparent;
             labelUploadFile.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelUploadFile.Location = new Point(263, 438);
+            labelUploadFile.Location = new Point(427, 570);
             labelUploadFile.Name = "labelUploadFile";
-            labelUploadFile.Size = new Size(266, 25);
+            labelUploadFile.Size = new Size(338, 32);
             labelUploadFile.TabIndex = 11;
             labelUploadFile.Text = "Загрузите файл с поставками";
             // 
@@ -138,9 +141,10 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.DownloadFon;
-            pictureBox1.Location = new Point(240, 371);
+            pictureBox1.Location = new Point(400, 481);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(317, 108);
+            pictureBox1.Size = new Size(362, 144);
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
             // 
@@ -153,10 +157,10 @@
             btnUpload.FlatStyle = FlatStyle.Popup;
             btnUpload.Font = new Font("Segoe UI", 14F);
             btnUpload.ForeColor = Color.White;
-            btnUpload.Location = new Point(310, 394);
-            btnUpload.Margin = new Padding(2);
+            btnUpload.Location = new Point(480, 511);
+            btnUpload.Margin = new Padding(2, 3, 2, 3);
             btnUpload.Name = "btnUpload";
-            btnUpload.Size = new Size(165, 35);
+            btnUpload.Size = new Size(189, 47);
             btnUpload.TabIndex = 13;
             btnUpload.Text = "Загрузить";
             btnUpload.UseVisualStyleBackColor = false;
@@ -171,10 +175,10 @@
             btnCancel.FlatStyle = FlatStyle.Popup;
             btnCancel.Font = new Font("Segoe UI", 16F);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(30, 499);
-            btnCancel.Margin = new Padding(2);
+            btnCancel.Location = new Point(17, 688);
+            btnCancel.Margin = new Padding(2, 3, 2, 3);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(295, 40);
+            btnCancel.Size = new Size(393, 47);
             btnCancel.TabIndex = 14;
             btnCancel.Text = "Отменить";
             btnCancel.UseVisualStyleBackColor = false;
@@ -188,10 +192,10 @@
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 16F);
             btnCreate.ForeColor = Color.White;
-            btnCreate.Location = new Point(473, 499);
-            btnCreate.Margin = new Padding(2);
+            btnCreate.Location = new Point(525, 688);
+            btnCreate.Margin = new Padding(2, 3, 2, 3);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(295, 40);
+            btnCreate.Size = new Size(393, 47);
             btnCreate.TabIndex = 15;
             btnCreate.Text = "Создать";
             btnCreate.UseVisualStyleBackColor = false;
@@ -201,40 +205,64 @@
             // 
             dtpExpirationDate.CalendarFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             dtpExpirationDate.Font = new Font("Segoe UI", 15F);
-            dtpExpirationDate.Location = new Point(359, 165);
+            dtpExpirationDate.Location = new Point(500, 175);
+            dtpExpirationDate.Margin = new Padding(3, 4, 3, 4);
             dtpExpirationDate.Name = "dtpExpirationDate";
-            dtpExpirationDate.Size = new Size(247, 34);
+            dtpExpirationDate.Size = new Size(282, 41);
             dtpExpirationDate.TabIndex = 16;
             // 
             // nudQuantity
             // 
             nudQuantity.Anchor = AnchorStyles.None;
             nudQuantity.Font = new Font("Microsoft Sans Serif", 15F);
-            nudQuantity.Location = new Point(359, 227);
-            nudQuantity.Margin = new Padding(2);
+            nudQuantity.Location = new Point(500, 253);
+            nudQuantity.Margin = new Padding(2, 3, 2, 3);
             nudQuantity.Maximum = new decimal(new int[] { 1316134912, 2328, 0, 0 });
             nudQuantity.Name = "nudQuantity";
-            nudQuantity.Size = new Size(247, 30);
+            nudQuantity.Size = new Size(282, 36);
             nudQuantity.TabIndex = 44;
             // 
             // nudPrice
             // 
             nudPrice.Anchor = AnchorStyles.None;
             nudPrice.Font = new Font("Microsoft Sans Serif", 15F);
-            nudPrice.Location = new Point(359, 287);
-            nudPrice.Margin = new Padding(2);
+            nudPrice.Location = new Point(502, 318);
+            nudPrice.Margin = new Padding(2, 3, 2, 3);
             nudPrice.Maximum = new decimal(new int[] { 1316134912, 2328, 0, 0 });
             nudPrice.Name = "nudPrice";
-            nudPrice.Size = new Size(247, 30);
+            nudPrice.Size = new Size(282, 36);
             nudPrice.TabIndex = 45;
+            // 
+            // cbTransportation
+            // 
+            cbTransportation.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbTransportation.Font = new Font("Segoe UI", 15F);
+            cbTransportation.FormattingEnabled = true;
+            cbTransportation.Location = new Point(502, 383);
+            cbTransportation.Margin = new Padding(3, 4, 3, 4);
+            cbTransportation.Name = "cbTransportation";
+            cbTransportation.Size = new Size(282, 43);
+            cbTransportation.TabIndex = 46;
+            // 
+            // labelTransportation
+            // 
+            labelTransportation.AutoSize = true;
+            labelTransportation.BackColor = Color.Transparent;
+            labelTransportation.Font = new Font("Segoe UI", 16F);
+            labelTransportation.Location = new Point(230, 384);
+            labelTransportation.Name = "labelTransportation";
+            labelTransportation.Size = new Size(256, 37);
+            labelTransportation.TabIndex = 47;
+            labelTransportation.Text = "Условия перевозки";
             // 
             // FormDelivery
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDark;
-            BackgroundImage = Properties.Resources.Fon;
-            ClientSize = new Size(813, 560);
+            BackColor = Color.Gold;
+            ClientSize = new Size(929, 747);
+            Controls.Add(labelTransportation);
+            Controls.Add(cbTransportation);
             Controls.Add(nudPrice);
             Controls.Add(nudQuantity);
             Controls.Add(dtpExpirationDate);
@@ -250,6 +278,8 @@
             Controls.Add(labelProduct);
             Controls.Add(labelDelivery);
             Controls.Add(pictureBox1);
+            Cursor = Cursors.Default;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormDelivery";
             Text = "Поставки";
             Load += FormDelivery_Load;
@@ -277,5 +307,7 @@
         private DateTimePicker dtpExpirationDate;
         private NumericUpDown nudQuantity;
         private NumericUpDown nudPrice;
+        private ComboBox cbTransportation;
+        private Label labelTransportation;
     }
 }

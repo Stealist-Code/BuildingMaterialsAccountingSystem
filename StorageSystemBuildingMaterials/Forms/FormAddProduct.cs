@@ -127,9 +127,7 @@ namespace StorageSystemBuildingMaterials.Forms
         {
             labelTextVisualName.Text = Resources.Name;
             labelTextVisualCategory.Text = Resources.Category;
-            labelTextVisualPrice.Text = Resources.PurchasePrice;
             labelTextVisualUnit.Text = Resources.Unit;
-            labelTextVisualDateTo.Text = Resources.ExpirationDate;
 
             if (_mode == FormAddProductsModeEnum.Create)
             {

@@ -71,7 +71,7 @@ namespace StorageSystemBuildingMaterials.Forms
             SetupDataGridView();
 
             this.Load += FormMain_Load;
-            SubscribeButtons(); 
+            SubscribeButtons();
         }
 
         private async void FormMain_Load(object sender, EventArgs e)
@@ -324,6 +324,16 @@ namespace StorageSystemBuildingMaterials.Forms
                     p.PurchasePrice = Math.Round(p.PurchasePrice / _currencyState.CurrentRate, 2);
                 }
             }
+        }
+
+        private void pnlCategories_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

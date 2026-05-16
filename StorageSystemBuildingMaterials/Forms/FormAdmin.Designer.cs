@@ -40,15 +40,15 @@
             // 
             // textBoxVisualAdmin
             // 
-            textBoxVisualAdmin.BackColor = Color.FromArgb(217, 217, 217);
+            textBoxVisualAdmin.BackColor = Color.Gold;
             textBoxVisualAdmin.BorderStyle = BorderStyle.None;
             textBoxVisualAdmin.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBoxVisualAdmin.Location = new Point(-10, 14);
-            textBoxVisualAdmin.Margin = new Padding(2);
+            textBoxVisualAdmin.Location = new Point(-11, 19);
+            textBoxVisualAdmin.Margin = new Padding(2, 3, 2, 3);
             textBoxVisualAdmin.Multiline = true;
             textBoxVisualAdmin.Name = "textBoxVisualAdmin";
             textBoxVisualAdmin.ReadOnly = true;
-            textBoxVisualAdmin.Size = new Size(159, 36);
+            textBoxVisualAdmin.Size = new Size(182, 48);
             textBoxVisualAdmin.TabIndex = 1;
             textBoxVisualAdmin.Text = "АДМИН-ПАНЕЛЬ";
             textBoxVisualAdmin.TextAlign = HorizontalAlignment.Center;
@@ -56,15 +56,15 @@
             // textBoxVisualFon
             // 
             textBoxVisualFon.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            textBoxVisualFon.BackColor = Color.LightGray;
+            textBoxVisualFon.BackColor = Color.Gold;
             textBoxVisualFon.BorderStyle = BorderStyle.None;
             textBoxVisualFon.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBoxVisualFon.Location = new Point(-10, -6);
-            textBoxVisualFon.Margin = new Padding(2);
+            textBoxVisualFon.Location = new Point(-11, -8);
+            textBoxVisualFon.Margin = new Padding(2, 3, 2, 3);
             textBoxVisualFon.Multiline = true;
             textBoxVisualFon.Name = "textBoxVisualFon";
             textBoxVisualFon.ReadOnly = true;
-            textBoxVisualFon.Size = new Size(159, 551);
+            textBoxVisualFon.Size = new Size(182, 735);
             textBoxVisualFon.TabIndex = 2;
             textBoxVisualFon.TextAlign = HorizontalAlignment.Center;
             // 
@@ -72,49 +72,51 @@
             // 
             textBoxDecor.BackColor = Color.Black;
             textBoxDecor.BorderStyle = BorderStyle.None;
-            textBoxDecor.Location = new Point(18, 48);
-            textBoxDecor.Margin = new Padding(2);
+            textBoxDecor.Location = new Point(21, 64);
+            textBoxDecor.Margin = new Padding(2, 3, 2, 3);
             textBoxDecor.Multiline = true;
             textBoxDecor.Name = "textBoxDecor";
             textBoxDecor.ReadOnly = true;
-            textBoxDecor.Size = new Size(121, 2);
+            textBoxDecor.Size = new Size(138, 3);
             textBoxDecor.TabIndex = 24;
             // 
             // btnWorkers
             // 
-            btnWorkers.BackColor = Color.LightGray;
+            btnWorkers.BackColor = Color.Gold;
             btnWorkers.FlatAppearance.BorderSize = 0;
             btnWorkers.FlatStyle = FlatStyle.Flat;
-            btnWorkers.Location = new Point(8, 70);
-            btnWorkers.Margin = new Padding(2);
+            btnWorkers.Location = new Point(9, 93);
+            btnWorkers.Margin = new Padding(2, 3, 2, 3);
             btnWorkers.Name = "btnWorkers";
-            btnWorkers.Size = new Size(141, 31);
+            btnWorkers.Size = new Size(161, 41);
             btnWorkers.TabIndex = 25;
             btnWorkers.Text = "Список работников";
             btnWorkers.UseVisualStyleBackColor = false;
             // 
             // btnProducts
             // 
-            btnProducts.BackColor = Color.LightGray;
+            btnProducts.BackColor = Color.Gold;
             btnProducts.FlatAppearance.BorderSize = 0;
             btnProducts.FlatStyle = FlatStyle.Flat;
-            btnProducts.Location = new Point(8, 105);
-            btnProducts.Margin = new Padding(2);
+            btnProducts.Location = new Point(9, 140);
+            btnProducts.Margin = new Padding(2, 3, 2, 3);
             btnProducts.Name = "btnProducts";
-            btnProducts.Size = new Size(141, 29);
+            btnProducts.Size = new Size(161, 39);
             btnProducts.TabIndex = 26;
             btnProducts.Text = "Список товаров";
             btnProducts.UseVisualStyleBackColor = false;
+            btnProducts.Click += btnProducts_Click;
             // 
             // btnShipments
             // 
-            btnShipments.BackColor = Color.LightGray;
+            btnShipments.AutoEllipsis = true;
+            btnShipments.BackColor = Color.Gold;
             btnShipments.FlatAppearance.BorderSize = 0;
             btnShipments.FlatStyle = FlatStyle.Flat;
-            btnShipments.Location = new Point(8, 138);
-            btnShipments.Margin = new Padding(2);
+            btnShipments.Location = new Point(9, 184);
+            btnShipments.Margin = new Padding(2, 3, 2, 3);
             btnShipments.Name = "btnShipments";
-            btnShipments.Size = new Size(141, 29);
+            btnShipments.Size = new Size(161, 39);
             btnShipments.TabIndex = 27;
             btnShipments.Text = "История отгрузок";
             btnShipments.UseVisualStyleBackColor = false;
@@ -122,21 +124,21 @@
             // pnlContent
             // 
             pnlContent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlContent.BackColor = Color.LightGray;
-            pnlContent.Location = new Point(153, -6);
-            pnlContent.Margin = new Padding(2);
+            pnlContent.BackColor = Color.White;
+            pnlContent.BackgroundImageLayout = ImageLayout.None;
+            pnlContent.Location = new Point(175, 2);
+            pnlContent.Margin = new Padding(2, 3, 2, 3);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(846, 544);
+            pnlContent.Size = new Size(967, 725);
             pnlContent.TabIndex = 28;
             // 
             // FormAdmin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(135, 135, 135);
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(997, 536);
+            ClientSize = new Size(1139, 715);
             Controls.Add(pnlContent);
             Controls.Add(btnShipments);
             Controls.Add(btnProducts);
@@ -146,9 +148,10 @@
             Controls.Add(textBoxVisualFon);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "FormAdmin";
             Text = "Admin";
+            Load += FormAdmin_Load;
             ResumeLayout(false);
             PerformLayout();
 

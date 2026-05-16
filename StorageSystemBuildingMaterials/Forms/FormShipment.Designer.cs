@@ -73,12 +73,12 @@
             txtStreet.BackColor = Color.White;
             txtStreet.Font = new Font("Microsoft Sans Serif", 15F);
             txtStreet.ForeColor = Color.Black;
-            txtStreet.Location = new Point(187, 320);
-            txtStreet.Margin = new Padding(2);
+            txtStreet.Location = new Point(214, 427);
+            txtStreet.Margin = new Padding(2, 3, 2, 3);
             txtStreet.Multiline = true;
             txtStreet.Name = "txtStreet";
             txtStreet.RightToLeft = RightToLeft.No;
-            txtStreet.Size = new Size(259, 33);
+            txtStreet.Size = new Size(295, 43);
             txtStreet.TabIndex = 12;
             // 
             // cbProduct
@@ -86,21 +86,21 @@
             cbProduct.Anchor = AnchorStyles.None;
             cbProduct.Font = new Font("Microsoft Sans Serif", 15F);
             cbProduct.FormattingEnabled = true;
-            cbProduct.Location = new Point(187, 439);
-            cbProduct.Margin = new Padding(2);
+            cbProduct.Location = new Point(214, 585);
+            cbProduct.Margin = new Padding(2, 3, 2, 3);
             cbProduct.Name = "cbProduct";
-            cbProduct.Size = new Size(259, 33);
+            cbProduct.Size = new Size(295, 37);
             cbProduct.TabIndex = 13;
             // 
             // nudQuantity
             // 
             nudQuantity.Anchor = AnchorStyles.None;
             nudQuantity.Font = new Font("Microsoft Sans Serif", 15F);
-            nudQuantity.Location = new Point(186, 496);
-            nudQuantity.Margin = new Padding(2);
+            nudQuantity.Location = new Point(213, 661);
+            nudQuantity.Margin = new Padding(2, 3, 2, 3);
             nudQuantity.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             nudQuantity.Name = "nudQuantity";
-            nudQuantity.Size = new Size(260, 30);
+            nudQuantity.Size = new Size(297, 36);
             nudQuantity.TabIndex = 14;
             // 
             // labelTextVisualStreet
@@ -110,10 +110,10 @@
             labelTextVisualStreet.BackColor = Color.Transparent;
             labelTextVisualStreet.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualStreet.ForeColor = Color.Black;
-            labelTextVisualStreet.Location = new Point(34, 319);
+            labelTextVisualStreet.Location = new Point(39, 425);
             labelTextVisualStreet.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualStreet.Name = "labelTextVisualStreet";
-            labelTextVisualStreet.Size = new Size(72, 30);
+            labelTextVisualStreet.Size = new Size(92, 37);
             labelTextVisualStreet.TabIndex = 15;
             labelTextVisualStreet.Text = "Улица";
             // 
@@ -124,10 +124,10 @@
             labelTextVisualProduct.BackColor = Color.Transparent;
             labelTextVisualProduct.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualProduct.ForeColor = Color.Black;
-            labelTextVisualProduct.Location = new Point(34, 438);
+            labelTextVisualProduct.Location = new Point(39, 584);
             labelTextVisualProduct.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualProduct.Name = "labelTextVisualProduct";
-            labelTextVisualProduct.Size = new Size(70, 30);
+            labelTextVisualProduct.Size = new Size(91, 37);
             labelTextVisualProduct.TabIndex = 16;
             labelTextVisualProduct.Text = "Товар";
             // 
@@ -138,10 +138,10 @@
             labelTextVisualCountProduct.BackColor = Color.Transparent;
             labelTextVisualCountProduct.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualCountProduct.ForeColor = Color.Black;
-            labelTextVisualCountProduct.Location = new Point(34, 494);
+            labelTextVisualCountProduct.Location = new Point(39, 659);
             labelTextVisualCountProduct.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualCountProduct.Name = "labelTextVisualCountProduct";
-            labelTextVisualCountProduct.Size = new Size(125, 30);
+            labelTextVisualCountProduct.Size = new Size(161, 37);
             labelTextVisualCountProduct.TabIndex = 17;
             labelTextVisualCountProduct.Text = "Количество";
             // 
@@ -154,10 +154,10 @@
             btnAdd.FlatStyle = FlatStyle.Popup;
             btnAdd.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(496, 485);
-            btnAdd.Margin = new Padding(2);
+            btnAdd.Location = new Point(567, 647);
+            btnAdd.Margin = new Padding(2, 3, 2, 3);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(371, 49);
+            btnAdd.Size = new Size(424, 65);
             btnAdd.TabIndex = 18;
             btnAdd.Text = "Зарезервировать товар";
             btnAdd.UseVisualStyleBackColor = false;
@@ -171,10 +171,10 @@
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnCreate.ForeColor = Color.White;
-            btnCreate.Location = new Point(983, 485);
-            btnCreate.Margin = new Padding(2);
+            btnCreate.Location = new Point(1123, 647);
+            btnCreate.Margin = new Padding(2, 3, 2, 3);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(344, 49);
+            btnCreate.Size = new Size(393, 65);
             btnCreate.TabIndex = 19;
             btnCreate.Text = "Создать отгрузку";
             btnCreate.UseVisualStyleBackColor = false;
@@ -186,10 +186,10 @@
             labelTextVisualShipment.BackColor = Color.Transparent;
             labelTextVisualShipment.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualShipment.ForeColor = Color.Black;
-            labelTextVisualShipment.Location = new Point(283, 38);
+            labelTextVisualShipment.Location = new Point(323, 51);
             labelTextVisualShipment.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualShipment.Name = "labelTextVisualShipment";
-            labelTextVisualShipment.Size = new Size(333, 37);
+            labelTextVisualShipment.Size = new Size(449, 46);
             labelTextVisualShipment.TabIndex = 20;
             labelTextVisualShipment.Text = "Оформление отгрузки";
             // 
@@ -200,10 +200,10 @@
             labelPositions.BackColor = Color.Transparent;
             labelPositions.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelPositions.ForeColor = Color.Black;
-            labelPositions.Location = new Point(1035, 38);
+            labelPositions.Location = new Point(1183, 51);
             labelPositions.Margin = new Padding(2, 0, 2, 0);
             labelPositions.Name = "labelPositions";
-            labelPositions.Size = new Size(259, 37);
+            labelPositions.Size = new Size(347, 46);
             labelPositions.TabIndex = 21;
             labelPositions.Text = "Текущие позиции";
             // 
@@ -212,17 +212,18 @@
             textBox1.Anchor = AnchorStyles.None;
             textBox1.BackColor = Color.Black;
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(896, 55);
-            textBox1.Margin = new Padding(2);
+            textBox1.Location = new Point(1024, 73);
+            textBox1.Margin = new Padding(2, 3, 2, 3);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(5, 688);
+            textBox1.Size = new Size(6, 917);
             textBox1.TabIndex = 22;
             // 
             // dgvCart
             // 
             dgvCart.Anchor = AnchorStyles.None;
+            dgvCart.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
@@ -240,15 +241,15 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvCart.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvCart.Location = new Point(969, 109);
-            dgvCart.Margin = new Padding(2);
+            dgvCart.Location = new Point(1107, 145);
+            dgvCart.Margin = new Padding(2, 3, 2, 3);
             dgvCart.MultiSelect = false;
             dgvCart.Name = "dgvCart";
             dgvCart.ReadOnly = true;
             dgvCart.RowHeadersWidth = 72;
             dgvCart.RowTemplate.Height = 31;
             dgvCart.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCart.Size = new Size(386, 341);
+            dgvCart.Size = new Size(441, 455);
             dgvCart.TabIndex = 23;
             // 
             // txtBuilding
@@ -257,12 +258,12 @@
             txtBuilding.BackColor = Color.White;
             txtBuilding.Font = new Font("Microsoft Sans Serif", 15F);
             txtBuilding.ForeColor = Color.Black;
-            txtBuilding.Location = new Point(187, 376);
-            txtBuilding.Margin = new Padding(2);
+            txtBuilding.Location = new Point(214, 501);
+            txtBuilding.Margin = new Padding(2, 3, 2, 3);
             txtBuilding.Multiline = true;
             txtBuilding.Name = "txtBuilding";
             txtBuilding.RightToLeft = RightToLeft.No;
-            txtBuilding.Size = new Size(259, 33);
+            txtBuilding.Size = new Size(295, 43);
             txtBuilding.TabIndex = 24;
             // 
             // txtRegion
@@ -271,12 +272,12 @@
             txtRegion.BackColor = Color.White;
             txtRegion.Font = new Font("Microsoft Sans Serif", 15F);
             txtRegion.ForeColor = Color.Black;
-            txtRegion.Location = new Point(187, 207);
-            txtRegion.Margin = new Padding(2);
+            txtRegion.Location = new Point(214, 276);
+            txtRegion.Margin = new Padding(2, 3, 2, 3);
             txtRegion.Multiline = true;
             txtRegion.Name = "txtRegion";
             txtRegion.RightToLeft = RightToLeft.No;
-            txtRegion.Size = new Size(259, 33);
+            txtRegion.Size = new Size(295, 43);
             txtRegion.TabIndex = 25;
             // 
             // txtCity
@@ -285,12 +286,12 @@
             txtCity.BackColor = Color.White;
             txtCity.Font = new Font("Microsoft Sans Serif", 15F);
             txtCity.ForeColor = Color.Black;
-            txtCity.Location = new Point(187, 263);
-            txtCity.Margin = new Padding(2);
+            txtCity.Location = new Point(214, 351);
+            txtCity.Margin = new Padding(2, 3, 2, 3);
             txtCity.Multiline = true;
             txtCity.Name = "txtCity";
             txtCity.RightToLeft = RightToLeft.No;
-            txtCity.Size = new Size(259, 33);
+            txtCity.Size = new Size(295, 43);
             txtCity.TabIndex = 26;
             // 
             // txtCountry
@@ -299,12 +300,12 @@
             txtCountry.BackColor = Color.White;
             txtCountry.Font = new Font("Microsoft Sans Serif", 15F);
             txtCountry.ForeColor = Color.Black;
-            txtCountry.Location = new Point(187, 146);
-            txtCountry.Margin = new Padding(2);
+            txtCountry.Location = new Point(214, 195);
+            txtCountry.Margin = new Padding(2, 3, 2, 3);
             txtCountry.Multiline = true;
             txtCountry.Name = "txtCountry";
             txtCountry.RightToLeft = RightToLeft.No;
-            txtCountry.Size = new Size(259, 33);
+            txtCountry.Size = new Size(295, 43);
             txtCountry.TabIndex = 27;
             // 
             // labelTextVisualBuilding
@@ -314,10 +315,10 @@
             labelTextVisualBuilding.BackColor = Color.Transparent;
             labelTextVisualBuilding.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualBuilding.ForeColor = Color.Black;
-            labelTextVisualBuilding.Location = new Point(34, 375);
+            labelTextVisualBuilding.Location = new Point(39, 500);
             labelTextVisualBuilding.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualBuilding.Name = "labelTextVisualBuilding";
-            labelTextVisualBuilding.Size = new Size(81, 30);
+            labelTextVisualBuilding.Size = new Size(107, 37);
             labelTextVisualBuilding.TabIndex = 28;
             labelTextVisualBuilding.Text = "Здание";
             // 
@@ -328,10 +329,10 @@
             labelTextVisualRegion.BackColor = Color.Transparent;
             labelTextVisualRegion.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualRegion.ForeColor = Color.Black;
-            labelTextVisualRegion.Location = new Point(34, 206);
+            labelTextVisualRegion.Location = new Point(39, 275);
             labelTextVisualRegion.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualRegion.Name = "labelTextVisualRegion";
-            labelTextVisualRegion.Size = new Size(80, 30);
+            labelTextVisualRegion.Size = new Size(104, 37);
             labelTextVisualRegion.TabIndex = 29;
             labelTextVisualRegion.Text = "Регион";
             // 
@@ -342,10 +343,10 @@
             labelTextVisualCity.BackColor = Color.Transparent;
             labelTextVisualCity.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualCity.ForeColor = Color.Black;
-            labelTextVisualCity.Location = new Point(34, 262);
+            labelTextVisualCity.Location = new Point(39, 349);
             labelTextVisualCity.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualCity.Name = "labelTextVisualCity";
-            labelTextVisualCity.Size = new Size(70, 30);
+            labelTextVisualCity.Size = new Size(93, 37);
             labelTextVisualCity.TabIndex = 30;
             labelTextVisualCity.Text = "Город";
             // 
@@ -356,10 +357,10 @@
             labelTextVisualCountry.BackColor = Color.Transparent;
             labelTextVisualCountry.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualCountry.ForeColor = Color.Black;
-            labelTextVisualCountry.Location = new Point(33, 145);
+            labelTextVisualCountry.Location = new Point(38, 193);
             labelTextVisualCountry.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualCountry.Name = "labelTextVisualCountry";
-            labelTextVisualCountry.Size = new Size(81, 30);
+            labelTextVisualCountry.Size = new Size(105, 37);
             labelTextVisualCountry.TabIndex = 31;
             labelTextVisualCountry.Text = "Страна";
             // 
@@ -370,10 +371,10 @@
             labelTextVisualMiddleName.BackColor = Color.Transparent;
             labelTextVisualMiddleName.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualMiddleName.ForeColor = Color.Black;
-            labelTextVisualMiddleName.Location = new Point(470, 262);
+            labelTextVisualMiddleName.Location = new Point(537, 349);
             labelTextVisualMiddleName.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualMiddleName.Name = "labelTextVisualMiddleName";
-            labelTextVisualMiddleName.Size = new Size(103, 30);
+            labelTextVisualMiddleName.Size = new Size(130, 37);
             labelTextVisualMiddleName.TabIndex = 33;
             labelTextVisualMiddleName.Text = "Отчество";
             // 
@@ -383,12 +384,12 @@
             txtMiddleName.BackColor = Color.White;
             txtMiddleName.Font = new Font("Microsoft Sans Serif", 15F);
             txtMiddleName.ForeColor = Color.Black;
-            txtMiddleName.Location = new Point(609, 263);
-            txtMiddleName.Margin = new Padding(2);
+            txtMiddleName.Location = new Point(696, 351);
+            txtMiddleName.Margin = new Padding(2, 3, 2, 3);
             txtMiddleName.Multiline = true;
             txtMiddleName.Name = "txtMiddleName";
             txtMiddleName.RightToLeft = RightToLeft.No;
-            txtMiddleName.Size = new Size(258, 33);
+            txtMiddleName.Size = new Size(294, 43);
             txtMiddleName.TabIndex = 32;
             // 
             // labelTextVisualFirstName
@@ -398,10 +399,10 @@
             labelTextVisualFirstName.BackColor = Color.Transparent;
             labelTextVisualFirstName.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualFirstName.ForeColor = Color.Black;
-            labelTextVisualFirstName.Location = new Point(470, 202);
+            labelTextVisualFirstName.Location = new Point(537, 269);
             labelTextVisualFirstName.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualFirstName.Name = "labelTextVisualFirstName";
-            labelTextVisualFirstName.Size = new Size(55, 30);
+            labelTextVisualFirstName.Size = new Size(70, 37);
             labelTextVisualFirstName.TabIndex = 35;
             labelTextVisualFirstName.Text = "Имя";
             // 
@@ -411,12 +412,12 @@
             txtFirstName.BackColor = Color.White;
             txtFirstName.Font = new Font("Microsoft Sans Serif", 15F);
             txtFirstName.ForeColor = Color.Black;
-            txtFirstName.Location = new Point(609, 203);
-            txtFirstName.Margin = new Padding(2);
+            txtFirstName.Location = new Point(696, 271);
+            txtFirstName.Margin = new Padding(2, 3, 2, 3);
             txtFirstName.Multiline = true;
             txtFirstName.Name = "txtFirstName";
             txtFirstName.RightToLeft = RightToLeft.No;
-            txtFirstName.Size = new Size(258, 33);
+            txtFirstName.Size = new Size(294, 43);
             txtFirstName.TabIndex = 34;
             // 
             // labelTextVisualLastName
@@ -426,10 +427,10 @@
             labelTextVisualLastName.BackColor = Color.Transparent;
             labelTextVisualLastName.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualLastName.ForeColor = Color.Black;
-            labelTextVisualLastName.Location = new Point(470, 141);
+            labelTextVisualLastName.Location = new Point(537, 188);
             labelTextVisualLastName.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualLastName.Name = "labelTextVisualLastName";
-            labelTextVisualLastName.Size = new Size(100, 30);
+            labelTextVisualLastName.Size = new Size(130, 37);
             labelTextVisualLastName.TabIndex = 37;
             labelTextVisualLastName.Text = "Фамилия";
             // 
@@ -439,12 +440,12 @@
             txtLastName.BackColor = Color.White;
             txtLastName.Font = new Font("Microsoft Sans Serif", 15F);
             txtLastName.ForeColor = Color.Black;
-            txtLastName.Location = new Point(609, 142);
-            txtLastName.Margin = new Padding(2);
+            txtLastName.Location = new Point(696, 189);
+            txtLastName.Margin = new Padding(2, 3, 2, 3);
             txtLastName.Multiline = true;
             txtLastName.Name = "txtLastName";
             txtLastName.RightToLeft = RightToLeft.No;
-            txtLastName.Size = new Size(258, 33);
+            txtLastName.Size = new Size(294, 43);
             txtLastName.TabIndex = 36;
             // 
             // labelTextVisualEmail
@@ -454,10 +455,10 @@
             labelTextVisualEmail.BackColor = Color.Transparent;
             labelTextVisualEmail.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualEmail.ForeColor = Color.Black;
-            labelTextVisualEmail.Location = new Point(474, 315);
+            labelTextVisualEmail.Location = new Point(542, 420);
             labelTextVisualEmail.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualEmail.Name = "labelTextVisualEmail";
-            labelTextVisualEmail.Size = new Size(104, 30);
+            labelTextVisualEmail.Size = new Size(133, 37);
             labelTextVisualEmail.TabIndex = 39;
             labelTextVisualEmail.Text = "Эл. почта";
             // 
@@ -467,12 +468,12 @@
             txtEmail.BackColor = Color.White;
             txtEmail.Font = new Font("Microsoft Sans Serif", 15F);
             txtEmail.ForeColor = Color.Black;
-            txtEmail.Location = new Point(609, 316);
-            txtEmail.Margin = new Padding(2);
+            txtEmail.Location = new Point(696, 421);
+            txtEmail.Margin = new Padding(2, 3, 2, 3);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
             txtEmail.RightToLeft = RightToLeft.No;
-            txtEmail.Size = new Size(258, 33);
+            txtEmail.Size = new Size(294, 43);
             txtEmail.TabIndex = 38;
             // 
             // labelTextVisualPrice
@@ -482,10 +483,10 @@
             labelTextVisualPrice.BackColor = Color.Transparent;
             labelTextVisualPrice.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualPrice.ForeColor = Color.Black;
-            labelTextVisualPrice.Location = new Point(474, 362);
+            labelTextVisualPrice.Location = new Point(542, 483);
             labelTextVisualPrice.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualPrice.Name = "labelTextVisualPrice";
-            labelTextVisualPrice.Size = new Size(63, 30);
+            labelTextVisualPrice.Size = new Size(81, 37);
             labelTextVisualPrice.TabIndex = 41;
             labelTextVisualPrice.Text = "Цена";
             // 
@@ -496,10 +497,10 @@
             labelTextVisualSelling.BackColor = Color.Transparent;
             labelTextVisualSelling.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualSelling.ForeColor = Color.Black;
-            labelTextVisualSelling.Location = new Point(470, 392);
+            labelTextVisualSelling.Location = new Point(537, 523);
             labelTextVisualSelling.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualSelling.Name = "labelTextVisualSelling";
-            labelTextVisualSelling.Size = new Size(99, 30);
+            labelTextVisualSelling.Size = new Size(130, 37);
             labelTextVisualSelling.TabIndex = 42;
             labelTextVisualSelling.Text = "продажи";
             // 
@@ -507,21 +508,20 @@
             // 
             nudTotalPrice.Anchor = AnchorStyles.None;
             nudTotalPrice.Font = new Font("Microsoft Sans Serif", 15F);
-            nudTotalPrice.Location = new Point(609, 377);
-            nudTotalPrice.Margin = new Padding(2);
+            nudTotalPrice.Location = new Point(696, 503);
+            nudTotalPrice.Margin = new Padding(2, 3, 2, 3);
             nudTotalPrice.Maximum = new decimal(new int[] { 1316134912, 2328, 0, 0 });
             nudTotalPrice.Name = "nudTotalPrice";
-            nudTotalPrice.Size = new Size(260, 30);
+            nudTotalPrice.Size = new Size(297, 36);
             nudTotalPrice.TabIndex = 43;
             // 
             // FormShipment
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1444, 637);
+            ClientSize = new Size(1650, 849);
             Controls.Add(nudTotalPrice);
             Controls.Add(labelTextVisualSelling);
             Controls.Add(labelTextVisualPrice);
@@ -555,7 +555,7 @@
             Controls.Add(txtStreet);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "FormShipment";
             Text = "Otgruzka";
             WindowState = FormWindowState.Minimized;

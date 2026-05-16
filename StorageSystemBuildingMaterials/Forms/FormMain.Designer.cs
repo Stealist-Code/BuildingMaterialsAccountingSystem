@@ -66,7 +66,7 @@ namespace StorageSystemBuildingMaterials.Forms
             dgvProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProducts.BackgroundColor = Color.LightGray;
+            dgvProducts.BackgroundColor = Color.White;
             dgvProducts.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.LightGray;
@@ -87,8 +87,8 @@ namespace StorageSystemBuildingMaterials.Forms
             dgvProducts.DefaultCellStyle = dataGridViewCellStyle3;
             dgvProducts.EnableHeadersVisualStyles = false;
             dgvProducts.GridColor = SystemColors.ActiveCaptionText;
-            dgvProducts.Location = new Point(194, 35);
-            dgvProducts.Margin = new Padding(2);
+            dgvProducts.Location = new Point(268, 50);
+            dgvProducts.Margin = new Padding(2, 3, 2, 3);
             dgvProducts.MultiSelect = false;
             dgvProducts.Name = "dgvProducts";
             dgvProducts.ReadOnly = true;
@@ -99,51 +99,51 @@ namespace StorageSystemBuildingMaterials.Forms
             dgvProducts.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvProducts.RowTemplate.Height = 31;
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProducts.Size = new Size(811, 552);
+            dgvProducts.Size = new Size(856, 715);
             dgvProducts.TabIndex = 1;
             // 
             // buttonShipment
             // 
-            buttonShipment.BackColor = Color.LightGray;
+            buttonShipment.BackColor = Color.Gold;
             buttonShipment.FlatAppearance.BorderColor = Color.LightGray;
             buttonShipment.FlatAppearance.BorderSize = 0;
             buttonShipment.FlatStyle = FlatStyle.Flat;
             buttonShipment.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            buttonShipment.Location = new Point(2, 2);
-            buttonShipment.Margin = new Padding(2);
+            buttonShipment.Location = new Point(2, 3);
+            buttonShipment.Margin = new Padding(2, 3, 2, 3);
             buttonShipment.Name = "buttonShipment";
-            buttonShipment.Size = new Size(96, 29);
+            buttonShipment.Size = new Size(110, 39);
             buttonShipment.TabIndex = 2;
             buttonShipment.Text = "Отгрузка";
             buttonShipment.UseVisualStyleBackColor = false;
             // 
             // buttonSearch
             // 
-            buttonSearch.BackColor = Color.LightGray;
+            buttonSearch.BackColor = Color.Gold;
             buttonSearch.FlatAppearance.BorderColor = Color.LightGray;
             buttonSearch.FlatAppearance.BorderSize = 0;
             buttonSearch.FlatStyle = FlatStyle.Flat;
             buttonSearch.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            buttonSearch.Location = new Point(244, 4);
-            buttonSearch.Margin = new Padding(2);
+            buttonSearch.Location = new Point(279, 5);
+            buttonSearch.Margin = new Padding(2, 3, 2, 3);
             buttonSearch.Name = "buttonSearch";
-            buttonSearch.Size = new Size(138, 29);
+            buttonSearch.Size = new Size(158, 39);
             buttonSearch.TabIndex = 3;
             buttonSearch.Text = "Поиск товара";
             buttonSearch.UseVisualStyleBackColor = false;
             // 
             // buttonLogout
             // 
-            buttonLogout.BackColor = Color.LightGray;
+            buttonLogout.BackColor = Color.Gold;
             buttonLogout.BackgroundImageLayout = ImageLayout.None;
             buttonLogout.FlatAppearance.BorderColor = Color.LightGray;
             buttonLogout.FlatAppearance.BorderSize = 0;
             buttonLogout.FlatStyle = FlatStyle.Flat;
             buttonLogout.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            buttonLogout.Location = new Point(528, 4);
-            buttonLogout.Margin = new Padding(2);
+            buttonLogout.Location = new Point(603, 5);
+            buttonLogout.Margin = new Padding(2, 3, 2, 3);
             buttonLogout.Name = "buttonLogout";
-            buttonLogout.Size = new Size(155, 29);
+            buttonLogout.Size = new Size(177, 39);
             buttonLogout.TabIndex = 4;
             buttonLogout.Text = "Выйти из аккаунта";
             buttonLogout.UseVisualStyleBackColor = false;
@@ -151,16 +151,16 @@ namespace StorageSystemBuildingMaterials.Forms
             // buttonAdmin
             // 
             buttonAdmin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonAdmin.BackColor = Color.LightGray;
+            buttonAdmin.BackColor = Color.Gold;
             buttonAdmin.BackgroundImageLayout = ImageLayout.None;
             buttonAdmin.FlatAppearance.BorderColor = Color.LightGray;
             buttonAdmin.FlatAppearance.BorderSize = 0;
             buttonAdmin.FlatStyle = FlatStyle.Flat;
             buttonAdmin.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            buttonAdmin.Location = new Point(738, 4);
-            buttonAdmin.Margin = new Padding(2);
+            buttonAdmin.Location = new Point(843, 5);
+            buttonAdmin.Margin = new Padding(2, 3, 2, 3);
             buttonAdmin.Name = "buttonAdmin";
-            buttonAdmin.Size = new Size(125, 29);
+            buttonAdmin.Size = new Size(143, 39);
             buttonAdmin.TabIndex = 5;
             buttonAdmin.Text = "Админ-панель";
             buttonAdmin.UseVisualStyleBackColor = false;
@@ -169,72 +169,74 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             textBoxDecor.BackColor = Color.Black;
             textBoxDecor.BorderStyle = BorderStyle.None;
-            textBoxDecor.Location = new Point(14, 70);
-            textBoxDecor.Margin = new Padding(2);
+            textBoxDecor.Location = new Point(16, 93);
+            textBoxDecor.Margin = new Padding(2, 3, 2, 3);
             textBoxDecor.Multiline = true;
             textBoxDecor.Name = "textBoxDecor";
             textBoxDecor.ReadOnly = true;
-            textBoxDecor.Size = new Size(156, 2);
+            textBoxDecor.Size = new Size(178, 3);
             textBoxDecor.TabIndex = 23;
             // 
             // textBoxDecor2
             // 
             textBoxDecor2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxDecor2.BackColor = Color.LightGray;
+            textBoxDecor2.BackColor = Color.Gold;
             textBoxDecor2.BorderStyle = BorderStyle.None;
-            textBoxDecor2.Location = new Point(-5, 1);
-            textBoxDecor2.Margin = new Padding(2);
+            textBoxDecor2.Location = new Point(-6, 1);
+            textBoxDecor2.Margin = new Padding(2, 3, 2, 3);
             textBoxDecor2.Multiline = true;
             textBoxDecor2.Name = "textBoxDecor2";
             textBoxDecor2.ReadOnly = true;
-            textBoxDecor2.Size = new Size(198, 584);
+            textBoxDecor2.Size = new Size(226, 779);
             textBoxDecor2.TabIndex = 24;
             // 
             // textBoxDecor3
             // 
-            textBoxDecor3.BackColor = Color.LightGray;
+            textBoxDecor3.BackColor = Color.Gold;
             textBoxDecor3.BorderStyle = BorderStyle.None;
             textBoxDecor3.Location = new Point(2, 1);
-            textBoxDecor3.Margin = new Padding(2);
+            textBoxDecor3.Margin = new Padding(2, 3, 2, 3);
             textBoxDecor3.Multiline = true;
             textBoxDecor3.Name = "textBoxDecor3";
             textBoxDecor3.ReadOnly = true;
-            textBoxDecor3.Size = new Size(1003, 32);
+            textBoxDecor3.Size = new Size(1146, 43);
             textBoxDecor3.TabIndex = 25;
             // 
             // textBoxVisualCatalog
             // 
-            textBoxVisualCatalog.BackColor = Color.LightGray;
+            textBoxVisualCatalog.BackColor = Color.Gold;
             textBoxVisualCatalog.BorderStyle = BorderStyle.None;
             textBoxVisualCatalog.Font = new Font("Microsoft Sans Serif", 14F);
-            textBoxVisualCatalog.Location = new Point(10, 134);
-            textBoxVisualCatalog.Margin = new Padding(2);
+            textBoxVisualCatalog.Location = new Point(11, 179);
+            textBoxVisualCatalog.Margin = new Padding(2, 3, 2, 3);
             textBoxVisualCatalog.Multiline = true;
             textBoxVisualCatalog.Name = "textBoxVisualCatalog";
             textBoxVisualCatalog.ReadOnly = true;
-            textBoxVisualCatalog.Size = new Size(160, 32);
+            textBoxVisualCatalog.Size = new Size(183, 43);
             textBoxVisualCatalog.TabIndex = 26;
             textBoxVisualCatalog.Text = "Каталог";
             textBoxVisualCatalog.TextAlign = HorizontalAlignment.Center;
             // 
             // pnlCategories
             // 
-            pnlCategories.Location = new Point(2, 170);
-            pnlCategories.Margin = new Padding(2);
+            pnlCategories.BackColor = Color.Gold;
+            pnlCategories.Location = new Point(2, 228);
+            pnlCategories.Margin = new Padding(2, 3, 2, 3);
             pnlCategories.Name = "pnlCategories";
-            pnlCategories.Size = new Size(191, 416);
+            pnlCategories.Size = new Size(218, 555);
             pnlCategories.TabIndex = 27;
+            pnlCategories.Paint += pnlCategories_Paint;
             // 
             // btnAllProducts
             // 
-            btnAllProducts.BackColor = Color.LightGray;
+            btnAllProducts.BackColor = Color.Gold;
             btnAllProducts.FlatAppearance.BorderSize = 0;
             btnAllProducts.FlatStyle = FlatStyle.Flat;
             btnAllProducts.Font = new Font("Microsoft Sans Serif", 14F);
-            btnAllProducts.Location = new Point(14, 33);
-            btnAllProducts.Margin = new Padding(2);
+            btnAllProducts.Location = new Point(16, 44);
+            btnAllProducts.Margin = new Padding(2, 3, 2, 3);
             btnAllProducts.Name = "btnAllProducts";
-            btnAllProducts.Size = new Size(156, 33);
+            btnAllProducts.Size = new Size(178, 44);
             btnAllProducts.TabIndex = 28;
             btnAllProducts.Text = "Все товары";
             btnAllProducts.UseVisualStyleBackColor = false;
@@ -242,16 +244,16 @@ namespace StorageSystemBuildingMaterials.Forms
             // buttonSettings
             // 
             buttonSettings.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonSettings.BackColor = Color.LightGray;
+            buttonSettings.BackColor = Color.Gold;
             buttonSettings.BackgroundImageLayout = ImageLayout.None;
             buttonSettings.FlatAppearance.BorderColor = Color.LightGray;
             buttonSettings.FlatAppearance.BorderSize = 0;
             buttonSettings.FlatStyle = FlatStyle.Flat;
             buttonSettings.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            buttonSettings.Location = new Point(867, 4);
-            buttonSettings.Margin = new Padding(2);
+            buttonSettings.Location = new Point(991, 5);
+            buttonSettings.Margin = new Padding(2, 3, 2, 3);
             buttonSettings.Name = "buttonSettings";
-            buttonSettings.Size = new Size(125, 29);
+            buttonSettings.Size = new Size(143, 39);
             buttonSettings.TabIndex = 29;
             buttonSettings.Text = "Настройки";
             buttonSettings.UseVisualStyleBackColor = false;
@@ -259,15 +261,15 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // buttonReport
             // 
-            buttonReport.BackColor = Color.LightGray;
+            buttonReport.BackColor = Color.Gold;
             buttonReport.FlatAppearance.BorderColor = Color.LightGray;
             buttonReport.FlatAppearance.BorderSize = 0;
             buttonReport.FlatStyle = FlatStyle.Flat;
             buttonReport.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            buttonReport.Location = new Point(386, 4);
-            buttonReport.Margin = new Padding(2);
+            buttonReport.Location = new Point(441, 5);
+            buttonReport.Margin = new Padding(2, 3, 2, 3);
             buttonReport.Name = "buttonReport";
-            buttonReport.Size = new Size(138, 29);
+            buttonReport.Size = new Size(158, 39);
             buttonReport.TabIndex = 29;
             buttonReport.Text = "Отчетность";
             buttonReport.UseVisualStyleBackColor = false;
@@ -275,15 +277,15 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // buttonDelivery
             // 
-            buttonDelivery.BackColor = Color.LightGray;
+            buttonDelivery.BackColor = Color.Gold;
             buttonDelivery.FlatAppearance.BorderColor = Color.LightGray;
             buttonDelivery.FlatAppearance.BorderSize = 0;
             buttonDelivery.FlatStyle = FlatStyle.Flat;
             buttonDelivery.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            buttonDelivery.Location = new Point(102, 4);
-            buttonDelivery.Margin = new Padding(2);
+            buttonDelivery.Location = new Point(117, 5);
+            buttonDelivery.Margin = new Padding(2, 3, 2, 3);
             buttonDelivery.Name = "buttonDelivery";
-            buttonDelivery.Size = new Size(138, 29);
+            buttonDelivery.Size = new Size(158, 39);
             buttonDelivery.TabIndex = 30;
             buttonDelivery.Text = "Поставки";
             buttonDelivery.UseVisualStyleBackColor = false;
@@ -293,24 +295,24 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             textBox1.BackColor = Color.Black;
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(15, 128);
-            textBox1.Margin = new Padding(2);
+            textBox1.Location = new Point(17, 171);
+            textBox1.Margin = new Padding(2, 3, 2, 3);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(156, 2);
+            textBox1.Size = new Size(178, 3);
             textBox1.TabIndex = 31;
             // 
             // btnExpiredProduct
             // 
-            btnExpiredProduct.BackColor = Color.LightGray;
+            btnExpiredProduct.BackColor = Color.Gold;
             btnExpiredProduct.FlatAppearance.BorderSize = 0;
             btnExpiredProduct.FlatStyle = FlatStyle.Flat;
             btnExpiredProduct.Font = new Font("Microsoft Sans Serif", 14F);
-            btnExpiredProduct.Location = new Point(2, 76);
-            btnExpiredProduct.Margin = new Padding(2);
+            btnExpiredProduct.Location = new Point(2, 101);
+            btnExpiredProduct.Margin = new Padding(2, 3, 2, 3);
             btnExpiredProduct.Name = "btnExpiredProduct";
-            btnExpiredProduct.Size = new Size(191, 48);
+            btnExpiredProduct.Size = new Size(218, 64);
             btnExpiredProduct.TabIndex = 32;
             btnExpiredProduct.Text = "Списанные товары";
             btnExpiredProduct.UseVisualStyleBackColor = false;
@@ -318,10 +320,10 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightGray;
-            ClientSize = new Size(1003, 583);
+            BackColor = Color.Gold;
+            ClientSize = new Size(1146, 777);
             Controls.Add(btnExpiredProduct);
             Controls.Add(textBox1);
             Controls.Add(buttonDelivery);
@@ -339,7 +341,7 @@ namespace StorageSystemBuildingMaterials.Forms
             Controls.Add(textBoxDecor2);
             Controls.Add(textBoxDecor3);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "FormMain";
             Text = "Main";
             ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
