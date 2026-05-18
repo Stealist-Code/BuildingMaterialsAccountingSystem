@@ -540,6 +540,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Списанные товары.
+        /// </summary>
+        public static string ExpiredProduct {
+            get {
+                return ResourceManager.GetString("ExpiredProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Экспорт отчета.
         /// </summary>
         public static string ExportReport {
@@ -956,7 +965,7 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на Дата.
         /// </summary>
         public static string ReportDate {
             get {

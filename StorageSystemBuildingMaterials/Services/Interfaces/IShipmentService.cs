@@ -23,7 +23,7 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
         /// <param name="items"></param>
         /// <param name="totalPrice"></param>
         /// <returns></returns>
-        public Task<Shipment> CreateShipment(Guid userId, Address address, Customer customer, List<ShipmentItem> items, decimal totalPrice);
+        public Task<Shipment> CreateShipment(Guid userId, Guid addressId, Guid customerId, List<ShipmentItem> items, decimal totalPrice);
 
         /// <summary>
         /// Создать поставкуы

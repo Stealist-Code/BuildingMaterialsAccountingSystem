@@ -215,17 +215,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
             buttonShipment.Click += async (s, e) =>
             {
-                //var shipmentForm = new FormShipment(_user.Id, _productService, _shipmentService, _shipmentValidation);
 
-                //shipmentForm.ShowDialog();
-
-                //await LoadAllProducts();
-
-                //var tinForm = new FormCheckTIN(_tINService);
-
-                //tinForm.ShowDialog();
-
-                //await LoadAllProducts();
             };
 
             buttonAdmin.Click += async (s, e) =>
@@ -278,6 +268,7 @@ namespace StorageSystemBuildingMaterials.Forms
             this.Text = Resources.MainTitle;
 
             btnAllProducts.Text = Resources.AllProducts;
+            btnExpiredProduct.Text = Resources.ExpiredProduct;
             buttonSearch.Text = Resources.Search;
             buttonShipment.Text = Resources.Shipment;
             buttonAdmin.Text = Resources.Admin;
@@ -286,6 +277,7 @@ namespace StorageSystemBuildingMaterials.Forms
             textBoxVisualCatalog.Text = Resources.Catalog;
             buttonReport.Text = Resources.Reporting;
             buttonDelivery.Text = Resources.Supplies;
+
 
             dgvProducts.Columns["Article"].HeaderText = Resources.Article;
             dgvProducts.Columns["Name"].HeaderText = Resources.Name;

@@ -196,7 +196,7 @@
     <value>Save</value>
   </data>
   <data name="EditProduct" xml:space="preserve">
-    <value>Edit product</value>
+    <value>Edit products</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>Add</value>
@@ -500,5 +500,11 @@
   </data>
   <data name="ExportReport" xml:space="preserve">
     <value>Export report</value>
+  </data>
+  <data name="ReportDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="ExpiredProduct" xml:space="preserve">
+    <value>Expired product</value>
   </data>
 </root>

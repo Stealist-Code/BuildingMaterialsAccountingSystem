@@ -13,11 +13,12 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly IShipmentService _shipmentService;
         private readonly IShipmentValidation _shipmentValidation;
         private readonly Guid _userId;
-        private readonly Address _address;
-        private readonly Customer _customer;
+        private readonly Guid _addressId;
+        private readonly Guid _customerId;
+        private readonly Form _formCheckTin;
         private List<CartItemDto> cart = new List<CartItemDto>();
 
-        public FormShipment(Guid currentUserId, IProductService productService, IShipmentService shipmentService, IShipmentValidation shipmentValidation)
+        public FormShipment(Guid currentUserId, IProductService productService, IShipmentService shipmentService, IShipmentValidation shipmentValidation, Customer customer, Form formCheckTin)
         {
             InitializeComponent();
 
@@ -25,6 +26,9 @@ namespace StorageSystemBuildingMaterials.Forms
             _productService = productService;
             _shipmentService = shipmentService;
             _shipmentValidation = shipmentValidation;
+            _customerId = customer.Id;
+            _addressId = customer.Address.Id;
+            _formCheckTin = formCheckTin;
 
             this.Text = Resources.CreateShipment;
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -129,26 +133,7 @@ namespace StorageSystemBuildingMaterials.Forms
         {
             try
             {
-                var address = new Address
-                {
-                    //Id = Guid.NewGuid(),
-                    //Country = txtCountry.Text.Trim(),
-                    //City = txtCity.Text.Trim(),
-                    //Region = txtRegion.Text.Trim(),
-                    //Street = txtStreet.Text.Trim(),
-                    //Building = txtBuilding.Text.Trim()
-                    Country = "Россия",
-                    Region = "Татарстан",
-                    City = "Казань",
-                    Street = "Склад",
-                    Building = "1"
-                };
-
                 var totalPrice = nudTotalPrice.Value;
-
-                _shipmentValidation.ValidateShipmentFields(address, cart);
-
-
 
                 var shipmentItems = cart.Select(c => new ShipmentItem
                 {
@@ -158,35 +143,25 @@ namespace StorageSystemBuildingMaterials.Forms
                     
                 }).ToList();
 
-                var customer = new Customer
-                {
-                    //Id = Guid.NewGuid(),
-                    //FirstName = txtFirstName.Text.Trim(),
-                    //LastName = txtLastName.Text.Trim(),
-                    //MiddleName = txtMiddleName.Text.Trim(),
-                    //Email = txtEmail.Text.Trim(),
-                    FirstName = "q",
-                    LastName = "q",
-                    MiddleName = "q",
-                    Email = "admin123@admin.admin",
-                };
-
                 await _shipmentService.CreateShipment(
                     _userId,
-                    address,
-                    customer,
+                    _addressId,
+                    _customerId,
                     shipmentItems,
                     totalPrice
                 );
 
                 MessageBox.Show(Resources.ShipmentCreated);
+                if (_formCheckTin != null)
+                {
+                    _formCheckTin.Close();
+                }
                 Close();
             }
             catch (Exception ex)
             {
                 var errorText = Resources.ResourceManager.GetString(ex.Message) ?? ex.Message;
                 MessageBox.Show(errorText);
-
             }
         }
 
@@ -205,17 +180,8 @@ namespace StorageSystemBuildingMaterials.Forms
             btnAdd.Text = Resources.Add;
             btnCreate.Text = Resources.Create;
 
-            labelTextVisualCountry.Text = Resources.Country;
-            labelTextVisualRegion.Text = Resources.Region;
-            labelTextVisualCity.Text = Resources.City;
-            labelTextVisualStreet.Text = Resources.Street;
-            labelTextVisualBuilding.Text = Resources.Building;
             labelTextVisualProduct.Text = Resources.Product;
             labelTextVisualCountProduct.Text = Resources.Amount;
-            labelTextVisualLastName.Text = Resources.LastName;
-            labelTextVisualFirstName.Text = Resources.FirstName;
-            labelTextVisualMiddleName.Text = Resources.MiddleName;
-            labelTextVisualEmail.Text = Resources.Email;
             labelTextVisualPrice.Text = Resources.Price;
             labelTextVisualSelling.Text = Resources.Selling;
             labelTextVisualShipment.Text = Resources.CreatingShipment;

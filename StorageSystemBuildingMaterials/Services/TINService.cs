@@ -5,13 +5,8 @@ using StorageSystemBuildingMaterials.Data;
 using StorageSystemBuildingMaterials.DTO;
 using StorageSystemBuildingMaterials.Models;
 using StorageSystemBuildingMaterials.Services.Interfaces;
-using StorageSystemBuildingMaterials.Validation;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
 using System.Configuration;
-using System.Runtime.CompilerServices;
-using System.Security.Policy;
-using System.Text;
-using System.Text.Json;
+using IO.Swagger;
 
 namespace StorageSystemBuildingMaterials.Services
 {
@@ -23,20 +18,32 @@ namespace StorageSystemBuildingMaterials.Services
         private readonly string _apiKey;
         private readonly string _secretKey;
         private readonly HttpClient _httpClient;
+        private readonly Client _client;
         private readonly AppDbContext _db;
-        
-
+      
         public TINService(AppDbContext db, HttpClient httpClient)
         {
             _apiKey = ConfigurationManager.AppSettings["DaDataApiKey"];
             _secretKey = ConfigurationManager.AppSettings["DaDataSecretKey"];
             _httpClient = httpClient;
+            _httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["ApiLink"]);
+            _client = new Client(httpClient);
             _db = db;
         }
 
         public async Task<CustomerDto> GetInfoCustomer(string tIN)
         {
             var customer = await FindCustomerWithTIN(tIN);
+
+            if (customer is null)
+            {
+                customer = await CreateCustomer(tIN);
+                if (customer is null)
+                {
+                    return null;
+                }
+            }
+
             return new CustomerDto()
             {
                 TIN = customer.TIN,
@@ -58,11 +65,6 @@ namespace StorageSystemBuildingMaterials.Services
                 .Include(x => x.Address)
                 .FirstOrDefaultAsync(x => x.TIN == tIN);
 
-            if (customer is null)
-            {
-                customer = await CreateCustomer(tIN);
-            }
-
             return customer;
         }
 
@@ -71,6 +73,12 @@ namespace StorageSystemBuildingMaterials.Services
             var apiSuggest = new SuggestClientAsync(_apiKey);
             var apiClean = new CleanClientAsync(_apiKey, _secretKey);
             var company = await apiSuggest.FindParty(tIN);
+
+            if (company.suggestions.Count == 0)
+            {
+                return null;
+            }
+
             var companyData = company.suggestions[0].data;
             var fioData = await apiClean.Clean<Fullname>(companyData.management.name);
             var addressData = companyData.address;
@@ -101,6 +109,34 @@ namespace StorageSystemBuildingMaterials.Services
             await _db.SaveChangesAsync();
 
             return customer;
+        }
+
+        public async Task<string> CheckCompanyOnBlackList(string tIN)
+        {
+            Search company = await _client.SearchAsync(tIN, null, null, null, null, 0);
+
+            var message = string.Empty;
+            // является ли компания контрагентом
+            if (company.Data.Any())
+            {
+                var companyId = company.Data.First().Id;
+                var info = await _client.DetailInfoAsync(companyId);
+                var signs = info.Signs;
+
+                if (Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "ru")
+                {
+                    message = $"Внимание, компания: {info.Info.First().NameOrg}, с ИНН: {tIN}, является контрагентом:\n";
+                    message += string.Join("\n ", signs.Select(x => x.SignRus));
+                }
+                else
+                {
+                    message = $"Attention, the company: {info.Info.First().NameOrg}, with INN: {tIN}, is a counterparty:\n";
+                    message += string.Join("\n ", signs.Select(x => x.SignEng));
+                }
+
+                return message;
+            }
+            return message;
         }
     }
 }

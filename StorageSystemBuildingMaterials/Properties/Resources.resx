@@ -512,6 +512,9 @@
     <value>Экспорт отчета</value>
   </data>
   <data name="ReportDate" xml:space="preserve">
-    <value />
+    <value>Дата</value>
+  </data>
+  <data name="ExpiredProduct" xml:space="preserve">
+    <value>Списанные товары</value>
   </data>
 </root>

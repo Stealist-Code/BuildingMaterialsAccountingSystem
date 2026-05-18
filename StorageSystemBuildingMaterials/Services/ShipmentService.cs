@@ -67,7 +67,7 @@ namespace StorageSystemBuildingMaterials.Services
         /// <param name="items"></param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public async Task<Shipment> CreateShipment(Guid userId, Address address, Customer customer, List<ShipmentItem> items, decimal totalPrice)
+        public async Task<Shipment> CreateShipment(Guid userId, Guid addressId, Guid customerId, List<ShipmentItem> items, decimal totalPrice)
         {
             _logger.Info($"Создание отгрузки userId={userId}");
 
@@ -75,14 +75,15 @@ namespace StorageSystemBuildingMaterials.Services
             {
                 _logger.Debug("Валидация полей формы");
 
+                var customer = await _db.Customers.FindAsync(customerId);
+                var address = await _db.Addresses.FindAsync(addressId);
+
                 _shipmentValidation.ValidateCreateShipment(address, items);
 
                 if (customer is null)
                 {
                     throw new Exception("CustomerIsNull");
                 }
-
-                address.Id = address.Id == Guid.Empty ? Guid.NewGuid() : address.Id;
 
                 var productIds = items.Select(x => x.ProductId).ToList();
 
@@ -95,28 +96,23 @@ namespace StorageSystemBuildingMaterials.Services
 
                 await DiscountHelper.ApplyDiscount(_db, supply);
 
-                var existingCustomer = await _db.Customers.FirstOrDefaultAsync(x => x.Email.ToLower() == customer.Email.ToLower());
-
-                if (existingCustomer is null)
+                var existingAddress = await _db.Addresses.FindAsync(address.Id);
+                if (existingAddress is null)
                 {
-                    customer.Id = Guid.NewGuid();
-                    await _db.Customers.AddAsync(customer);
-                    existingCustomer = customer;
+                    throw new Exception("AddressNotFound");
                 }
 
                 var products = await _db.Products.ToListAsync();
-
-                await _db.Addresses.AddAsync(address);
 
                 var shipment = new Shipment
                 {
                     Id = Guid.NewGuid(),
                     UserId = userId,
-                    CustomerId = existingCustomer.Id,
-                    Customer = existingCustomer,
+                    CustomerId = customer.Id,
+                    Customer = customer,
                     ShipmentDate = DateTime.UtcNow,
-                    Address = address,
-                    AddressId = address.Id,
+                    AddressId = existingAddress.Id,
+                    Address = existingAddress,
                     ShipmentItems = items,
                     PriceForSell = totalPrice
                 };

@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyModel;
+﻿using StorageSystemBuildingMaterials.DTO;
 using StorageSystemBuildingMaterials.Properties;
 using StorageSystemBuildingMaterials.Services.Interfaces;
 using StorageSystemBuildingMaterials.Validation.Interfaces;
@@ -27,15 +27,22 @@ namespace StorageSystemBuildingMaterials.Forms
             SetupDataGridView();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private async Task LoadAllInfoTIN()
         {
             var tIN = tbTIN.Text;
             var customer = await _tINService.GetInfoCustomer(tIN);
+            if (customer is null)
+            {
+                MessageBox.Show("Указан неправильный ИНН.");
+                return;
+            }
+
+            var message = await _tINService.CheckCompanyOnBlackList(tIN);
+            if (message is not null)
+            {
+                MessageBox.Show(message);
+                return;
+            }
 
             _bindingSource.DataSource = customer;
             dgvTIN.Columns["Id"].Visible = false;
@@ -64,11 +71,44 @@ namespace StorageSystemBuildingMaterials.Forms
             LoadAllInfoTIN();
         }
 
-        private void buttonSelect_Click(object sender, EventArgs e)
+        private async void buttonSelect_Click(object sender, EventArgs e)
         {
-            var shipmentForm = new FormShipment(_userId, _productService, _shipmentService, _shipmentValidation);
+            if (dgvTIN.CurrentRow is null)
+            {
+                return;
+            }
+
+            var selectedCustomer = dgvTIN.CurrentRow.DataBoundItem as CustomerDto;
+
+            if (selectedCustomer is null)
+            {
+                return;
+            }
+
+            var message = await _tINService.CheckCompanyOnBlackList(selectedCustomer.TIN);
+            if (message is not null)
+            {
+                MessageBox.Show(message);
+                return;
+            }
+
+            var customer = await _tINService.FindCustomerWithTIN(selectedCustomer.TIN);
+
+            if (string.IsNullOrEmpty(customer.TIN) || customer.Id == Guid.Empty)
+            {
+                MessageBox.Show("Клиент не найден в системе", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var shipmentForm = new FormShipment(_userId, _productService, _shipmentService, _shipmentValidation, customer, this);
 
             shipmentForm.ShowDialog();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -56,7 +56,6 @@
             labelCheckTIN.Size = new Size(247, 28);
             labelCheckTIN.TabIndex = 1;
             labelCheckTIN.Text = "Проверка на контрагента";
-            labelCheckTIN.Click += label1_Click;
             // 
             // labelTIN
             // 
@@ -82,6 +81,7 @@
             buttonCancel.TabIndex = 4;
             buttonCancel.Text = "Отменить";
             buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // buttonSelect
             // 
