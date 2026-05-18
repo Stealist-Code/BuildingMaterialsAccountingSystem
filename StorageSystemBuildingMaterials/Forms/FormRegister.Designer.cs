@@ -54,11 +54,11 @@
             textBoxFirstName.Anchor = AnchorStyles.None;
             textBoxFirstName.BackColor = Color.White;
             textBoxFirstName.Font = new Font("Microsoft Sans Serif", 15F);
-            textBoxFirstName.Location = new Point(516, 202);
-            textBoxFirstName.Margin = new Padding(2);
+            textBoxFirstName.Location = new Point(590, 269);
+            textBoxFirstName.Margin = new Padding(2, 3, 2, 3);
             textBoxFirstName.Multiline = true;
             textBoxFirstName.Name = "textBoxFirstName";
-            textBoxFirstName.Size = new Size(274, 40);
+            textBoxFirstName.Size = new Size(313, 52);
             textBoxFirstName.TabIndex = 0;
             // 
             // textBoxLastName
@@ -66,11 +66,11 @@
             textBoxLastName.Anchor = AnchorStyles.None;
             textBoxLastName.BackColor = Color.White;
             textBoxLastName.Font = new Font("Microsoft Sans Serif", 15F);
-            textBoxLastName.Location = new Point(516, 271);
-            textBoxLastName.Margin = new Padding(2);
+            textBoxLastName.Location = new Point(590, 361);
+            textBoxLastName.Margin = new Padding(2, 3, 2, 3);
             textBoxLastName.Multiline = true;
             textBoxLastName.Name = "textBoxLastName";
-            textBoxLastName.Size = new Size(274, 40);
+            textBoxLastName.Size = new Size(313, 52);
             textBoxLastName.TabIndex = 1;
             // 
             // textBoxMiddleName
@@ -78,11 +78,11 @@
             textBoxMiddleName.Anchor = AnchorStyles.None;
             textBoxMiddleName.BackColor = Color.White;
             textBoxMiddleName.Font = new Font("Microsoft Sans Serif", 15F);
-            textBoxMiddleName.Location = new Point(516, 340);
-            textBoxMiddleName.Margin = new Padding(2);
+            textBoxMiddleName.Location = new Point(590, 453);
+            textBoxMiddleName.Margin = new Padding(2, 3, 2, 3);
             textBoxMiddleName.Multiline = true;
             textBoxMiddleName.Name = "textBoxMiddleName";
-            textBoxMiddleName.Size = new Size(274, 40);
+            textBoxMiddleName.Size = new Size(313, 52);
             textBoxMiddleName.TabIndex = 2;
             // 
             // textBoxEmail
@@ -90,11 +90,11 @@
             textBoxEmail.Anchor = AnchorStyles.None;
             textBoxEmail.BackColor = Color.White;
             textBoxEmail.Font = new Font("Microsoft Sans Serif", 15F);
-            textBoxEmail.Location = new Point(516, 411);
-            textBoxEmail.Margin = new Padding(2);
+            textBoxEmail.Location = new Point(590, 548);
+            textBoxEmail.Margin = new Padding(2, 3, 2, 3);
             textBoxEmail.Multiline = true;
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(274, 40);
+            textBoxEmail.Size = new Size(313, 52);
             textBoxEmail.TabIndex = 3;
             // 
             // textBoxPassword
@@ -102,12 +102,12 @@
             textBoxPassword.Anchor = AnchorStyles.None;
             textBoxPassword.BackColor = Color.White;
             textBoxPassword.Font = new Font("Microsoft Sans Serif", 15F);
-            textBoxPassword.Location = new Point(516, 480);
-            textBoxPassword.Margin = new Padding(2);
+            textBoxPassword.Location = new Point(590, 640);
+            textBoxPassword.Margin = new Padding(2, 3, 2, 3);
             textBoxPassword.Multiline = true;
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.PasswordChar = '*';
-            textBoxPassword.Size = new Size(274, 40);
+            textBoxPassword.Size = new Size(313, 52);
             textBoxPassword.TabIndex = 4;
             // 
             // textBoxConfirmPassword
@@ -115,12 +115,12 @@
             textBoxConfirmPassword.Anchor = AnchorStyles.None;
             textBoxConfirmPassword.BackColor = Color.White;
             textBoxConfirmPassword.Font = new Font("Microsoft Sans Serif", 15F);
-            textBoxConfirmPassword.Location = new Point(516, 550);
-            textBoxConfirmPassword.Margin = new Padding(2);
+            textBoxConfirmPassword.Location = new Point(590, 733);
+            textBoxConfirmPassword.Margin = new Padding(2, 3, 2, 3);
             textBoxConfirmPassword.Multiline = true;
             textBoxConfirmPassword.Name = "textBoxConfirmPassword";
             textBoxConfirmPassword.PasswordChar = '*';
-            textBoxConfirmPassword.Size = new Size(274, 40);
+            textBoxConfirmPassword.Size = new Size(313, 52);
             textBoxConfirmPassword.TabIndex = 5;
             // 
             // buttonRegister
@@ -130,10 +130,10 @@
             buttonRegister.FlatStyle = FlatStyle.Popup;
             buttonRegister.Font = new Font("Microsoft Sans Serif", 19F, FontStyle.Regular, GraphicsUnit.Point, 204);
             buttonRegister.ForeColor = Color.White;
-            buttonRegister.Location = new Point(322, 687);
-            buttonRegister.Margin = new Padding(2);
+            buttonRegister.Location = new Point(368, 916);
+            buttonRegister.Margin = new Padding(2, 3, 2, 3);
             buttonRegister.Name = "buttonRegister";
-            buttonRegister.Size = new Size(438, 68);
+            buttonRegister.Size = new Size(501, 91);
             buttonRegister.TabIndex = 6;
             buttonRegister.Text = "Зарегистрироваться";
             buttonRegister.UseVisualStyleBackColor = false;
@@ -145,10 +145,10 @@
             labelTextVisualFirstName.AutoSize = true;
             labelTextVisualFirstName.BackColor = Color.Transparent;
             labelTextVisualFirstName.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelTextVisualFirstName.Location = new Point(276, 205);
+            labelTextVisualFirstName.Location = new Point(294, 272);
             labelTextVisualFirstName.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualFirstName.Name = "labelTextVisualFirstName";
-            labelTextVisualFirstName.Size = new Size(54, 25);
+            labelTextVisualFirstName.Size = new Size(63, 29);
             labelTextVisualFirstName.TabIndex = 7;
             labelTextVisualFirstName.Text = "Имя";
             // 
@@ -158,10 +158,10 @@
             labelTextVisualLastName.AutoSize = true;
             labelTextVisualLastName.BackColor = Color.Transparent;
             labelTextVisualLastName.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelTextVisualLastName.Location = new Point(276, 274);
+            labelTextVisualLastName.Location = new Point(293, 364);
             labelTextVisualLastName.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualLastName.Name = "labelTextVisualLastName";
-            labelTextVisualLastName.Size = new Size(103, 25);
+            labelTextVisualLastName.Size = new Size(122, 29);
             labelTextVisualLastName.TabIndex = 8;
             labelTextVisualLastName.Text = "Фамилия";
             // 
@@ -171,10 +171,10 @@
             labelTextVisualPatronymic.AutoSize = true;
             labelTextVisualPatronymic.BackColor = Color.Transparent;
             labelTextVisualPatronymic.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelTextVisualPatronymic.Location = new Point(275, 343);
+            labelTextVisualPatronymic.Location = new Point(294, 456);
             labelTextVisualPatronymic.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualPatronymic.Name = "labelTextVisualPatronymic";
-            labelTextVisualPatronymic.Size = new Size(104, 25);
+            labelTextVisualPatronymic.Size = new Size(121, 29);
             labelTextVisualPatronymic.TabIndex = 9;
             labelTextVisualPatronymic.Text = "Отчество";
             // 
@@ -184,10 +184,10 @@
             labelTextVisualEmail.AutoSize = true;
             labelTextVisualEmail.BackColor = Color.Transparent;
             labelTextVisualEmail.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelTextVisualEmail.Location = new Point(275, 414);
+            labelTextVisualEmail.Location = new Point(294, 551);
             labelTextVisualEmail.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualEmail.Name = "labelTextVisualEmail";
-            labelTextVisualEmail.Size = new Size(196, 25);
+            labelTextVisualEmail.Size = new Size(240, 29);
             labelTextVisualEmail.TabIndex = 10;
             labelTextVisualEmail.Text = "Электронная почта";
             // 
@@ -197,10 +197,10 @@
             labelTextVisualPassword.AutoSize = true;
             labelTextVisualPassword.BackColor = Color.Transparent;
             labelTextVisualPassword.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelTextVisualPassword.Location = new Point(275, 483);
+            labelTextVisualPassword.Location = new Point(294, 640);
             labelTextVisualPassword.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualPassword.Name = "labelTextVisualPassword";
-            labelTextVisualPassword.Size = new Size(80, 25);
+            labelTextVisualPassword.Size = new Size(100, 29);
             labelTextVisualPassword.TabIndex = 12;
             labelTextVisualPassword.Text = "Пароль";
             // 
@@ -210,10 +210,10 @@
             labelTextVisualCheckPassword.AutoSize = true;
             labelTextVisualCheckPassword.BackColor = Color.Transparent;
             labelTextVisualCheckPassword.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelTextVisualCheckPassword.Location = new Point(275, 553);
+            labelTextVisualCheckPassword.Location = new Point(294, 736);
             labelTextVisualCheckPassword.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualCheckPassword.Name = "labelTextVisualCheckPassword";
-            labelTextVisualCheckPassword.Size = new Size(237, 25);
+            labelTextVisualCheckPassword.Size = new Size(292, 29);
             labelTextVisualCheckPassword.TabIndex = 13;
             labelTextVisualCheckPassword.Text = "Подтверждение пароля";
             // 
@@ -223,10 +223,10 @@
             labeRegistration.AutoSize = true;
             labeRegistration.BackColor = Color.Transparent;
             labeRegistration.Font = new Font("Microsoft Sans Serif", 26F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labeRegistration.Location = new Point(418, 112);
+            labeRegistration.Location = new Point(478, 149);
             labeRegistration.Margin = new Padding(2, 0, 2, 0);
             labeRegistration.Name = "labeRegistration";
-            labeRegistration.Size = new Size(223, 39);
+            labeRegistration.Size = new Size(281, 52);
             labeRegistration.TabIndex = 15;
             labeRegistration.Text = "Регистрация";
             // 
@@ -239,10 +239,10 @@
             buttonRegisrationINAuth.FlatStyle = FlatStyle.Flat;
             buttonRegisrationINAuth.Font = new Font("Microsoft Sans Serif", 12.85714F, FontStyle.Bold, GraphicsUnit.Point, 204);
             buttonRegisrationINAuth.ForeColor = Color.Black;
-            buttonRegisrationINAuth.Location = new Point(322, 624);
-            buttonRegisrationINAuth.Margin = new Padding(2);
+            buttonRegisrationINAuth.Location = new Point(368, 832);
+            buttonRegisrationINAuth.Margin = new Padding(2, 3, 2, 3);
             buttonRegisrationINAuth.Name = "buttonRegisrationINAuth";
-            buttonRegisrationINAuth.Size = new Size(438, 47);
+            buttonRegisrationINAuth.Size = new Size(501, 63);
             buttonRegisrationINAuth.TabIndex = 16;
             buttonRegisrationINAuth.Text = "Уже есть аккаунт? Авторизоваться";
             buttonRegisrationINAuth.UseVisualStyleBackColor = false;
@@ -254,12 +254,11 @@
             // 
             // FormRegister
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1118, 773);
+            ClientSize = new Size(1278, 1031);
             Controls.Add(buttonRegisrationINAuth);
             Controls.Add(labeRegistration);
             Controls.Add(labelTextVisualCheckPassword);
@@ -277,7 +276,7 @@
             Controls.Add(textBoxFirstName);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "FormRegister";
             Text = "Sign-up";
             Load += FormRegister_Load;

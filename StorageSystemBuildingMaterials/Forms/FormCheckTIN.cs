@@ -86,7 +86,7 @@ namespace StorageSystemBuildingMaterials.Forms
             }
 
             var message = await _tINService.CheckCompanyOnBlackList(selectedCustomer.TIN);
-            if (message is not null)
+            if (!string.IsNullOrEmpty(message))
             {
                 MessageBox.Show(message);
                 return;

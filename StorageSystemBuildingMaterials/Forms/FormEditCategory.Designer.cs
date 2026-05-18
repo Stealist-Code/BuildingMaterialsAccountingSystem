@@ -104,6 +104,7 @@
             btnDelete.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnDelete.ForeColor = Color.White;
             btnDelete.Location = new Point(695, 523);
+            btnDelete.Location = new Point(374, 523);
             btnDelete.Margin = new Padding(2, 3, 2, 3);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(267, 72);
@@ -122,6 +123,7 @@
             btnSave.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnSave.ForeColor = Color.White;
             btnSave.Location = new Point(695, 523);
+            btnSave.Location = new Point(688, 523);
             btnSave.Margin = new Padding(2, 3, 2, 3);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(267, 72);
@@ -134,8 +136,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1000, 716);
             Controls.Add(btnSave);

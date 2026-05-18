@@ -153,7 +153,6 @@ namespace StorageSystemBuildingMaterials.Forms
                         PurchasePrice = purchasePrice,
                         ExpirationDate = DateTime.SpecifyKind(dtpExpirationDate.Value, DateTimeKind.Utc),
                         ReceivedDate = DateTime.UtcNow,
-                        //ProductState = productState,
                         ProductStateId = productState.Id
                     }
                 };
@@ -195,6 +194,8 @@ namespace StorageSystemBuildingMaterials.Forms
             labelUploadFile.Text = Resources.UploadFile;
             btnCancel.Text = Resources.Cancel;
             btnCreate.Text = Resources.Create;
+
+            
         }
 
         private void FormDelivery_Load(object sender, EventArgs e)

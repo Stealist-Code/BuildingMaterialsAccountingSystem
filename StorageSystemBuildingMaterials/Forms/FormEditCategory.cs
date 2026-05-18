@@ -32,7 +32,7 @@ namespace StorageSystemBuildingMaterials.Forms
                 ? ComboBoxStyle.DropDownList : ComboBoxStyle.DropDown;
 
             btnSave.Visible = mode == CategoryFormMode.Edit;
-            btnDelete.Visible = mode == CategoryFormMode.Delete;
+            btnDelete.Visible = mode == CategoryFormMode.Delete || mode == CategoryFormMode.Edit;
 
             LoadCategories();
 

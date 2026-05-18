@@ -48,12 +48,12 @@ namespace StorageSystemBuildingMaterials.Forms
             textBoxEmail.BackColor = Color.White;
             textBoxEmail.Font = new Font("Microsoft Sans Serif", 16F);
             textBoxEmail.ForeColor = Color.Black;
-            textBoxEmail.Location = new Point(444, 219);
-            textBoxEmail.Margin = new Padding(2);
+            textBoxEmail.Location = new Point(507, 292);
+            textBoxEmail.Margin = new Padding(2, 3, 2, 3);
             textBoxEmail.Multiline = true;
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.RightToLeft = RightToLeft.No;
-            textBoxEmail.Size = new Size(330, 43);
+            textBoxEmail.Size = new Size(377, 56);
             textBoxEmail.TabIndex = 0;
             // 
             // textBoxPassword
@@ -62,12 +62,12 @@ namespace StorageSystemBuildingMaterials.Forms
             textBoxPassword.BackColor = Color.White;
             textBoxPassword.Font = new Font("Microsoft Sans Serif", 16F);
             textBoxPassword.ForeColor = Color.Black;
-            textBoxPassword.Location = new Point(444, 298);
-            textBoxPassword.Margin = new Padding(2);
+            textBoxPassword.Location = new Point(507, 397);
+            textBoxPassword.Margin = new Padding(2, 3, 2, 3);
             textBoxPassword.Multiline = true;
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.PasswordChar = '*';
-            textBoxPassword.Size = new Size(330, 42);
+            textBoxPassword.Size = new Size(377, 55);
             textBoxPassword.TabIndex = 1;
             // 
             // buttonRegister
@@ -79,10 +79,10 @@ namespace StorageSystemBuildingMaterials.Forms
             buttonRegister.FlatStyle = FlatStyle.Flat;
             buttonRegister.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Bold, GraphicsUnit.Point, 204);
             buttonRegister.ForeColor = SystemColors.ActiveCaptionText;
-            buttonRegister.Location = new Point(284, 384);
-            buttonRegister.Margin = new Padding(2);
+            buttonRegister.Location = new Point(325, 519);
+            buttonRegister.Margin = new Padding(2, 3, 2, 3);
             buttonRegister.Name = "buttonRegister";
-            buttonRegister.Size = new Size(488, 46);
+            buttonRegister.Size = new Size(504, 61);
             buttonRegister.TabIndex = 2;
             buttonRegister.Text = "Нет аккаунта? Зарегистрироваться";
             buttonRegister.UseVisualStyleBackColor = false;
@@ -97,10 +97,10 @@ namespace StorageSystemBuildingMaterials.Forms
             buttonLogin.FlatStyle = FlatStyle.Popup;
             buttonLogin.Font = new Font("Microsoft Sans Serif", 21F, FontStyle.Regular, GraphicsUnit.Point, 204);
             buttonLogin.ForeColor = Color.White;
-            buttonLogin.Location = new Point(284, 447);
-            buttonLogin.Margin = new Padding(2);
+            buttonLogin.Location = new Point(325, 596);
+            buttonLogin.Margin = new Padding(2, 3, 2, 3);
             buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(488, 76);
+            buttonLogin.Size = new Size(558, 101);
             buttonLogin.TabIndex = 3;
             buttonLogin.Text = "Войти";
             buttonLogin.UseVisualStyleBackColor = false;
@@ -113,10 +113,10 @@ namespace StorageSystemBuildingMaterials.Forms
             labelError.BackColor = SystemColors.ScrollBar;
             labelError.Cursor = Cursors.Hand;
             labelError.ForeColor = Color.Fuchsia;
-            labelError.Location = new Point(286, 522);
+            labelError.Location = new Point(327, 696);
             labelError.Margin = new Padding(2, 0, 2, 0);
             labelError.Name = "labelError";
-            labelError.Size = new Size(0, 15);
+            labelError.Size = new Size(0, 20);
             labelError.TabIndex = 4;
             // 
             // labelTextVisualAuth
@@ -126,10 +126,10 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualAuth.BackColor = Color.Transparent;
             labelTextVisualAuth.Font = new Font("Microsoft Sans Serif", 28F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualAuth.ForeColor = Color.Black;
-            labelTextVisualAuth.Location = new Point(382, 126);
+            labelTextVisualAuth.Location = new Point(437, 168);
             labelTextVisualAuth.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualAuth.Name = "labelTextVisualAuth";
-            labelTextVisualAuth.Size = new Size(248, 44);
+            labelTextVisualAuth.Size = new Size(307, 54);
             labelTextVisualAuth.TabIndex = 8;
             labelTextVisualAuth.Text = "Авторизация";
             // 
@@ -140,10 +140,10 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualEmail.BackColor = Color.Transparent;
             labelTextVisualEmail.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualEmail.ForeColor = Color.Black;
-            labelTextVisualEmail.Location = new Point(230, 222);
+            labelTextVisualEmail.Location = new Point(246, 305);
             labelTextVisualEmail.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualEmail.Name = "labelTextVisualEmail";
-            labelTextVisualEmail.Size = new Size(210, 26);
+            labelTextVisualEmail.Size = new Size(257, 31);
             labelTextVisualEmail.TabIndex = 9;
             labelTextVisualEmail.Text = "Электронная почта";
             // 
@@ -154,21 +154,20 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualPassword.BackColor = Color.Transparent;
             labelTextVisualPassword.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualPassword.ForeColor = Color.Black;
-            labelTextVisualPassword.Location = new Point(230, 301);
+            labelTextVisualPassword.Location = new Point(263, 401);
             labelTextVisualPassword.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualPassword.Name = "labelTextVisualPassword";
-            labelTextVisualPassword.Size = new Size(89, 26);
+            labelTextVisualPassword.Size = new Size(108, 31);
             labelTextVisualPassword.TabIndex = 11;
             labelTextVisualPassword.Text = "Пароль";
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1035, 635);
+            ClientSize = new Size(1183, 847);
             Controls.Add(labelTextVisualPassword);
             Controls.Add(labelTextVisualEmail);
             Controls.Add(labelTextVisualAuth);
@@ -180,7 +179,7 @@ namespace StorageSystemBuildingMaterials.Forms
             DoubleBuffered = true;
             ForeColor = Color.Crimson;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "FormLogin";
             Text = "Sign-in";
             Load += FormLogin_Load;

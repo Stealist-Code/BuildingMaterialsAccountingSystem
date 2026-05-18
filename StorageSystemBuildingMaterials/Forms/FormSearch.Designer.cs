@@ -50,10 +50,10 @@
             btnCancel.FlatStyle = FlatStyle.Popup;
             btnCancel.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(55, 421);
-            btnCancel.Margin = new Padding(2);
+            btnCancel.Location = new Point(63, 561);
+            btnCancel.Margin = new Padding(2, 3, 2, 3);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(298, 54);
+            btnCancel.Size = new Size(341, 72);
             btnCancel.TabIndex = 4;
             btnCancel.Text = "Отменить";
             btnCancel.UseVisualStyleBackColor = false;
@@ -68,10 +68,10 @@
             btnSearch.FlatStyle = FlatStyle.Popup;
             btnSearch.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(499, 421);
-            btnSearch.Margin = new Padding(2);
+            btnSearch.Location = new Point(570, 561);
+            btnSearch.Margin = new Padding(2, 3, 2, 3);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(305, 54);
+            btnSearch.Size = new Size(349, 72);
             btnSearch.TabIndex = 5;
             btnSearch.Text = "Поиск";
             btnSearch.UseVisualStyleBackColor = false;
@@ -83,10 +83,10 @@
             labelTextVisualSearch.BackColor = Color.Transparent;
             labelTextVisualSearch.Font = new Font("Microsoft Sans Serif", 25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualSearch.ForeColor = Color.Black;
-            labelTextVisualSearch.Location = new Point(373, 23);
+            labelTextVisualSearch.Location = new Point(426, 31);
             labelTextVisualSearch.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualSearch.Name = "labelTextVisualSearch";
-            labelTextVisualSearch.Size = new Size(114, 39);
+            labelTextVisualSearch.Size = new Size(138, 48);
             labelTextVisualSearch.TabIndex = 9;
             labelTextVisualSearch.Text = "Поиск";
             // 
@@ -96,12 +96,12 @@
             txtArticle.BackColor = Color.White;
             txtArticle.Font = new Font("Microsoft Sans Serif", 15F);
             txtArticle.ForeColor = Color.Black;
-            txtArticle.Location = new Point(346, 154);
-            txtArticle.Margin = new Padding(2);
+            txtArticle.Location = new Point(395, 205);
+            txtArticle.Margin = new Padding(2, 3, 2, 3);
             txtArticle.Multiline = true;
             txtArticle.Name = "txtArticle";
             txtArticle.RightToLeft = RightToLeft.No;
-            txtArticle.Size = new Size(304, 33);
+            txtArticle.Size = new Size(347, 43);
             txtArticle.TabIndex = 10;
             // 
             // txtName
@@ -110,12 +110,12 @@
             txtName.BackColor = Color.White;
             txtName.Font = new Font("Microsoft Sans Serif", 15F);
             txtName.ForeColor = Color.Black;
-            txtName.Location = new Point(346, 226);
-            txtName.Margin = new Padding(2);
+            txtName.Location = new Point(395, 290);
+            txtName.Margin = new Padding(2, 3, 2, 3);
             txtName.Multiline = true;
             txtName.Name = "txtName";
             txtName.RightToLeft = RightToLeft.No;
-            txtName.Size = new Size(304, 33);
+            txtName.Size = new Size(347, 43);
             txtName.TabIndex = 11;
             // 
             // cbCategory
@@ -124,10 +124,10 @@
             cbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCategory.Font = new Font("Microsoft Sans Serif", 15F);
             cbCategory.FormattingEnabled = true;
-            cbCategory.Location = new Point(346, 298);
-            cbCategory.Margin = new Padding(2);
+            cbCategory.Location = new Point(395, 397);
+            cbCategory.Margin = new Padding(2, 3, 2, 3);
             cbCategory.Name = "cbCategory";
-            cbCategory.Size = new Size(304, 33);
+            cbCategory.Size = new Size(347, 37);
             cbCategory.TabIndex = 12;
             // 
             // labelTextVisualArticle
@@ -137,12 +137,13 @@
             labelTextVisualArticle.BackColor = Color.Transparent;
             labelTextVisualArticle.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualArticle.ForeColor = Color.Black;
-            labelTextVisualArticle.Location = new Point(190, 157);
+            labelTextVisualArticle.Location = new Point(191, 205);
             labelTextVisualArticle.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualArticle.Name = "labelTextVisualArticle";
-            labelTextVisualArticle.Size = new Size(96, 26);
+            labelTextVisualArticle.Size = new Size(117, 31);
             labelTextVisualArticle.TabIndex = 13;
             labelTextVisualArticle.Text = "Артикул";
+            labelTextVisualArticle.Click += labelTextVisualArticle_Click;
             // 
             // labelTextVisualProductName
             // 
@@ -151,10 +152,10 @@
             labelTextVisualProductName.BackColor = Color.Transparent;
             labelTextVisualProductName.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualProductName.ForeColor = Color.Black;
-            labelTextVisualProductName.Location = new Point(190, 229);
+            labelTextVisualProductName.Location = new Point(191, 302);
             labelTextVisualProductName.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualProductName.Name = "labelTextVisualProductName";
-            labelTextVisualProductName.Size = new Size(111, 26);
+            labelTextVisualProductName.Size = new Size(137, 31);
             labelTextVisualProductName.TabIndex = 14;
             labelTextVisualProductName.Text = "Название";
             // 
@@ -165,10 +166,10 @@
             labelCategory.BackColor = Color.Transparent;
             labelCategory.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelCategory.ForeColor = Color.Black;
-            labelCategory.Location = new Point(190, 301);
+            labelCategory.Location = new Point(191, 403);
             labelCategory.Margin = new Padding(2, 0, 2, 0);
             labelCategory.Name = "labelCategory";
-            labelCategory.Size = new Size(117, 26);
+            labelCategory.Size = new Size(144, 31);
             labelCategory.TabIndex = 15;
             labelCategory.Text = "Категория";
             // 
@@ -179,21 +180,20 @@
             labelART.BackColor = Color.Transparent;
             labelART.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelART.ForeColor = Color.Black;
-            labelART.Location = new Point(280, 157);
+            labelART.Location = new Point(312, 206);
             labelART.Margin = new Padding(2, 0, 2, 0);
             labelART.Name = "labelART";
-            labelART.Size = new Size(62, 26);
+            labelART.Size = new Size(78, 31);
             labelART.TabIndex = 16;
             labelART.Text = "ART-";
             // 
             // FormSearch
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(884, 567);
+            ClientSize = new Size(1010, 756);
             Controls.Add(labelART);
             Controls.Add(labelCategory);
             Controls.Add(labelTextVisualProductName);
@@ -206,7 +206,7 @@
             Controls.Add(btnCancel);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "FormSearch";
             Text = "Search";
             Load += FormSearch_Load;

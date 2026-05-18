@@ -35,6 +35,10 @@
             textBoxDecor = new TextBox();
             labelReport = new Label();
             dgvReport = new DataGridView();
+            Date = new DataGridViewTextBoxColumn();
+            CustomerName = new DataGridViewTextBoxColumn();
+            ShipmentAmount = new DataGridViewTextBoxColumn();
+            Profit = new DataGridViewTextBoxColumn();
             reportDtoBindingSource = new BindingSource(components);
             panelReport = new Panel();
             btnExportReport = new Button();
@@ -42,10 +46,6 @@
             dateTimePickerTo = new DateTimePicker();
             dateTimePickerFrom = new DateTimePicker();
             labelDate = new Label();
-            Date = new DataGridViewTextBoxColumn();
-            CustomerName = new DataGridViewTextBoxColumn();
-            ShipmentAmount = new DataGridViewTextBoxColumn();
-            Profit = new DataGridViewTextBoxColumn();
             panelReportTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReport).BeginInit();
             ((System.ComponentModel.ISupportInitialize)reportDtoBindingSource).BeginInit();
@@ -54,13 +54,14 @@
             // 
             // panelReportTitle
             // 
-            panelReportTitle.BackColor = Color.Gainsboro;
+            panelReportTitle.BackColor = Color.Gold;
             panelReportTitle.Controls.Add(textBoxDecor);
             panelReportTitle.Controls.Add(labelReport);
             panelReportTitle.Dock = DockStyle.Left;
             panelReportTitle.Location = new Point(0, 0);
+            panelReportTitle.Margin = new Padding(3, 4, 3, 4);
             panelReportTitle.Name = "panelReportTitle";
-            panelReportTitle.Size = new Size(222, 582);
+            panelReportTitle.Size = new Size(254, 776);
             panelReportTitle.TabIndex = 0;
             // 
             // textBoxDecor
@@ -68,18 +69,19 @@
             textBoxDecor.BackColor = SystemColors.MenuText;
             textBoxDecor.BorderStyle = BorderStyle.None;
             textBoxDecor.Font = new Font("Segoe UI", 1F);
-            textBoxDecor.Location = new Point(23, 68);
+            textBoxDecor.Location = new Point(26, 91);
+            textBoxDecor.Margin = new Padding(3, 4, 3, 4);
             textBoxDecor.Name = "textBoxDecor";
-            textBoxDecor.Size = new Size(175, 2);
+            textBoxDecor.Size = new Size(200, 3);
             textBoxDecor.TabIndex = 1;
             // 
             // labelReport
             // 
             labelReport.AutoSize = true;
             labelReport.Font = new Font("Segoe UI", 20F);
-            labelReport.Location = new Point(32, 16);
+            labelReport.Location = new Point(37, 21);
             labelReport.Name = "labelReport";
-            labelReport.Size = new Size(157, 37);
+            labelReport.Size = new Size(198, 46);
             labelReport.TabIndex = 0;
             labelReport.Text = "Отчетность";
             // 
@@ -88,6 +90,7 @@
             dgvReport.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvReport.AutoGenerateColumns = false;
             dgvReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvReport.BackgroundColor = Color.Gold;
             dgvReport.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -108,13 +111,47 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvReport.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvReport.Location = new Point(222, 77);
+            dgvReport.Location = new Point(254, 103);
+            dgvReport.Margin = new Padding(3, 4, 3, 4);
             dgvReport.MultiSelect = false;
             dgvReport.Name = "dgvReport";
             dgvReport.ReadOnly = true;
+            dgvReport.RowHeadersWidth = 51;
             dgvReport.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvReport.Size = new Size(724, 505);
+            dgvReport.Size = new Size(827, 673);
             dgvReport.TabIndex = 1;
+            // 
+            // Date
+            // 
+            Date.DataPropertyName = "Date";
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 6;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            // 
+            // CustomerName
+            // 
+            CustomerName.DataPropertyName = "CustomerName";
+            CustomerName.HeaderText = "CustomerName";
+            CustomerName.MinimumWidth = 6;
+            CustomerName.Name = "CustomerName";
+            CustomerName.ReadOnly = true;
+            // 
+            // ShipmentAmount
+            // 
+            ShipmentAmount.DataPropertyName = "ShipmentAmount";
+            ShipmentAmount.HeaderText = "ShipmentAmount";
+            ShipmentAmount.MinimumWidth = 6;
+            ShipmentAmount.Name = "ShipmentAmount";
+            ShipmentAmount.ReadOnly = true;
+            // 
+            // Profit
+            // 
+            Profit.DataPropertyName = "Profit";
+            Profit.HeaderText = "Profit";
+            Profit.MinimumWidth = 6;
+            Profit.Name = "Profit";
+            Profit.ReadOnly = true;
             // 
             // reportDtoBindingSource
             // 
@@ -122,16 +159,17 @@
             // 
             // panelReport
             // 
-            panelReport.BackColor = Color.DarkGray;
+            panelReport.BackColor = Color.Gold;
             panelReport.Controls.Add(btnExportReport);
             panelReport.Controls.Add(textBoxDecor2);
             panelReport.Controls.Add(dateTimePickerTo);
             panelReport.Controls.Add(dateTimePickerFrom);
             panelReport.Controls.Add(labelDate);
             panelReport.Dock = DockStyle.Top;
-            panelReport.Location = new Point(222, 0);
+            panelReport.Location = new Point(254, 0);
+            panelReport.Margin = new Padding(3, 4, 3, 4);
             panelReport.Name = "panelReport";
-            panelReport.Size = new Size(727, 79);
+            panelReport.Size = new Size(831, 105);
             panelReport.TabIndex = 2;
             // 
             // btnExportReport
@@ -142,10 +180,10 @@
             btnExportReport.FlatStyle = FlatStyle.Popup;
             btnExportReport.Font = new Font("Segoe UI", 12F);
             btnExportReport.ForeColor = Color.White;
-            btnExportReport.Location = new Point(493, 28);
-            btnExportReport.Margin = new Padding(2);
+            btnExportReport.Location = new Point(563, 37);
+            btnExportReport.Margin = new Padding(2, 3, 2, 3);
             btnExportReport.Name = "btnExportReport";
-            btnExportReport.Size = new Size(218, 31);
+            btnExportReport.Size = new Size(249, 41);
             btnExportReport.TabIndex = 7;
             btnExportReport.Text = "Экспорт отчета";
             btnExportReport.UseVisualStyleBackColor = false;
@@ -156,9 +194,10 @@
             textBoxDecor2.BackColor = SystemColors.MenuText;
             textBoxDecor2.BorderStyle = BorderStyle.None;
             textBoxDecor2.Font = new Font("Segoe UI", 1F);
-            textBoxDecor2.Location = new Point(219, 40);
+            textBoxDecor2.Location = new Point(250, 53);
+            textBoxDecor2.Margin = new Padding(3, 4, 3, 4);
             textBoxDecor2.Name = "textBoxDecor2";
-            textBoxDecor2.Size = new Size(20, 2);
+            textBoxDecor2.Size = new Size(23, 3);
             textBoxDecor2.TabIndex = 2;
             // 
             // dateTimePickerTo
@@ -166,9 +205,10 @@
             dateTimePickerTo.CalendarFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             dateTimePickerTo.Font = new Font("Segoe UI", 13F);
             dateTimePickerTo.Format = DateTimePickerFormat.Short;
-            dateTimePickerTo.Location = new Point(254, 26);
+            dateTimePickerTo.Location = new Point(290, 35);
+            dateTimePickerTo.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerTo.Name = "dateTimePickerTo";
-            dateTimePickerTo.Size = new Size(119, 31);
+            dateTimePickerTo.Size = new Size(135, 36);
             dateTimePickerTo.TabIndex = 4;
             // 
             // dateTimePickerFrom
@@ -176,58 +216,32 @@
             dateTimePickerFrom.CalendarFont = new Font("Segoe UI", 11F);
             dateTimePickerFrom.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             dateTimePickerFrom.Format = DateTimePickerFormat.Short;
-            dateTimePickerFrom.Location = new Point(87, 26);
+            dateTimePickerFrom.Location = new Point(99, 35);
+            dateTimePickerFrom.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerFrom.Name = "dateTimePickerFrom";
-            dateTimePickerFrom.Size = new Size(119, 30);
+            dateTimePickerFrom.Size = new Size(135, 36);
             dateTimePickerFrom.TabIndex = 3;
             // 
             // labelDate
             // 
             labelDate.AutoSize = true;
             labelDate.Font = new Font("Segoe UI", 15F);
-            labelDate.Location = new Point(18, 23);
+            labelDate.Location = new Point(21, 31);
             labelDate.Name = "labelDate";
-            labelDate.Size = new Size(54, 28);
+            labelDate.Size = new Size(68, 35);
             labelDate.TabIndex = 2;
             labelDate.Text = "Дата";
             // 
-            // Date
-            // 
-            Date.DataPropertyName = "Date";
-            Date.HeaderText = "Date";
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            // 
-            // CustomerName
-            // 
-            CustomerName.DataPropertyName = "CustomerName";
-            CustomerName.HeaderText = "CustomerName";
-            CustomerName.Name = "CustomerName";
-            CustomerName.ReadOnly = true;
-            // 
-            // ShipmentAmount
-            // 
-            ShipmentAmount.DataPropertyName = "ShipmentAmount";
-            ShipmentAmount.HeaderText = "ShipmentAmount";
-            ShipmentAmount.Name = "ShipmentAmount";
-            ShipmentAmount.ReadOnly = true;
-            // 
-            // Profit
-            // 
-            Profit.DataPropertyName = "Profit";
-            Profit.HeaderText = "Profit";
-            Profit.Name = "Profit";
-            Profit.ReadOnly = true;
-            // 
             // FormReports
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
-            ClientSize = new Size(949, 582);
+            ClientSize = new Size(1085, 776);
             Controls.Add(panelReport);
             Controls.Add(dgvReport);
             Controls.Add(panelReportTitle);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormReports";
             Text = "Отчетность";
             Load += FormReports_Load;

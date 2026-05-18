@@ -55,6 +55,7 @@
             cbProduct.Font = new Font("Microsoft Sans Serif", 15F);
             cbProduct.FormattingEnabled = true;
             cbProduct.Location = new Point(466, 183);
+            cbProduct.Location = new Point(214, 585);
             cbProduct.Margin = new Padding(2, 3, 2, 3);
             cbProduct.Name = "cbProduct";
             cbProduct.Size = new Size(295, 37);
@@ -65,6 +66,7 @@
             nudQuantity.Anchor = AnchorStyles.None;
             nudQuantity.Font = new Font("Microsoft Sans Serif", 15F);
             nudQuantity.Location = new Point(465, 259);
+            nudQuantity.Location = new Point(213, 661);
             nudQuantity.Margin = new Padding(2, 3, 2, 3);
             nudQuantity.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             nudQuantity.Name = "nudQuantity";
@@ -79,6 +81,7 @@
             labelTextVisualProduct.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualProduct.ForeColor = Color.Black;
             labelTextVisualProduct.Location = new Point(291, 182);
+            labelTextVisualProduct.Location = new Point(39, 584);
             labelTextVisualProduct.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualProduct.Name = "labelTextVisualProduct";
             labelTextVisualProduct.Size = new Size(91, 37);
@@ -93,6 +96,7 @@
             labelTextVisualCountProduct.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualCountProduct.ForeColor = Color.Black;
             labelTextVisualCountProduct.Location = new Point(291, 257);
+            labelTextVisualCountProduct.Location = new Point(39, 659);
             labelTextVisualCountProduct.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualCountProduct.Name = "labelTextVisualCountProduct";
             labelTextVisualCountProduct.Size = new Size(161, 37);
@@ -177,6 +181,7 @@
             // dgvCart
             // 
             dgvCart.Anchor = AnchorStyles.None;
+            dgvCart.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
@@ -213,6 +218,7 @@
             labelTextVisualPrice.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualPrice.ForeColor = Color.Black;
             labelTextVisualPrice.Location = new Point(291, 324);
+            labelTextVisualPrice.Location = new Point(542, 483);
             labelTextVisualPrice.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualPrice.Name = "labelTextVisualPrice";
             labelTextVisualPrice.Size = new Size(81, 37);
@@ -227,6 +233,7 @@
             labelTextVisualSelling.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualSelling.ForeColor = Color.Black;
             labelTextVisualSelling.Location = new Point(291, 361);
+            labelTextVisualSelling.Location = new Point(537, 523);
             labelTextVisualSelling.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualSelling.Name = "labelTextVisualSelling";
             labelTextVisualSelling.Size = new Size(130, 37);
@@ -238,6 +245,7 @@
             nudTotalPrice.Anchor = AnchorStyles.None;
             nudTotalPrice.Font = new Font("Microsoft Sans Serif", 15F);
             nudTotalPrice.Location = new Point(464, 340);
+            nudTotalPrice.Location = new Point(696, 503);
             nudTotalPrice.Margin = new Padding(2, 3, 2, 3);
             nudTotalPrice.Maximum = new decimal(new int[] { 1316134912, 2328, 0, 0 });
             nudTotalPrice.Name = "nudTotalPrice";
@@ -248,8 +256,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1650, 849);
             Controls.Add(nudTotalPrice);

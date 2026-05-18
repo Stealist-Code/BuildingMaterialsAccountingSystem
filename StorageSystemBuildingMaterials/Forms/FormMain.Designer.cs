@@ -66,7 +66,7 @@ namespace StorageSystemBuildingMaterials.Forms
             dgvProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvProducts.BackgroundColor = Color.LightGray;
+            dgvProducts.BackgroundColor = Color.White;
             dgvProducts.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.LightGray;
@@ -88,6 +88,7 @@ namespace StorageSystemBuildingMaterials.Forms
             dgvProducts.EnableHeadersVisualStyles = false;
             dgvProducts.GridColor = SystemColors.ActiveCaptionText;
             dgvProducts.Location = new Point(222, 47);
+            dgvProducts.Location = new Point(268, 50);
             dgvProducts.Margin = new Padding(2, 3, 2, 3);
             dgvProducts.MultiSelect = false;
             dgvProducts.Name = "dgvProducts";
@@ -100,11 +101,12 @@ namespace StorageSystemBuildingMaterials.Forms
             dgvProducts.RowTemplate.Height = 31;
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProducts.Size = new Size(927, 736);
+            dgvProducts.Size = new Size(856, 715);
             dgvProducts.TabIndex = 1;
             // 
             // buttonShipment
             // 
-            buttonShipment.BackColor = Color.LightGray;
+            buttonShipment.BackColor = Color.Gold;
             buttonShipment.FlatAppearance.BorderColor = Color.LightGray;
             buttonShipment.FlatAppearance.BorderSize = 0;
             buttonShipment.FlatStyle = FlatStyle.Flat;
@@ -120,7 +122,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // buttonSearch
             // 
-            buttonSearch.BackColor = Color.LightGray;
+            buttonSearch.BackColor = Color.Gold;
             buttonSearch.FlatAppearance.BorderColor = Color.LightGray;
             buttonSearch.FlatAppearance.BorderSize = 0;
             buttonSearch.FlatStyle = FlatStyle.Flat;
@@ -135,7 +137,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // buttonLogout
             // 
-            buttonLogout.BackColor = Color.LightGray;
+            buttonLogout.BackColor = Color.Gold;
             buttonLogout.BackgroundImageLayout = ImageLayout.None;
             buttonLogout.FlatAppearance.BorderColor = Color.LightGray;
             buttonLogout.FlatAppearance.BorderSize = 0;
@@ -152,7 +154,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // buttonAdmin
             // 
             buttonAdmin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonAdmin.BackColor = Color.LightGray;
+            buttonAdmin.BackColor = Color.Gold;
             buttonAdmin.BackgroundImageLayout = ImageLayout.None;
             buttonAdmin.FlatAppearance.BorderColor = Color.LightGray;
             buttonAdmin.FlatAppearance.BorderSize = 0;
@@ -181,7 +183,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // textBoxDecor2
             // 
             textBoxDecor2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxDecor2.BackColor = Color.LightGray;
+            textBoxDecor2.BackColor = Color.Gold;
             textBoxDecor2.BorderStyle = BorderStyle.None;
             textBoxDecor2.Location = new Point(-6, 1);
             textBoxDecor2.Margin = new Padding(2, 3, 2, 3);
@@ -193,7 +195,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // textBoxDecor3
             // 
-            textBoxDecor3.BackColor = Color.LightGray;
+            textBoxDecor3.BackColor = Color.Gold;
             textBoxDecor3.BorderStyle = BorderStyle.None;
             textBoxDecor3.Location = new Point(2, 1);
             textBoxDecor3.Margin = new Padding(2, 3, 2, 3);
@@ -205,7 +207,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // textBoxVisualCatalog
             // 
-            textBoxVisualCatalog.BackColor = Color.LightGray;
+            textBoxVisualCatalog.BackColor = Color.Gold;
             textBoxVisualCatalog.BorderStyle = BorderStyle.None;
             textBoxVisualCatalog.Font = new Font("Microsoft Sans Serif", 14F);
             textBoxVisualCatalog.Location = new Point(11, 179);
@@ -221,6 +223,8 @@ namespace StorageSystemBuildingMaterials.Forms
             // pnlCategories
             // 
             pnlCategories.Location = new Point(2, 227);
+            pnlCategories.BackColor = Color.Gold;
+            pnlCategories.Location = new Point(2, 228);
             pnlCategories.Margin = new Padding(2, 3, 2, 3);
             pnlCategories.Name = "pnlCategories";
             pnlCategories.Size = new Size(218, 555);
@@ -228,7 +232,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // btnAllProducts
             // 
-            btnAllProducts.BackColor = Color.LightGray;
+            btnAllProducts.BackColor = Color.Gold;
             btnAllProducts.FlatAppearance.BorderSize = 0;
             btnAllProducts.FlatStyle = FlatStyle.Flat;
             btnAllProducts.Font = new Font("Microsoft Sans Serif", 14F);
@@ -243,7 +247,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // buttonSettings
             // 
             buttonSettings.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonSettings.BackColor = Color.LightGray;
+            buttonSettings.BackColor = Color.Gold;
             buttonSettings.BackgroundImageLayout = ImageLayout.None;
             buttonSettings.FlatAppearance.BorderColor = Color.LightGray;
             buttonSettings.FlatAppearance.BorderSize = 0;
@@ -260,7 +264,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // buttonReport
             // 
-            buttonReport.BackColor = Color.LightGray;
+            buttonReport.BackColor = Color.Gold;
             buttonReport.FlatAppearance.BorderColor = Color.LightGray;
             buttonReport.FlatAppearance.BorderSize = 0;
             buttonReport.FlatStyle = FlatStyle.Flat;
@@ -276,7 +280,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // buttonDelivery
             // 
-            buttonDelivery.BackColor = Color.LightGray;
+            buttonDelivery.BackColor = Color.Gold;
             buttonDelivery.FlatAppearance.BorderColor = Color.LightGray;
             buttonDelivery.FlatAppearance.BorderSize = 0;
             buttonDelivery.FlatStyle = FlatStyle.Flat;
@@ -304,7 +308,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // btnExpiredProduct
             // 
-            btnExpiredProduct.BackColor = Color.LightGray;
+            btnExpiredProduct.BackColor = Color.Gold;
             btnExpiredProduct.FlatAppearance.BorderSize = 0;
             btnExpiredProduct.FlatStyle = FlatStyle.Flat;
             btnExpiredProduct.Font = new Font("Microsoft Sans Serif", 14F);
@@ -322,6 +326,7 @@ namespace StorageSystemBuildingMaterials.Forms
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
+            BackColor = Color.Gold;
             ClientSize = new Size(1146, 777);
             Controls.Add(btnExpiredProduct);
             Controls.Add(textBox1);

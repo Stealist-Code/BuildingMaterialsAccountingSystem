@@ -62,5 +62,15 @@ namespace StorageSystemBuildingMaterials.Forms
                 }
             }
         }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
