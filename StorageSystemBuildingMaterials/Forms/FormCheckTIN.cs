@@ -38,7 +38,7 @@ namespace StorageSystemBuildingMaterials.Forms
             }
 
             var message = await _tINService.CheckCompanyOnBlackList(tIN);
-            if (message is not null)
+            if (!string.IsNullOrEmpty(message))
             {
                 MessageBox.Show(message);
                 return;
@@ -93,13 +93,6 @@ namespace StorageSystemBuildingMaterials.Forms
             }
 
             var customer = await _tINService.FindCustomerWithTIN(selectedCustomer.TIN);
-
-            if (string.IsNullOrEmpty(customer.TIN) || customer.Id == Guid.Empty)
-            {
-                MessageBox.Show("Клиент не найден в системе", "Ошибка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
             var shipmentForm = new FormShipment(_userId, _productService, _shipmentService, _shipmentValidation, customer, this);
 
