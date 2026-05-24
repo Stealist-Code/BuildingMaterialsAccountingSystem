@@ -150,13 +150,13 @@ namespace StorageSystemBuildingMaterials.Services
                             if (supplyItem.CurrentStock <= item.Quantity)
                             {
                                 item.Quantity -= supplyItem.CurrentStock;
-                                totalPurchasePrice += supplyItem.CurrentStock * supplyItem.PurchasePrice;
+                                totalPurchasePrice += supplyItem.CurrentStock * supplyItem.PurchasePriceOnDayPurchace;
                                 supplyItem.CurrentStock = 0;
                             }
                             else
                             {
                                 supplyItem.CurrentStock -= item.Quantity;
-                                totalPurchasePrice += item.Quantity * supplyItem.PurchasePrice;
+                                totalPurchasePrice += item.Quantity * supplyItem.PurchasePriceOnDayPurchace;
                                 item.Quantity = 0;
                             }
                         }

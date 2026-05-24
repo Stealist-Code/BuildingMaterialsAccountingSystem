@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StorageSystemBuildingMaterials.Services.State;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -35,9 +36,14 @@ namespace StorageSystemBuildingMaterials.Models
         public int CurrentStock { get; set; }
 
         /// <summary>
-        /// Цена закупки
+        /// Цена на сегодняшний день
         /// </summary>
         public decimal PurchasePrice { get; set; }
+
+        /// <summary>
+        /// Цена на день закупки
+        /// </summary>
+        public decimal PurchasePriceOnDayPurchace { get; set; }
 
         /// <summary>
         /// Срок годности
@@ -48,6 +54,11 @@ namespace StorageSystemBuildingMaterials.Models
         /// Дата приема
         /// </summary>
         public DateTime ReceivedDate { get; set; }
+
+        /// <summary>
+        /// Курс валюты соответствующий днью закупки
+        /// </summary>
+        public decimal ExchangeRateOnDayPurchace { get; set; }
 
         /// <summary>
         /// Навигационное свойство состояния товарной позиции

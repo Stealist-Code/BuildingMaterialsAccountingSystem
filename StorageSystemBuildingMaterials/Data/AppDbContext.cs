@@ -199,9 +199,11 @@ namespace StorageSystemBuildingMaterials.Data
                     .OnDelete(DeleteBehavior.Cascade);
 
                 entity.Property(x => x.Quantity).IsRequired();
-                entity.Property(x => x.PurchasePrice).HasColumnType("decimal(18,2)"); ;
+                entity.Property(x => x.PurchasePrice).HasColumnType("decimal(18,2)");
+                entity.Property(x => x.PurchasePriceOnDayPurchace).HasColumnType("decimal(18,2)");
                 entity.Property(x => x.ExpirationDate).IsRequired();
                 entity.Property(x => x.ReceivedDate).IsRequired();
+                entity.Property(x => x.ExchangeRateOnDayPurchace).HasColumnType("decimal(18,2)");
 
                 entity.HasOne(x => x.ProductState)
                     .WithMany()

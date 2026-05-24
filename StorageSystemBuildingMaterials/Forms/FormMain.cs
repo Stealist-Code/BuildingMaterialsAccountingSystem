@@ -222,7 +222,7 @@ namespace StorageSystemBuildingMaterials.Forms
             {
                 var adminForm = new FormAdmin(
                     () => new WorkersControl(_userService),
-                    () => new ProductsControl(_productService, _categoryService),
+                    () => new ProductsControl(_productService, _categoryService, _supplyService),
                     () => new ShipmentsControl(_shipmentService)
                 );
 

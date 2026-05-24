@@ -112,7 +112,6 @@ namespace StorageSystemBuildingMaterials.Forms
                 return;
             }
 
-
             try
             {
                 int idx = dgvCart.CurrentRow.Index;

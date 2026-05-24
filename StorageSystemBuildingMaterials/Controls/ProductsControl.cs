@@ -11,14 +11,17 @@ namespace StorageSystemBuildingMaterials.Controls
     public partial class ProductsControl : UserControl
     {
         private readonly IProductService _productService;
+        private Button warehouseMapBtn;
         private readonly ICategoryService _categoryService;
+        private readonly ISupplyService _supplyService;
 
-        public ProductsControl(IProductService productService, ICategoryService categoryService)
+        public ProductsControl(IProductService productService, ICategoryService categoryService, ISupplyService supplyService)
         {
             InitializeComponent();
 
             _productService = productService;
             _categoryService = categoryService;
+            _supplyService = supplyService;
 
             Load += OnLoad;
             productBtn.Click += OnProductBtnClick;
@@ -63,8 +66,8 @@ namespace StorageSystemBuildingMaterials.Controls
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             dgvProducts = new DataGridView();
             cmsProduct = new ContextMenuStrip(components);
             addProductToolStripMenuItem = new ToolStripMenuItem();
@@ -76,6 +79,7 @@ namespace StorageSystemBuildingMaterials.Controls
             addCategoryToolStripMenuItem = new ToolStripMenuItem();
             editCategoryToolStripMenuItem = new ToolStripMenuItem();
             deleteCategoryToolStripMenuItem = new ToolStripMenuItem();
+            warehouseMapBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             cmsProduct.SuspendLayout();
             cmsCategory.SuspendLayout();
@@ -86,56 +90,58 @@ namespace StorageSystemBuildingMaterials.Controls
             dgvProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProducts.BackgroundColor = Color.LightGray;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.LightGray;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.LightGray;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvProducts.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvProducts.DefaultCellStyle = dataGridViewCellStyle4;
             dgvProducts.Location = new Point(0, 50);
             dgvProducts.MultiSelect = false;
             dgvProducts.Name = "dgvProducts";
             dgvProducts.ReadOnly = true;
+            dgvProducts.RowHeadersWidth = 51;
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProducts.Size = new Size(846, 494);
             dgvProducts.TabIndex = 0;
             // 
             // cmsProduct
             // 
+            cmsProduct.ImageScalingSize = new Size(20, 20);
             cmsProduct.Items.AddRange(new ToolStripItem[] { addProductToolStripMenuItem, editProductToolStripMenuItem, deleteProductToolStripMenuItem });
             cmsProduct.Name = "cmsProduct";
-            cmsProduct.Size = new Size(155, 70);
+            cmsProduct.Size = new Size(181, 76);
             cmsProduct.Text = Resources.Product;
             // 
             // addProductToolStripMenuItem
             // 
             addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
-            addProductToolStripMenuItem.Size = new Size(154, 22);
+            addProductToolStripMenuItem.Size = new Size(180, 24);
             addProductToolStripMenuItem.Text = Resources.Add;
             addProductToolStripMenuItem.Click += addProductToolStripMenuItem_Click;
             // 
             // editProductToolStripMenuItem
             // 
             editProductToolStripMenuItem.Name = "editProductToolStripMenuItem";
-            editProductToolStripMenuItem.Size = new Size(154, 22);
+            editProductToolStripMenuItem.Size = new Size(180, 24);
             editProductToolStripMenuItem.Text = Resources.Edit;
             editProductToolStripMenuItem.Click += editProductToolStripMenuItem_Click;
             // 
             // deleteProductToolStripMenuItem
             // 
             deleteProductToolStripMenuItem.Name = "deleteProductToolStripMenuItem";
-            deleteProductToolStripMenuItem.Size = new Size(154, 22);
+            deleteProductToolStripMenuItem.Size = new Size(180, 24);
             deleteProductToolStripMenuItem.Text = Resources.Delete;
             deleteProductToolStripMenuItem.Click += deleteProductToolStripMenuItem_Click;
             // 
@@ -159,33 +165,45 @@ namespace StorageSystemBuildingMaterials.Controls
             // 
             // cmsCategory
             // 
+            cmsCategory.ImageScalingSize = new Size(20, 20);
             cmsCategory.Items.AddRange(new ToolStripItem[] { addCategoryToolStripMenuItem, editCategoryToolStripMenuItem, deleteCategoryToolStripMenuItem });
             cmsCategory.Name = "cmsCategory";
-            cmsCategory.Size = new Size(155, 70);
+            cmsCategory.Size = new Size(181, 76);
             // 
             // addCategoryToolStripMenuItem
             // 
             addCategoryToolStripMenuItem.Name = "addCategoryToolStripMenuItem";
-            addCategoryToolStripMenuItem.Size = new Size(154, 22);
+            addCategoryToolStripMenuItem.Size = new Size(180, 24);
             addCategoryToolStripMenuItem.Text = Resources.Add;
             addCategoryToolStripMenuItem.Click += addCategoryToolStripMenuItem_Click;
             // 
             // editCategoryToolStripMenuItem
             // 
             editCategoryToolStripMenuItem.Name = "editCategoryToolStripMenuItem";
-            editCategoryToolStripMenuItem.Size = new Size(154, 22);
+            editCategoryToolStripMenuItem.Size = new Size(180, 24);
             editCategoryToolStripMenuItem.Text = Resources.Edit;
             editCategoryToolStripMenuItem.Click += editCategoryToolStripMenuItem_Click;
             // 
             // deleteCategoryToolStripMenuItem
             // 
             deleteCategoryToolStripMenuItem.Name = "deleteCategoryToolStripMenuItem";
-            deleteCategoryToolStripMenuItem.Size = new Size(154, 22);
+            deleteCategoryToolStripMenuItem.Size = new Size(180, 24);
             deleteCategoryToolStripMenuItem.Text = Resources.Delete;
             deleteCategoryToolStripMenuItem.Click += deleteCategoryToolStripMenuItem_Click;
             // 
+            // warehouseMapBtn
+            // 
+            warehouseMapBtn.Location = new Point(336, 14);
+            warehouseMapBtn.Name = "warehouseMapBtn";
+            warehouseMapBtn.Size = new Size(148, 30);
+            warehouseMapBtn.TabIndex = 3;
+            warehouseMapBtn.Text = "Карта склада";
+            warehouseMapBtn.UseVisualStyleBackColor = true;
+            warehouseMapBtn.Click += warehouseMapBtn_Click;
+            // 
             // ProductsControl
             // 
+            Controls.Add(warehouseMapBtn);
             Controls.Add(categoryBtn);
             Controls.Add(productBtn);
             Controls.Add(dgvProducts);
@@ -366,6 +384,12 @@ namespace StorageSystemBuildingMaterials.Controls
         private void OnCategoryBtnClick(object sender, EventArgs e)
         {
             cmsCategory.Show(categoryBtn, new Point(0, categoryBtn.Height));
+        }
+
+        private void warehouseMapBtn_Click(object sender, EventArgs e)
+        {
+            var warehouseMapForm = new FormWarehouseMap(_supplyService);
+            warehouseMapForm.ShowDialog();
         }
     }
 }
