@@ -40,6 +40,7 @@
             // 
             // dgvTIN
             // 
+            dgvTIN.BackgroundColor = SystemColors.Control;
             dgvTIN.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTIN.Location = new Point(12, 118);
             dgvTIN.Name = "dgvTIN";
@@ -75,38 +76,48 @@
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(112, 476);
+            buttonCancel.BackColor = Color.Black;
+            buttonCancel.FlatStyle = FlatStyle.Popup;
+            buttonCancel.ForeColor = SystemColors.Control;
+            buttonCancel.Location = new Point(12, 476);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(94, 29);
+            buttonCancel.Size = new Size(235, 30);
             buttonCancel.TabIndex = 4;
             buttonCancel.Text = "Отменить";
-            buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.UseVisualStyleBackColor = false;
             buttonCancel.Click += buttonCancel_Click;
             // 
             // buttonSelect
             // 
-            buttonSelect.Location = new Point(423, 476);
+            buttonSelect.BackColor = Color.Black;
+            buttonSelect.FlatStyle = FlatStyle.Popup;
+            buttonSelect.ForeColor = SystemColors.Control;
+            buttonSelect.Location = new Point(355, 476);
             buttonSelect.Name = "buttonSelect";
-            buttonSelect.Size = new Size(94, 29);
+            buttonSelect.Size = new Size(235, 30);
             buttonSelect.TabIndex = 5;
             buttonSelect.Text = "Выбрать";
-            buttonSelect.UseVisualStyleBackColor = true;
+            buttonSelect.UseVisualStyleBackColor = false;
             buttonSelect.Click += buttonSelect_Click;
             // 
             // buttonCheck
             // 
-            buttonCheck.Location = new Point(747, 476);
+            buttonCheck.BackColor = Color.Black;
+            buttonCheck.FlatStyle = FlatStyle.Popup;
+            buttonCheck.ForeColor = SystemColors.Control;
+            buttonCheck.Location = new Point(685, 476);
             buttonCheck.Name = "buttonCheck";
-            buttonCheck.Size = new Size(94, 29);
+            buttonCheck.Size = new Size(235, 30);
             buttonCheck.TabIndex = 6;
             buttonCheck.Text = "Проверить";
-            buttonCheck.UseVisualStyleBackColor = true;
+            buttonCheck.UseVisualStyleBackColor = false;
             buttonCheck.Click += buttonCheck_Click;
             // 
             // FormCheckTIN
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Gold;
             ClientSize = new Size(932, 531);
             Controls.Add(buttonCheck);
             Controls.Add(buttonSelect);

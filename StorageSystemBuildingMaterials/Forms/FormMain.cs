@@ -150,7 +150,7 @@ namespace StorageSystemBuildingMaterials.Forms
                     Height = 35,
                     FlatStyle = FlatStyle.Flat,
                     Margin = new Padding(5),
-                    BackColor = Color.LightGray,
+                    BackColor = Color.Gold,
                     ForeColor = Color.Black,
                     TextAlign = ContentAlignment.MiddleLeft,
                     Location = new Point(5, y)

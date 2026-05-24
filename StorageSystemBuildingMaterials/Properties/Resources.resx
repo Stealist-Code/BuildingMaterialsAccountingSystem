@@ -359,7 +359,7 @@
     <value>Вход</value>
   </data>
   <data name="Register" xml:space="preserve">
-    <value>Нет аккаунта? Зарегистрироваться</value>
+    <value>Зарегистрироваться</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Пароль</value>
@@ -377,7 +377,7 @@
     <value>Регистрация</value>
   </data>
   <data name="RegisrationINAuth" xml:space="preserve">
-    <value>Уже есть аккаунт? Авторизоваться</value>
+    <value>Авторизоваться</value>
   </data>
   <data name="FonMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

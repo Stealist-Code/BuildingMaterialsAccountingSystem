@@ -46,6 +46,7 @@
             labeRegistration = new Label();
             buttonRegisrationINAuth = new Button();
             errorProvider = new ErrorProvider(components);
+            labelAccount = new Label();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
@@ -233,24 +234,34 @@
             // buttonRegisrationINAuth
             // 
             buttonRegisrationINAuth.Anchor = AnchorStyles.None;
-            buttonRegisrationINAuth.BackColor = Color.Transparent;
+            buttonRegisrationINAuth.BackColor = Color.Black;
             buttonRegisrationINAuth.FlatAppearance.BorderColor = Color.White;
             buttonRegisrationINAuth.FlatAppearance.BorderSize = 0;
             buttonRegisrationINAuth.FlatStyle = FlatStyle.Flat;
             buttonRegisrationINAuth.Font = new Font("Microsoft Sans Serif", 12.85714F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            buttonRegisrationINAuth.ForeColor = Color.Black;
-            buttonRegisrationINAuth.Location = new Point(368, 832);
+            buttonRegisrationINAuth.ForeColor = Color.White;
+            buttonRegisrationINAuth.Location = new Point(624, 832);
             buttonRegisrationINAuth.Margin = new Padding(2, 3, 2, 3);
             buttonRegisrationINAuth.Name = "buttonRegisrationINAuth";
-            buttonRegisrationINAuth.Size = new Size(501, 63);
+            buttonRegisrationINAuth.Size = new Size(279, 63);
             buttonRegisrationINAuth.TabIndex = 16;
-            buttonRegisrationINAuth.Text = "Уже есть аккаунт? Авторизоваться";
+            buttonRegisrationINAuth.Text = "Авторизоваться";
             buttonRegisrationINAuth.UseVisualStyleBackColor = false;
             buttonRegisrationINAuth.Click += buttonRegisrationINAuth_Click;
             // 
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
+            // 
+            // labelAccount
+            // 
+            labelAccount.AutoSize = true;
+            labelAccount.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            labelAccount.Location = new Point(332, 845);
+            labelAccount.Name = "labelAccount";
+            labelAccount.Size = new Size(276, 32);
+            labelAccount.TabIndex = 17;
+            labelAccount.Text = "Уже есть аккаунт?";
             // 
             // FormRegister
             // 
@@ -259,6 +270,7 @@
             BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1278, 1031);
+            Controls.Add(labelAccount);
             Controls.Add(buttonRegisrationINAuth);
             Controls.Add(labeRegistration);
             Controls.Add(labelTextVisualCheckPassword);
@@ -304,5 +316,6 @@
         private System.Windows.Forms.Label labeRegistration;
         private System.Windows.Forms.Button buttonRegisrationINAuth;
         private ErrorProvider errorProvider;
+        private Label labelAccount;
     }
 }

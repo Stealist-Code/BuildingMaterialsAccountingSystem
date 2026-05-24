@@ -15,6 +15,7 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly Guid _userId;
         private readonly Guid _addressId;
         private readonly Guid _customerId;
+        private readonly string _tIN;
         private readonly Form _formCheckTin;
         private List<CartItemDto> cart = new List<CartItemDto>();
 
@@ -27,6 +28,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _shipmentService = shipmentService;
             _shipmentValidation = shipmentValidation;
             _customerId = customer.Id;
+            _tIN = customer.TIN;
             _addressId = customer.Address.Id;
             _formCheckTin = formCheckTin;
 
@@ -42,6 +44,7 @@ namespace StorageSystemBuildingMaterials.Forms
         {
             var products = await _productService.GetProducts();
 
+            textBoxTIN.Text = _tIN;
             cbProduct.DataSource = products;
             cbProduct.DisplayMember = "Name";
             cbProduct.ValueMember = "Id";
@@ -139,7 +142,7 @@ namespace StorageSystemBuildingMaterials.Forms
                     Id = Guid.NewGuid(),
                     ProductId = c.ProductId,
                     Quantity = c.Quantity,
-                    
+
                 }).ToList();
 
                 await _shipmentService.CreateShipment(
@@ -164,11 +167,6 @@ namespace StorageSystemBuildingMaterials.Forms
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         /// <summary>
         /// Локализация
         /// </summary>
@@ -182,7 +180,6 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualProduct.Text = Resources.Product;
             labelTextVisualCountProduct.Text = Resources.Amount;
             labelTextVisualPrice.Text = Resources.Price;
-            labelTextVisualSelling.Text = Resources.Selling;
             labelTextVisualShipment.Text = Resources.CreatingShipment;
             labelPositions.Text = Resources.Positions;
 
@@ -193,6 +190,11 @@ namespace StorageSystemBuildingMaterials.Forms
         private void FormShipment_Load(object sender, EventArgs e)
         {
             ApplyLocalization();
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -103,7 +103,6 @@
             btnDelete.FlatStyle = FlatStyle.Popup;
             btnDelete.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(695, 523);
             btnDelete.Location = new Point(374, 523);
             btnDelete.Margin = new Padding(2, 3, 2, 3);
             btnDelete.Name = "btnDelete";
@@ -122,7 +121,6 @@
             btnSave.FlatStyle = FlatStyle.Popup;
             btnSave.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(695, 523);
             btnSave.Location = new Point(688, 523);
             btnSave.Margin = new Padding(2, 3, 2, 3);
             btnSave.Name = "btnSave";
@@ -137,7 +135,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gold;
-            BackgroundImageLayout = ImageLayout.Stretch;
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1000, 716);
             Controls.Add(btnSave);
             Controls.Add(btnDelete);

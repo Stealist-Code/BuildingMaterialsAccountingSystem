@@ -929,7 +929,7 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Уже есть аккаунт? Авторизоваться.
+        ///   Ищет локализованную строку, похожую на Авторизоваться.
         /// </summary>
         public static string RegisrationINAuth {
             get {
@@ -938,7 +938,7 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Нет аккаунта? Зарегистрироваться.
+        ///   Ищет локализованную строку, похожую на Зарегистрироваться.
         /// </summary>
         public static string Register {
             get {

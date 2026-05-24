@@ -40,6 +40,7 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualAuth = new Label();
             labelTextVisualEmail = new Label();
             labelTextVisualPassword = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // textBoxEmail
@@ -62,7 +63,7 @@ namespace StorageSystemBuildingMaterials.Forms
             textBoxPassword.BackColor = Color.White;
             textBoxPassword.Font = new Font("Microsoft Sans Serif", 16F);
             textBoxPassword.ForeColor = Color.Black;
-            textBoxPassword.Location = new Point(507, 397);
+            textBoxPassword.Location = new Point(506, 385);
             textBoxPassword.Margin = new Padding(2, 3, 2, 3);
             textBoxPassword.Multiline = true;
             textBoxPassword.Name = "textBoxPassword";
@@ -73,18 +74,18 @@ namespace StorageSystemBuildingMaterials.Forms
             // buttonRegister
             // 
             buttonRegister.Anchor = AnchorStyles.None;
-            buttonRegister.BackColor = Color.Transparent;
+            buttonRegister.BackColor = Color.Black;
             buttonRegister.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
             buttonRegister.FlatAppearance.BorderSize = 0;
             buttonRegister.FlatStyle = FlatStyle.Flat;
             buttonRegister.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            buttonRegister.ForeColor = SystemColors.ActiveCaptionText;
-            buttonRegister.Location = new Point(325, 519);
+            buttonRegister.ForeColor = SystemColors.Control;
+            buttonRegister.Location = new Point(563, 519);
             buttonRegister.Margin = new Padding(2, 3, 2, 3);
             buttonRegister.Name = "buttonRegister";
-            buttonRegister.Size = new Size(504, 61);
+            buttonRegister.Size = new Size(307, 61);
             buttonRegister.TabIndex = 2;
-            buttonRegister.Text = "Нет аккаунта? Зарегистрироваться";
+            buttonRegister.Text = "Зарегистрироваться";
             buttonRegister.UseVisualStyleBackColor = false;
             buttonRegister.Click += buttonRegister_Click;
             // 
@@ -136,14 +137,13 @@ namespace StorageSystemBuildingMaterials.Forms
             // labelTextVisualEmail
             // 
             labelTextVisualEmail.Anchor = AnchorStyles.None;
-            labelTextVisualEmail.AutoSize = true;
             labelTextVisualEmail.BackColor = Color.Transparent;
             labelTextVisualEmail.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualEmail.ForeColor = Color.Black;
-            labelTextVisualEmail.Location = new Point(246, 305);
+            labelTextVisualEmail.Location = new Point(278, 295);
             labelTextVisualEmail.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualEmail.Name = "labelTextVisualEmail";
-            labelTextVisualEmail.Size = new Size(257, 31);
+            labelTextVisualEmail.Size = new Size(187, 67);
             labelTextVisualEmail.TabIndex = 9;
             labelTextVisualEmail.Text = "Электронная почта";
             // 
@@ -154,12 +154,23 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualPassword.BackColor = Color.Transparent;
             labelTextVisualPassword.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualPassword.ForeColor = Color.Black;
-            labelTextVisualPassword.Location = new Point(263, 401);
+            labelTextVisualPassword.Location = new Point(278, 388);
             labelTextVisualPassword.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualPassword.Name = "labelTextVisualPassword";
             labelTextVisualPassword.Size = new Size(108, 31);
             labelTextVisualPassword.TabIndex = 11;
             labelTextVisualPassword.Text = "Пароль";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(329, 534);
+            label1.Name = "label1";
+            label1.Size = new Size(218, 32);
+            label1.TabIndex = 12;
+            label1.Text = "Нет аккаунта?";
             // 
             // FormLogin
             // 
@@ -168,6 +179,7 @@ namespace StorageSystemBuildingMaterials.Forms
             BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1183, 847);
+            Controls.Add(label1);
             Controls.Add(labelTextVisualPassword);
             Controls.Add(labelTextVisualEmail);
             Controls.Add(labelTextVisualAuth);
@@ -198,5 +210,6 @@ namespace StorageSystemBuildingMaterials.Forms
         private System.Windows.Forms.Label labelTextVisualAuth;
         private System.Windows.Forms.Label labelTextVisualEmail;
         private System.Windows.Forms.Label labelTextVisualPassword;
+        private Label label1;
     }
 }

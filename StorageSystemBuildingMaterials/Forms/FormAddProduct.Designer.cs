@@ -50,10 +50,6 @@
             btnCancel.FlatStyle = FlatStyle.Popup;
             btnCancel.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(136, 452);
-            btnCancel.Margin = new Padding(2, 3, 2, 3);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(294, 61);
             btnCancel.Location = new Point(46, 474);
             btnCancel.Margin = new Padding(2, 3, 2, 3);
             btnCancel.Name = "btnCancel";
@@ -72,10 +68,6 @@
             btnOK.FlatStyle = FlatStyle.Popup;
             btnOK.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnOK.ForeColor = Color.White;
-            btnOK.Location = new Point(541, 452);
-            btnOK.Margin = new Padding(2, 3, 2, 3);
-            btnOK.Name = "btnOK";
-            btnOK.Size = new Size(294, 62);
             btnOK.Location = new Point(545, 474);
             btnOK.Margin = new Padding(2, 3, 2, 3);
             btnOK.Name = "btnOK";
@@ -92,7 +84,6 @@
             labelTextVisualAddProduct.BackColor = Color.Transparent;
             labelTextVisualAddProduct.Font = new Font("Microsoft Sans Serif", 25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualAddProduct.ForeColor = Color.Black;
-            labelTextVisualAddProduct.Location = new Point(328, 57);
             labelTextVisualAddProduct.Location = new Point(334, 45);
             labelTextVisualAddProduct.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualAddProduct.Name = "labelTextVisualAddProduct";
@@ -107,7 +98,6 @@
             labelTextVisualName.BackColor = Color.Transparent;
             labelTextVisualName.Font = new Font("Microsoft Sans Serif", 16F);
             labelTextVisualName.ForeColor = Color.Black;
-            labelTextVisualName.Location = new Point(229, 182);
             labelTextVisualName.Location = new Point(235, 153);
             labelTextVisualName.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualName.Name = "labelTextVisualName";
@@ -122,7 +112,6 @@
             labelTextVisualCategory.BackColor = Color.Transparent;
             labelTextVisualCategory.Font = new Font("Microsoft Sans Serif", 16F);
             labelTextVisualCategory.ForeColor = Color.Black;
-            labelTextVisualCategory.Location = new Point(229, 263);
             labelTextVisualCategory.Location = new Point(228, 239);
             labelTextVisualCategory.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualCategory.Name = "labelTextVisualCategory";
@@ -137,7 +126,6 @@
             labelTextVisualUnit.BackColor = Color.Transparent;
             labelTextVisualUnit.Font = new Font("Microsoft Sans Serif", 16F);
             labelTextVisualUnit.ForeColor = Color.Black;
-            labelTextVisualUnit.Location = new Point(229, 338);
             labelTextVisualUnit.Location = new Point(219, 316);
             labelTextVisualUnit.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualUnit.Name = "labelTextVisualUnit";
@@ -152,7 +140,6 @@
             labelTextVisualUnit2.BackColor = Color.Transparent;
             labelTextVisualUnit2.Font = new Font("Microsoft Sans Serif", 16F);
             labelTextVisualUnit2.ForeColor = Color.Black;
-            labelTextVisualUnit2.Location = new Point(235, 355);
             labelTextVisualUnit2.Location = new Point(235, 375);
             labelTextVisualUnit2.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualUnit2.Name = "labelTextVisualUnit2";
@@ -167,7 +154,6 @@
             cbCategory.FormattingEnabled = true;
             cbCategory.IntegralHeight = false;
             cbCategory.ItemHeight = 31;
-            cbCategory.Location = new Point(451, 259);
             cbCategory.Location = new Point(457, 236);
             cbCategory.Margin = new Padding(2, 3, 2, 3);
             cbCategory.Name = "cbCategory";
@@ -180,7 +166,6 @@
             txtName.BackColor = Color.White;
             txtName.Font = new Font("Microsoft Sans Serif", 16F);
             txtName.ForeColor = Color.Black;
-            txtName.Location = new Point(451, 178);
             txtName.Location = new Point(457, 153);
             txtName.Margin = new Padding(2, 3, 2, 3);
             txtName.Multiline = true;
@@ -197,11 +182,6 @@
             comboBoxUnit.FormattingEnabled = true;
             comboBoxUnit.IntegralHeight = false;
             comboBoxUnit.ItemHeight = 31;
-            comboBoxUnit.Location = new Point(451, 330);
-            comboBoxUnit.Margin = new Padding(2, 3, 2, 3);
-            comboBoxUnit.Name = "comboBoxUnit";
-            comboBoxUnit.Size = new Size(311, 39);
-            comboBoxUnit.TabIndex = 27;
             comboBoxUnit.Location = new Point(454, 308);
             comboBoxUnit.Margin = new Padding(3, 4, 3, 4);
             comboBoxUnit.Name = "comboBoxUnit";
@@ -213,8 +193,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gold;
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(969, 556);
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(969, 597);
             Controls.Add(comboBoxUnit);
             Controls.Add(txtName);
@@ -231,7 +210,6 @@
             Margin = new Padding(2, 3, 2, 3);
             Name = "FormAddProduct";
             Text = "AddGood";
-            TransparencyKey = Color.Gold;
             ResumeLayout(false);
             PerformLayout();
 

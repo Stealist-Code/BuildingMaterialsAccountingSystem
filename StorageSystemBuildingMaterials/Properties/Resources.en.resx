@@ -355,7 +355,7 @@
     <value>Log In</value>
   </data>
   <data name="Register" xml:space="preserve">
-    <value>Don't have an account? Sign up</value>
+    <value>Sign up</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
@@ -373,7 +373,7 @@
     <value>Registration</value>
   </data>
   <data name="RegisrationINAuth" xml:space="preserve">
-    <value>Do you already have an account? Log in</value>
+    <value>Log in</value>
   </data>
   <data name="Shipment" xml:space="preserve">
     <value>Shipment</value>
