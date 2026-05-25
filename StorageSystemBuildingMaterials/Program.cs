@@ -13,9 +13,6 @@ namespace StorageSystemBuildingMaterials
         private static IWindsorContainer container;
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-        /// <summary>
-        /// Точка входа в приложение
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -28,35 +25,8 @@ namespace StorageSystemBuildingMaterials
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                var authService = container.Resolve<IAuthService>();
-                var authValidation = container.Resolve<IAuthValidation>();
-                var categoryService = container.Resolve<ICategoryService>();
-                var productService = container.Resolve<IProductService>();
-                var shipmentService = container.Resolve<IShipmentService>();
-                var shipmentValidation = container.Resolve<IShipmentValidation>();
-                var userService = container.Resolve<IUserService>();
-                var reportService = container.Resolve<IReportService>();
-                var currencyService = container.Resolve<ICurrencyService>();
-                var supplyService = container.Resolve<ISupplyService>();
-                var discountService = container.Resolve<IDiscountService>();
-                var tINService = container.Resolve<ITINService>();
-                var currencyState = container.Resolve<CurrencyState>();
-
-                Application.Run(new FormLogin(
-                    authService,
-                    authValidation,
-                    categoryService,
-                    productService,
-                    shipmentService,
-                    shipmentValidation,
-                    reportService,
-                    userService,
-                    currencyState,
-                    currencyService,
-                    supplyService,
-                    discountService,
-                    tINService
-                ));
+                var startForm = new FormLogInApp(container);
+                Application.Run(startForm);
             }
             catch (Exception ex)
             {

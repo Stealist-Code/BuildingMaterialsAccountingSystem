@@ -299,6 +299,7 @@ namespace StorageSystemBuildingMaterials.Forms
             var deliveryForm = new FormDelivery(_productService, _shipmentService, _discountService, _user.Id);
 
             deliveryForm.ShowDialog();
+            RefreshData();
         }
 
         private async void btnExpiredProduct_Click(object sender, EventArgs e)

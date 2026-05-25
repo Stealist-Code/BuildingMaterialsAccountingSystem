@@ -22,22 +22,14 @@ namespace StorageSystemBuildingMaterials.Services
 
         public async Task<ProductState> CreateProductState()
         {
-            var productState = await _db.ProductStates
-                    .AsNoTracking()
-                    .Include(x => x.StateRule)
-                    .FirstOrDefaultAsync(x => x.StateRule.Discount == 30m && x.StateRule.DaysBeforeDiscount == 14);
+            var stateRule = await CreateStateRule();
 
-            if (productState is null)
+            var productState = new ProductState
             {
-                var stateRule = await CreateStateRule();
-                productState = new ProductState()
-                {
-                    StateRuleId = stateRule.Id,
-                    StateRule = stateRule
-                };
-                await _db.ProductStates.AddAsync(productState);
-                await _db.SaveChangesAsync();
-            }
+                Id = Guid.NewGuid(),
+                StateRuleId = stateRule.Id
+            };
+
             return productState;
         }
 

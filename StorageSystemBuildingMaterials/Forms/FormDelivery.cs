@@ -124,6 +124,7 @@ namespace StorageSystemBuildingMaterials.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private async void btnCreate_Click(object sender, EventArgs e)
@@ -175,7 +176,10 @@ namespace StorageSystemBuildingMaterials.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                var msg = ex.Message;
+                if (ex.InnerException != null)
+                    msg += "\n\nInner: " + ex.InnerException.Message;
+                MessageBox.Show(msg);
             }
         }
 
