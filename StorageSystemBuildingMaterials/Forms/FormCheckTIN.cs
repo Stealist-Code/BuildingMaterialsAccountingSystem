@@ -12,9 +12,10 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly IProductService _productService;
         private readonly IShipmentService _shipmentService;
         private readonly IShipmentValidation _shipmentValidation;
+        private readonly IWeatherService _weatherService;
         private readonly Guid _userId;
 
-        public FormCheckTIN(ITINService tINService, Guid currentUserId, IProductService productService, IShipmentService shipmentService, IShipmentValidation shipmentValidation)
+        public FormCheckTIN(ITINService tINService, Guid currentUserId, IProductService productService, IShipmentService shipmentService, IShipmentValidation shipmentValidation, IWeatherService weatherService)
         {
             InitializeComponent();
 
@@ -23,6 +24,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _productService = productService;
             _shipmentService = shipmentService;
             _shipmentValidation = shipmentValidation;
+            _weatherService = weatherService;
 
             SetupDataGridView();
         }
@@ -36,6 +38,10 @@ namespace StorageSystemBuildingMaterials.Forms
                 MessageBox.Show("Указан неправильный ИНН.");
                 return;
             }
+
+            var (lat, lon) = await _tINService.GetCoordinates(customer.FullAddress);
+            var (weatherCode, temperature) = await _weatherService.GetWeatherCodeAndTemperature(lat, lon);
+            customer.Weather = $"{weatherCode}, {temperature}℃";
 
             var message = await _tINService.CheckCompanyOnBlackList(tIN);
             if (!string.IsNullOrEmpty(message))

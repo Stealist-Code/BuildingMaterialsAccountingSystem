@@ -138,5 +138,28 @@ namespace StorageSystemBuildingMaterials.Services
             }
             return message;
         }
+
+        /// <summary>
+        /// Метод для получения координатов по адресу
+        /// </summary>
+        /// <param name="address">Адрес</param>
+        /// <returns>Возвращает кортеж с широтой и долготой</returns>
+        public async Task<(double latitude, double longitude)> GetCoordinates(string address)
+        {
+            if (string.IsNullOrWhiteSpace(address))
+            {
+                return (0, 0);
+            }
+
+            var api = new CleanClientAsync(_apiKey, _secretKey);
+            var result = await api.Clean<Dadata.Model.Address>(address);
+            
+            if (!double.TryParse(result.geo_lat, out var lat) || !double.TryParse(result.geo_lon, out var lon))
+            {
+                return (0, 0);
+            }
+
+            return (lat, lon);
+        }
     }
 }

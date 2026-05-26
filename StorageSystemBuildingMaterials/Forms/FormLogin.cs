@@ -29,6 +29,7 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly CurrencyState _currencyState;
         private readonly ICurrencyService _currencyService;
         private readonly ITINService _tINService;
+        private readonly IWeatherService _weatherService;
 
         /// <summary>
         /// Конструктор формы входа
@@ -45,7 +46,8 @@ namespace StorageSystemBuildingMaterials.Forms
                          ICurrencyService currencyService,
                          ISupplyService supplyService,
                          IDiscountService discountService,
-                         ITINService tINService)
+                         ITINService tINService,
+                         IWeatherService weatherService)
         {
             InitializeComponent();
             _authService = authService;
@@ -61,6 +63,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _supplyService = supplyService;
             _discountService = discountService;
             _tINService = tINService;
+            _weatherService = weatherService;
         }
 
         /// <summary>
@@ -98,12 +101,13 @@ namespace StorageSystemBuildingMaterials.Forms
                                                 _shipmentValidation,
                                                 _userService,
                                                 _reportService,
-                                                () => new FormLogin(_authService, _authValidation, _categoryService, _productService, _shipmentService, _shipmentValidation, _reportService, _userService, _currencyState, _currencyService, _supplyService, _discountService, _tINService),
+                                                () => new FormLogin(_authService, _authValidation, _categoryService, _productService, _shipmentService, _shipmentValidation, _reportService, _userService, _currencyState, _currencyService, _supplyService, _discountService, _tINService, _weatherService),
                                                 _currencyState,
                                                 _currencyService,
                                                 _supplyService,
                                                 _discountService,
-                                                _tINService);
+                                                _tINService,
+                                                _weatherService);
                     mainForm.Show();
                     this.Hide();
                 }

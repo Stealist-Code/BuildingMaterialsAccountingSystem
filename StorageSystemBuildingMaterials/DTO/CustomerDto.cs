@@ -71,5 +71,10 @@ namespace StorageSystemBuildingMaterials.DTO
         /// Полный адрес до покупателя, куда отгружаем
         /// </summary>
         public string FullAddress { get; set; }
+
+        /// <summary>
+        /// Погода по текущему адресу
+        /// </summary>
+        public string? Weather { get; set; }
     }
 }
