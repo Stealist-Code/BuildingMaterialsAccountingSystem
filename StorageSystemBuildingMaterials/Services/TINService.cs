@@ -30,7 +30,7 @@ namespace StorageSystemBuildingMaterials.Services
             _client = new Client(httpClient);
             _db = db;
         }
-
+        
         public async Task<CustomerDto> GetInfoCustomer(string tIN)
         {
             var customer = await FindCustomerWithTIN(tIN);

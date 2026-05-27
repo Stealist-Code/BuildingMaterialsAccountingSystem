@@ -15,7 +15,6 @@ namespace StorageSystemBuildingMaterials.Tests.Validation
             {
                 Name = "Гвозди 100мм",
                 CategoryId = Guid.NewGuid(),
-                PurchasePrice = 150.50m,
                 Unit = "кг",
                 CurrentStock = 1000
             };
@@ -38,46 +37,13 @@ namespace StorageSystemBuildingMaterials.Tests.Validation
             {
                 Name = name,
                 CategoryId = Guid.NewGuid(),
-                PurchasePrice = 10m
+                Unit = "кг",
+                CurrentStock = 10
             };
 
             // Act & Assert
             var ex = Assert.Throws<Exception>(() => _validator.Validate(product));
             Assert.Equal("ProductNameRequired", ex.Message);
-        }
-
-        [Fact]
-        public void Validate_NegativePurchasePrice_ThrowsException()
-        {
-            // Arrange
-            var product = new Product
-            {
-                Name = "Товар",
-                CategoryId = Guid.NewGuid(),
-                PurchasePrice = -5m
-            };
-
-            // Act & Assert
-            var ex = Assert.Throws<Exception>(() => _validator.Validate(product));
-            Assert.Equal("InvalidPrice", ex.Message);
-        }
-
-        [Fact]
-        public void Validate_ZeroPurchasePrice_Valid()
-        {
-            // Arrange
-            var product = new Product
-            {
-                Name = "Бесплатный образец",
-                CategoryId = Guid.NewGuid(),
-                PurchasePrice = 0m
-            };
-
-            // Act
-            var exception = Record.Exception(() => _validator.Validate(product));
-
-            // Assert
-            Assert.Null(exception);
         }
 
         [Fact]
@@ -88,7 +54,8 @@ namespace StorageSystemBuildingMaterials.Tests.Validation
             {
                 Name = "Товар без категории",
                 CategoryId = Guid.Empty,
-                PurchasePrice = 100m
+                Unit = "шт",
+                CurrentStock = 100
             };
 
             // Act & Assert
