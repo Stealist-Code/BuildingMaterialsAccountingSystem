@@ -40,7 +40,7 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualAuth = new Label();
             labelTextVisualEmail = new Label();
             labelTextVisualPassword = new Label();
-            label1 = new Label();
+            labelWithoutAccount = new Label();
             SuspendLayout();
             // 
             // textBoxEmail
@@ -161,16 +161,16 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualPassword.TabIndex = 11;
             labelTextVisualPassword.Text = "Пароль";
             // 
-            // label1
+            // labelWithoutAccount
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(329, 534);
-            label1.Name = "label1";
-            label1.Size = new Size(218, 32);
-            label1.TabIndex = 12;
-            label1.Text = "Нет аккаунта?";
+            labelWithoutAccount.AutoSize = true;
+            labelWithoutAccount.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            labelWithoutAccount.ForeColor = SystemColors.ActiveCaptionText;
+            labelWithoutAccount.Location = new Point(329, 534);
+            labelWithoutAccount.Name = "labelWithoutAccount";
+            labelWithoutAccount.Size = new Size(218, 32);
+            labelWithoutAccount.TabIndex = 12;
+            labelWithoutAccount.Text = "Нет аккаунта?";
             // 
             // FormLogin
             // 
@@ -179,7 +179,7 @@ namespace StorageSystemBuildingMaterials.Forms
             BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1183, 847);
-            Controls.Add(label1);
+            Controls.Add(labelWithoutAccount);
             Controls.Add(labelTextVisualPassword);
             Controls.Add(labelTextVisualEmail);
             Controls.Add(labelTextVisualAuth);
@@ -210,6 +210,6 @@ namespace StorageSystemBuildingMaterials.Forms
         private System.Windows.Forms.Label labelTextVisualAuth;
         private System.Windows.Forms.Label labelTextVisualEmail;
         private System.Windows.Forms.Label labelTextVisualPassword;
-        private Label label1;
+        private Label labelWithoutAccount;
     }
 }

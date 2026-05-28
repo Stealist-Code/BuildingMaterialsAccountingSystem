@@ -127,7 +127,7 @@
             Controls.Add(labelCheckTIN);
             Controls.Add(dgvTIN);
             Name = "FormCheckTIN";
-            Text = "FormCheckTIN";
+            Text = "Проверка ИНН";
             ((System.ComponentModel.ISupportInitialize)dgvTIN).EndInit();
             ResumeLayout(false);
             PerformLayout();

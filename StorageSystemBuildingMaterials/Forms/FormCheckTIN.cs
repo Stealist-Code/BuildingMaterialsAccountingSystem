@@ -5,6 +5,9 @@ using StorageSystemBuildingMaterials.Validation.Interfaces;
 
 namespace StorageSystemBuildingMaterials.Forms
 {
+    /// <summary>
+    /// Форма для проверки ИНН
+    /// </summary>
     public partial class FormCheckTIN : Form
     {
         private readonly ITINService _tINService;
@@ -26,6 +29,8 @@ namespace StorageSystemBuildingMaterials.Forms
             _shipmentValidation = shipmentValidation;
             _weatherService = weatherService;
 
+            ApplyLocalization();
+
             SetupDataGridView();
         }
 
@@ -35,7 +40,7 @@ namespace StorageSystemBuildingMaterials.Forms
             var customer = await _tINService.GetInfoCustomer(tIN);
             if (customer is null)
             {
-                MessageBox.Show("Указан неправильный ИНН.");
+                MessageBox.Show(Resources.InvalidTIN);
                 return;
             }
 
@@ -108,6 +113,19 @@ namespace StorageSystemBuildingMaterials.Forms
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// Локализация
+        /// </summary>
+        public void ApplyLocalization()
+        {
+            labelCheckTIN.Text = Resources.CheckTIN;
+            labelTIN.Text = Resources.TIN;
+            buttonCancel.Text = Resources.Cancel;
+            buttonSelect.Text = Resources.Select;
+            buttonCheck.Text = Resources.Check;
+            this.Text = Resources.FormCheckTIN;
         }
     }
 }

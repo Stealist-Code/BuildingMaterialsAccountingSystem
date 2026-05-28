@@ -143,7 +143,6 @@
             labelTextVisualArticle.Size = new Size(117, 31);
             labelTextVisualArticle.TabIndex = 13;
             labelTextVisualArticle.Text = "Артикул";
-            labelTextVisualArticle.Click += labelTextVisualArticle_Click;
             // 
             // labelTextVisualProductName
             // 

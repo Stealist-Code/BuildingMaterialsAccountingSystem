@@ -507,4 +507,46 @@
   <data name="ExpiredProduct" xml:space="preserve">
     <value>Expired product</value>
   </data>
+  <data name="CheckTIN" xml:space="preserve">
+    <value>Checking for a counterparty</value>
+  </data>
+  <data name="TIN" xml:space="preserve">
+    <value>TIN</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="FormCheckTIN" xml:space="preserve">
+    <value>Check TIN</value>
+  </data>
+  <data name="InvalidTIN" xml:space="preserve">
+    <value>Incorrect TIN is specified</value>
+  </data>
+  <data name="WarehouseMap" xml:space="preserve">
+    <value>Warehouse map</value>
+  </data>
+  <data name="ShippingFirst" xml:space="preserve">
+    <value>Shipping first</value>
+  </data>
+  <data name="NextWeekShipmentPlan" xml:space="preserve">
+    <value>Next week's shipment plan</value>
+  </data>
+  <data name="StandardRotation" xml:space="preserve">
+    <value>Standard Rotation (FIFO)</value>
+  </data>
+  <data name="AccountingForBalances" xml:space="preserve">
+    <value>Accounting for balances without urgency</value>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>Row</value>
+  </data>
+  <data name="AlreadyAccount" xml:space="preserve">
+    <value>Do you already have an account?</value>
+  </data>
+  <data name="WithoutAccount" xml:space="preserve">
+    <value>No account?</value>
+  </data>
 </root>

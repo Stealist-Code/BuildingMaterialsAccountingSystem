@@ -7,6 +7,9 @@ using StorageSystemBuildingMaterials.Validation.Interfaces;
 
 namespace StorageSystemBuildingMaterials.Forms
 {
+    /// <summary>
+    /// Форма для оформления отгрузок
+    /// </summary>
     public partial class FormShipment : Form, ILocalizable
     {
         private readonly IProductService _productService;
@@ -176,6 +179,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
             btnAdd.Text = Resources.Add;
             btnCreate.Text = Resources.Create;
+            btnCancel.Text = Resources.Cancel;
 
             labelTextVisualProduct.Text = Resources.Product;
             labelTextVisualCountProduct.Text = Resources.Amount;

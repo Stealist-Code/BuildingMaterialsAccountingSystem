@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace StorageSystemBuildingMaterials.Forms
 {
+    /// <summary>
+    /// Форма для изменения настроек программы (валюта, язык интерфейса)
+    /// </summary>
     public partial class FormSettings : Form, ILocalizable
     {
         private bool _isUpdating = false;
@@ -68,6 +71,9 @@ namespace StorageSystemBuildingMaterials.Forms
             comboBoxCurrency.SelectedValue = _currencyState.SelectedCurrency;
         }
 
+        /// <summary>
+        /// Локализация
+        /// </summary>
         public void ApplyLocalization()
         {
             this.Text = Resources.SettingsTitle;

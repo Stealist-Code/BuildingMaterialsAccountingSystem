@@ -129,6 +129,9 @@ namespace StorageSystemBuildingMaterials.Forms
             }
         }
 
+        /// <summary>
+        /// Метод для обновления данных товаров
+        /// </summary>
         public async void RefreshData()
         {
             await LoadAllProducts();

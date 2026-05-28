@@ -105,7 +105,6 @@
             btnProducts.TabIndex = 26;
             btnProducts.Text = "Список товаров";
             btnProducts.UseVisualStyleBackColor = false;
-            btnProducts.Click += btnProducts_Click;
             // 
             // btnShipments
             // 
@@ -151,7 +150,6 @@
             Margin = new Padding(2, 3, 2, 3);
             Name = "FormAdmin";
             Text = "Admin";
-            Load += FormAdmin_Load;
             ResumeLayout(false);
             PerformLayout();
 

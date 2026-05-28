@@ -517,4 +517,46 @@
   <data name="ExpiredProduct" xml:space="preserve">
     <value>Списанные товары</value>
   </data>
+  <data name="CheckTIN" xml:space="preserve">
+    <value>Проверка на контрагента</value>
+  </data>
+  <data name="TIN" xml:space="preserve">
+    <value>ИНН</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Выбрать</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>Проверить</value>
+  </data>
+  <data name="FormCheckTIN" xml:space="preserve">
+    <value>Проверка ИНН</value>
+  </data>
+  <data name="InvalidTIN" xml:space="preserve">
+    <value>Указан неправильный ИНН</value>
+  </data>
+  <data name="WarehouseMap" xml:space="preserve">
+    <value>Карта склада</value>
+  </data>
+  <data name="ShippingFirst" xml:space="preserve">
+    <value>Отгрузка в первую очередь</value>
+  </data>
+  <data name="NextWeekShipmentPlan" xml:space="preserve">
+    <value>План отгрузки на следующую неделю</value>
+  </data>
+  <data name="StandardRotation" xml:space="preserve">
+    <value>Стандартная ротация (FIFO)</value>
+  </data>
+  <data name="AccountingForBalances" xml:space="preserve">
+    <value>Учёт по остаткам без срочности</value>
+  </data>
+  <data name="Row" xml:space="preserve">
+    <value>Ряд</value>
+  </data>
+  <data name="AlreadyAccount" xml:space="preserve">
+    <value>Уже есть аккаунт?</value>
+  </data>
+  <data name="WithoutAccount" xml:space="preserve">
+    <value>Нет аккаунта?</value>
+  </data>
 </root>

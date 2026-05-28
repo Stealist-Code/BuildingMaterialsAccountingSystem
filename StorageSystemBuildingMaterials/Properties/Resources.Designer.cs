@@ -61,6 +61,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Учёт по остаткам без срочности.
+        /// </summary>
+        public static string AccountingForBalances {
+            get {
+                return ResourceManager.GetString("AccountingForBalances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Добавить.
         /// </summary>
         public static string Add {
@@ -138,6 +147,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string AllProducts {
             get {
                 return ResourceManager.GetString("AllProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Уже есть аккаунт?.
+        /// </summary>
+        public static string AlreadyAccount {
+            get {
+                return ResourceManager.GetString("AlreadyAccount", resourceCulture);
             }
         }
         
@@ -274,6 +292,24 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string CategoryWasDeleted {
             get {
                 return ResourceManager.GetString("CategoryWasDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Проверить.
+        /// </summary>
+        public static string Check {
+            get {
+                return ResourceManager.GetString("Check", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Проверка на контрагента.
+        /// </summary>
+        public static string CheckTIN {
+            get {
+                return ResourceManager.GetString("CheckTIN", resourceCulture);
             }
         }
         
@@ -605,6 +641,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Проверка ИНН.
+        /// </summary>
+        public static string FormCheckTIN {
+            get {
+                return ResourceManager.GetString("FormCheckTIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Общие.
         /// </summary>
         public static string GeneralLabel {
@@ -628,6 +673,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string InvalidEmail {
             get {
                 return ResourceManager.GetString("InvalidEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Указан неправильный ИНН.
+        /// </summary>
+        public static string InvalidTIN {
+            get {
+                return ResourceManager.GetString("InvalidTIN", resourceCulture);
             }
         }
         
@@ -754,6 +808,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string Name {
             get {
                 return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на План отгрузки на следующую неделю.
+        /// </summary>
+        public static string NextWeekShipmentPlan {
+            get {
+                return ResourceManager.GetString("NextWeekShipmentPlan", resourceCulture);
             }
         }
         
@@ -1028,6 +1091,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ряд.
+        /// </summary>
+        public static string Row {
+            get {
+                return ResourceManager.GetString("Row", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Рубль (₽).
         /// </summary>
         public static string Rubles {
@@ -1060,6 +1132,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string Search {
             get {
                 return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выбрать.
+        /// </summary>
+        public static string Select {
+            get {
+                return ResourceManager.GetString("Select", resourceCulture);
             }
         }
         
@@ -1136,11 +1217,29 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Отгрузка в первую очередь.
+        /// </summary>
+        public static string ShippingFirst {
+            get {
+                return ResourceManager.GetString("ShippingFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Зарегистрироваться.
         /// </summary>
         public static string SignUp {
             get {
                 return ResourceManager.GetString("SignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Стандартная ротация (FIFO).
+        /// </summary>
+        public static string StandardRotation {
+            get {
+                return ResourceManager.GetString("StandardRotation", resourceCulture);
             }
         }
         
@@ -1177,6 +1276,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string SupplySuccess {
             get {
                 return ResourceManager.GetString("SupplySuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ИНН.
+        /// </summary>
+        public static string TIN {
+            get {
+                return ResourceManager.GetString("TIN", resourceCulture);
             }
         }
         
@@ -1231,6 +1339,24 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string UserEmail {
             get {
                 return ResourceManager.GetString("UserEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Карта склада.
+        /// </summary>
+        public static string WarehouseMap {
+            get {
+                return ResourceManager.GetString("WarehouseMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Нет аккаунта?.
+        /// </summary>
+        public static string WithoutAccount {
+            get {
+                return ResourceManager.GetString("WithoutAccount", resourceCulture);
             }
         }
         

@@ -2,8 +2,6 @@
 using StorageSystemBuildingMaterials.Forms.Interfaces;
 using StorageSystemBuildingMaterials.Properties;
 using StorageSystemBuildingMaterials.Services.Interfaces;
-using System;
-using System.Windows.Forms;
 
 namespace StorageSystemBuildingMaterials.Forms
 {
@@ -78,6 +76,7 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualEmail.Text = Resources.Email;
             labelTextVisualPassword.Text = Resources.Password;
             labelTextVisualCheckPassword.Text = Resources.ConfirmPassword;
+            labelAccount.Text = Resources.AlreadyAccount;
 
             labeRegistration.Text = Resources.Registration;
             buttonRegisrationINAuth.Text = Resources.RegisrationINAuth;

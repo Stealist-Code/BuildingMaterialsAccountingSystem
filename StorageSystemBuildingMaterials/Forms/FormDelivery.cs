@@ -8,6 +8,9 @@ using StorageSystemBuildingMaterials.Properties;
 
 namespace StorageSystemBuildingMaterials.Forms
 {
+    /// <summary>
+    /// Форма для оформления поставок
+    /// </summary>
     public partial class FormDelivery : Form
     {
         private readonly IProductService _productService;

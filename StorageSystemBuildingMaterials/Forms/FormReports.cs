@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace StorageSystemBuildingMaterials.Forms
 {
+    /// <summary>
+    /// Форма для отчетов
+    /// </summary>
     public partial class FormReports : Form
     {
         private readonly IReportService _reportService;
@@ -15,6 +18,7 @@ namespace StorageSystemBuildingMaterials.Forms
             InitializeComponent();
 
             _reportService = reportService;
+            ApplyLocalization();
 
             dateTimePickerFrom.ValueChanged += dateTimePicker_ValueChanged;
             dateTimePickerTo.ValueChanged += dateTimePicker_ValueChanged;

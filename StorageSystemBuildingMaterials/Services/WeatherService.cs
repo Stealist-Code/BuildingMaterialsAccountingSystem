@@ -19,7 +19,7 @@ namespace StorageSystemBuildingMaterials.Services
         /// <param name="latitude">Широта</param>
         /// <param name="longitude">Долгота</param>
         /// <returns>Возвращает кортеж с кодом погоды и температурой</returns>
-        public async Task<(string? weather_code, double temperature)> GetWeatherCodeAndTemperature(double latitude, double longitude)
+        public async Task<(int? weather_code, double temperature)> GetWeatherCodeAndTemperature(double latitude, double longitude)
         {
             var url = $"{_weatherHttps}forecast?latitude={latitude}&longitude={longitude}&current=weather_code,temperature_2m";
             var json = await _httpClient.GetStringAsync(url);
@@ -29,7 +29,7 @@ namespace StorageSystemBuildingMaterials.Services
             var weather_code = doc.RootElement
                 .GetProperty("current")
                 .GetProperty("weather_code")
-                .GetString();
+                .GetInt32();
 
             var temperature = doc.RootElement
                 .GetProperty("current")

@@ -135,6 +135,7 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualAuth.Text = Resources.Auth;
             labelTextVisualEmail.Text = Resources.Email;
             labelTextVisualPassword.Text = Resources.Password;
+            labelWithoutAccount.Text = Resources.WithoutAccount;
         }
 
         /// <summary>
@@ -197,6 +198,4 @@ namespace StorageSystemBuildingMaterials.Forms
             this.Invalidate();  
         }
     }
-
-
 }

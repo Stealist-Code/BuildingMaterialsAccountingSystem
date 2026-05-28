@@ -1,9 +1,13 @@
 ﻿using StorageSystemBuildingMaterials.DTO;
+using StorageSystemBuildingMaterials.Properties;
 using StorageSystemBuildingMaterials.Services.Interfaces;
 using System.Data;
 
 namespace StorageSystemBuildingMaterials.Forms
 {
+    /// <summary>
+    /// Форма для отображения карты склада
+    /// </summary>
     public partial class FormWarehouseMap : Form
     {
         private readonly int _rowsMin = 10;
@@ -17,7 +21,8 @@ namespace StorageSystemBuildingMaterials.Forms
             InitializeComponent();
             dataGridViewWarehouseMap.DataSource = _bindingSource;
             dataGridViewWarehouseMap.SizeChanged += (s, e) => ResizeRows();
-            this.Load += FormWarehouseMap_Load;   
+            this.Load += FormWarehouseMap_Load;
+            ApplyLocalization();
         }
 
         private async void FormWarehouseMap_Load(object sender, EventArgs e)
@@ -40,7 +45,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
             for (var c = 0; c < columnCount; c++)
             {
-                table.Columns.Add($"Ряд №{c+1}", typeof(string));
+                table.Columns.Add($"{Resources.Row} №{c+1}", typeof(string));
             }
 
             for (var r = 0; r < _rowsMin; r++)
@@ -66,7 +71,6 @@ namespace StorageSystemBuildingMaterials.Forms
             ResizeRows();
             await ApplyColor(columnCount, products);
         }
-
 
         private void ResizeRows()
         {
@@ -141,6 +145,19 @@ namespace StorageSystemBuildingMaterials.Forms
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+        }
+
+        /// <summary>
+        /// Локализация
+        /// </summary>
+        public void ApplyLocalization()
+        {
+            this.Text = Resources.WarehouseMap;
+            labelWarehouseMap.Text = Resources.WarehouseMap;
+            labelShipment1.Text = Resources.ShippingFirst;
+            labelShpment2.Text = Resources.NextWeekShipmentPlan;
+            labelShipment3.Text = Resources.StandardRotation;
+            labelShimpent4.Text = Resources.AccountingForBalances;
         }
     }
 }

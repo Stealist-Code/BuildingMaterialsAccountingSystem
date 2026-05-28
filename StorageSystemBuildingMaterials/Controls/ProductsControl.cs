@@ -200,6 +200,7 @@ namespace StorageSystemBuildingMaterials.Controls
             warehouseMapBtn.Text = "Карта склада";
             warehouseMapBtn.UseVisualStyleBackColor = true;
             warehouseMapBtn.Click += warehouseMapBtn_Click;
+            warehouseMapBtn.Text = Resources.WarehouseMap;
             // 
             // ProductsControl
             // 

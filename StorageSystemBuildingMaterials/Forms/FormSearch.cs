@@ -88,10 +88,5 @@ namespace StorageSystemBuildingMaterials.Forms
         {
             ApplyLocalization();
         }
-
-        private void labelTextVisualArticle_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
