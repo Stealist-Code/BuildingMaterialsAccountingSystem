@@ -19,10 +19,11 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly Guid _addressId;
         private readonly Guid _customerId;
         private readonly string _tIN;
+        private readonly string _weather;
         private readonly Form _formCheckTin;
         private List<CartItemDto> cart = new List<CartItemDto>();
 
-        public FormShipment(Guid currentUserId, IProductService productService, IShipmentService shipmentService, IShipmentValidation shipmentValidation, Customer customer, Form formCheckTin)
+        public FormShipment(Guid currentUserId, IProductService productService, IShipmentService shipmentService, IShipmentValidation shipmentValidation, Customer customer, string weather, Form formCheckTin)
         {
             InitializeComponent();
 
@@ -33,6 +34,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _customerId = customer.Id;
             _tIN = customer.TIN;
             _addressId = customer.Address.Id;
+            _weather = weather;
             _formCheckTin = formCheckTin;
 
             this.Text = Resources.CreateShipment;
@@ -48,6 +50,7 @@ namespace StorageSystemBuildingMaterials.Forms
             var products = await _productService.GetProducts();
 
             textBoxTIN.Text = _tIN;
+            textBoxWeather.Text = _weather;
             cbProduct.DataSource = products;
             cbProduct.DisplayMember = "Name";
             cbProduct.ValueMember = "Id";
@@ -57,7 +60,11 @@ namespace StorageSystemBuildingMaterials.Forms
         {
             dgvCart.Columns.Clear();
             dgvCart.Columns.Add("ProductName", Resources.Product);
+            dgvCart.Columns.Add("PurchasePrice", Resources.PurchasePrice);
+            dgvCart.Columns.Add("ShipmentPrice", Resources.ShipmentPrice);
             dgvCart.Columns.Add("Quantity", Resources.Quantity);
+            dgvCart.Columns.Add("Insurance", Resources.Insurance);
+            dgvCart.Columns.Add("ThermalContainer", Resources.ThermalContainer);
             dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
@@ -67,7 +74,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
             foreach (var item in cart)
             {
-                dgvCart.Rows.Add(item.ProductName, item.Quantity);
+                dgvCart.Rows.Add(item.ProductName, item.PurchasePrice, item.ShipmentPrice, item.Quantity, item.Insurance, item.ThermalContainer);
             }
         }
 
@@ -97,8 +104,12 @@ namespace StorageSystemBuildingMaterials.Forms
                     {
                         ProductId = product.Id,
                         ProductName = product.Name,
+                        PurchasePrice = product.PurchasePrice,
+                        ShipmentPrice = nudTotalPrice.Value,
                         Quantity = quantity,
-                        Stock = product.CurrentStock
+                        Insurance = product.Insurance,
+                        ThermalContainer = product.ThermalContainer,
+                        Stock = product.CurrentStock,
                     });
                 }
 
@@ -183,12 +194,10 @@ namespace StorageSystemBuildingMaterials.Forms
 
             labelTextVisualProduct.Text = Resources.Product;
             labelTextVisualCountProduct.Text = Resources.Amount;
-            labelTextVisualPrice.Text = Resources.Price;
+            labelTextVisualPrice.Text = Resources.SalePrice;
             labelTextVisualShipment.Text = Resources.CreatingShipment;
             labelPositions.Text = Resources.Positions;
 
-            dgvCart.Columns[0].HeaderText = Resources.Product;
-            dgvCart.Columns[1].HeaderText = Resources.Quantity;
         }
 
         private void FormShipment_Load(object sender, EventArgs e)

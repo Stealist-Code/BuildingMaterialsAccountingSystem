@@ -74,6 +74,8 @@ namespace StorageSystemBuildingMaterials.Services
                         CategoryId = x.CategoryId,
                         Unit = x.Unit,
                         CurrentStock = x.CurrentStock,
+                        Insurance = x.Insurance,
+                        ThermalContainer = x.ThermalContainer,
                     })
                     .OrderBy(x => x.Name)
                     .ToListAsync();

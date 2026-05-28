@@ -46,7 +46,8 @@ namespace StorageSystemBuildingMaterials.Forms
 
             var (lat, lon) = await _tINService.GetCoordinates(customer.FullAddress);
             var (weatherCode, temperature) = await _weatherService.GetWeatherCodeAndTemperature(lat, lon);
-            customer.Weather = $"{weatherCode}, {temperature}℃";
+            var weatherText = _weatherService.GetWeatherText(weatherCode);
+            customer.Weather = $"{weatherText}, {temperature}℃";
 
             var message = await _tINService.CheckCompanyOnBlackList(tIN);
             if (!string.IsNullOrEmpty(message))
@@ -68,6 +69,7 @@ namespace StorageSystemBuildingMaterials.Forms
             dgvTIN.Columns["FirstName"].HeaderText = Resources.FirstName;
             dgvTIN.Columns["LastName"].HeaderText = Resources.LastName;
             dgvTIN.Columns["MiddleName"].HeaderText = Resources.MiddleName;
+            dgvTIN.Columns["Weather"].HeaderText = Resources.Weather;
         }
 
         private void SetupDataGridView()
@@ -105,7 +107,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
             var customer = await _tINService.FindCustomerWithTIN(selectedCustomer.TIN);
 
-            var shipmentForm = new FormShipment(_userId, _productService, _shipmentService, _shipmentValidation, customer, this);
+            var shipmentForm = new FormShipment(_userId, _productService, _shipmentService, _shipmentValidation, customer, selectedCustomer.Weather, this);
 
             shipmentForm.ShowDialog();
         }

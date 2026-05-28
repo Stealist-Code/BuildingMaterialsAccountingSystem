@@ -46,6 +46,8 @@
             labelTIN = new Label();
             textBoxTIN = new TextBox();
             btnCancel = new Button();
+            textBoxWeather = new TextBox();
+            labelWeather = new Label();
             ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCart).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudTotalPrice).BeginInit();
@@ -56,7 +58,7 @@
             cbProduct.Anchor = AnchorStyles.None;
             cbProduct.Font = new Font("Microsoft Sans Serif", 15F);
             cbProduct.FormattingEnabled = true;
-            cbProduct.Location = new Point(241, 256);
+            cbProduct.Location = new Point(233, 255);
             cbProduct.Margin = new Padding(2, 3, 2, 3);
             cbProduct.Name = "cbProduct";
             cbProduct.Size = new Size(295, 37);
@@ -66,7 +68,7 @@
             // 
             nudQuantity.Anchor = AnchorStyles.None;
             nudQuantity.Font = new Font("Microsoft Sans Serif", 15F);
-            nudQuantity.Location = new Point(242, 332);
+            nudQuantity.Location = new Point(234, 331);
             nudQuantity.Margin = new Padding(2, 3, 2, 3);
             nudQuantity.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             nudQuantity.Name = "nudQuantity";
@@ -80,7 +82,7 @@
             labelTextVisualProduct.BackColor = Color.Transparent;
             labelTextVisualProduct.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualProduct.ForeColor = Color.Black;
-            labelTextVisualProduct.Location = new Point(60, 254);
+            labelTextVisualProduct.Location = new Point(68, 253);
             labelTextVisualProduct.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualProduct.Name = "labelTextVisualProduct";
             labelTextVisualProduct.Size = new Size(91, 37);
@@ -94,7 +96,7 @@
             labelTextVisualCountProduct.BackColor = Color.Transparent;
             labelTextVisualCountProduct.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualCountProduct.ForeColor = Color.Black;
-            labelTextVisualCountProduct.Location = new Point(60, 329);
+            labelTextVisualCountProduct.Location = new Point(68, 328);
             labelTextVisualCountProduct.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualCountProduct.Name = "labelTextVisualCountProduct";
             labelTextVisualCountProduct.Size = new Size(161, 37);
@@ -110,7 +112,7 @@
             btnAdd.FlatStyle = FlatStyle.Popup;
             btnAdd.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(78, 693);
+            btnAdd.Location = new Point(128, 693);
             btnAdd.Margin = new Padding(2, 3, 2, 3);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(424, 65);
@@ -127,7 +129,7 @@
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnCreate.ForeColor = Color.White;
-            btnCreate.Location = new Point(1048, 693);
+            btnCreate.Location = new Point(1098, 693);
             btnCreate.Margin = new Padding(2, 3, 2, 3);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(285, 65);
@@ -142,7 +144,7 @@
             labelTextVisualShipment.BackColor = Color.Transparent;
             labelTextVisualShipment.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualShipment.ForeColor = Color.Black;
-            labelTextVisualShipment.Location = new Point(90, 51);
+            labelTextVisualShipment.Location = new Point(103, 68);
             labelTextVisualShipment.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualShipment.Name = "labelTextVisualShipment";
             labelTextVisualShipment.Size = new Size(449, 46);
@@ -156,7 +158,7 @@
             labelPositions.BackColor = Color.Transparent;
             labelPositions.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelPositions.ForeColor = Color.Black;
-            labelPositions.Location = new Point(823, 51);
+            labelPositions.Location = new Point(873, 51);
             labelPositions.Margin = new Padding(2, 0, 2, 0);
             labelPositions.Name = "labelPositions";
             labelPositions.Size = new Size(347, 46);
@@ -168,7 +170,7 @@
             textBox1.Anchor = AnchorStyles.None;
             textBox1.BackColor = Color.Black;
             textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(597, 51);
+            textBox1.Location = new Point(604, 41);
             textBox1.Margin = new Padding(2, 3, 2, 3);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
@@ -179,10 +181,11 @@
             // dgvCart
             // 
             dgvCart.Anchor = AnchorStyles.None;
+            dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCart.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point, 204);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -197,7 +200,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvCart.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvCart.Location = new Point(659, 162);
+            dgvCart.Location = new Point(641, 161);
             dgvCart.Margin = new Padding(2, 3, 2, 3);
             dgvCart.MultiSelect = false;
             dgvCart.Name = "dgvCart";
@@ -205,7 +208,7 @@
             dgvCart.RowHeadersWidth = 72;
             dgvCart.RowTemplate.Height = 31;
             dgvCart.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCart.Size = new Size(675, 455);
+            dgvCart.Size = new Size(820, 455);
             dgvCart.TabIndex = 23;
             // 
             // labelTextVisualPrice
@@ -214,7 +217,7 @@
             labelTextVisualPrice.BackColor = Color.Transparent;
             labelTextVisualPrice.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualPrice.ForeColor = Color.Black;
-            labelTextVisualPrice.Location = new Point(60, 389);
+            labelTextVisualPrice.Location = new Point(68, 388);
             labelTextVisualPrice.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualPrice.Name = "labelTextVisualPrice";
             labelTextVisualPrice.Size = new Size(136, 75);
@@ -225,7 +228,7 @@
             // 
             nudTotalPrice.Anchor = AnchorStyles.None;
             nudTotalPrice.Font = new Font("Microsoft Sans Serif", 15F);
-            nudTotalPrice.Location = new Point(241, 414);
+            nudTotalPrice.Location = new Point(233, 413);
             nudTotalPrice.Margin = new Padding(2, 3, 2, 3);
             nudTotalPrice.Maximum = new decimal(new int[] { 1316134912, 2328, 0, 0 });
             nudTotalPrice.Name = "nudTotalPrice";
@@ -239,7 +242,7 @@
             labelTIN.BackColor = Color.Transparent;
             labelTIN.Font = new Font("Segoe UI", 15.75F);
             labelTIN.ForeColor = Color.Black;
-            labelTIN.Location = new Point(60, 186);
+            labelTIN.Location = new Point(68, 185);
             labelTIN.Margin = new Padding(2, 0, 2, 0);
             labelTIN.Name = "labelTIN";
             labelTIN.Size = new Size(75, 37);
@@ -248,8 +251,9 @@
             // 
             // textBoxTIN
             // 
+            textBoxTIN.Anchor = AnchorStyles.None;
             textBoxTIN.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBoxTIN.Location = new Point(241, 186);
+            textBoxTIN.Location = new Point(232, 185);
             textBoxTIN.MaximumSize = new Size(296, 37);
             textBoxTIN.MinimumSize = new Size(296, 37);
             textBoxTIN.Name = "textBoxTIN";
@@ -266,7 +270,7 @@
             btnCancel.FlatStyle = FlatStyle.Popup;
             btnCancel.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(659, 693);
+            btnCancel.Location = new Point(709, 693);
             btnCancel.Margin = new Padding(2, 3, 2, 3);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(285, 65);
@@ -275,13 +279,41 @@
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click_1;
             // 
+            // textBoxWeather
+            // 
+            textBoxWeather.Anchor = AnchorStyles.None;
+            textBoxWeather.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            textBoxWeather.Location = new Point(234, 492);
+            textBoxWeather.MaximumSize = new Size(296, 37);
+            textBoxWeather.MinimumSize = new Size(296, 37);
+            textBoxWeather.Name = "textBoxWeather";
+            textBoxWeather.ReadOnly = true;
+            textBoxWeather.Size = new Size(296, 37);
+            textBoxWeather.TabIndex = 46;
+            // 
+            // labelWeather
+            // 
+            labelWeather.Anchor = AnchorStyles.None;
+            labelWeather.AutoSize = true;
+            labelWeather.BackColor = Color.Transparent;
+            labelWeather.Font = new Font("Segoe UI", 15.75F);
+            labelWeather.ForeColor = Color.Black;
+            labelWeather.Location = new Point(70, 492);
+            labelWeather.Margin = new Padding(2, 0, 2, 0);
+            labelWeather.Name = "labelWeather";
+            labelWeather.Size = new Size(107, 37);
+            labelWeather.TabIndex = 47;
+            labelWeather.Text = "Погода";
+            // 
             // FormShipment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1372, 849);
+            ClientSize = new Size(1472, 849);
+            Controls.Add(textBoxWeather);
+            Controls.Add(labelWeather);
             Controls.Add(btnCancel);
             Controls.Add(textBoxTIN);
             Controls.Add(labelTIN);
@@ -328,5 +360,7 @@
         private Label labelTIN;
         private TextBox textBoxTIN;
         private Button btnCancel;
+        private TextBox textBoxWeather;
+        private Label labelWeather;
     }
 }

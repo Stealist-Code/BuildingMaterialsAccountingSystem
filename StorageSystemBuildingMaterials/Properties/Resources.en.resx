@@ -558,4 +558,40 @@
   <data name="ExceptionGetListProduct" xml:space="preserve">
     <value>Error receiving the product list</value>
   </data>
+  <data name="Weather" xml:space="preserve">
+    <value>Weather</value>
+  </data>
+  <data name="SalePrice" xml:space="preserve">
+    <value>Sale price</value>
+  </data>
+  <data name="ShipmentPrice" xml:space="preserve">
+    <value>Shipment price</value>
+  </data>
+  <data name="Insurance" xml:space="preserve">
+    <value>Insurance</value>
+  </data>
+  <data name="ThermalContainer" xml:space="preserve">
+    <value>Thermal container</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="ChooseInsurance" xml:space="preserve">
+    <value>Choose insurance</value>
+  </data>
+  <data name="ChooseThermal" xml:space="preserve">
+    <value>Choose thermal container</value>
+  </data>
+  <data name="Pcs" xml:space="preserve">
+    <value>pcs (pieces)</value>
+  </data>
+  <data name="Liters" xml:space="preserve">
+    <value>l (liters)</value>
+  </data>
+  <data name="CubicMeters" xml:space="preserve">
+    <value>m³ (cubic meters)</value>
+  </data>
 </root>

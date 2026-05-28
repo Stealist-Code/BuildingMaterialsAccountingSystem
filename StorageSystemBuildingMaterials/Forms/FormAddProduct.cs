@@ -48,11 +48,39 @@ namespace StorageSystemBuildingMaterials.Forms
                 return;
             }
 
+            if (comboBoxInsurance.SelectedItem is null)
+            {
+                MessageBox.Show(Resources.ChooseInsurance);
+                return;
+            }
+
+            var booleanInsurance = false; 
+
+            if (comboBoxInsurance.SelectedItem == Resources.Yes)
+            {
+                booleanInsurance = true;
+            }
+
+            if (comboBoxThermal.SelectedItem is null)
+            {
+                MessageBox.Show(Resources.ChooseThermal);
+                return;
+            }
+
+            var booleanThermal = false;
+
+            if (comboBoxThermal.SelectedItem == Resources.Yes)
+            {
+                booleanThermal = true;
+            }
+
             ResultProduct = new Product
             {
                 Name = txtName.Text.Trim(),
                 Unit = comboBoxUnit.SelectedItem?.ToString(),
                 CategoryId = (Guid)cbCategory.SelectedValue,
+                Insurance = booleanInsurance,
+                ThermalContainer = false,
                 CurrentStock = 0
             };
 
@@ -103,6 +131,18 @@ namespace StorageSystemBuildingMaterials.Forms
                 "м (метры)"
             });
 
+            comboBoxInsurance.Items.AddRange(new object[]
+            {
+                Resources.Yes,
+                Resources.No,
+            });
+
+            comboBoxThermal.Items.AddRange(new object[]
+            {
+                Resources.Yes,
+                Resources.No,
+            });
+
             if (_mode == FormAddProductsModeEnum.Create)
             {
                 this.Text = Resources.AddProduct;
@@ -144,5 +184,6 @@ namespace StorageSystemBuildingMaterials.Forms
 
             btnCancel.Text = Resources.Cancel;
         }
+
     }
 }

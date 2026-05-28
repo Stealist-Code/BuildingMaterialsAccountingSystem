@@ -314,6 +314,24 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Выберите страховку.
+        /// </summary>
+        public static string ChooseInsurance {
+            get {
+                return ResourceManager.GetString("ChooseInsurance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выберите термалоконтейнер.
+        /// </summary>
+        public static string ChooseThermal {
+            get {
+                return ResourceManager.GetString("ChooseThermal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Выберите единицу измерения.
         /// </summary>
         public static string ChooseUnit {
@@ -400,6 +418,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string CreatingShipment {
             get {
                 return ResourceManager.GetString("CreatingShipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на м³ (куб. метры).
+        /// </summary>
+        public static string CubicMeters {
+            get {
+                return ResourceManager.GetString("CubicMeters", resourceCulture);
             }
         }
         
@@ -695,6 +722,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Страховка.
+        /// </summary>
+        public static string Insurance {
+            get {
+                return ResourceManager.GetString("Insurance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Введите корректный email (например, name@domain.com).
         /// </summary>
         public static string InvalidEmail {
@@ -776,6 +812,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на л (литры).
+        /// </summary>
+        public static string Liters {
+            get {
+                return ResourceManager.GetString("Liters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вход.
         /// </summary>
         public static string Login {
@@ -848,6 +893,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Нет.
+        /// </summary>
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Не указан срок годности.
         /// </summary>
         public static string NoExpirationDate {
@@ -898,6 +952,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string PasswordsDoNotMatch {
             get {
                 return ResourceManager.GetString("PasswordsDoNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на шт (штуки).
+        /// </summary>
+        public static string Pcs {
+            get {
+                return ResourceManager.GetString("Pcs", resourceCulture);
             }
         }
         
@@ -1136,6 +1199,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Цена продажи.
+        /// </summary>
+        public static string SalePrice {
+            get {
+                return ResourceManager.GetString("SalePrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Сохранить.
         /// </summary>
         public static string Save {
@@ -1235,6 +1307,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Цена отгрузки.
+        /// </summary>
+        public static string ShipmentPrice {
+            get {
+                return ResourceManager.GetString("ShipmentPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на История отгрузок.
         /// </summary>
         public static string Shipments {
@@ -1303,6 +1384,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string SupplySuccess {
             get {
                 return ResourceManager.GetString("SupplySuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Термоконтейнер.
+        /// </summary>
+        public static string ThermalContainer {
+            get {
+                return ResourceManager.GetString("ThermalContainer", resourceCulture);
             }
         }
         
@@ -1379,6 +1469,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Погода.
+        /// </summary>
+        public static string Weather {
+            get {
+                return ResourceManager.GetString("Weather", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Нет аккаунта?.
         /// </summary>
         public static string WithoutAccount {
@@ -1402,6 +1501,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string WriteNameOfCategory {
             get {
                 return ResourceManager.GetString("WriteNameOfCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Да.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
         

@@ -61,5 +61,15 @@ namespace StorageSystemBuildingMaterials.DTO
         /// Сколько дней осталось
         /// </summary>
         public int DaysLeft { get; set; }
+
+        /// <summary>
+        /// Страховка
+        /// </summary>
+        public bool Insurance { get; set; }
+
+        /// <summary>
+        /// Термоконтейнер
+        /// </summary>
+        public bool ThermalContainer { get; set; }
     }
 }

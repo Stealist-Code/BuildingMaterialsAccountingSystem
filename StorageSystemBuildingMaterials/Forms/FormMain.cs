@@ -122,6 +122,8 @@ namespace StorageSystemBuildingMaterials.Forms
                 dgvProducts.Columns["ReceivedDate"].HeaderText = Resources.ReceivedDate;
                 dgvProducts.Columns["DaysLeft"].HeaderText = Resources.DaysLeft;
                 dgvProducts.Columns["ExpirationDate"].Visible = false;
+                dgvProducts.Columns["Insurance"].Visible = false;
+                dgvProducts.Columns["ThermalContainer"].Visible = false;
             }
             catch (Exception ex)
             {

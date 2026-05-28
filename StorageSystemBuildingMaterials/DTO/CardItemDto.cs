@@ -18,9 +18,29 @@ namespace StorageSystemBuildingMaterials.DTO
         public string ProductName { get; set; }
 
         /// <summary>
+        /// Цена закупки
+        /// </summary>
+        public decimal PurchasePrice { get; set; }
+
+        /// <summary>
+        /// Цена отгрузки
+        /// </summary>
+        public decimal ShipmentPrice { get; set; }
+
+        /// <summary>
         /// Количество товара в отгрузке
         /// </summary>
         public int Quantity { get; set; }
+
+        /// <summary>
+        /// Страховка
+        /// </summary>
+        public bool Insurance { get; set; }
+
+        /// <summary>
+        /// Термоконтейнер
+        /// </summary>
+        public bool ThermalContainer { get; set; }
 
         /// <summary>
         /// Остаток товара на складе

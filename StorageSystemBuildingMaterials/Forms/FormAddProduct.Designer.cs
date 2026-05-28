@@ -39,6 +39,10 @@
             cbCategory = new ComboBox();
             txtName = new TextBox();
             comboBoxUnit = new ComboBox();
+            labelInsurance = new Label();
+            labelThermal = new Label();
+            comboBoxInsurance = new ComboBox();
+            comboBoxThermal = new ComboBox();
             SuspendLayout();
             // 
             // btnCancel
@@ -50,7 +54,7 @@
             btnCancel.FlatStyle = FlatStyle.Popup;
             btnCancel.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(46, 474);
+            btnCancel.Location = new Point(38, 583);
             btnCancel.Margin = new Padding(2, 3, 2, 3);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(399, 49);
@@ -68,7 +72,7 @@
             btnOK.FlatStyle = FlatStyle.Popup;
             btnOK.Font = new Font("Microsoft Sans Serif", 17F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnOK.ForeColor = Color.White;
-            btnOK.Location = new Point(545, 474);
+            btnOK.Location = new Point(537, 583);
             btnOK.Margin = new Padding(2, 3, 2, 3);
             btnOK.Name = "btnOK";
             btnOK.Size = new Size(399, 49);
@@ -84,7 +88,7 @@
             labelTextVisualAddProduct.BackColor = Color.Transparent;
             labelTextVisualAddProduct.Font = new Font("Microsoft Sans Serif", 25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelTextVisualAddProduct.ForeColor = Color.Black;
-            labelTextVisualAddProduct.Location = new Point(334, 45);
+            labelTextVisualAddProduct.Location = new Point(329, 35);
             labelTextVisualAddProduct.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualAddProduct.Name = "labelTextVisualAddProduct";
             labelTextVisualAddProduct.Size = new Size(330, 48);
@@ -98,7 +102,7 @@
             labelTextVisualName.BackColor = Color.Transparent;
             labelTextVisualName.Font = new Font("Microsoft Sans Serif", 16F);
             labelTextVisualName.ForeColor = Color.Black;
-            labelTextVisualName.Location = new Point(235, 153);
+            labelTextVisualName.Location = new Point(236, 121);
             labelTextVisualName.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualName.Name = "labelTextVisualName";
             labelTextVisualName.Size = new Size(137, 31);
@@ -112,7 +116,7 @@
             labelTextVisualCategory.BackColor = Color.Transparent;
             labelTextVisualCategory.Font = new Font("Microsoft Sans Serif", 16F);
             labelTextVisualCategory.ForeColor = Color.Black;
-            labelTextVisualCategory.Location = new Point(228, 239);
+            labelTextVisualCategory.Location = new Point(229, 207);
             labelTextVisualCategory.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualCategory.Name = "labelTextVisualCategory";
             labelTextVisualCategory.Size = new Size(144, 31);
@@ -126,7 +130,7 @@
             labelTextVisualUnit.BackColor = Color.Transparent;
             labelTextVisualUnit.Font = new Font("Microsoft Sans Serif", 16F);
             labelTextVisualUnit.ForeColor = Color.Black;
-            labelTextVisualUnit.Location = new Point(219, 316);
+            labelTextVisualUnit.Location = new Point(220, 284);
             labelTextVisualUnit.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualUnit.Name = "labelTextVisualUnit";
             labelTextVisualUnit.Size = new Size(201, 31);
@@ -140,7 +144,7 @@
             labelTextVisualUnit2.BackColor = Color.Transparent;
             labelTextVisualUnit2.Font = new Font("Microsoft Sans Serif", 16F);
             labelTextVisualUnit2.ForeColor = Color.Black;
-            labelTextVisualUnit2.Location = new Point(235, 375);
+            labelTextVisualUnit2.Location = new Point(235, 442);
             labelTextVisualUnit2.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualUnit2.Name = "labelTextVisualUnit2";
             labelTextVisualUnit2.Size = new Size(0, 31);
@@ -154,7 +158,7 @@
             cbCategory.FormattingEnabled = true;
             cbCategory.IntegralHeight = false;
             cbCategory.ItemHeight = 31;
-            cbCategory.Location = new Point(457, 236);
+            cbCategory.Location = new Point(458, 204);
             cbCategory.Margin = new Padding(2, 3, 2, 3);
             cbCategory.Name = "cbCategory";
             cbCategory.Size = new Size(311, 39);
@@ -166,7 +170,7 @@
             txtName.BackColor = Color.White;
             txtName.Font = new Font("Microsoft Sans Serif", 16F);
             txtName.ForeColor = Color.Black;
-            txtName.Location = new Point(457, 153);
+            txtName.Location = new Point(458, 121);
             txtName.Margin = new Padding(2, 3, 2, 3);
             txtName.Multiline = true;
             txtName.Name = "txtName";
@@ -182,11 +186,67 @@
             comboBoxUnit.FormattingEnabled = true;
             comboBoxUnit.IntegralHeight = false;
             comboBoxUnit.ItemHeight = 31;
-            comboBoxUnit.Location = new Point(454, 308);
+            comboBoxUnit.Location = new Point(455, 276);
             comboBoxUnit.Margin = new Padding(3, 4, 3, 4);
             comboBoxUnit.Name = "comboBoxUnit";
             comboBoxUnit.Size = new Size(314, 39);
             comboBoxUnit.TabIndex = 26;
+            // 
+            // labelInsurance
+            // 
+            labelInsurance.Anchor = AnchorStyles.None;
+            labelInsurance.AutoSize = true;
+            labelInsurance.BackColor = Color.Transparent;
+            labelInsurance.Font = new Font("Microsoft Sans Serif", 16F);
+            labelInsurance.ForeColor = Color.Black;
+            labelInsurance.Location = new Point(235, 364);
+            labelInsurance.Margin = new Padding(2, 0, 2, 0);
+            labelInsurance.Name = "labelInsurance";
+            labelInsurance.Size = new Size(147, 31);
+            labelInsurance.TabIndex = 27;
+            labelInsurance.Text = "Страховка";
+            // 
+            // labelThermal
+            // 
+            labelThermal.Anchor = AnchorStyles.None;
+            labelThermal.AutoSize = true;
+            labelThermal.BackColor = Color.Transparent;
+            labelThermal.Font = new Font("Microsoft Sans Serif", 16F);
+            labelThermal.ForeColor = Color.Black;
+            labelThermal.Location = new Point(195, 433);
+            labelThermal.Margin = new Padding(2, 0, 2, 0);
+            labelThermal.Name = "labelThermal";
+            labelThermal.Size = new Size(226, 31);
+            labelThermal.TabIndex = 28;
+            labelThermal.Text = "Термоконтейнер";
+            // 
+            // comboBoxInsurance
+            // 
+            comboBoxInsurance.Anchor = AnchorStyles.None;
+            comboBoxInsurance.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxInsurance.Font = new Font("Microsoft Sans Serif", 16F);
+            comboBoxInsurance.FormattingEnabled = true;
+            comboBoxInsurance.IntegralHeight = false;
+            comboBoxInsurance.ItemHeight = 31;
+            comboBoxInsurance.Location = new Point(455, 356);
+            comboBoxInsurance.Margin = new Padding(2, 3, 2, 3);
+            comboBoxInsurance.Name = "comboBoxInsurance";
+            comboBoxInsurance.Size = new Size(311, 39);
+            comboBoxInsurance.TabIndex = 29;
+            // 
+            // comboBoxThermal
+            // 
+            comboBoxThermal.Anchor = AnchorStyles.None;
+            comboBoxThermal.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxThermal.Font = new Font("Microsoft Sans Serif", 16F);
+            comboBoxThermal.FormattingEnabled = true;
+            comboBoxThermal.IntegralHeight = false;
+            comboBoxThermal.ItemHeight = 31;
+            comboBoxThermal.Location = new Point(455, 433);
+            comboBoxThermal.Margin = new Padding(2, 3, 2, 3);
+            comboBoxThermal.Name = "comboBoxThermal";
+            comboBoxThermal.Size = new Size(311, 39);
+            comboBoxThermal.TabIndex = 30;
             // 
             // FormAddProduct
             // 
@@ -194,7 +254,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(969, 597);
+            ClientSize = new Size(969, 731);
+            Controls.Add(comboBoxThermal);
+            Controls.Add(comboBoxInsurance);
+            Controls.Add(labelThermal);
+            Controls.Add(labelInsurance);
             Controls.Add(comboBoxUnit);
             Controls.Add(txtName);
             Controls.Add(cbCategory);
@@ -227,5 +291,9 @@
         private ComboBox cbCategory;
         private TextBox txtName;
         private ComboBox comboBoxUnit;
+        private Label labelInsurance;
+        private Label labelThermal;
+        private ComboBox comboBoxInsurance;
+        private ComboBox comboBoxThermal;
     }
 }

@@ -568,4 +568,40 @@
   <data name="ExceptionGetListProduct" xml:space="preserve">
     <value>Ошибка получения списка товаров</value>
   </data>
+  <data name="Weather" xml:space="preserve">
+    <value>Погода</value>
+  </data>
+  <data name="SalePrice" xml:space="preserve">
+    <value>Цена продажи</value>
+  </data>
+  <data name="ShipmentPrice" xml:space="preserve">
+    <value>Цена отгрузки</value>
+  </data>
+  <data name="Insurance" xml:space="preserve">
+    <value>Страховка</value>
+  </data>
+  <data name="ThermalContainer" xml:space="preserve">
+    <value>Термоконтейнер</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="ChooseInsurance" xml:space="preserve">
+    <value>Выберите страховку</value>
+  </data>
+  <data name="ChooseThermal" xml:space="preserve">
+    <value>Выберите термалоконтейнер</value>
+  </data>
+  <data name="Pcs" xml:space="preserve">
+    <value>шт (штуки)</value>
+  </data>
+  <data name="Liters" xml:space="preserve">
+    <value>л (литры)</value>
+  </data>
+  <data name="CubicMeters" xml:space="preserve">
+    <value>м³ (куб. метры)</value>
+  </data>
 </root>

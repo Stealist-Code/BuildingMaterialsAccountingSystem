@@ -126,6 +126,8 @@ namespace StorageSystemBuildingMaterials.Data
                 entity.Property(p => p.Name).IsRequired().HasMaxLength(200);
                 entity.Property(p => p.Unit).HasMaxLength(20);
                 entity.Property(p => p.CurrentStock).IsRequired();
+                entity.Property(p => p.Insurance).IsRequired().HasDefaultValue(false);
+                entity.Property(p => p.ThermalContainer).IsRequired().HasDefaultValue(false);
                 // Связь с Category
                 entity.HasOne(p => p.Category).WithMany(c => c.Products).HasForeignKey(p => p.CategoryId).OnDelete(DeleteBehavior.Restrict);
             });

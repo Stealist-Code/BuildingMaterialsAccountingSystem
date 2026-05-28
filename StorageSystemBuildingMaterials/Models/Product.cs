@@ -35,17 +35,17 @@ namespace StorageSystemBuildingMaterials.Models
         /// <summary>
         /// Текущий остаток
         /// </summary>
-        public int CurrentStock { get; set; } 
+        public int CurrentStock { get; set; }
 
-        ///// <summary>
-        ///// Наличие страховки
-        ///// </summary>
-        //public bool Insurance { get; set; }
+        /// <summary>
+        /// Наличие страховки
+        /// </summary>
+        public bool Insurance { get; set; }
 
-        ///// <summary>
-        ///// Наличие термоконтейнера
-        ///// </summary>
-        //public bool ThermalContainer { get; set; }
+        /// <summary>
+        /// Наличие термоконтейнера
+        /// </summary>
+        public bool ThermalContainer { get; set; }
 
         /// <summary>
         /// Свойство
