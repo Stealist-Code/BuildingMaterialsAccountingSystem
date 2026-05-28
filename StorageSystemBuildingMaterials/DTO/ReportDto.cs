@@ -2,6 +2,9 @@
 
 namespace StorageSystemBuildingMaterials.DTO
 {
+    /// <summary>
+    /// DTO для отчетов
+    /// </summary>
     public class ReportDto
     {
         /// <summary>

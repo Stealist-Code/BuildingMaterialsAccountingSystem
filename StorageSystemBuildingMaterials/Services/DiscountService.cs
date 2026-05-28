@@ -20,6 +20,10 @@ namespace StorageSystemBuildingMaterials.Services
             _db = db;
         }
 
+        /// <summary>
+        /// Создаёт или возвращает существующее состояние продукта с правилом скидки 30% за 14 дней.
+        /// </summary>
+        /// <returns>Возвращает существующее или вновь созданное состояние продукта</returns>
         public async Task<ProductState> CreateProductState()
         {
             var productState = await _db.ProductStates
@@ -41,6 +45,10 @@ namespace StorageSystemBuildingMaterials.Services
             return productState;
         }
 
+        /// <summary>
+        /// Возвращает правило скидки 30% за 14 дней.
+        /// </summary>
+        /// <returns>Возвращает существующее или вновь созданное состояние продукта</returns>
         public async Task<StateRule> CreateStateRule()
         {
             var stateRule = await _db.StateRules

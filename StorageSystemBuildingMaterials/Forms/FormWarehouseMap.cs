@@ -69,7 +69,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _bindingSource.DataSource = table;
 
             ResizeRows();
-            await ApplyColor(columnCount, products);
+            ApplyColor(columnCount, products);
         }
 
         private void ResizeRows()
@@ -93,7 +93,7 @@ namespace StorageSystemBuildingMaterials.Forms
             }
         }
 
-        private async Task ApplyColor(int columnCount, List<ProductDto> products)
+        private void ApplyColor(int columnCount, List<ProductDto> products)
         {
             var productIndex = 0;
             for (var col = 0; col < columnCount; col++)
@@ -108,13 +108,13 @@ namespace StorageSystemBuildingMaterials.Forms
                     var product = products[productIndex];
                     var cell = dataGridViewWarehouseMap.Rows[row].Cells[col];
 
-                    cell.Style.BackColor = await GetProductColor(product);
+                    cell.Style.BackColor = GetProductColor(product);
                     productIndex++;
                 }
             }
         }
 
-        private async Task<Color> GetProductColor(ProductDto productDto)
+        private Color GetProductColor(ProductDto productDto)
         {
             if (productDto is null)
             {

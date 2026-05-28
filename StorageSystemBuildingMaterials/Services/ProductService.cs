@@ -27,6 +27,8 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Получить товары по категории
         /// </summary>
+        /// <param name="categoryId">Id категории</param>
+        /// <returns>Товары с указанным категорией</returns>
         public async Task<List<ProductDto>> GetProducts(Guid categoryId)
         {
             try
@@ -56,6 +58,7 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Получить список товаров для отображения
         /// </summary>
+        /// <returns>Список товаров</returns>
         public async Task<List<ProductDto>> GetProducts()
         {
             try
@@ -85,10 +88,10 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Поиск товаров по названию/артикулу/названию категории (или сразу все вместе)
         /// </summary>
-        /// <param name="article"></param>
-        /// <param name="name"></param>
-        /// <param name="categoryId"></param>
-        /// <returns></returns>
+        /// <param name="article">Артикль</param>
+        /// <param name="name">Название</param>
+        /// <param name="categoryId">Id категории</param>
+        /// <returns>Список товаров</returns>
         public async Task<List<ProductDto>> SearchProductsAdvanced(string articleStr, string name, Guid? categoryId)
         {
             try
@@ -136,7 +139,7 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Создать товар
         /// </summary>
-        /// <param name="product"></param>
+        /// <param name="product">Объект товара</param>
         public async Task CreateProduct(Product product)
         {
             _logger.Info($"Добавление нового товара: {product?.Name}");
@@ -170,8 +173,8 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Обновить данные товара
         /// </summary>
-        /// <param name="updated"></param>
-        /// <exception cref="Exception"></exception>
+        /// <param name="updated">Объект товара</param>
+        /// <exception cref="Exception">Ошибка обновления товара</exception>
         public async Task UpdateProduct(Guid id, Product updated)
         {
             _logger.Info($"Редактирование товара id={id}");
@@ -213,8 +216,8 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Удалить товар
         /// </summary>
-        /// <param name="id"></param>
-        /// <exception cref="Exception"></exception>
+        /// <param name="id">Id товара</param>
+        /// <exception cref="Exception">Ошибка удаления товара</exception>
         public async Task DeleteProduct(Guid id)
         {
             try
@@ -254,7 +257,7 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Получить непросроченные товары 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список товаров</returns>
         public async Task<List<ProductDto>> GetActualProducts()
         {
             var today = DateTime.UtcNow.Date;
@@ -293,7 +296,7 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Получить просроченные товары
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список товаров</returns>
         public async Task<List<ProductDto>> GetExpiredProducts()
         {
             var today = DateTime.UtcNow.Date;

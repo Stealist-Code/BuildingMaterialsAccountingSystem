@@ -11,7 +11,8 @@ namespace StorageSystemBuildingMaterials.Validation.Interfaces
         /// <summary>
         /// Проверяет товар на валидность
         /// </summary>
-        /// <param name="product"></param>
+        /// <param name="product">Объект товара.</param>
+        /// <exception cref="Exception">Название не заполнено, цена (остаток) отрицательная или категория не указана.</exception>
         public void Validate(Product product);
     }
 }

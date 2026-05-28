@@ -12,38 +12,36 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
     public interface IProductService
     {
         /// <summary>
-        /// Получение товаров по категории
+        /// Получить товары по категории
         /// </summary>
-        /// <param name="categoryId"></param>
-        /// <returns></returns>
+        /// <param name="categoryId">Id категории</param>
+        /// <returns>Товары с указанным категорией</returns>
         public Task<List<ProductDto>> GetProducts(Guid categoryId);
 
         /// <summary>
         /// Получение всех товаров
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список товаров</returns>
         public Task<List<ProductDto>> GetProducts();
 
         /// <summary>
-        /// Создание товара
+        /// Создать товар
         /// </summary>
-        /// <param name="product"></param>
-        /// <returns></returns>
+        /// <param name="product">Объект товара</param>
         public Task CreateProduct(Product product);
 
         /// <summary>
-        /// Обновление товара
+        /// Обновить данные товара
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="updated"></param>
-        /// <returns></returns>
+        /// <param name="updated">Объект товара</param>
+        /// <exception cref="Exception">Ошибка обновления товара</exception>
         public Task UpdateProduct(Guid id, Product updated);
 
         /// <summary>
-        /// Удаление товара
+        /// Удалить товар
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Id товара</param>
+        /// <exception cref="Exception">Ошибка удаления товара</exception>
         public Task DeleteProduct(Guid id);
 
         /// <summary>
@@ -55,7 +53,16 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
         /// <summary>
         /// Получение просроченных товаров
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список товаров</returns>
         public Task<List<ProductDto>> GetExpiredProducts();
+
+        /// <summary>
+        /// Поиск товаров по названию/артикулу/названию категории (или сразу все вместе)
+        /// </summary>
+        /// <param name="article">Артикль</param>
+        /// <param name="name">Название</param>
+        /// <param name="categoryId">Id категории</param>
+        /// <returns>Список товаров</returns>
+        public Task<List<ProductDto>> SearchProductsAdvanced(string articleStr, string name, Guid? categoryId);
     }
 }

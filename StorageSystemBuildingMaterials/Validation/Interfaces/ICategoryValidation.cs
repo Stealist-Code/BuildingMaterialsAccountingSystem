@@ -10,7 +10,8 @@ namespace StorageSystemBuildingMaterials.Validation.Interfaces
         /// <summary>
         /// Проверяет название категории на валидность
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">Название категории</param>
+        /// <exception cref="Exception">Пустое название категории</exception>
         public void Validate(string name);
     }
 }

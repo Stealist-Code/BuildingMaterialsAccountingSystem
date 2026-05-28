@@ -4,11 +4,15 @@ using StorageSystemBuildingMaterials.Data;
 using StorageSystemBuildingMaterials.DTO;
 using StorageSystemBuildingMaterials.HelperClasses;
 using StorageSystemBuildingMaterials.Models;
+using StorageSystemBuildingMaterials.Properties;
 using StorageSystemBuildingMaterials.Services.Interfaces;
 using StorageSystemBuildingMaterials.Validation.Interfaces;
 
 namespace StorageSystemBuildingMaterials.Services
 {
+    /// <summary>
+    /// Сервис для работы с поставками
+    /// </summary>
     public class SupplyService : ISupplyService
     {
         private readonly AppDbContext _db;
@@ -24,6 +28,7 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Получить список товаров для отображения
         /// </summary>
+        /// <returns>Список товаров</returns>
         public async Task<List<ProductDto>> GetProducts()
         {
             try
@@ -66,7 +71,7 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Получить непросроченные товары 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список товаров</returns>
         public async Task<List<ProductDto>> GetActualProducts()
         {
             var today = DateTime.UtcNow.Date;
@@ -104,7 +109,7 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Получить просроченные товары
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список товаров</returns>
         public async Task<List<ProductDto>> GetExpiredProducts()
         {
             var today = DateTime.UtcNow.Date;
@@ -142,10 +147,10 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Поиск товаров по названию/артикулу/названию категории (или сразу все вместе)
         /// </summary>
-        /// <param name="article"></param>
-        /// <param name="name"></param>
-        /// <param name="categoryId"></param>
-        /// <returns></returns>
+        /// <param name="articleStr">Артикул в строковом формате (будет преобразован в число).</param>
+        /// <param name="name">Название товара (точное совпадение).</param>
+        /// <param name="categoryId">ID категории.</param>
+        /// <returns>Список товаров</returns>
         public async Task<List<ProductDto>> SearchProductsAdvanced(string articleStr, string name, Guid? categoryId)
         {
             try

@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StorageSystemBuildingMaterials.Models
 {
+    /// <summary>
+    /// Модель класса для адресов
+    /// </summary>
     public class Address
     {
         /// <summary>

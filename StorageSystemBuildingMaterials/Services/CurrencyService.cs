@@ -23,7 +23,7 @@ public class CurrencyService : ICurrencyService
     /// Получает курс указанной валюты относительно рубля
     /// </summary>
     /// <param name="code">Трехбуквенный код валюты.</param>
-    /// <returns></returns>
+    /// <returns>Курс валюты к рублю</returns>
     public async Task<decimal> GetRate(string code)
     {
         if (code == "RUB")
@@ -46,7 +46,7 @@ public class CurrencyService : ICurrencyService
     /// </summary>
     /// <param name="code">Трехбуквенный код валюты.</param>
     /// <param name="dateTime">Дата, на которую требуется получить курс.</param>
-    /// <returns></returns>
+    /// <returns>Курс валюты к рублю на указанную дату</returns>
     public async Task<decimal> GetRateByDate(string code, DateTime dateTime)
     {
         var dateStr = dateTime.ToString("dd/MM/yyyy");
@@ -90,7 +90,6 @@ public class CurrencyService : ICurrencyService
     /// </summary>
     /// <param name="code">Трехбуквенный код валюты</param>
     /// <param name="productId">Id товара</param>
-    /// <returns></returns>
     public async Task PriceChangeSuppliesInDatabase(string code, Guid productId)
     {
         var supplies = await _db.SupplyItems

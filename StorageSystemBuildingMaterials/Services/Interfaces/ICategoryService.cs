@@ -11,29 +11,29 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
         /// <summary>
         /// Получение списка всех категорий
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список категорий</returns>
         public Task<List<Category>> GetAllCategories();
 
         /// <summary>
-        /// Добавление категорий
+        /// Добавить категорию (только для админа)
         /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        /// <param name="name">Название категории</param>
+        /// <exception cref="Exception">Выбрасывается, если ошибка создания категории</exception>
         public Task AddCategory(string name);
-        
+
         /// <summary>
-        /// Обновление категории
+        /// Обновляет название категории
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="newName"></param>
-        /// <returns></returns>
+        /// <param name="id">Id категории</param>
+        /// <param name="newName">Новое название категории</param>
+        /// <exception cref="Exception">Выбрасывается, если ошибка обновления категории</exception>
         public Task UpdateCategory(Guid id, string newName);
-        
+
         /// <summary>
-        /// Удаление категорий
+        /// Удалить категорию (только если нет товаров)
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Id категории</param>
+        /// <exception cref="Exception">Выбрасывается, если ошибка удаления категории</exception>
         public Task DeleteCategory(Guid id);
     }
 }

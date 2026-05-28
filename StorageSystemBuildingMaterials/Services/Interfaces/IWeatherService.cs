@@ -1,5 +1,8 @@
 ﻿namespace StorageSystemBuildingMaterials.Services.Interfaces
 {
+    /// <summary>
+    /// Интерфейс сервиса для работы с погодой
+    /// </summary>
     public interface IWeatherService
     {
         /// <summary>

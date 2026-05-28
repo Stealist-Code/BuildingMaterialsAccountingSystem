@@ -2,6 +2,7 @@
 using NLog;
 using StorageSystemBuildingMaterials.Data;
 using StorageSystemBuildingMaterials.Models;
+using StorageSystemBuildingMaterials.Properties;
 using StorageSystemBuildingMaterials.Services.Interfaces;
 using System;
 
@@ -23,7 +24,7 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Возвращает всех пользователей с их ролями
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список пользователей</returns>
         public async Task<List<User>> GetAllUsers()
         {
             try

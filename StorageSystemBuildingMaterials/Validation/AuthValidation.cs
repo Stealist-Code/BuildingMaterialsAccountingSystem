@@ -14,6 +14,8 @@ namespace StorageSystemBuildingMaterials.Validation
         /// <summary>
         /// Проверяет, является ли строка корректным email-адресом (с помощью регулярного выражения).
         /// </summary>
+        /// <param name="email">Email.</param>
+        /// <returns>true, если email валиден, иначе false.</returns>
         public bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -29,8 +31,8 @@ namespace StorageSystemBuildingMaterials.Validation
         /// <summary>
         /// Метод, который проверяет введенные поля при регистрации пользователя
         /// </summary>
-        /// <param name="request"></param>
-        /// <exception cref="Exception"></exception>
+        /// <param name="request">Запрос регистрации.</param>
+        /// <exception cref="Exception">Ошибка валидации (незаполненные поля, невалидный email, слабый пароль, несовпадение паролей).</exception>
         public void ValidateRegisterRequest(RegisterRequest request)
         {
             if (string.IsNullOrWhiteSpace(request.FirstName) || string.IsNullOrWhiteSpace(request.LastName) ||
@@ -58,9 +60,8 @@ namespace StorageSystemBuildingMaterials.Validation
         /// <summary>
         /// Проверка логина на валидность (заполнение всех полей, а также проверка электронной почты на валидность)
         /// </summary>
-        /// <param name="email"></param>
-        /// <param name="password"></param>
-        /// <exception cref="Exception"></exception>
+        /// <param name="authenticateRequest">Запрос аутентификации.</param>
+        /// <exception cref="Exception">Ошибка валидации (незаполненные поля или невалидный email).</exception>
         public void ValidateLogin(AuthenticateRequest authenticateRequest)
         {
             if (string.IsNullOrEmpty(authenticateRequest.Email) || string.IsNullOrEmpty(authenticateRequest.Password))
@@ -77,8 +78,8 @@ namespace StorageSystemBuildingMaterials.Validation
         /// <summary>
         /// Проверка на наличие в пароле спец символов, цифр, заглавных и строчных букв, длины минимум в 8 символов
         /// </summary>
-        /// <param name="password"></param>
-        /// <returns></returns>
+        /// <param name="password">Пароль для проверки.</param>
+        /// <returns>true, если пароль соответствует требованиям, иначе false.</returns>
         public bool ValidatePassword(string password)
         {
             if (string.IsNullOrWhiteSpace(password) || password.Length < 8)

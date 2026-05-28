@@ -4,6 +4,9 @@ using StorageSystemBuildingMaterials.Models;
 
 namespace StorageSystemBuildingMaterials.HelperClasses
 {
+    /// <summary>
+    /// Класс для работы со скидками
+    /// </summary>
     public static class DiscountHelper
     {
         public static async Task ApplyDiscount(AppDbContext db, SupplyItem supplyItem)
@@ -22,6 +25,12 @@ namespace StorageSystemBuildingMaterials.HelperClasses
             }
         }
 
+        /// <summary>
+        /// Применяет скидки к списку товаров в поставке
+        /// </summary>
+        /// <param name="db">Контекст базы данных</param>
+        /// <param name="supplyItems">Поставки, к которым необходимо применить скидки</param>
+        /// <returns>Задача, представляющая асинхронную операцию</returns>
         public static async Task ApplyDiscount(AppDbContext db, ICollection<SupplyItem> supplyItems)
         {
             if (supplyItems is null || supplyItems.Count == 0)

@@ -3,6 +3,9 @@ using System.Text.Json;
 
 namespace StorageSystemBuildingMaterials.Services
 {
+    /// <summary>
+    /// Сервис для работы с погодой через API 
+    /// </summary>
     public class WeatherService : IWeatherService
     {
         private readonly HttpClient _httpClient;

@@ -20,12 +20,12 @@ namespace StorageSystemBuildingMaterials.Services
         }
 
         /// <summary>
-        /// Получить отчеты
+        /// Получает список отчётов за указанный период времени
         /// </summary>
-        /// <param name="from"></param>
-        /// <param name="to"></param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentException"></exception>
+        /// <param name="from">Начало периода (включительно).</param>
+        /// <param name="to">Конец периода (включительно).</param>
+        /// <returns>Список DTO отчетов, отсортированных по дате.</returns>
+        /// <exception cref="ArgumentException">Если from или to больше текущей даты.</exception>
         public async Task<List<ReportDto>> GetReports(DateTime from, DateTime to)
         {
             if (to > DateTime.Now || from > DateTime.Now)

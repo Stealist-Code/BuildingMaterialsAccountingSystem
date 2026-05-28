@@ -11,8 +11,8 @@ namespace StorageSystemBuildingMaterials.Validation
         /// <summary>
         /// Проверяет заполнено ли поле название категории
         /// </summary>
-        /// <param name="name"></param>
-        /// <exception cref="Exception"></exception>
+        /// <param name="name">Название категории</param>
+        /// <exception cref="Exception">Пустое название категории</exception>
         public void Validate(string name)
         {
             if (string.IsNullOrWhiteSpace(name))

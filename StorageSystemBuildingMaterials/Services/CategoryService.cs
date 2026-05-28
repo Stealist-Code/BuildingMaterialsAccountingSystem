@@ -26,7 +26,7 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Возвращает все категории
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список категорий</returns>
         public async Task<List<Category>> GetAllCategories()
         {
             try
@@ -43,8 +43,8 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Добавить категорию (только для админа)
         /// </summary>
-        /// <param name="name"></param>
-        /// <exception cref="Exception"></exception>
+        /// <param name="name">Название категории</param>
+        /// <exception cref="Exception">Выбрасывается, если ошибка создания категории</exception>
         public async Task AddCategory(string name)
         {
             _logger.Info($"Создание категории {name}");
@@ -76,9 +76,9 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Обновляет название категории
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="newName"></param>
-        /// <exception cref="Exception"></exception>
+        /// <param name="id">Id категории</param>
+        /// <param name="newName">Новое название категории</param>
+        /// <exception cref="Exception">Выбрасывается, если ошибка обновления категории</exception>
         public async Task UpdateCategory(Guid id, string newName)
         {
             try
@@ -118,8 +118,8 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Удалить категорию (только если нет товаров)
         /// </summary>
-        /// <param name="id"></param>
-        /// <exception cref="Exception"></exception>
+        /// <param name="id">Id категории</param>
+        /// <exception cref="Exception">Выбрасывается, если ошибка удаления категории</exception>
         public async Task DeleteCategory(Guid id)
         {
             _logger.Info($"Удаление категории id={id}");

@@ -31,6 +31,11 @@ namespace StorageSystemBuildingMaterials.Services
             _db = db;
         }
 
+        /// <summary>
+        /// Возвращает информацию о клиенте по ИНН. Если клиент не найден, создаёт его.
+        /// </summary>
+        /// <param name="tIN">ИНН клиента.</param>
+        /// <returns>Покупатель DTO</returns>
         public async Task<CustomerDto> GetInfoCustomer(string tIN)
         {
             var customer = await FindCustomerWithTIN(tIN);
@@ -58,6 +63,12 @@ namespace StorageSystemBuildingMaterials.Services
                 FullAddress = customer.Address.FullAddress,
             };
         }
+
+        /// <summary>
+        /// Находит клиента по ИНН вместе с адресом.
+        /// </summary>
+        /// <param name="tIN">ИНН клиента.</param>
+        /// <returns>Покупатель</returns>
         public async Task<Customer> FindCustomerWithTIN(string tIN)
         {
             var customer = await _db.Customers
@@ -68,6 +79,11 @@ namespace StorageSystemBuildingMaterials.Services
             return customer;
         }
 
+        /// <summary>
+        /// Создаёт клиента.
+        /// </summary>
+        /// <param name="tIN">ИНН клиента.</param>
+        /// <returns>Созданный клиент или null, если ИНН не найден в API.</returns>
         private async Task<Customer> CreateCustomer(string tIN)
         {
             var apiSuggest = new SuggestClientAsync(_apiKey);
@@ -111,6 +127,11 @@ namespace StorageSystemBuildingMaterials.Services
             return customer;
         }
 
+        /// <summary>
+        /// Проверяет компанию по ИНН в списке недобросовестных контрагентов.
+        /// </summary>
+        /// <param name="tIN">ИНН компании.</param>
+        /// <returns>Сообщение с признаками нарушений на русском или английском языке, либо пустая строка.</returns>
         public async Task<string> CheckCompanyOnBlackList(string tIN)
         {
             Search company = await _client.SearchAsync(tIN, null, null, null, null, 0);

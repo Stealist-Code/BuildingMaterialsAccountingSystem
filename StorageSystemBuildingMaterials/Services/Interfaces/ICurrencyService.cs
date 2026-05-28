@@ -13,7 +13,7 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
         /// Получает курс указанной валюты относительно рубля
         /// </summary>
         /// <param name="code">Трехбуквенный код валюты.</param>
-        /// <returns></returns>
+        /// <returns>Курс валюты к рублю</returns>
         public Task<decimal> GetRate(string code);
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
         /// </summary>
         /// <param name="code">Трехбуквенный код валюты.</param>
         /// <param name="dateTime">Дата, на которую требуется получить курс.</param>
-        /// <returns></returns>
+        /// <returns>Курс валюты к рублю на указанную дату</returns>
         public Task<decimal> GetRateByDate(string code, DateTime dateTime);
 
         /// <summary>
@@ -29,7 +29,6 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
         /// </summary>
         /// <param name="code">Трехбуквенный код валюты</param>
         /// <param name="productId">Id товара</param>
-        /// <returns></returns>
         public Task PriceChangeSuppliesInDatabase(string code, Guid productId);
     }
 }

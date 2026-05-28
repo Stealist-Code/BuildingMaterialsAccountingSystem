@@ -549,4 +549,13 @@
   <data name="WithoutAccount" xml:space="preserve">
     <value>No account?</value>
   </data>
+  <data name="ExceptionGetUsers" xml:space="preserve">
+    <value>Error getting the list of users</value>
+  </data>
+  <data name="ExceptionSearchProduct" xml:space="preserve">
+    <value>Product search error</value>
+  </data>
+  <data name="ExceptionGetListProduct" xml:space="preserve">
+    <value>Error receiving the product list</value>
+  </data>
 </root>

@@ -8,6 +8,11 @@ namespace StorageSystemBuildingMaterials.Data
     /// </summary>
     public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {
+        /// <summary>
+        /// Создаёт экземпляр <see cref="AppDbContext"/> для миграций.
+        /// </summary>
+        /// <param name="args">Аргументы командной строки (не используются).</param>
+        /// <returns>Настроенный экземпляр контекста базы данных.</returns>
         public AppDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();

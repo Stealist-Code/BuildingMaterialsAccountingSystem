@@ -29,8 +29,8 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Проверяет введенные данные при входе в аккаунт
         /// </summary>
-        /// <param name="authenticateRequest"></param>
-        /// <returns></returns>
+        /// <param name="authenticateRequest">Запрос, содержащий email и пароль пользователя</param>
+        /// <returns>Данные аутентифицированного пользователя (<see cref="User"/>)</returns>
         public async Task<User?> Authenticate(AuthenticateRequest authenticateRequest)
         {
             try
@@ -64,8 +64,8 @@ namespace StorageSystemBuildingMaterials.Services
         /// <summary>
         /// Метод, который создает пользователя
         /// </summary>
-        /// <param name="request"></param>
-        /// <exception cref="Exception"></exception>
+        /// <param name="request">Запрос, содержащий данные для регистрации</param>
+        /// <exception cref="Exception">Выбрасывается, если роль "Worker" не найдена в базе данных или email не существует</exception>
         public async Task Register(RegisterRequest request)
         {
             _authValidation.ValidateRegisterRequest(request);

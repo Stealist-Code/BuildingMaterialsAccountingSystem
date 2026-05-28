@@ -559,4 +559,13 @@
   <data name="WithoutAccount" xml:space="preserve">
     <value>Нет аккаунта?</value>
   </data>
+  <data name="ExceptionGetUsers" xml:space="preserve">
+    <value>Ошибка получения списка пользователей</value>
+  </data>
+  <data name="ExceptionSearchProduct" xml:space="preserve">
+    <value>Ошибка поиска товаров</value>
+  </data>
+  <data name="ExceptionGetListProduct" xml:space="preserve">
+    <value>Ошибка получения списка товаров</value>
+  </data>
 </root>

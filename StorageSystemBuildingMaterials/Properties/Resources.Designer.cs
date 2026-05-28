@@ -567,6 +567,33 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка получения списка товаров.
+        /// </summary>
+        public static string ExceptionGetListProduct {
+            get {
+                return ResourceManager.GetString("ExceptionGetListProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка получения списка пользователей.
+        /// </summary>
+        public static string ExceptionGetUsers {
+            get {
+                return ResourceManager.GetString("ExceptionGetUsers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка поиска товаров.
+        /// </summary>
+        public static string ExceptionSearchProduct {
+            get {
+                return ResourceManager.GetString("ExceptionSearchProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Годен до.
         /// </summary>
         public static string ExpirationDate {

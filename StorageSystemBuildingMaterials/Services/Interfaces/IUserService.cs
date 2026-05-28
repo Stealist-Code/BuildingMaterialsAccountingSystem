@@ -13,7 +13,7 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
         /// <summary>
         /// Получить список всех пользователей
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Список пользователей</returns>
         public Task<List<User>> GetAllUsers();
     }
 }

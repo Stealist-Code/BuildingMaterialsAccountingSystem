@@ -12,8 +12,8 @@ namespace StorageSystemBuildingMaterials.Validation
         /// <summary>
         /// Проверка на заполнение поля имени, а также проверка на корректную цену закупки
         /// </summary>
-        /// <param name="product"></param>
-        /// <exception cref="Exception"></exception>
+        /// <param name="product">Объект товара.</param>
+        /// <exception cref="Exception">Название не заполнено, цена (остаток) отрицательная или категория не указана.</exception>
         public void Validate(Product product)
         {
             if (string.IsNullOrWhiteSpace(product.Name))
