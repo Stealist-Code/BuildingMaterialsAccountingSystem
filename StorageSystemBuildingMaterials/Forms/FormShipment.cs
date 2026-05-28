@@ -197,7 +197,8 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualPrice.Text = Resources.SalePrice;
             labelTextVisualShipment.Text = Resources.CreatingShipment;
             labelPositions.Text = Resources.Positions;
-
+            labelTIN.Text = Resources.TIN;
+            labelWeather.Text = Resources.Weather;
         }
 
         private void FormShipment_Load(object sender, EventArgs e)
