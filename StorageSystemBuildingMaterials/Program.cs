@@ -40,7 +40,7 @@ namespace StorageSystemBuildingMaterials
                 var weatherService = container.Resolve<IWeatherService>();
                 var currencyState = container.Resolve<CurrencyState>();
 
-                Application.Run(new FormLogin(
+                Application.Run(new FormLogInApp(
                     authService,
                     authValidation,
                     categoryService,
@@ -56,8 +56,6 @@ namespace StorageSystemBuildingMaterials
                     tINService,
                     weatherService
                 ));
-                var startForm = new FormLogInApp(container);
-                Application.Run(startForm);
             }
             catch (Exception ex)
             {

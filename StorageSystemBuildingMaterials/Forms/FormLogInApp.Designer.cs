@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogInApp));
-            label1 = new Label();
+            labelText = new Label();
             buttonOpen = new Button();
             buttonClose = new Button();
             SuspendLayout();
             // 
-            // label1
+            // labelText
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(188, 115);
-            label1.Name = "label1";
-            label1.Size = new Size(506, 35);
-            label1.TabIndex = 0;
-            label1.Text = "Система учета строительных материалов";
+            labelText.Anchor = AnchorStyles.None;
+            labelText.AutoSize = true;
+            labelText.BackColor = Color.Transparent;
+            labelText.Font = new Font("Segoe UI Semibold", 26F, FontStyle.Bold);
+            labelText.Location = new Point(23, 111);
+            labelText.Name = "labelText";
+            labelText.Size = new Size(880, 60);
+            labelText.TabIndex = 0;
+            labelText.Text = "Система учета строительных материалов";
             // 
             // buttonOpen
             // 
-            buttonOpen.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonOpen.Anchor = AnchorStyles.None;
             buttonOpen.BackColor = Color.Black;
             buttonOpen.Font = new Font("Segoe UI", 12F);
             buttonOpen.ForeColor = Color.White;
@@ -63,6 +63,7 @@
             // 
             // buttonClose
             // 
+            buttonClose.Anchor = AnchorStyles.None;
             buttonClose.BackColor = Color.Black;
             buttonClose.Font = new Font("Segoe UI", 12F);
             buttonClose.ForeColor = Color.White;
@@ -84,7 +85,7 @@
             ClientSize = new Size(906, 529);
             Controls.Add(buttonClose);
             Controls.Add(buttonOpen);
-            Controls.Add(label1);
+            Controls.Add(labelText);
             ForeColor = Color.Black;
             Name = "FormLogInApp";
             Text = "Вход в приложение";
@@ -94,7 +95,7 @@
 
         #endregion
 
-        private Label label1;
+        private Label labelText;
         private Button buttonOpen;
         private Button buttonClose;
     }

@@ -63,9 +63,8 @@ namespace StorageSystemBuildingMaterials.Forms
             dgvCart.Columns.Add("PurchasePrice", Resources.PurchasePrice);
             dgvCart.Columns.Add("ShipmentPrice", Resources.ShipmentPrice);
             dgvCart.Columns.Add("Quantity", Resources.Quantity);
-            dgvCart.Columns.Add("Insurance", Resources.Insurance);
-            dgvCart.Columns.Add("ThermalContainer", Resources.ThermalContainer);
-            dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCart.Columns.Add(new DataGridViewCheckBoxColumn() { Name = "Insurance", HeaderText = Resources.Insurance });
+            dgvCart.Columns.Add(new DataGridViewCheckBoxColumn() { Name = "ThermalContainer", HeaderText = Resources.ThermalContainer });
         }
 
         private void RefreshCart()

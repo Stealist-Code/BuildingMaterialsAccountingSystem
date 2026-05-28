@@ -163,6 +163,7 @@ namespace StorageSystemBuildingMaterials.Forms
             // 
             // labelWithoutAccount
             // 
+            labelWithoutAccount.Anchor = AnchorStyles.None;
             labelWithoutAccount.AutoSize = true;
             labelWithoutAccount.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             labelWithoutAccount.ForeColor = SystemColors.ActiveCaptionText;

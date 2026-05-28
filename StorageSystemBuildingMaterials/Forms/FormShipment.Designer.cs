@@ -217,12 +217,13 @@
             labelTextVisualPrice.BackColor = Color.Transparent;
             labelTextVisualPrice.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualPrice.ForeColor = Color.Black;
-            labelTextVisualPrice.Location = new Point(68, 388);
+            labelTextVisualPrice.Location = new Point(68, 391);
             labelTextVisualPrice.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualPrice.Name = "labelTextVisualPrice";
             labelTextVisualPrice.Size = new Size(136, 75);
             labelTextVisualPrice.TabIndex = 41;
             labelTextVisualPrice.Text = "Цена продажи";
+            labelTextVisualPrice.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // nudTotalPrice
             // 

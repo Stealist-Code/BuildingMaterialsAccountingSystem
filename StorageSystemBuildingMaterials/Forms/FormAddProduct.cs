@@ -54,7 +54,7 @@ namespace StorageSystemBuildingMaterials.Forms
                 return;
             }
 
-            var booleanInsurance = false; 
+            var booleanInsurance = false;
 
             if (comboBoxInsurance.SelectedItem == Resources.Yes)
             {
@@ -168,6 +168,8 @@ namespace StorageSystemBuildingMaterials.Forms
             labelTextVisualName.Text = Resources.Name;
             labelTextVisualCategory.Text = Resources.Category;
             labelTextVisualUnit.Text = Resources.Unit;
+            labelInsurance.Text = Resources.Insurance;
+            labelThermal.Text = Resources.ThermalContainer;
 
             if (_mode == FormAddProductsModeEnum.Create)
             {
@@ -184,6 +186,5 @@ namespace StorageSystemBuildingMaterials.Forms
 
             btnCancel.Text = Resources.Cancel;
         }
-
     }
 }

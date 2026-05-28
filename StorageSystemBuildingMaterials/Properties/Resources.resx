@@ -604,4 +604,16 @@
   <data name="CubicMeters" xml:space="preserve">
     <value>м³ (куб. метры)</value>
   </data>
+  <data name="SystemAccountingBuildingMaterials" xml:space="preserve">
+    <value>Система учета строительных материалов</value>
+  </data>
+  <data name="OpenApp" xml:space="preserve">
+    <value>Открыть приложение</value>
+  </data>
+  <data name="CloseApp" xml:space="preserve">
+    <value>Закрыть приложение</value>
+  </data>
+  <data name="LogInTheApp" xml:space="preserve">
+    <value>Вход в приложение</value>
+  </data>
 </root>

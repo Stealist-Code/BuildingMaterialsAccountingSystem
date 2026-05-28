@@ -574,7 +574,7 @@
     <value>Thermal container</value>
   </data>
   <data name="Yes" xml:space="preserve">
-    <value>Нет</value>
+    <value>Yes</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
@@ -593,5 +593,17 @@
   </data>
   <data name="CubicMeters" xml:space="preserve">
     <value>m³ (cubic meters)</value>
+  </data>
+  <data name="SystemAccountingBuildingMaterials" xml:space="preserve">
+    <value>Building materials accounting system</value>
+  </data>
+  <data name="OpenApp" xml:space="preserve">
+    <value>Open application</value>
+  </data>
+  <data name="CloseApp" xml:space="preserve">
+    <value>Close application</value>
+  </data>
+  <data name="LogInTheApp" xml:space="preserve">
+    <value>Log in to the app</value>
   </data>
 </root>

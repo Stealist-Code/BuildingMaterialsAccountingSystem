@@ -45,6 +45,8 @@ namespace StorageSystemBuildingMaterials.Controls
             dgvProducts.Columns["ExpirationDate"].Visible = false;
             dgvProducts.Columns["DaysLeft"].Visible = false;
             dgvProducts.Columns["ReceivedDate"].Visible = false;
+            dgvProducts.Columns["Insurance"].Visible = false;
+            dgvProducts.Columns["ThermalContainer"].Visible = false;
         }
 
         private async Task LoadDataForAdminPanel()
@@ -61,6 +63,8 @@ namespace StorageSystemBuildingMaterials.Controls
             dgvProducts.Columns["Unit"].HeaderText = Resources.Unit;
             dgvProducts.Columns["CurrentStock"].HeaderText = Resources.CurrentStock;
             dgvProducts.Columns["ReceivedDate"].Visible = false;
+            dgvProducts.Columns["Insurance"].Visible = false;
+            dgvProducts.Columns["ThermalContainer"].Visible = false;
         }
 
         private void InitializeComponent()

@@ -350,6 +350,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Закрыть приложение.
+        /// </summary>
+        public static string CloseApp {
+            get {
+                return ResourceManager.GetString("CloseApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Подтвержение.
         /// </summary>
         public static string Confirm {
@@ -848,6 +857,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Вход в приложение.
+        /// </summary>
+        public static string LogInTheApp {
+            get {
+                return ResourceManager.GetString("LogInTheApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Выйти из аккаунта.
         /// </summary>
         public static string Logout {
@@ -925,6 +943,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string NotEnoughStock {
             get {
                 return ResourceManager.GetString("NotEnoughStock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Открыть приложение.
+        /// </summary>
+        public static string OpenApp {
+            get {
+                return ResourceManager.GetString("OpenApp", resourceCulture);
             }
         }
         
@@ -1384,6 +1411,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string SupplySuccess {
             get {
                 return ResourceManager.GetString("SupplySuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Система учета строительных материалов.
+        /// </summary>
+        public static string SystemAccountingBuildingMaterials {
+            get {
+                return ResourceManager.GetString("SystemAccountingBuildingMaterials", resourceCulture);
             }
         }
         

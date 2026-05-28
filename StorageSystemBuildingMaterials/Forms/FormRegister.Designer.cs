@@ -254,13 +254,14 @@
             // 
             // labelAccount
             // 
-            labelAccount.AutoSize = true;
+            labelAccount.Anchor = AnchorStyles.None;
             labelAccount.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            labelAccount.Location = new Point(332, 845);
+            labelAccount.Location = new Point(32, 845);
             labelAccount.Name = "labelAccount";
-            labelAccount.Size = new Size(276, 32);
+            labelAccount.Size = new Size(576, 32);
             labelAccount.TabIndex = 17;
             labelAccount.Text = "Уже есть аккаунт?";
+            labelAccount.TextAlign = ContentAlignment.TopRight;
             // 
             // FormRegister
             // 
