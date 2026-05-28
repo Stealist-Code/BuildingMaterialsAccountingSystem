@@ -26,6 +26,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _shipmentService = shipmentService;
             _userId = userId;
             _discountService = discountService;
+            ApplyLocalization();
 
             this.Load += async (s, e) => await LoadProducts();
         }
@@ -127,8 +128,10 @@ namespace StorageSystemBuildingMaterials.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
+     
         private async void btnCreate_Click(object sender, EventArgs e)
         {
             try
@@ -146,20 +149,21 @@ namespace StorageSystemBuildingMaterials.Forms
                 var productState = await _discountService.CreateProductState();
 
                 var supplyItems = new List<SupplyItem>
-                {
-                    new SupplyItem
-                    {
-                        Id = Guid.NewGuid(),
-                        ProductId = productId,
-                        Quantity = quantity,
-                        CurrentStock = quantity,
-                        PurchasePrice = purchasePrice,
-                        PurchasePriceOnDayPurchace = purchasePrice,
-                        ExpirationDate = DateTime.SpecifyKind(dtpExpirationDate.Value, DateTimeKind.Utc),
-                        ReceivedDate = DateTime.UtcNow,
-                        ProductStateId = productState.Id
-                    }
-                };
+        {
+            new SupplyItem
+            {
+                Id = Guid.NewGuid(),
+                ProductId = productId,
+                Quantity = quantity,
+                CurrentStock = quantity,
+                PurchasePrice = purchasePrice,
+                PurchasePriceOnDayPurchace = purchasePrice,
+                ExpirationDate = DateTime.SpecifyKind(dtpExpirationDate.Value, DateTimeKind.Utc),
+                ReceivedDate = DateTime.UtcNow,
+                ProductState = productState,         
+                ProductStateId = productState.Id
+            }
+        };
 
                 await _shipmentService.CreateSupply(
                     _userId,
@@ -198,11 +202,6 @@ namespace StorageSystemBuildingMaterials.Forms
             labelUploadFile.Text = Resources.UploadFile;
             btnCancel.Text = Resources.Cancel;
             btnCreate.Text = Resources.Create;
-        }
-
-        private void FormDelivery_Load(object sender, EventArgs e)
-        {
-            ApplyLocalization();
         }
     }
 }

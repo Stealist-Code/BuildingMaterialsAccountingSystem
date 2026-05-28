@@ -1,26 +1,20 @@
 ﻿[
   {
-    "ProductName": "Вода",
-    "Quantity": 1000,
-    "Price": 500,
-    "ExpirationDate": "2026-05-01"
+    "ProductName": "Кирпич красный",
+    "Quantity": 100,
+    "Price": 350.50,
+    "ExpirationDate": "2026-12-31T00:00:00"
   },
   {
-    "ProductName": "Колесо",
-    "Quantity": 2000,
-    "Price": 30,
-    "ExpirationDate": "2026-06-15"
+    "ProductName": "Доски",
+    "Quantity": 500,
+    "Price": 12.00,
+    "ExpirationDate": "2030-06-01T00:00:00"
   },
   {
-    "ProductName": "Колесо",
-    "Quantity": 2000,
-    "Price": 30,
-    "ExpirationDate": "2026-04-24"
-  },
-  {
-    "ProductName": "Вода",
-    "Quantity": 1000,
-    "Price": 500,
-    "ExpirationDate": "2026-04-21"
+    "ProductName": "Доски",
+    "Quantity": 200,
+    "Price": 450.00,
+    "ExpirationDate": "2026-08-15T00:00:00"
   }
 ]

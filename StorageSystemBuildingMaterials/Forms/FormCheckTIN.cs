@@ -77,6 +77,9 @@ namespace StorageSystemBuildingMaterials.Forms
             dgvTIN.AutoGenerateColumns = true;
             dgvTIN.DataSource = _bindingSource;
             dgvTIN.ColumnHeadersHeight = 45;
+            dgvTIN.ReadOnly = true;
+            dgvTIN.AllowUserToAddRows = false;
+            dgvTIN.AllowUserToDeleteRows = false;
         }
 
         private void buttonCheck_Click(object sender, EventArgs e)

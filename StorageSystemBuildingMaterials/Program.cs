@@ -13,9 +13,6 @@ namespace StorageSystemBuildingMaterials
         private static IWindsorContainer container;
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-        /// <summary>
-        /// Точка входа в приложение
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -59,6 +56,8 @@ namespace StorageSystemBuildingMaterials
                     tINService,
                     weatherService
                 ));
+                var startForm = new FormLogInApp(container);
+                Application.Run(startForm);
             }
             catch (Exception ex)
             {

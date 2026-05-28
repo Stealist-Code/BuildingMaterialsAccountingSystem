@@ -247,7 +247,6 @@
             buttonRegisrationINAuth.TabIndex = 16;
             buttonRegisrationINAuth.Text = "Авторизоваться";
             buttonRegisrationINAuth.UseVisualStyleBackColor = false;
-            buttonRegisrationINAuth.Click += buttonRegisrationINAuth_Click;
             // 
             // errorProvider
             // 

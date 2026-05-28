@@ -92,10 +92,6 @@ namespace StorageSystemBuildingMaterials.Forms
             this.Close();
         }
 
-        private void buttonRegisrationINAuth_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void FormRegister_Load(object sender, EventArgs e)
         {

@@ -43,6 +43,10 @@
             labelThermal = new Label();
             comboBoxInsurance = new ComboBox();
             comboBoxThermal = new ComboBox();
+            label1 = new Label();
+            label2 = new Label();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             SuspendLayout();
             // 
             // btnCancel
@@ -103,6 +107,7 @@
             labelTextVisualName.Font = new Font("Microsoft Sans Serif", 16F);
             labelTextVisualName.ForeColor = Color.Black;
             labelTextVisualName.Location = new Point(236, 121);
+            labelTextVisualName.Location = new Point(228, 135);
             labelTextVisualName.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualName.Name = "labelTextVisualName";
             labelTextVisualName.Size = new Size(137, 31);
@@ -117,6 +122,7 @@
             labelTextVisualCategory.Font = new Font("Microsoft Sans Serif", 16F);
             labelTextVisualCategory.ForeColor = Color.Black;
             labelTextVisualCategory.Location = new Point(229, 207);
+            labelTextVisualCategory.Location = new Point(228, 202);
             labelTextVisualCategory.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualCategory.Name = "labelTextVisualCategory";
             labelTextVisualCategory.Size = new Size(144, 31);
@@ -131,6 +137,7 @@
             labelTextVisualUnit.Font = new Font("Microsoft Sans Serif", 16F);
             labelTextVisualUnit.ForeColor = Color.Black;
             labelTextVisualUnit.Location = new Point(220, 284);
+            labelTextVisualUnit.Location = new Point(228, 271);
             labelTextVisualUnit.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualUnit.Name = "labelTextVisualUnit";
             labelTextVisualUnit.Size = new Size(201, 31);
@@ -159,6 +166,7 @@
             cbCategory.IntegralHeight = false;
             cbCategory.ItemHeight = 31;
             cbCategory.Location = new Point(458, 204);
+            cbCategory.Location = new Point(454, 194);
             cbCategory.Margin = new Padding(2, 3, 2, 3);
             cbCategory.Name = "cbCategory";
             cbCategory.Size = new Size(311, 39);
@@ -171,6 +179,7 @@
             txtName.Font = new Font("Microsoft Sans Serif", 16F);
             txtName.ForeColor = Color.Black;
             txtName.Location = new Point(458, 121);
+            txtName.Location = new Point(454, 112);
             txtName.Margin = new Padding(2, 3, 2, 3);
             txtName.Multiline = true;
             txtName.Name = "txtName";
@@ -187,6 +196,7 @@
             comboBoxUnit.IntegralHeight = false;
             comboBoxUnit.ItemHeight = 31;
             comboBoxUnit.Location = new Point(455, 276);
+            comboBoxUnit.Location = new Point(454, 271);
             comboBoxUnit.Margin = new Padding(3, 4, 3, 4);
             comboBoxUnit.Name = "comboBoxUnit";
             comboBoxUnit.Size = new Size(314, 39);
@@ -247,6 +257,61 @@
             comboBoxThermal.Name = "comboBoxThermal";
             comboBoxThermal.Size = new Size(311, 39);
             comboBoxThermal.TabIndex = 30;
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft Sans Serif", 16F);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(192, 344);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(226, 31);
+            label1.TabIndex = 27;
+            label1.Text = "Термоконтейнер";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Microsoft Sans Serif", 16F);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(235, 406);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(147, 31);
+            label2.TabIndex = 28;
+            label2.Text = "Страховка";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.None;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Microsoft Sans Serif", 16F);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.IntegralHeight = false;
+            comboBox1.ItemHeight = 31;
+            comboBox1.Location = new Point(454, 341);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(314, 39);
+            comboBox1.TabIndex = 29;
+            // 
+            // comboBox2
+            // 
+            comboBox2.Anchor = AnchorStyles.None;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.Font = new Font("Microsoft Sans Serif", 16F);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.IntegralHeight = false;
+            comboBox2.ItemHeight = 31;
+            comboBox2.Location = new Point(454, 406);
+            comboBox2.Margin = new Padding(3, 4, 3, 4);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(314, 39);
+            comboBox2.TabIndex = 30;
             // 
             // FormAddProduct
             // 
@@ -259,6 +324,11 @@
             Controls.Add(comboBoxInsurance);
             Controls.Add(labelThermal);
             Controls.Add(labelInsurance);
+            ClientSize = new Size(969, 597);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(comboBoxUnit);
             Controls.Add(txtName);
             Controls.Add(cbCategory);
@@ -295,5 +365,9 @@
         private Label labelThermal;
         private ComboBox comboBoxInsurance;
         private ComboBox comboBoxThermal;
+        private Label label1;
+        private Label label2;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }
