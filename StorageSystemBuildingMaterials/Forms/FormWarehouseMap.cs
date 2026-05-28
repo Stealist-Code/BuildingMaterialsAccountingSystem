@@ -17,7 +17,7 @@ namespace StorageSystemBuildingMaterials.Forms
             InitializeComponent();
             dataGridViewWarehouseMap.DataSource = _bindingSource;
             dataGridViewWarehouseMap.SizeChanged += (s, e) => ResizeRows();
-            this.Load += FormWarehouseMap_Load;   
+            this.Load += FormWarehouseMap_Load;
         }
 
         private async void FormWarehouseMap_Load(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
             for (var c = 0; c < columnCount; c++)
             {
-                table.Columns.Add($"Ряд №{c+1}", typeof(string));
+                table.Columns.Add($"Ряд №{c + 1}", typeof(string));
             }
 
             for (var r = 0; r < _rowsMin; r++)

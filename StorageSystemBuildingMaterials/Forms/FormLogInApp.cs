@@ -9,10 +9,13 @@ namespace StorageSystemBuildingMaterials.Forms
     {
         private readonly IWindsorContainer _container;
 
+
         public FormLogInApp(IWindsorContainer container)
         {
             InitializeComponent();
             _container = container;
+
+         
         }
 
         private void buttonOpen_Click(object sender, EventArgs e)

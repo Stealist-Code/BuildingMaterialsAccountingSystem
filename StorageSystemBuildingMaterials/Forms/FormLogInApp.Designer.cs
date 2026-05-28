@@ -36,6 +36,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -47,10 +48,12 @@
             // 
             // buttonOpen
             // 
+            buttonOpen.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             buttonOpen.BackColor = Color.Black;
             buttonOpen.Font = new Font("Segoe UI", 12F);
             buttonOpen.ForeColor = Color.White;
-            buttonOpen.Location = new Point(60, 241);
+            buttonOpen.Location = new Point(258, 199);
+            buttonOpen.Margin = new Padding(10);
             buttonOpen.Name = "buttonOpen";
             buttonOpen.Size = new Size(328, 81);
             buttonOpen.TabIndex = 1;
@@ -63,10 +66,11 @@
             buttonClose.BackColor = Color.Black;
             buttonClose.Font = new Font("Segoe UI", 12F);
             buttonClose.ForeColor = Color.White;
-            buttonClose.Location = new Point(525, 241);
+            buttonClose.Location = new Point(258, 340);
             buttonClose.Name = "buttonClose";
+            buttonClose.RightToLeft = RightToLeft.No;
             buttonClose.Size = new Size(328, 81);
-            buttonClose.TabIndex = 2;
+            buttonClose.TabIndex = 1;
             buttonClose.Text = "Закрыть приложение";
             buttonClose.UseVisualStyleBackColor = false;
             buttonClose.Click += buttonClose_Click;
@@ -83,7 +87,7 @@
             Controls.Add(label1);
             ForeColor = Color.Black;
             Name = "FormLogInApp";
-            Text = "FormLogInApp";
+            Text = "Вход в приложение";
             ResumeLayout(false);
             PerformLayout();
         }
