@@ -6,7 +6,8 @@ using StorageSystemBuildingMaterials.DTO;
 using StorageSystemBuildingMaterials.Models;
 using StorageSystemBuildingMaterials.Services.Interfaces;
 using System.Configuration;
-using IO.Swagger;
+using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace StorageSystemBuildingMaterials.Services
 {
@@ -18,7 +19,6 @@ namespace StorageSystemBuildingMaterials.Services
         private readonly string _apiKey;
         private readonly string _secretKey;
         private readonly HttpClient _httpClient;
-        private readonly Client _client;
         private readonly AppDbContext _db;
       
         public TINService(AppDbContext db, HttpClient httpClient)
@@ -26,8 +26,6 @@ namespace StorageSystemBuildingMaterials.Services
             _apiKey = ConfigurationManager.AppSettings["DaDataApiKey"];
             _secretKey = ConfigurationManager.AppSettings["DaDataSecretKey"];
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["ApiLink"]);
-            _client = new Client(httpClient);
             _db = db;
         }
 
@@ -134,27 +132,38 @@ namespace StorageSystemBuildingMaterials.Services
         /// <returns>Сообщение с признаками нарушений на русском или английском языке, либо пустая строка.</returns>
         public async Task<string> CheckCompanyOnBlackList(string tIN)
         {
-            Search company = await _client.SearchAsync(tIN, null, null, null, null, 0);
+            var baseUrl = "http://www.cbr.ru/warninglistapi/";
+
+            var urlForSearch = $"{baseUrl}Search?sphrase={tIN}&page=0";
+            var resultSearch = await _httpClient.GetStringAsync(urlForSearch);
+
+            using var docSearch = JsonDocument.Parse(resultSearch);
+            var rootSearch = docSearch.RootElement;
 
             var message = string.Empty;
-            // является ли компания контрагентом
-            if (company.Data.Any())
+
+            if (rootSearch.TryGetProperty("Data", out var dataElement) && dataElement.GetArrayLength() > 0)
             {
-                var companyId = company.Data.First().Id;
-                var info = await _client.DetailInfoAsync(companyId);
-                var signs = info.Signs;
+                var companyId = dataElement[0].GetProperty("id").GetInt32();
+
+                var urlDetailInfo = $"{baseUrl}DetailInfo?id={companyId}";
+                var resultDetail = await _httpClient.GetStringAsync(urlDetailInfo);
+
+                using var doc = JsonDocument.Parse(resultDetail);
+                var rootElem = doc.RootElement;
+
+                var signs = rootElem.GetProperty("Signs");
 
                 if (Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "ru")
                 {
-                    message = $"Внимание, компания: {info.Info.First().NameOrg}, с ИНН: {tIN}, является контрагентом:\n";
-                    message += string.Join("\n ", signs.Select(x => x.SignRus));
+                    message = $"Внимание, компания с ИНН: {tIN}, является контрагентом:\n";
+                    message += string.Join("\n ", signs.EnumerateArray().Select(x => x.GetProperty("signRus").GetString()));
                 }
                 else
                 {
-                    message = $"Attention, the company: {info.Info.First().NameOrg}, with INN: {tIN}, is a counterparty:\n";
-                    message += string.Join("\n ", signs.Select(x => x.SignEng));
+                    message = $"Attention, the company with INN: {tIN}, is a counterparty:\n";
+                    message += string.Join("\n ", signs.EnumerateArray().Select(x => x.GetProperty("signEng").GetString()));
                 }
-
                 return message;
             }
             return message;
