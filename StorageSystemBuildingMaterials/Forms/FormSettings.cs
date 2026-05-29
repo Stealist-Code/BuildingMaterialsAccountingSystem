@@ -17,12 +17,14 @@ namespace StorageSystemBuildingMaterials.Forms
         private bool _isUpdating = false;
         private readonly ICurrencyService _currencyService;
         private readonly CurrencyState _currencyState;
+        private readonly IConfigurationAppService _configurationAppService;
 
-        public FormSettings(ICurrencyService currencyService, CurrencyState currencyState)
+        public FormSettings(ICurrencyService currencyService, CurrencyState currencyState, IConfigurationAppService configurationAppService)
         {
             InitializeComponent();
             _currencyService = currencyService;
             _currencyState = currencyState;
+            _configurationAppService = configurationAppService;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -39,11 +41,13 @@ namespace StorageSystemBuildingMaterials.Forms
             {
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru");
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("ru");
+                _configurationAppService.SetLanguage("ru");
             }
             else
             {
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("en");
+                _configurationAppService.SetLanguage("en");
             }
 
             _isUpdating = true;
@@ -106,11 +110,13 @@ namespace StorageSystemBuildingMaterials.Forms
             {
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru");
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("ru");
+                _configurationAppService.SetLanguage("ru");
             }
             else if (comboBoxLanguage.SelectedIndex == 1)
             {
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
                 Thread.CurrentThread.CurrentCulture = new CultureInfo("en");
+                _configurationAppService.SetLanguage("en");
             }
 
             var selectedCode = comboBoxCurrency.SelectedValue.ToString();

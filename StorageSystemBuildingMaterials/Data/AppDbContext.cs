@@ -60,6 +60,11 @@ namespace StorageSystemBuildingMaterials.Data
         /// </summary>
         public DbSet<StateRule> StateRules { get; set; }
 
+        /// <summary>
+        /// Модель таблицы конфигурации программы
+        /// </summary>
+        public DbSet<ConfigurationApp> ConfigurationApps { get; set; }
+
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
             try
@@ -234,6 +239,15 @@ namespace StorageSystemBuildingMaterials.Data
 
                 entity.Property(x => x.Discount).HasColumnType("decimal(5,2)").IsRequired();
                 entity.Property(x => x.DaysBeforeDiscount).IsRequired();
+            });
+
+            // правила конфигурации
+            modelBuilder.Entity<ConfigurationApp>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.Id).HasDefaultValueSql("gen_random_uuid()");
+                entity.Property(e => e.Language).IsRequired().HasMaxLength(10).HasDefaultValue("ru");
             });
         }
     }

@@ -616,4 +616,7 @@
   <data name="LogInTheApp" xml:space="preserve">
     <value>Вход в приложение</value>
   </data>
+  <data name="ReportSend" xml:space="preserve">
+    <value>Отчет успешно экспортирован!</value>
+  </data>
 </root>

@@ -1172,6 +1172,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Отчет успешно экспортирован!.
+        /// </summary>
+        public static string ReportSend {
+            get {
+                return ResourceManager.GetString("ReportSend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Сумма отгрузки.
         /// </summary>
         public static string ReportShipmentAmount {

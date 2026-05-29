@@ -606,4 +606,7 @@
   <data name="LogInTheApp" xml:space="preserve">
     <value>Log in to the app</value>
   </data>
+  <data name="ReportSend" xml:space="preserve">
+    <value>The report has been successfully exported!</value>
+  </data>
 </root>

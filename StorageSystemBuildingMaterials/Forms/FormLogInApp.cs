@@ -24,6 +24,7 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly ITINService _tINService;
         private readonly IWeatherService _weatherService;
         private readonly IWindsorContainer _container;
+        private readonly IConfigurationAppService _configurationAppService;
 
         public FormLogInApp(IAuthService authService,
                          IAuthValidation authValidation,
@@ -38,7 +39,8 @@ namespace StorageSystemBuildingMaterials.Forms
                          ISupplyService supplyService,
                          IDiscountService discountService,
                          ITINService tINService,
-                         IWeatherService weatherService)
+                         IWeatherService weatherService,
+                         IConfigurationAppService configurationAppService)
         {
             InitializeComponent();
             _authService = authService;
@@ -55,6 +57,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _discountService = discountService;
             _tINService = tINService;
             _weatherService = weatherService;
+            _configurationAppService = configurationAppService;
             ApplyLocalization();
         }
 
@@ -74,7 +77,8 @@ namespace StorageSystemBuildingMaterials.Forms
                 _supplyService,
                 _discountService,
                 _tINService,
-                _weatherService
+                _weatherService,
+                _configurationAppService
             );
 
             loginForm.Show();

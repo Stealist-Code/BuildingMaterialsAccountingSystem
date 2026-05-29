@@ -9,6 +9,11 @@ namespace StorageSystemBuildingMaterials.HelperClasses
     /// </summary>
     public static class DiscountHelper
     {
+        /// <summary>
+        /// Метод для применения скидок
+        /// </summary>
+        /// <param name="db">база данных</param>
+        /// <param name="supplyItem">поставки</param>
         public static async Task ApplyDiscount(AppDbContext db, SupplyItem supplyItem)
         {
             if (supplyItem is not null && supplyItem.ExpirationDate > DateTime.UtcNow)

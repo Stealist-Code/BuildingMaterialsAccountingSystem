@@ -29,6 +29,7 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly IDiscountService _discountService;
         private readonly ITINService _tINService;
         private readonly IWeatherService _weatherService;
+        private readonly IConfigurationAppService _configurationAppService;
         private readonly Func<FormLogin> _loginForm;
         private readonly CurrencyState _currencyState;
 
@@ -48,7 +49,8 @@ namespace StorageSystemBuildingMaterials.Forms
                         ISupplyService supplyService,
                         IDiscountService discountService,
                         ITINService tINService,
-                        IWeatherService weatherService)
+                        IWeatherService weatherService,
+                        IConfigurationAppService configurationAppService)
         {
             InitializeComponent();
 
@@ -66,6 +68,7 @@ namespace StorageSystemBuildingMaterials.Forms
             _discountService = discountService;
             _tINService = tINService;
             _weatherService = weatherService;
+            _configurationAppService = configurationAppService;
 
             if (!Enum.TryParse(user.Role.Title, out Roles _role))
             {
@@ -263,7 +266,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
-            var settingsForm = new FormSettings(_currencyService, _currencyState);
+            var settingsForm = new FormSettings(_currencyService, _currencyState, _configurationAppService);
 
             settingsForm.ShowDialog();
         }

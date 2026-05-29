@@ -99,7 +99,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
                         File.WriteAllLines(sfd.FileName, lines, System.Text.Encoding.UTF8);
 
-                        MessageBox.Show("Отчет успешно экспортирован!");
+                        MessageBox.Show(Resources.ReportSend);
                     }
                 }
             }

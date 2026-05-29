@@ -12,8 +12,8 @@ namespace StorageSystemBuildingMaterials.HelperClasses
         /// <summary>
         /// Преобразует пароль в хэш
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">Пароль</param>
+        /// <returns>Хэш</returns>
         public string GetHash(string input)
         {
             using var sha256 = SHA256.Create();
@@ -34,9 +34,9 @@ namespace StorageSystemBuildingMaterials.HelperClasses
         /// <summary>
         /// Метод, который проверяет пароли на совпадение
         /// </summary>
-        /// <param name="inputPassword"></param>
-        /// <param name="storedHash"></param>
-        /// <returns></returns>
+        /// <param name="inputPassword">Пароль-1</param>
+        /// <param name="storedHash">Пароль-2</param>
+        /// <returns>true или false</returns>
         public bool VerifyPassword(string inputPassword, string passwordHashInDB)
         {
             var hashOfInput = GetHash(inputPassword);

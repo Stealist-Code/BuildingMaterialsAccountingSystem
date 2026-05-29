@@ -5,6 +5,7 @@ using StorageSystemBuildingMaterials.HelperClasses;
 using StorageSystemBuildingMaterials.Services.Interfaces;
 using StorageSystemBuildingMaterials.Services.State;
 using StorageSystemBuildingMaterials.Validation.Interfaces;
+using System.Globalization;
 
 namespace StorageSystemBuildingMaterials
 {
@@ -39,6 +40,12 @@ namespace StorageSystemBuildingMaterials
                 var tINService = container.Resolve<ITINService>();
                 var weatherService = container.Resolve<IWeatherService>();
                 var currencyState = container.Resolve<CurrencyState>();
+                var configurationService = container.Resolve<IConfigurationAppService>();
+
+                var language = configurationService.CreateConfiguration();
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(language);
+                _logger.Info("Загрузка языка из бд");
 
                 Application.Run(new FormLogInApp(
                     authService,
@@ -54,7 +61,8 @@ namespace StorageSystemBuildingMaterials
                     supplyService,
                     discountService,
                     tINService,
-                    weatherService
+                    weatherService,
+                    configurationService
                 ));
             }
             catch (Exception ex)
