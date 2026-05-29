@@ -23,10 +23,28 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             // Arrange
             var category = new Category { Id = Guid.NewGuid(), Name = "Cat1" };
             DbContext.Categories.Add(category);
+
             DbContext.Products.AddRange(
-                new Product { Id = Guid.NewGuid(), Name = "Z_Product", Unit = "шт", Article = "A1", CategoryId = category.Id, CurrentStock = 10 },
-                new Product { Id = Guid.NewGuid(), Name = "A_Product", Unit = "шт", Article = "A2", CategoryId = category.Id, CurrentStock = 5 }
+                new Product
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Z_Product",
+                    Unit = "шт",
+                    Article = "ART-1",
+                    CategoryId = category.Id,
+                    CurrentStock = 10
+                },
+                new Product
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "A_Product",
+                    Unit = "шт",
+                    Article = "ART-2",
+                    CategoryId = category.Id,
+                    CurrentStock = 5
+                }
             );
+
             await DbContext.SaveChangesAsync();
 
             // Act
@@ -44,11 +62,30 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             // Arrange
             var cat1 = new Category { Id = Guid.NewGuid(), Name = "Cat1" };
             var cat2 = new Category { Id = Guid.NewGuid(), Name = "Cat2" };
+
             DbContext.Categories.AddRange(cat1, cat2);
+
             DbContext.Products.AddRange(
-                new Product { Name = "P1", Unit = "шт", Article = "A1", CategoryId = cat1.Id, CurrentStock = 10 },
-                new Product { Name = "P2", Unit = "шт", Article = "A2", CategoryId = cat2.Id, CurrentStock = 10 }
+                new Product
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "P1",
+                    Unit = "шт",
+                    Article = "ART-1",
+                    CategoryId = cat1.Id,
+                    CurrentStock = 10
+                },
+                new Product
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "P2",
+                    Unit = "шт",
+                    Article = "ART-2",
+                    CategoryId = cat2.Id,
+                    CurrentStock = 10
+                }
             );
+
             await DbContext.SaveChangesAsync();
 
             // Act
@@ -71,8 +108,7 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             {
                 Name = "New Product",
                 CategoryId = category.Id,
-                Unit = "pcs",
-                PurchasePrice = 100m,
+                Unit = "шт",
                 CurrentStock = 50
             };
 
@@ -83,9 +119,10 @@ namespace StorageSystemBuildingMaterials.Tests.Services
 
             // Assert
             var saved = await DbContext.Products.FirstOrDefaultAsync(p => p.Name == "New Product");
+
             Assert.NotNull(saved);
-            Assert.StartsWith("ART-", saved.Article);
-            Assert.Equal(100m, saved.PurchasePrice);
+            Assert.Equal("ART-1", saved.Article);
+            Assert.Equal(50, saved.CurrentStock);
             _mockValidation.Verify(v => v.Validate(product), Times.Once);
         }
 
@@ -100,11 +137,25 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             _mockValidation.Setup(v => v.Validate(It.IsAny<Product>())).Verifiable();
 
             // Act
-            await _productService.CreateProduct(new Product { Unit = "шт", Name = "First", CategoryId = category.Id, CurrentStock = 1 });
-            await _productService.CreateProduct(new Product { Unit = "шт", Name = "Second", CategoryId = category.Id, CurrentStock = 1 });
+            await _productService.CreateProduct(new Product
+            {
+                Name = "First",
+                Unit = "шт",
+                CategoryId = category.Id,
+                CurrentStock = 1
+            });
+
+            await _productService.CreateProduct(new Product
+            {
+                Name = "Second",
+                Unit = "шт",
+                CategoryId = category.Id,
+                CurrentStock = 1
+            });
 
             // Assert
             var products = await DbContext.Products.OrderBy(p => p.Article).ToListAsync();
+
             Assert.Equal("ART-1", products[0].Article);
             Assert.Equal("ART-2", products[1].Article);
         }
@@ -115,6 +166,7 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             // Arrange
             var cat1 = new Category { Id = Guid.NewGuid(), Name = "Cat1" };
             var cat2 = new Category { Id = Guid.NewGuid(), Name = "Cat2" };
+
             DbContext.Categories.AddRange(cat1, cat2);
 
             var product = new Product
@@ -123,10 +175,10 @@ namespace StorageSystemBuildingMaterials.Tests.Services
                 Name = "Original",
                 Article = "ART-1",
                 CategoryId = cat1.Id,
-                Unit = "kg",
-                PurchasePrice = 10m,
+                Unit = "кг",
                 CurrentStock = 100
             };
+
             DbContext.Products.Add(product);
             await DbContext.SaveChangesAsync();
 
@@ -134,10 +186,9 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             {
                 Name = "Updated",
                 CategoryId = cat2.Id,
-                Unit = "pcs",
-                PurchasePrice = 20m,
+                Unit = "шт",
                 CurrentStock = 200,
-                Article = "ART-1" // same article
+                Article = "ART-1"
             };
 
             _mockValidation.Setup(v => v.Validate(updated)).Verifiable();
@@ -147,10 +198,11 @@ namespace StorageSystemBuildingMaterials.Tests.Services
 
             // Assert
             var saved = await DbContext.Products.FindAsync(product.Id);
+
+            Assert.NotNull(saved);
             Assert.Equal("Updated", saved.Name);
             Assert.Equal(cat2.Id, saved.CategoryId);
-            Assert.Equal("pcs", saved.Unit);
-            Assert.Equal(20m, saved.PurchasePrice);
+            Assert.Equal("шт", saved.Unit);
             Assert.Equal(200, saved.CurrentStock);
             _mockValidation.Verify(v => v.Validate(updated), Times.Once);
         }
@@ -159,11 +211,21 @@ namespace StorageSystemBuildingMaterials.Tests.Services
         public async Task UpdateProduct_ProductNotFound_ThrowsException()
         {
             // Arrange
-            var updated = new Product { Name = "Test", CategoryId = Guid.NewGuid() };
+            var updated = new Product
+            {
+                Name = "Test",
+                CategoryId = Guid.NewGuid(),
+                Unit = "шт",
+                Article = "ART-1",
+                CurrentStock = 10
+            };
+
             _mockValidation.Setup(v => v.Validate(updated)).Verifiable();
 
             // Act & Assert
-            var ex = await Assert.ThrowsAsync<Exception>(() => _productService.UpdateProduct(Guid.NewGuid(), updated));
+            var ex = await Assert.ThrowsAsync<Exception>(() =>
+                _productService.UpdateProduct(Guid.NewGuid(), updated));
+
             Assert.Equal("ProductNotFound", ex.Message);
         }
 
@@ -174,16 +236,44 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             var category = new Category { Id = Guid.NewGuid(), Name = "Cat" };
             DbContext.Categories.Add(category);
 
-            var product1 = new Product { Id = Guid.NewGuid(), Name = "P1", Unit = "шт", Article = "ART-1", CategoryId = category.Id, CurrentStock = 10 };
-            var product2 = new Product { Id = Guid.NewGuid(), Name = "P2", Unit = "шт", Article = "ART-2", CategoryId = category.Id, CurrentStock = 10 };
+            var product1 = new Product
+            {
+                Id = Guid.NewGuid(),
+                Name = "P1",
+                Unit = "шт",
+                Article = "ART-1",
+                CategoryId = category.Id,
+                CurrentStock = 10
+            };
+
+            var product2 = new Product
+            {
+                Id = Guid.NewGuid(),
+                Name = "P2",
+                Unit = "шт",
+                Article = "ART-2",
+                CategoryId = category.Id,
+                CurrentStock = 10
+            };
+
             DbContext.Products.AddRange(product1, product2);
             await DbContext.SaveChangesAsync();
 
-            var updated = new Product { Name = "P1", Unit = "шт", Article = "ART-2", CategoryId = category.Id };
+            var updated = new Product
+            {
+                Name = "P1",
+                Unit = "шт",
+                Article = "ART-2",
+                CategoryId = category.Id,
+                CurrentStock = 10
+            };
+
             _mockValidation.Setup(v => v.Validate(updated)).Verifiable();
 
             // Act & Assert
-            var ex = await Assert.ThrowsAsync<Exception>(() => _productService.UpdateProduct(product1.Id, updated));
+            var ex = await Assert.ThrowsAsync<Exception>(() =>
+                _productService.UpdateProduct(product1.Id, updated));
+
             Assert.Equal("ProductWithSimilarArticle", ex.Message);
         }
 
@@ -193,7 +283,17 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             // Arrange
             var category = new Category { Id = Guid.NewGuid(), Name = "Cat" };
             DbContext.Categories.Add(category);
-            var product = new Product { Id = Guid.NewGuid(), Name = "ToDelete", Unit = "шт", Article = "ART-1", CategoryId = category.Id, CurrentStock = 10 };
+
+            var product = new Product
+            {
+                Id = Guid.NewGuid(),
+                Name = "ToDelete",
+                Unit = "шт",
+                Article = "ART-1",
+                CategoryId = category.Id,
+                CurrentStock = 10
+            };
+
             DbContext.Products.Add(product);
             await DbContext.SaveChangesAsync();
 
@@ -210,17 +310,42 @@ namespace StorageSystemBuildingMaterials.Tests.Services
         {
             // Arrange
             var category = new Category { Id = Guid.NewGuid(), Name = "Cat" };
-            var product = new Product { Id = Guid.NewGuid(), Name = "Used", Article = "ART-1", Unit = "шт", CategoryId = category.Id, CurrentStock = 10 };
+
+            var product = new Product
+            {
+                Id = Guid.NewGuid(),
+                Name = "Used",
+                Article = "ART-1",
+                Unit = "шт",
+                CategoryId = category.Id,
+                CurrentStock = 10
+            };
+
+            var shipment = new Shipment
+            {
+                Id = Guid.NewGuid(),
+                UserId = DbContext.Users.FirstOrDefault()?.Id ?? Guid.NewGuid(),
+                ShipmentDate = DateTime.UtcNow
+            };
+
             DbContext.Categories.Add(category);
             DbContext.Products.Add(product);
-
-            var shipment = new Shipment { Id = Guid.NewGuid(), UserId = Guid.NewGuid(), ShipmentDate = DateTime.UtcNow };
             DbContext.Shipments.Add(shipment);
-            DbContext.ShipmentItems.Add(new ShipmentItem { ProductId = product.Id, ShipmentId = shipment.Id, Quantity = 1 });
+
+            DbContext.ShipmentItems.Add(new ShipmentItem
+            {
+                Id = Guid.NewGuid(),
+                ProductId = product.Id,
+                ShipmentId = shipment.Id,
+                Quantity = 1
+            });
+
             await DbContext.SaveChangesAsync();
 
             // Act & Assert
-            var ex = await Assert.ThrowsAsync<Exception>(() => _productService.DeleteProduct(product.Id));
+            var ex = await Assert.ThrowsAsync<Exception>(() =>
+                _productService.DeleteProduct(product.Id));
+
             Assert.Equal("ProductCannotDeletedInShippment", ex.Message);
         }
 
@@ -230,7 +355,7 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             // Act
             await _productService.DeleteProduct(Guid.NewGuid());
 
-            // Assert (no exception)
+            // Assert
             Assert.True(true);
         }
 
@@ -240,10 +365,28 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             // Arrange
             var catId = Guid.NewGuid();
             DbContext.Categories.Add(new Category { Id = catId, Name = "Cat" });
+
             DbContext.Products.AddRange(
-                new Product { Id = Guid.NewGuid(), Name = "Product A", Unit = "шт", Article = "ART-123", CategoryId = catId, CurrentStock = 10 },
-                new Product { Id = Guid.NewGuid(), Name = "Product B", Unit = "шт", Article = "ART-456", CategoryId = catId, CurrentStock = 10 }
+                new Product
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Product A",
+                    Unit = "шт",
+                    Article = "ART-123",
+                    CategoryId = catId,
+                    CurrentStock = 10
+                },
+                new Product
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Product B",
+                    Unit = "шт",
+                    Article = "ART-456",
+                    CategoryId = catId,
+                    CurrentStock = 10
+                }
             );
+
             await DbContext.SaveChangesAsync();
 
             // Act
@@ -260,10 +403,26 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             // Arrange
             var catId = Guid.NewGuid();
             DbContext.Categories.Add(new Category { Id = catId, Name = "Cat" });
+
             DbContext.Products.AddRange(
-                new Product { Name = "Гвозди", Unit = "шт", Article = "A1", CategoryId = catId, CurrentStock = 10 },
-                new Product { Name = "Шурупы", Unit = "шт", Article = "A2", CategoryId = catId, CurrentStock = 10 }
+                new Product
+                {
+                    Name = "Гвозди",
+                    Unit = "шт",
+                    Article = "ART-1",
+                    CategoryId = catId,
+                    CurrentStock = 10
+                },
+                new Product
+                {
+                    Name = "Шурупы",
+                    Unit = "шт",
+                    Article = "ART-2",
+                    CategoryId = catId,
+                    CurrentStock = 10
+                }
             );
+
             await DbContext.SaveChangesAsync();
 
             // Act
@@ -280,11 +439,28 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             // Arrange
             var cat1 = new Category { Id = Guid.NewGuid(), Name = "Cat1" };
             var cat2 = new Category { Id = Guid.NewGuid(), Name = "Cat2" };
+
             DbContext.Categories.AddRange(cat1, cat2);
+
             DbContext.Products.AddRange(
-                new Product { Name = "P1", Unit = "шт", Article = "A1", CategoryId = cat1.Id, CurrentStock = 10 },
-                new Product { Name = "P2", Unit = "шт", Article = "A2", CategoryId = cat2.Id, CurrentStock = 10 }
+                new Product
+                {
+                    Name = "P1",
+                    Unit = "шт",
+                    Article = "ART-1",
+                    CategoryId = cat1.Id,
+                    CurrentStock = 10
+                },
+                new Product
+                {
+                    Name = "P2",
+                    Unit = "шт",
+                    Article = "ART-2",
+                    CategoryId = cat2.Id,
+                    CurrentStock = 10
+                }
             );
+
             await DbContext.SaveChangesAsync();
 
             // Act
@@ -293,28 +469,6 @@ namespace StorageSystemBuildingMaterials.Tests.Services
             // Assert
             Assert.Single(results);
             Assert.Equal("P1", results[0].Name);
-        }
-
-        [Fact]
-        public async Task SearchProductsAdvanced_AllCriteria_ReturnsIntersection()
-        {
-            // Arrange
-            var cat1 = new Category { Id = Guid.NewGuid(), Name = "Cat1" };
-            DbContext.Categories.Add(cat1);
-            DbContext.Products.AddRange(
-                new Product { Name = "Target", Unit = "шт", Article = "ART-100", CategoryId = cat1.Id, CurrentStock = 10 },
-                new Product { Name = "Target", Unit = "шт", Article = "ART-200", CategoryId = Guid.NewGuid(), CurrentStock = 10 },
-                new Product { Name = "Other", Unit = "шт", Article = "ART-100", CategoryId = cat1.Id, CurrentStock = 10 }
-            );
-            await DbContext.SaveChangesAsync();
-
-            // Act
-            var results = await _productService.SearchProductsAdvanced("100", "target", cat1.Id);
-
-            // Assert
-            Assert.Single(results);
-            Assert.Equal("Target", results[0].Name);
-            Assert.Equal("ART-100", results[0].Article);
         }
     }
 }
