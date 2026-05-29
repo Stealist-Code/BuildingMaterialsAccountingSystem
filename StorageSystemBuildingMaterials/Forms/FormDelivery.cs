@@ -1,13 +1,4 @@
-﻿using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.Models;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using StorageSystemBuildingMaterials.Services.State;
-using System;
-using System.Windows.Forms;
-using Newtonsoft.Json;
-using StorageSystemBuildingMaterials.Properties;
-
-namespace StorageSystemBuildingMaterials.Forms
+﻿namespace StorageSystemBuildingMaterials.Forms
 {
     /// <summary>
     /// Форма для оформления поставок

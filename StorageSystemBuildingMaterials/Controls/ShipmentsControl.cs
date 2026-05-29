@@ -1,9 +1,4 @@
-﻿using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.Properties;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using System;
-
-namespace StorageSystemBuildingMaterials.Controls
+﻿namespace StorageSystemBuildingMaterials.Controls
 {
     public partial class ShipmentsControl : UserControl
     {

@@ -1,10 +1,4 @@
-﻿using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StorageSystemBuildingMaterials.Services.Interfaces
+﻿namespace StorageSystemBuildingMaterials.Services.Interfaces
 {
     /// <summary>
     /// Интерфейс сервиса для работы с поставками

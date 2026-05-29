@@ -1,6 +1,4 @@
-﻿using StorageSystemBuildingMaterials.Models;
-
-namespace StorageSystemBuildingMaterials.Services.Interfaces
+﻿namespace StorageSystemBuildingMaterials.Services.Interfaces
 {
     /// <summary>
     /// Интерфейс сервиса для работы со скидками 

@@ -1,9 +1,4 @@
-﻿using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.Properties;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
-
-namespace StorageSystemBuildingMaterials.Forms
+﻿namespace StorageSystemBuildingMaterials.Forms
 {
     /// <summary>
     /// Форма для проверки ИНН

@@ -1,11 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StorageSystemBuildingMaterials.Data;
-using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.Models;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using System;
-
-namespace StorageSystemBuildingMaterials.Services
+﻿namespace StorageSystemBuildingMaterials.Services
 {
     /// <summary>
     /// Сервис для работы с отчетами

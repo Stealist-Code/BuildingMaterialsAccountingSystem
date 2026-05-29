@@ -1,9 +1,4 @@
-﻿using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.Models;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
-using System;
-
-namespace StorageSystemBuildingMaterials.Validation
+﻿namespace StorageSystemBuildingMaterials.Validation
 {
     /// <summary>
     /// Класс валидации отгрузки, вся логика валидации, связанная с отгрузками должна быть здесь!!!

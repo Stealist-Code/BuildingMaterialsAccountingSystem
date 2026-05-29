@@ -1,13 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using NLog;
-using StorageSystemBuildingMaterials.Data;
-using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.HelperClasses.Interfaces;
-using StorageSystemBuildingMaterials.Models;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
-
-namespace StorageSystemBuildingMaterials.Services
+﻿namespace StorageSystemBuildingMaterials.Services
 {
     /// <summary>
     /// Сервис для работы с авторизацией, вся логика работы с БД должна быть здесь!!!

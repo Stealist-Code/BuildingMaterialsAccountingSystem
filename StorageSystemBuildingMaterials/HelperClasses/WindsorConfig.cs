@@ -1,14 +1,4 @@
-﻿using Castle.MicroKernel.Registration;
-using Castle.Windsor;
-using Microsoft.EntityFrameworkCore;
-using StorageSystemBuildingMaterials.Data;
-using StorageSystemBuildingMaterials.HelperClasses.Interfaces;
-using StorageSystemBuildingMaterials.Services;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using StorageSystemBuildingMaterials.Services.State;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
-
-namespace StorageSystemBuildingMaterials.HelperClasses
+﻿namespace StorageSystemBuildingMaterials.HelperClasses
 {
     /// <summary>
     /// Конфигурация для Castle Windsor
@@ -55,8 +45,6 @@ namespace StorageSystemBuildingMaterials.HelperClasses
                     .LifestyleSingleton(),
 
                 Component.For<HttpClient>().LifestyleSingleton(),
-
-                Component.For<ICurrencyService>().ImplementedBy<CurrencyService>().LifestyleSingleton(),
 
                 Component.For<CurrencyState>().LifestyleSingleton()
             );

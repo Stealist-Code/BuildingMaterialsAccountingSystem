@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace StorageSystemBuildingMaterials.DTO
+﻿namespace StorageSystemBuildingMaterials.DTO
 {
     /// <summary>
     /// DTO для данных о покупателе

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace StorageSystemBuildingMaterials.Forms.Interfaces
+﻿namespace StorageSystemBuildingMaterials.Forms.Interfaces
 {
     /// <summary>
     /// Интерфейс для поддержки локализации формы или контролов

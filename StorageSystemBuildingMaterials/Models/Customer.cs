@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace StorageSystemBuildingMaterials.Models
+﻿namespace StorageSystemBuildingMaterials.Models
 {
     /// <summary>
     /// Модель покупателя

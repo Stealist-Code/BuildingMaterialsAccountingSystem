@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace StorageSystemBuildingMaterials.DTO
+﻿namespace StorageSystemBuildingMaterials.DTO
 {
     /// <summary>
     /// Класс, который представляет товар, добавленный в отгрузку. Содержит информацию: ID, название, кол-во, остаток

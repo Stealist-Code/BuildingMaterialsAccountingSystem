@@ -1,14 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using NLog;
-using StorageSystemBuildingMaterials.Data;
-using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.HelperClasses;
-using StorageSystemBuildingMaterials.Models;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
-using System;
-
-namespace StorageSystemBuildingMaterials.Services
+﻿namespace StorageSystemBuildingMaterials.Services
 {
     /// <summary>
     /// Сервис для работы с отгрузками. Логика с БД, связанная с отгрузками!!!

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StorageSystemBuildingMaterials.DTO
+﻿namespace StorageSystemBuildingMaterials.DTO
 {
     /// <summary>
     /// DTO для импорта поставок из JSON-файла

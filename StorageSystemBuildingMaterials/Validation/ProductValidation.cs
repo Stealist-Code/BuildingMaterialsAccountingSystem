@@ -1,8 +1,4 @@
-﻿using StorageSystemBuildingMaterials.Models;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
-using System;
-
-namespace StorageSystemBuildingMaterials.Validation
+﻿namespace StorageSystemBuildingMaterials.Validation
 {
     /// <summary>
     /// Класс валидации товара, вся логика валидации, связанная с товарами должна быть здесь!!!

@@ -1,11 +1,4 @@
-﻿using Castle.Windsor;
-using Microsoft.Extensions.DependencyModel;
-using StorageSystemBuildingMaterials.Properties;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using StorageSystemBuildingMaterials.Services.State;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
-
-namespace StorageSystemBuildingMaterials.Forms
+﻿namespace StorageSystemBuildingMaterials.Forms
 {
     public partial class FormLogInApp : Form
     {

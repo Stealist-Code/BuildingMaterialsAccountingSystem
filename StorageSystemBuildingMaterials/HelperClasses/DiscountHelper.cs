@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StorageSystemBuildingMaterials.Data;
-using StorageSystemBuildingMaterials.Models;
-
-namespace StorageSystemBuildingMaterials.HelperClasses
+﻿namespace StorageSystemBuildingMaterials.HelperClasses
 {
     /// <summary>
     /// Класс для работы со скидками

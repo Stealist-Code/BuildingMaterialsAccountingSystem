@@ -1,12 +1,4 @@
-﻿using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.Enums;
-using StorageSystemBuildingMaterials.Forms;
-using StorageSystemBuildingMaterials.Models;
-using StorageSystemBuildingMaterials.Properties;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using System;
-
-namespace StorageSystemBuildingMaterials.Controls
+﻿namespace StorageSystemBuildingMaterials.Controls
 {
     public partial class ProductsControl : UserControl
     {

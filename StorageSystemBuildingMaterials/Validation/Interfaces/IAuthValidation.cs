@@ -1,6 +1,4 @@
-﻿using StorageSystemBuildingMaterials.DTO;
-
-namespace StorageSystemBuildingMaterials.Validation.Interfaces
+﻿namespace StorageSystemBuildingMaterials.Validation.Interfaces
 {
     /// <summary>
     /// Интерфейс для валидации авторизации

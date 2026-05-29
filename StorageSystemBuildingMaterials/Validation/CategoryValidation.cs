@@ -1,7 +1,4 @@
-﻿using StorageSystemBuildingMaterials.Validation.Interfaces;
-using System;
-
-namespace StorageSystemBuildingMaterials.Validation
+﻿namespace StorageSystemBuildingMaterials.Validation
 {
     /// <summary>
     /// Класс валидации категории, вся логика валидации, связанная с категориями должна быть здесь!!!

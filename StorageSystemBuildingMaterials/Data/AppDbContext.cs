@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using NLog;
-using StorageSystemBuildingMaterials.Models;
-
-namespace StorageSystemBuildingMaterials.Data
+﻿namespace StorageSystemBuildingMaterials.Data
 {
     /// <summary>
     /// Класс работы с базой данных

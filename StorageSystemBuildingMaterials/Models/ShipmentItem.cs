@@ -1,7 +1,4 @@
-﻿using StorageSystemBuildingMaterials.DTO;
-using System;
-
-namespace StorageSystemBuildingMaterials.Models
+﻿namespace StorageSystemBuildingMaterials.Models
 {
     /// <summary>
     /// Позиция отгрузки – связывает отгрузку с товаром и указывает количество.

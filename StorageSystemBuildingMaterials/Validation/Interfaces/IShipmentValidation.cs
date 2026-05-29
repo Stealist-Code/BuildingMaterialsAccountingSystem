@@ -1,8 +1,4 @@
-﻿using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.Models;
-using System;
-
-namespace StorageSystemBuildingMaterials.Validation.Interfaces
+﻿namespace StorageSystemBuildingMaterials.Validation.Interfaces
 {
     /// <summary>
     /// Интерфейс для валидации отгрузки

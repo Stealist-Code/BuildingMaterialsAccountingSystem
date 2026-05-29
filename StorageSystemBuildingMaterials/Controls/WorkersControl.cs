@@ -1,9 +1,4 @@
-﻿using StorageSystemBuildingMaterials.Properties;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-
-namespace StorageSystemBuildingMaterials.Controls
+﻿namespace StorageSystemBuildingMaterials.Controls
 {
     public partial class WorkersControl : UserControl
     {

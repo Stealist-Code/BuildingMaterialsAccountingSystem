@@ -1,12 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using NLog;
-using StorageSystemBuildingMaterials.Data;
-using StorageSystemBuildingMaterials.Models;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
-using System;
-
-namespace StorageSystemBuildingMaterials.Services
+﻿namespace StorageSystemBuildingMaterials.Services
 {
     /// <summary>
     /// Сервис для работы с категориями. Вся логика с БД, связанная с категориями!!!

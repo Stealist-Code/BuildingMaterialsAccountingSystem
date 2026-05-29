@@ -1,12 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using NLog;
-using StorageSystemBuildingMaterials.Data;
-using StorageSystemBuildingMaterials.Models;
-using StorageSystemBuildingMaterials.Properties;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using System;
-
-namespace StorageSystemBuildingMaterials.Services
+﻿namespace StorageSystemBuildingMaterials.Services
 {
     /// <summary>
     /// Сервис для работы с пользователями. Логика с БД, связанная с пользователями!!!

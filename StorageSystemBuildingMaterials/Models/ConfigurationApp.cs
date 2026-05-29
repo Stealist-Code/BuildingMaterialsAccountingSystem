@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StorageSystemBuildingMaterials.Models
+﻿namespace StorageSystemBuildingMaterials.Models
 {
     /// <summary>
     /// Модель для хранения конфигурации программы (язык)

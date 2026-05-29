@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
-
-namespace StorageSystemBuildingMaterials.Data
+﻿namespace StorageSystemBuildingMaterials.Data
 {
     /// <summary>
     /// Создаёт контекст базы данных для миграций

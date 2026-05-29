@@ -1,9 +1,4 @@
-﻿using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
-using System;
-using System.Text.RegularExpressions;
-
-namespace StorageSystemBuildingMaterials.Validation
+﻿namespace StorageSystemBuildingMaterials.Validation
 {
     /// <summary>
     /// Класс валидации для авторизации, вся логика валидации, связанная с авторизацией должна быть тут!!!

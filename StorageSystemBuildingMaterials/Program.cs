@@ -1,12 +1,3 @@
-using Castle.Windsor;
-using NLog;
-using StorageSystemBuildingMaterials.Forms;
-using StorageSystemBuildingMaterials.HelperClasses;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using StorageSystemBuildingMaterials.Services.State;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
-using System.Globalization;
-
 namespace StorageSystemBuildingMaterials
 {
     internal static class Program

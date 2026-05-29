@@ -1,7 +1,4 @@
-﻿using StorageSystemBuildingMaterials.Models;
-using System;
-
-namespace StorageSystemBuildingMaterials.Services.Interfaces
+﻿namespace StorageSystemBuildingMaterials.Services.Interfaces
 {
     /// <summary>
     /// Интерфейс сервиса для работы с категориями

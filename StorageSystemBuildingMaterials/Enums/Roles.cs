@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StorageSystemBuildingMaterials.Enums
+﻿namespace StorageSystemBuildingMaterials.Enums
 {
     /// <summary>
     /// Роли

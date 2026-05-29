@@ -1,9 +1,4 @@
-﻿using StorageSystemBuildingMaterials.Properties;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using System;
-using System.Windows.Forms;
-
-namespace StorageSystemBuildingMaterials.Forms
+﻿namespace StorageSystemBuildingMaterials.Forms
 {
     /// <summary>
     /// Форма для отчетов

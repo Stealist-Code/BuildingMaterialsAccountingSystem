@@ -1,8 +1,4 @@
-﻿
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using System.Text.Json;
-
-namespace StorageSystemBuildingMaterials.Services
+﻿namespace StorageSystemBuildingMaterials.Services
 {
     /// <summary>
     /// Сервис для работы с погодой через API 

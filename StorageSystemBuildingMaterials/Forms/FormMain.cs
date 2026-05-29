@@ -1,16 +1,4 @@
-﻿using StorageSystemBuildingMaterials.Controls;
-using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.Enums;
-using StorageSystemBuildingMaterials.Forms.Interfaces;
-using StorageSystemBuildingMaterials.Models;
-using StorageSystemBuildingMaterials.Properties;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using StorageSystemBuildingMaterials.Services.State;
-using StorageSystemBuildingMaterials.Validation.Interfaces;
-using System;
-using System.Windows.Forms;
-
-namespace StorageSystemBuildingMaterials.Forms
+﻿namespace StorageSystemBuildingMaterials.Forms
 {
     /// <summary>
     /// Класс формы

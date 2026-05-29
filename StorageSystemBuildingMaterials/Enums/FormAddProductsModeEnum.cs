@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace StorageSystemBuildingMaterials.Enums
+﻿namespace StorageSystemBuildingMaterials.Enums
 {
     /// <summary>
     /// Режим добавления продукта

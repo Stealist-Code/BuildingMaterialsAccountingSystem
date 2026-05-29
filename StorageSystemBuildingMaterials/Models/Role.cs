@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System;
-
-namespace StorageSystemBuildingMaterials.Models
+﻿namespace StorageSystemBuildingMaterials.Models
 {
     /// <summary>
     /// Класс Role представляет роль пользователя в системе

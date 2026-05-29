@@ -1,13 +1,5 @@
 ﻿using Dadata;
 using Dadata.Model;
-using Microsoft.EntityFrameworkCore;
-using StorageSystemBuildingMaterials.Data;
-using StorageSystemBuildingMaterials.DTO;
-using StorageSystemBuildingMaterials.Models;
-using StorageSystemBuildingMaterials.Services.Interfaces;
-using System.Configuration;
-using System.Net.Http.Json;
-using System.Text.Json;
 
 namespace StorageSystemBuildingMaterials.Services
 {

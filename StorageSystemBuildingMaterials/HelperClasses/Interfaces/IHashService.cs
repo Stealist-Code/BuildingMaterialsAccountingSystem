@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace StorageSystemBuildingMaterials.HelperClasses.Interfaces
+﻿namespace StorageSystemBuildingMaterials.HelperClasses.Interfaces
 {
     /// <summary>
     /// Интерфейс для хэширования

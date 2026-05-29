@@ -1,7 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace StorageSystemBuildingMaterials.Models
+﻿namespace StorageSystemBuildingMaterials.Models
 {
     /// <summary>
     /// Модель класса для адресов

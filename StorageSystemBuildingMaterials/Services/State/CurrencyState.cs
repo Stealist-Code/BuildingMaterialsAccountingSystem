@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StorageSystemBuildingMaterials.Services.State
+﻿namespace StorageSystemBuildingMaterials.Services.State
 {
     /// <summary>
     /// Хранит текущее состояние выбранной валюты в приложении

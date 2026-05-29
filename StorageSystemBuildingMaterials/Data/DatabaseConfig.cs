@@ -1,5 +1,4 @@
-﻿
-namespace StorageSystemBuildingMaterials.Data
+﻿namespace StorageSystemBuildingMaterials.Data
 {
     /// <summary>
     /// Класс содержащий строку подключения к бд

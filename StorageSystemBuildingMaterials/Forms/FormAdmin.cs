@@ -1,11 +1,4 @@
-﻿using StorageSystemBuildingMaterials.Controls;
-using StorageSystemBuildingMaterials.Forms.Interfaces;
-using StorageSystemBuildingMaterials.Properties;
-using System;
-using System.Windows.Forms;
-
-
-namespace StorageSystemBuildingMaterials.Forms
+﻿namespace StorageSystemBuildingMaterials.Forms
 {
     /// <summary>
     /// Административная панель: управление пользователями, товарами, категориями, история отгрузок.

@@ -1,10 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StorageSystemBuildingMaterials
-{
-    internal class GlobalUsings
-    {
-    }
-}
+﻿global using StorageSystemBuildingMaterials.DTO;
+global using StorageSystemBuildingMaterials.Forms.Interfaces;
+global using StorageSystemBuildingMaterials.Models;
+global using StorageSystemBuildingMaterials.Properties;
+global using StorageSystemBuildingMaterials.Services.Interfaces;
+global using StorageSystemBuildingMaterials.Validation.Interfaces;
+global using Microsoft.EntityFrameworkCore;
+global using NLog;
+global using StorageSystemBuildingMaterials.Data;
+global using StorageSystemBuildingMaterials.HelperClasses.Interfaces;
+global using System.Globalization;
+global using System.Text.Json;
+global using System.Xml.Linq;
+global using StorageSystemBuildingMaterials.HelperClasses;
+global using System.Configuration;
+global using System.Text.RegularExpressions;
+global using System.ComponentModel.DataAnnotations.Schema;
+global using Castle.MicroKernel.Registration;
+global using Castle.Windsor;
+global using StorageSystemBuildingMaterials.Services;
+global using StorageSystemBuildingMaterials.Services.State;
+global using System.Security.Cryptography;
+global using System.Text;
+global using System.Data;
+global using StorageSystemBuildingMaterials.Controls;
+global using StorageSystemBuildingMaterials.Enums;
+global using Newtonsoft.Json;
+global using Microsoft.EntityFrameworkCore.Design;
+global using StorageSystemBuildingMaterials.Forms;

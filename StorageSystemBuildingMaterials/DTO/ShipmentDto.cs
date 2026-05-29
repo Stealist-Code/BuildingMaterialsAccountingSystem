@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace StorageSystemBuildingMaterials.DTO
+﻿namespace StorageSystemBuildingMaterials.DTO
 {
     /// <summary>
     /// Данные об отгрузке
