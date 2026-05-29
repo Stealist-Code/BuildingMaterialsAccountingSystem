@@ -1,6 +1,7 @@
 ﻿using StorageSystemBuildingMaterials.DTO;
 using StorageSystemBuildingMaterials.Models;
 using StorageSystemBuildingMaterials.Services.Interfaces;
+using StorageSystemBuildingMaterials.Services.State;
 using System;
 using System.Windows.Forms;
 using Newtonsoft.Json;
@@ -16,9 +17,16 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly IProductService _productService;
         private readonly IShipmentService _shipmentService;
         private readonly IDiscountService _discountService;
+        private readonly ICurrencyService _currencyService;
+        private readonly CurrencyState _currencyState;
         private readonly Guid _userId;
 
-        public FormDelivery(IProductService productService, IShipmentService shipmentService, IDiscountService discountService, Guid userId)
+        public FormDelivery(IProductService productService, 
+                            IShipmentService shipmentService,
+                            IDiscountService discountService, 
+                            ICurrencyService currencyService,
+                            CurrencyState currencyState, 
+                            Guid userId)
         {
             InitializeComponent();
 
@@ -26,6 +34,8 @@ namespace StorageSystemBuildingMaterials.Forms
             _shipmentService = shipmentService;
             _userId = userId;
             _discountService = discountService;
+            _currencyService = currencyService;
+            _currencyState = currencyState;
             ApplyLocalization();
 
             this.Load += async (s, e) => await LoadProducts();
@@ -65,6 +75,7 @@ namespace StorageSystemBuildingMaterials.Forms
                 }
 
                 var products = await _productService.GetProducts();
+                var rate = await _currencyService.GetRate(_currencyState.SelectedCurrency);
 
                 var supplyItems = new List<SupplyItem>();
 
@@ -96,12 +107,18 @@ namespace StorageSystemBuildingMaterials.Forms
 
                     var productState = await _discountService.CreateProductState();
 
+                    var priceInRUB = item.Price * rate;
+
                     supplyItems.Add(new SupplyItem
                     {
                         Id = Guid.NewGuid(),
                         ProductId = product.Id,
                         Quantity = item.Quantity,
                         CurrentStock = item.Quantity,
+                        PurchasePrice = priceInRUB,
+                        PurchasePriceOnDayPurchace = priceInRUB,
+                        ExchangeRateOnDayPurchace = rate,
+                        Currency = _currencyState.SelectedCurrency,
                         ExpirationDate = DateTime.SpecifyKind(item.ExpirationDate, DateTimeKind.Utc),
                         ReceivedDate = DateTime.UtcNow,
                         ProductState = productState,
@@ -113,7 +130,7 @@ namespace StorageSystemBuildingMaterials.Forms
                     _userId,
                     new Address
                     {
-                        Country = "Россия", // заглушки, чтобы корректно отрабатывали поставки
+                        Country = "Россия",
                         Region = "Татарстан",
                         City = "Казань",
                         Street = "Склад",
@@ -131,7 +148,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
         }
 
-     
+
         private async void btnCreate_Click(object sender, EventArgs e)
         {
             try
@@ -147,23 +164,27 @@ namespace StorageSystemBuildingMaterials.Forms
                 }
 
                 var productState = await _discountService.CreateProductState();
+                var rate = await _currencyService.GetRate(_currencyState.SelectedCurrency);
+                var priceInRUB = purchasePrice * rate;
 
                 var supplyItems = new List<SupplyItem>
-        {
-            new SupplyItem
-            {
-                Id = Guid.NewGuid(),
-                ProductId = productId,
-                Quantity = quantity,
-                CurrentStock = quantity,
-                PurchasePrice = purchasePrice,
-                PurchasePriceOnDayPurchace = purchasePrice,
-                ExpirationDate = DateTime.SpecifyKind(dtpExpirationDate.Value, DateTimeKind.Utc),
-                ReceivedDate = DateTime.UtcNow,
-                ProductState = productState,         
-                ProductStateId = productState.Id
-            }
-        };
+                {
+                    new SupplyItem
+                    {
+                        Id = Guid.NewGuid(),
+                        ProductId = productId,
+                        Quantity = quantity,
+                        CurrentStock = quantity,
+                        PurchasePrice = priceInRUB,
+                        PurchasePriceOnDayPurchace = priceInRUB,
+                        ExchangeRateOnDayPurchace = rate,
+                        Currency = _currencyState.SelectedCurrency,
+                        ExpirationDate = DateTime.SpecifyKind(dtpExpirationDate.Value, DateTimeKind.Utc),
+                        ReceivedDate = DateTime.UtcNow,
+                        ProductState = productState,
+                        ProductStateId = productState.Id
+                    }
+                };
 
                 await _shipmentService.CreateSupply(
                     _userId,
@@ -197,7 +218,7 @@ namespace StorageSystemBuildingMaterials.Forms
             labelProduct.Text = Resources.Product;
             labelExpirationDate.Text = Resources.ExpirationDate;
             labelAmount.Text = Resources.Amount;
-            labelPurchasePrice.Text = Resources.PurchasePrice;
+            labelPurchasePrice.Text = $"{Resources.PurchasePrice} ({_currencyState.SelectedCurrency})";
             btnUpload.Text = Resources.Upload;
             labelUploadFile.Text = Resources.UploadFile;
             btnCancel.Text = Resources.Cancel;

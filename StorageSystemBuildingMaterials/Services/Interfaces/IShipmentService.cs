@@ -35,5 +35,13 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
         /// <param name="items">Список поставляемых товаров.</param>
         /// <exception cref="Exception">Если товар не найден в базе.</exception>
         public Task CreateSupply(Guid userId, Address address, List<SupplyItem> items);
+
+        /// <summary>
+        /// Метод для получения закупочной цены
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns>Закупочная цена</returns>
+        /// <exception cref="Exception">Ошибки валидации</exception>
+        public Task<decimal> GetPurshacePrice(List<ShipmentItem> items);
     }
 }

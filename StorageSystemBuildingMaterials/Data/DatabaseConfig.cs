@@ -9,6 +9,6 @@ namespace StorageSystemBuildingMaterials.Data
         /// <summary>
         /// Строка подключения к бд
         /// </summary>
-        public const string ConnectionString = "Host=localhost;Port=5432;Database=DB;Username=postgres;Password=1245admin";
+        public const string ConnectionString = "Host=localhost;Port=5432;Database=DBNew;Username=postgres;Password=1245admin";
     }
 }

@@ -88,6 +88,7 @@
             labelTextVisualProduct.Size = new Size(91, 37);
             labelTextVisualProduct.TabIndex = 16;
             labelTextVisualProduct.Text = "Товар";
+            labelTextVisualProduct.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // labelTextVisualCountProduct
             // 
@@ -102,6 +103,7 @@
             labelTextVisualCountProduct.Size = new Size(161, 37);
             labelTextVisualCountProduct.TabIndex = 17;
             labelTextVisualCountProduct.Text = "Количество";
+            labelTextVisualCountProduct.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btnAdd
             // 
@@ -217,13 +219,13 @@
             labelTextVisualPrice.BackColor = Color.Transparent;
             labelTextVisualPrice.Font = new Font("Segoe UI", 15.75F);
             labelTextVisualPrice.ForeColor = Color.Black;
-            labelTextVisualPrice.Location = new Point(68, 391);
+            labelTextVisualPrice.Location = new Point(68, 378);
             labelTextVisualPrice.Margin = new Padding(2, 0, 2, 0);
             labelTextVisualPrice.Name = "labelTextVisualPrice";
-            labelTextVisualPrice.Size = new Size(136, 75);
+            labelTextVisualPrice.Size = new Size(136, 101);
             labelTextVisualPrice.TabIndex = 41;
             labelTextVisualPrice.Text = "Цена продажи";
-            labelTextVisualPrice.TextAlign = ContentAlignment.MiddleCenter;
+            labelTextVisualPrice.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // nudTotalPrice
             // 
@@ -249,6 +251,7 @@
             labelTIN.Size = new Size(75, 37);
             labelTIN.TabIndex = 44;
             labelTIN.Text = "ИНН";
+            labelTIN.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // textBoxTIN
             // 
@@ -305,6 +308,7 @@
             labelWeather.Size = new Size(107, 37);
             labelWeather.TabIndex = 47;
             labelWeather.Text = "Погода";
+            labelWeather.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // FormShipment
             // 

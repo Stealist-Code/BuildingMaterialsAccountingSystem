@@ -206,6 +206,7 @@ namespace StorageSystemBuildingMaterials.Data
                 entity.Property(x => x.ExpirationDate).IsRequired();
                 entity.Property(x => x.ReceivedDate).IsRequired();
                 entity.Property(x => x.ExchangeRateOnDayPurchace).HasColumnType("decimal(18,2)");
+                entity.Property(x => x.Currency).IsRequired().HasMaxLength(3).HasDefaultValue("RUB");
 
                 entity.HasOne(x => x.ProductState)
                     .WithMany()

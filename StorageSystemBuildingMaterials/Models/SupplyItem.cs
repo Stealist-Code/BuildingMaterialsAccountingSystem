@@ -61,6 +61,11 @@ namespace StorageSystemBuildingMaterials.Models
         public decimal ExchangeRateOnDayPurchace { get; set; }
 
         /// <summary>
+        /// Код валюты закупки
+        /// </summary>
+        public string Currency { get; set; } = "RUB";
+
+        /// <summary>
         /// Навигационное свойство состояния товарной позиции
         /// </summary>
         public Guid ProductStateId { get; set; }

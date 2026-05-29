@@ -77,7 +77,7 @@ namespace StorageSystemBuildingMaterials.Forms
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private async void btnAdd_Click(object sender, EventArgs e)
         {
             if (cbProduct.SelectedItem is null)
             {
@@ -99,11 +99,21 @@ namespace StorageSystemBuildingMaterials.Forms
                 }
                 else
                 {
+                    var shipmentItems = new List<ShipmentItem>
+                    {
+                        new ShipmentItem
+                        {
+                            Id = Guid.NewGuid(),
+                            ProductId = product.Id,
+                            Quantity = quantity,
+                        }
+                    };
+
                     cart.Add(new CartItemDto
                     {
                         ProductId = product.Id,
                         ProductName = product.Name,
-                        PurchasePrice = product.PurchasePrice,
+                        PurchasePrice = await _shipmentService.GetPurshacePrice(shipmentItems),
                         ShipmentPrice = nudTotalPrice.Value,
                         Quantity = quantity,
                         Insurance = product.Insurance,

@@ -304,7 +304,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
         private void buttonDelivery_Click(object sender, EventArgs e)
         {
-            var deliveryForm = new FormDelivery(_productService, _shipmentService, _discountService, _user.Id);
+            var deliveryForm = new FormDelivery(_productService, _shipmentService, _discountService, _currencyService, _currencyState, _user.Id);
 
             deliveryForm.ShowDialog();
             RefreshData();

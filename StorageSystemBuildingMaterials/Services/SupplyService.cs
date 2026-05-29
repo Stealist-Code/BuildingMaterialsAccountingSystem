@@ -17,12 +17,57 @@ namespace StorageSystemBuildingMaterials.Services
     {
         private readonly AppDbContext _db;
         private readonly IProductValidation _productValidation;
+        private readonly ICurrencyService _currencyService;
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
-        public SupplyService(AppDbContext db, IProductValidation productValidation)
+        public SupplyService(AppDbContext db, IProductValidation productValidation, ICurrencyService currencyService)
         {
             _db = db;
             _productValidation = productValidation;
+            _currencyService = currencyService;
+        }
+
+        /// <summary>
+        /// Пересчитывает актуальную цену (на сегодняшний день) для списка поставок
+        /// по текущему курсу валюты закупки
+        /// </summary>
+        private async Task CalculateCurrentPrices(List<SupplyItem> supplyItems)
+        {
+            var currencies = supplyItems
+                .Where(x => x.Currency != "RUB" && x.ExchangeRateOnDayPurchace > 0)
+                .Select(x => x.Currency)
+                .Distinct()
+                .ToList();
+
+            var todayRates = new Dictionary<string, decimal>();
+
+            foreach (var currency in currencies)
+            {
+                try
+                {
+                    todayRates[currency] = await _currencyService.GetRate(currency);
+                }
+                catch (Exception ex)
+                {
+                    _logger.Error(ex, $"Не удалось получить курс для валюты {currency}");
+                }
+            }
+
+            foreach (var item in supplyItems)
+            {
+                if (item.Currency == "RUB" || item.ExchangeRateOnDayPurchace == 0)
+                {
+                    item.PurchasePrice = item.PurchasePriceOnDayPurchace;
+                }
+                else if (todayRates.TryGetValue(item.Currency, out var todayRate))
+                {
+                    item.PurchasePrice = Math.Round(item.PurchasePriceOnDayPurchace * (todayRate / item.ExchangeRateOnDayPurchace), 2);
+                }
+                else
+                {
+                    item.PurchasePrice = item.PurchasePriceOnDayPurchace;
+                }
+            }
         }
 
         /// <summary>
@@ -41,6 +86,7 @@ namespace StorageSystemBuildingMaterials.Services
                         .ThenInclude(x => x.StateRule)
                     .ToListAsync();
 
+                await CalculateCurrentPrices(supplyItems);
                 await DiscountHelper.ApplyDiscount(_db, supplyItems);
 
                 return supplyItems
@@ -69,13 +115,13 @@ namespace StorageSystemBuildingMaterials.Services
         }
 
         /// <summary>
-        /// Получить непросроченные товары 
+        /// Получить непросроченные товары
         /// </summary>
         /// <returns>Список товаров</returns>
         public async Task<List<ProductDto>> GetActualProducts()
         {
             var today = DateTime.UtcNow.Date;
-            
+
             var supplyItems = await _db.SupplyItems
                     .AsNoTracking()
                     .Where(x => x.ExpirationDate.Date > today && x.CurrentStock > 0)
@@ -85,6 +131,7 @@ namespace StorageSystemBuildingMaterials.Services
                         .ThenInclude(x => x.StateRule)
                     .ToListAsync();
 
+            await CalculateCurrentPrices(supplyItems);
             await DiscountHelper.ApplyDiscount(_db, supplyItems);
 
             return supplyItems
@@ -123,6 +170,7 @@ namespace StorageSystemBuildingMaterials.Services
                         .ThenInclude(x => x.StateRule)
                     .ToListAsync();
 
+            await CalculateCurrentPrices(supplyItems);
             await DiscountHelper.ApplyDiscount(_db, supplyItems);
 
             return supplyItems
@@ -172,24 +220,33 @@ namespace StorageSystemBuildingMaterials.Services
                     supply = supply.Where(x => x.Product.CategoryId == categoryId.Value);
                 }
 
+                var supplyItems = await supply
+                    .Include(x => x.Product)
+                        .ThenInclude(x => x.Category)
+                    .Include(x => x.ProductState)
+                        .ThenInclude(x => x.StateRule)
+                    .ToListAsync();
+
+                await CalculateCurrentPrices(supplyItems);
+                await DiscountHelper.ApplyDiscount(_db, supplyItems);
+
                 var now = DateTime.UtcNow;
 
-                return await supply
+                return supplyItems
                     .Select(x => new ProductDto
                     {
-                        Id = x.Id,
+                        Id = x.Product.Id,
                         Article = x.Product.Article,
                         Name = x.Product.Name,
-
+                        CategoryName = x.Product.Category.Name,
                         ExpirationDate = x.ExpirationDate,
                         DaysLeft = (x.ExpirationDate - now).Days,
-                        CategoryName = x.Product.Category.Name,
                         Unit = x.Product.Unit,
                         PurchasePrice = x.PurchasePrice,
                         CurrentStock = x.CurrentStock
                     })
                     .OrderBy(x => x.Name)
-                    .ToListAsync();
+                    .ToList();
             }
             catch (Exception ex)
             {

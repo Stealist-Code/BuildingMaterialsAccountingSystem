@@ -92,7 +92,9 @@ namespace StorageSystemBuildingMaterials.Services
                 _logger.Debug("Проверка наличия товара");
 
                 var supply = await _db.SupplyItems
-                    .Where(x => productIds.Contains(x.ProductId))
+                    .Where(x => productIds.Contains(x.ProductId)
+                        && x.ExpirationDate > DateTime.UtcNow
+                        && x.CurrentStock > 0)
                     .OrderBy(x => x.ExpirationDate)
                     .ToListAsync();
 
@@ -121,7 +123,9 @@ namespace StorageSystemBuildingMaterials.Services
 
                 foreach (var item in items)
                 {
-                    var supplyItemProducts = supply.Where(x => x.ProductId == item.ProductId);
+                    var supplyItemProducts = supply
+                        .Where(x => x.ProductId == item.ProductId)
+                        .ToList();
 
                     if (!supplyItemProducts.Any())
                     {
@@ -135,38 +139,40 @@ namespace StorageSystemBuildingMaterials.Services
                         throw new Exception("InsufficientProduct");
                     }
 
-                    foreach (var supplyItemProduct in supplyItemProducts)
+                    item.Id = (item.Id == Guid.Empty) ? Guid.NewGuid() : item.Id;
+                    item.ShipmentId = shipment.Id;
+
+                    decimal totalPurchasePrice = 0;
+                    var remainingQuantity = item.Quantity;
+
+                    foreach (var supplyItem in supplyItemProducts)
                     {
-                        supplyItemProduct.Product = products
-                            .FirstOrDefault(x => x.Id == supplyItemProduct.ProductId && x.CurrentStock > 0);
-
-                        item.Id = (item.Id == Guid.Empty) ? Guid.NewGuid() : item.Id;
-                        item.ShipmentId = shipment.Id;
-
-                        _logger.Info($"Товар зарезервирован: {supplyItemProduct.Product.Name}, количество: {item.Quantity}");
-
-                        decimal totalPurchasePrice = 0;
-
-                        foreach (var supplyItem in supply)
+                        if (remainingQuantity <= 0)
                         {
-                            if (supplyItem.CurrentStock <= item.Quantity)
-                            {
-                                item.Quantity -= supplyItem.CurrentStock;
-                                totalPurchasePrice += supplyItem.CurrentStock * supplyItem.PurchasePriceOnDayPurchace;
-                                supplyItem.CurrentStock = 0;
-                            }
-                            else
-                            {
-                                supplyItem.CurrentStock -= item.Quantity;
-                                totalPurchasePrice += item.Quantity * supplyItem.PurchasePriceOnDayPurchace;
-                                item.Quantity = 0;
-                            }
+                            break;
+                        }    
+
+                        supplyItem.Product = product;
+
+                        _logger.Info($"Товар зарезервирован: {supplyItem.Product.Name}, количество: {item.Quantity}");
+
+                        if (supplyItem.CurrentStock <= remainingQuantity)
+                        {
+                            remainingQuantity -= supplyItem.CurrentStock;
+                            totalPurchasePrice += supplyItem.CurrentStock * supplyItem.PurchasePriceOnDayPurchace;
+                            supplyItem.CurrentStock = 0;
+                        }
+                        else
+                        {
+                            supplyItem.CurrentStock -= remainingQuantity;
+                            totalPurchasePrice += remainingQuantity * supplyItem.PurchasePriceOnDayPurchace;
+                            remainingQuantity = 0;
                         }
 
-                        item.TotalPurchasePrice = totalPurchasePrice;
-
-                        _logger.Info($"Остаток товара уменьшен: {supplyItemProduct.Product.Name}");
+                        _logger.Info($"Остаток товара уменьшен: {supplyItem.Product.Name}");
                     }
+
+                    item.TotalPurchasePrice += totalPurchasePrice;
                 }
 
                 await _db.Shipments.AddAsync(shipment);
@@ -181,6 +187,74 @@ namespace StorageSystemBuildingMaterials.Services
                 _logger.Error(ex, $"Ошибка при создании отгрузки userId={userId}");
                 throw new Exception(ex.InnerException?.Message ?? ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Метод для получения закупочной цены
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns>Закупочная цена</returns>
+        /// <exception cref="Exception">Ошибки валидации</exception>
+        public async Task<decimal> GetPurshacePrice(List<ShipmentItem> items)
+        {
+            var productIds = items.Select(x => x.ProductId).ToList();
+
+            _logger.Debug("Проверка наличия товара");
+
+            var supply = await _db.SupplyItems
+                .Where(x => productIds.Contains(x.ProductId)
+                    && x.ExpirationDate > DateTime.UtcNow
+                    && x.CurrentStock > 0)
+                .OrderBy(x => x.ExpirationDate)
+                .ToListAsync();
+
+            var products = await _db.Products.ToListAsync();
+
+            decimal totalPurshace = 0;
+
+            foreach (var item in items)
+            {
+                var supplyItemProducts = supply
+                    .Where(x => x.ProductId == item.ProductId)
+                    .ToList();
+
+                if (!supplyItemProducts.Any())
+                {
+                    throw new Exception("ProductNotFound");
+                }
+
+                var product = products.FirstOrDefault(x => x.Id == item.ProductId);
+
+                if (product is null || product is not null && product.CurrentStock < item.Quantity)
+                {
+                    throw new Exception("InsufficientProduct");
+                }
+
+                var remainingQuantity = item.Quantity;
+                decimal itemPurchasePrice = 0;
+
+                foreach (var supplyItem in supplyItemProducts)
+                {
+                    if (remainingQuantity <= 0)
+                    {
+                        break;
+                    }
+
+                    if (supplyItem.CurrentStock <= remainingQuantity)
+                    {
+                        remainingQuantity -= supplyItem.CurrentStock;
+                        itemPurchasePrice += supplyItem.CurrentStock * supplyItem.PurchasePriceOnDayPurchace;
+                    }
+                    else
+                    {
+                        itemPurchasePrice += remainingQuantity * supplyItem.PurchasePriceOnDayPurchace;
+                        remainingQuantity = 0;
+                    }
+                }
+
+                totalPurshace += itemPurchasePrice;
+            }
+            return totalPurshace;
         }
 
         /// <summary>

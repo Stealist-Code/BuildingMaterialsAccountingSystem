@@ -61,14 +61,14 @@
             // 
             // labelProduct
             // 
-            labelProduct.AutoSize = true;
             labelProduct.BackColor = Color.Transparent;
             labelProduct.Font = new Font("Segoe UI", 16F);
-            labelProduct.Location = new Point(365, 179);
+            labelProduct.Location = new Point(182, 179);
             labelProduct.Name = "labelProduct";
-            labelProduct.Size = new Size(91, 37);
+            labelProduct.Size = new Size(274, 37);
             labelProduct.TabIndex = 1;
             labelProduct.Text = "Товар";
+            labelProduct.TextAlign = ContentAlignment.MiddleRight;
             // 
             // cbProducts
             // 
@@ -82,36 +82,36 @@
             // 
             // labelExpirationDate
             // 
-            labelExpirationDate.AutoSize = true;
             labelExpirationDate.BackColor = Color.Transparent;
             labelExpirationDate.Font = new Font("Segoe UI", 16F);
-            labelExpirationDate.Location = new Point(327, 243);
+            labelExpirationDate.Location = new Point(156, 243);
             labelExpirationDate.Name = "labelExpirationDate";
-            labelExpirationDate.Size = new Size(129, 37);
+            labelExpirationDate.Size = new Size(300, 37);
             labelExpirationDate.TabIndex = 3;
             labelExpirationDate.Text = "Годен до";
+            labelExpirationDate.TextAlign = ContentAlignment.MiddleRight;
             // 
             // labelAmount
             // 
-            labelAmount.AutoSize = true;
             labelAmount.BackColor = Color.Transparent;
             labelAmount.Font = new Font("Segoe UI", 16F);
-            labelAmount.Location = new Point(311, 314);
+            labelAmount.Location = new Point(156, 314);
             labelAmount.Name = "labelAmount";
-            labelAmount.Size = new Size(161, 37);
+            labelAmount.Size = new Size(316, 37);
             labelAmount.TabIndex = 5;
             labelAmount.Text = "Количество";
+            labelAmount.TextAlign = ContentAlignment.MiddleRight;
             // 
             // labelPurchasePrice
             // 
-            labelPurchasePrice.AutoSize = true;
             labelPurchasePrice.BackColor = Color.Transparent;
             labelPurchasePrice.Font = new Font("Segoe UI", 16F);
-            labelPurchasePrice.Location = new Point(287, 384);
+            labelPurchasePrice.Location = new Point(135, 384);
             labelPurchasePrice.Name = "labelPurchasePrice";
-            labelPurchasePrice.Size = new Size(185, 37);
+            labelPurchasePrice.Size = new Size(337, 37);
             labelPurchasePrice.TabIndex = 7;
             labelPurchasePrice.Text = "Цена закупки";
+            labelPurchasePrice.TextAlign = ContentAlignment.MiddleRight;
             // 
             // labelOr
             // 

@@ -23,12 +23,5 @@ namespace StorageSystemBuildingMaterials.Services.Interfaces
         /// <param name="dateTime">Дата, на которую требуется получить курс.</param>
         /// <returns>Курс валюты к рублю на указанную дату</returns>
         public Task<decimal> GetRateByDate(string code, DateTime dateTime);
-
-        /// <summary>
-        /// Меняет курс валюты поставок 
-        /// </summary>
-        /// <param name="code">Трехбуквенный код валюты</param>
-        /// <param name="productId">Id товара</param>
-        public Task PriceChangeSuppliesInDatabase(string code, Guid productId);
     }
 }

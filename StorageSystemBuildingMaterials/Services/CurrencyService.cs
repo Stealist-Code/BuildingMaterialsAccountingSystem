@@ -1,7 +1,4 @@
-﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
-using Microsoft.EntityFrameworkCore;
-using StorageSystemBuildingMaterials.Data;
-using StorageSystemBuildingMaterials.Services.Interfaces;
+﻿using StorageSystemBuildingMaterials.Services.Interfaces;
 using System.Globalization;
 using System.Text.Json;
 using System.Xml.Linq;
@@ -12,7 +9,9 @@ using System.Xml.Linq;
 public class CurrencyService : ICurrencyService
 {
     private readonly HttpClient _httpClient;
-    private readonly AppDbContext _db;
+    private Dictionary<string, decimal> _currentRatesCache = new();
+    private DateTime? _currentRatesCacheTime;
+    private static readonly TimeSpan _cacheDuration = TimeSpan.FromHours(1);
 
     public CurrencyService(HttpClient http)
     {
@@ -20,7 +19,7 @@ public class CurrencyService : ICurrencyService
     }
 
     /// <summary>
-    /// Получает курс указанной валюты относительно рубля
+    /// Получает курс указанной валюты относительно рубля (с кэшированием на 1 час)
     /// </summary>
     /// <param name="code">Трехбуквенный код валюты.</param>
     /// <returns>Курс валюты к рублю</returns>
@@ -30,15 +29,33 @@ public class CurrencyService : ICurrencyService
         {
             return 1;
         }
+
+        if (_currentRatesCacheTime.HasValue
+            && DateTime.UtcNow - _currentRatesCacheTime < _cacheDuration
+            && _currentRatesCache.TryGetValue(code, out var cachedRate))
+        {
+            return cachedRate;
+        }
+
         var json = await _httpClient.GetStringAsync("https://www.cbr-xml-daily.ru/daily_json.js");
 
         using var doc = JsonDocument.Parse(json);
 
-        return doc.RootElement
-            .GetProperty("Valute")
-            .GetProperty(code)
-            .GetProperty("Value")
-            .GetDecimal();
+        var valutes = doc.RootElement.GetProperty("Valute");
+        var newCache = new Dictionary<string, decimal>();
+
+        foreach (var property in valutes.EnumerateObject())
+        {
+            if (property.Value.TryGetProperty("Value", out var valueElement))
+            {
+                newCache[property.Name] = valueElement.GetDecimal();
+            }
+        }
+
+        _currentRatesCache = newCache;
+        _currentRatesCacheTime = DateTime.UtcNow;
+
+        return newCache.TryGetValue(code, out var rate) ? rate : 0;
     }
 
     /// <summary>
@@ -70,7 +87,7 @@ public class CurrencyService : ICurrencyService
         if (!decimal.TryParse(valueStr, new CultureInfo("ru-RU"), out decimal value))
         {
             return 0;
-        }    
+        }
 
         if (!decimal.TryParse(nominalStr, CultureInfo.InvariantCulture, out decimal nominal))
         {
@@ -83,23 +100,5 @@ public class CurrencyService : ICurrencyService
         }
 
         return value / nominal;
-    }
-
-    /// <summary>
-    /// Меняет курс валюты поставок 
-    /// </summary>
-    /// <param name="code">Трехбуквенный код валюты</param>
-    /// <param name="productId">Id товара</param>
-    public async Task PriceChangeSuppliesInDatabase(string code, Guid productId)
-    {
-        var supplies = await _db.SupplyItems
-            .AsNoTracking()
-            .Where(x => x.ProductId == productId)
-            .ToListAsync();
-
-        foreach (var supply in supplies)
-        {
-            supply.ExchangeRateOnDayPurchace = await GetRateByDate(code, supply.ReceivedDate);
-        }
     }
 }
