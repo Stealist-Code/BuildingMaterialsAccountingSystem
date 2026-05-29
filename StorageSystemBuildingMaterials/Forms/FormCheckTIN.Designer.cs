@@ -40,10 +40,13 @@
             // 
             // dgvTIN
             // 
+            dgvTIN.Anchor = AnchorStyles.None;
+            dgvTIN.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTIN.BackgroundColor = SystemColors.Control;
             dgvTIN.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTIN.Location = new Point(12, 118);
             dgvTIN.Name = "dgvTIN";
+            dgvTIN.ReadOnly = true;
             dgvTIN.RowHeadersWidth = 51;
             dgvTIN.Size = new Size(908, 319);
             dgvTIN.TabIndex = 0;

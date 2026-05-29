@@ -46,6 +46,7 @@
             dateTimePickerTo = new DateTimePicker();
             dateTimePickerFrom = new DateTimePicker();
             labelDate = new Label();
+            btnQuit = new Button();
             panelReportTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvReport).BeginInit();
             ((System.ComponentModel.ISupportInitialize)reportDtoBindingSource).BeginInit();
@@ -118,7 +119,7 @@
             dgvReport.ReadOnly = true;
             dgvReport.RowHeadersWidth = 51;
             dgvReport.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvReport.Size = new Size(827, 673);
+            dgvReport.Size = new Size(931, 673);
             dgvReport.TabIndex = 1;
             // 
             // Date
@@ -160,6 +161,7 @@
             // panelReport
             // 
             panelReport.BackColor = Color.Gold;
+            panelReport.Controls.Add(btnQuit);
             panelReport.Controls.Add(btnExportReport);
             panelReport.Controls.Add(textBoxDecor2);
             panelReport.Controls.Add(dateTimePickerTo);
@@ -169,7 +171,7 @@
             panelReport.Location = new Point(254, 0);
             panelReport.Margin = new Padding(3, 4, 3, 4);
             panelReport.Name = "panelReport";
-            panelReport.Size = new Size(831, 105);
+            panelReport.Size = new Size(935, 105);
             panelReport.TabIndex = 2;
             // 
             // btnExportReport
@@ -180,7 +182,7 @@
             btnExportReport.FlatStyle = FlatStyle.Popup;
             btnExportReport.Font = new Font("Segoe UI", 12F);
             btnExportReport.ForeColor = Color.White;
-            btnExportReport.Location = new Point(563, 37);
+            btnExportReport.Location = new Point(667, 37);
             btnExportReport.Margin = new Padding(2, 3, 2, 3);
             btnExportReport.Name = "btnExportReport";
             btnExportReport.Size = new Size(249, 41);
@@ -232,12 +234,29 @@
             labelDate.TabIndex = 2;
             labelDate.Text = "Дата";
             // 
+            // btnQuit
+            // 
+            btnQuit.Anchor = AnchorStyles.Right;
+            btnQuit.BackColor = Color.Black;
+            btnQuit.FlatAppearance.BorderSize = 20;
+            btnQuit.FlatStyle = FlatStyle.Popup;
+            btnQuit.Font = new Font("Segoe UI", 12F);
+            btnQuit.ForeColor = Color.White;
+            btnQuit.Location = new Point(468, 37);
+            btnQuit.Margin = new Padding(2, 3, 2, 3);
+            btnQuit.Name = "btnQuit";
+            btnQuit.Size = new Size(184, 41);
+            btnQuit.TabIndex = 8;
+            btnQuit.Text = "Выйти";
+            btnQuit.UseVisualStyleBackColor = false;
+            btnQuit.Click += btnQuit_Click;
+            // 
             // FormReports
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
-            ClientSize = new Size(1085, 776);
+            ClientSize = new Size(1189, 776);
             Controls.Add(panelReport);
             Controls.Add(dgvReport);
             Controls.Add(panelReportTitle);
@@ -271,5 +290,6 @@
         private DataGridViewTextBoxColumn CustomerName;
         private DataGridViewTextBoxColumn ShipmentAmount;
         private DataGridViewTextBoxColumn Profit;
+        private Button btnQuit;
     }
 }

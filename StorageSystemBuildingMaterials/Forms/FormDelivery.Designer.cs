@@ -50,6 +50,7 @@
             // 
             // labelDelivery
             // 
+            labelDelivery.Anchor = AnchorStyles.None;
             labelDelivery.AutoSize = true;
             labelDelivery.BackColor = Color.Transparent;
             labelDelivery.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
@@ -61,6 +62,7 @@
             // 
             // labelProduct
             // 
+            labelProduct.Anchor = AnchorStyles.None;
             labelProduct.BackColor = Color.Transparent;
             labelProduct.Font = new Font("Segoe UI", 16F);
             labelProduct.Location = new Point(182, 179);
@@ -72,6 +74,7 @@
             // 
             // cbProducts
             // 
+            cbProducts.Anchor = AnchorStyles.None;
             cbProducts.Font = new Font("Segoe UI", 15F);
             cbProducts.FormattingEnabled = true;
             cbProducts.Location = new Point(502, 173);
@@ -82,6 +85,7 @@
             // 
             // labelExpirationDate
             // 
+            labelExpirationDate.Anchor = AnchorStyles.None;
             labelExpirationDate.BackColor = Color.Transparent;
             labelExpirationDate.Font = new Font("Segoe UI", 16F);
             labelExpirationDate.Location = new Point(156, 243);
@@ -93,6 +97,7 @@
             // 
             // labelAmount
             // 
+            labelAmount.Anchor = AnchorStyles.None;
             labelAmount.BackColor = Color.Transparent;
             labelAmount.Font = new Font("Segoe UI", 16F);
             labelAmount.Location = new Point(156, 314);
@@ -104,6 +109,7 @@
             // 
             // labelPurchasePrice
             // 
+            labelPurchasePrice.Anchor = AnchorStyles.None;
             labelPurchasePrice.BackColor = Color.Transparent;
             labelPurchasePrice.Font = new Font("Segoe UI", 16F);
             labelPurchasePrice.Location = new Point(135, 384);
@@ -115,10 +121,11 @@
             // 
             // labelOr
             // 
+            labelOr.Anchor = AnchorStyles.None;
             labelOr.AutoSize = true;
             labelOr.BackColor = Color.Transparent;
             labelOr.Font = new Font("Segoe UI", 16F);
-            labelOr.Location = new Point(301, 521);
+            labelOr.Location = new Point(442, 463);
             labelOr.Name = "labelOr";
             labelOr.Size = new Size(63, 37);
             labelOr.TabIndex = 9;
@@ -126,10 +133,11 @@
             // 
             // labelUploadFile
             // 
+            labelUploadFile.Anchor = AnchorStyles.None;
             labelUploadFile.AutoSize = true;
             labelUploadFile.BackColor = Color.Transparent;
             labelUploadFile.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelUploadFile.Location = new Point(427, 570);
+            labelUploadFile.Location = new Point(328, 629);
             labelUploadFile.Name = "labelUploadFile";
             labelUploadFile.Size = new Size(338, 32);
             labelUploadFile.TabIndex = 11;
@@ -137,9 +145,10 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.DownloadFon;
-            pictureBox1.Location = new Point(400, 481);
+            pictureBox1.Location = new Point(307, 526);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(362, 144);
@@ -155,7 +164,7 @@
             btnUpload.FlatStyle = FlatStyle.Popup;
             btnUpload.Font = new Font("Segoe UI", 14F);
             btnUpload.ForeColor = Color.White;
-            btnUpload.Location = new Point(480, 511);
+            btnUpload.Location = new Point(363, 556);
             btnUpload.Margin = new Padding(2, 3, 2, 3);
             btnUpload.Name = "btnUpload";
             btnUpload.Size = new Size(189, 47);
@@ -173,13 +182,14 @@
             btnCancel.FlatStyle = FlatStyle.Popup;
             btnCancel.Font = new Font("Segoe UI", 16F);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(17, 688);
+            btnCancel.Location = new Point(17, 712);
             btnCancel.Margin = new Padding(2, 3, 2, 3);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(393, 47);
             btnCancel.TabIndex = 14;
             btnCancel.Text = "Отменить";
             btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnCreate
             // 
@@ -190,7 +200,7 @@
             btnCreate.FlatStyle = FlatStyle.Popup;
             btnCreate.Font = new Font("Segoe UI", 16F);
             btnCreate.ForeColor = Color.White;
-            btnCreate.Location = new Point(525, 688);
+            btnCreate.Location = new Point(513, 712);
             btnCreate.Margin = new Padding(2, 3, 2, 3);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(393, 47);
@@ -201,6 +211,7 @@
             // 
             // dtpExpirationDate
             // 
+            dtpExpirationDate.Anchor = AnchorStyles.None;
             dtpExpirationDate.CalendarFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             dtpExpirationDate.Font = new Font("Segoe UI", 15F);
             dtpExpirationDate.Location = new Point(502, 240);
@@ -236,7 +247,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gold;
-            ClientSize = new Size(929, 747);
+            ClientSize = new Size(929, 795);
             Controls.Add(nudPrice);
             Controls.Add(nudQuantity);
             Controls.Add(dtpExpirationDate);

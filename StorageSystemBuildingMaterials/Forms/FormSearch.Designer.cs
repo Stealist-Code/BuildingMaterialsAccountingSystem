@@ -38,7 +38,6 @@
             labelTextVisualArticle = new Label();
             labelTextVisualProductName = new Label();
             labelCategory = new Label();
-            labelART = new Label();
             SuspendLayout();
             // 
             // btnCancel
@@ -172,20 +171,6 @@
             labelCategory.TabIndex = 15;
             labelCategory.Text = "Категория";
             // 
-            // labelART
-            // 
-            labelART.Anchor = AnchorStyles.None;
-            labelART.AutoSize = true;
-            labelART.BackColor = Color.Transparent;
-            labelART.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            labelART.ForeColor = Color.Black;
-            labelART.Location = new Point(312, 206);
-            labelART.Margin = new Padding(2, 0, 2, 0);
-            labelART.Name = "labelART";
-            labelART.Size = new Size(78, 31);
-            labelART.TabIndex = 16;
-            labelART.Text = "ART-";
-            // 
             // FormSearch
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -193,7 +178,6 @@
             BackColor = Color.Gold;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1010, 756);
-            Controls.Add(labelART);
             Controls.Add(labelCategory);
             Controls.Add(labelTextVisualProductName);
             Controls.Add(labelTextVisualArticle);
@@ -225,6 +209,5 @@
         private System.Windows.Forms.Label labelTextVisualArticle;
         private System.Windows.Forms.Label labelTextVisualProductName;
         private System.Windows.Forms.Label labelCategory;
-        private Label labelART;
     }
 }

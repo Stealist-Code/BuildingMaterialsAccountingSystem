@@ -94,7 +94,16 @@ namespace StorageSystemBuildingMaterials.Services
             }
 
             var companyData = company.suggestions[0].data;
-            var fioData = await apiClean.Clean<Fullname>(companyData.management.name);
+
+            Fullname fioData;
+            if (companyData.type == Dadata.Model.PartyType.INDIVIDUAL)
+            {
+                fioData = companyData.fio;
+            }
+            else
+            {
+                fioData = await apiClean.Clean<Fullname>(companyData.management.name);
+            }
             var addressData = companyData.address;
 
             var address = new Models.Address()

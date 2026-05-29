@@ -40,6 +40,7 @@
             labelCurrency = new Label();
             comboBoxCurrency = new ComboBox();
             btnSave = new Button();
+            btnClose = new Button();
             panelSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -186,7 +187,7 @@
             btnSave.FlatStyle = FlatStyle.Popup;
             btnSave.Font = new Font("Segoe UI", 17.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(263, 528);
+            btnSave.Location = new Point(574, 529);
             btnSave.Margin = new Padding(2, 3, 2, 3);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(322, 65);
@@ -195,12 +196,31 @@
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
+            // btnClose
+            // 
+            btnClose.Anchor = AnchorStyles.None;
+            btnClose.AutoSize = true;
+            btnClose.BackColor = Color.FromArgb(44, 44, 44);
+            btnClose.FlatAppearance.BorderSize = 20;
+            btnClose.FlatStyle = FlatStyle.Popup;
+            btnClose.Font = new Font("Segoe UI", 17.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            btnClose.ForeColor = Color.White;
+            btnClose.Location = new Point(248, 529);
+            btnClose.Margin = new Padding(2, 3, 2, 3);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(259, 65);
+            btnClose.TabIndex = 8;
+            btnClose.Text = "Отменить";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
             // FormSettings
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gold;
             ClientSize = new Size(929, 663);
+            Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(comboBoxCurrency);
             Controls.Add(labelCurrency);
@@ -211,7 +231,6 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormSettings";
             Text = "Настройки";
-
             Load += FormSettings_Load;
             panelSettings.ResumeLayout(false);
             panelSettings.PerformLayout();
@@ -234,5 +253,6 @@
         private Label labelCurrency;
         private ComboBox comboBoxCurrency;
         private Button btnSave;
+        private Button btnClose;
     }
 }

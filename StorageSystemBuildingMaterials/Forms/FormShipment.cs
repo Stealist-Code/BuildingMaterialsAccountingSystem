@@ -36,13 +36,13 @@ namespace StorageSystemBuildingMaterials.Forms
             _addressId = customer.Address.Id;
             _weather = weather;
             _formCheckTin = formCheckTin;
+            SetupCartGrid();
 
             this.Text = Resources.CreateShipment;
             this.StartPosition = FormStartPosition.CenterScreen;
             btnAdd.Click += btnAdd_Click;
             btnCreate.Click += btnCreate_Click;
             Load += async (s, e) => await LoadProducts();
-            SetupCartGrid();
         }
 
         private async Task LoadProducts()
@@ -65,6 +65,7 @@ namespace StorageSystemBuildingMaterials.Forms
             dgvCart.Columns.Add("Quantity", Resources.Quantity);
             dgvCart.Columns.Add(new DataGridViewCheckBoxColumn() { Name = "Insurance", HeaderText = Resources.Insurance });
             dgvCart.Columns.Add(new DataGridViewCheckBoxColumn() { Name = "ThermalContainer", HeaderText = Resources.ThermalContainer });
+            dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void RefreshCart()
@@ -88,6 +89,20 @@ namespace StorageSystemBuildingMaterials.Forms
             var product = cbProduct.SelectedItem as ProductDto;
             int quantity = (int)nudQuantity.Value;
             var existing = cart.FirstOrDefault(i => i.ProductId == product?.Id);
+
+            var totalPrice = nudTotalPrice.Value;
+
+            DialogResult result = MessageBox.Show(
+                Resources.AttentionShipment,
+                Resources.Confirmation,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
 
             try
             {
@@ -160,7 +175,7 @@ namespace StorageSystemBuildingMaterials.Forms
             {
                 var totalPrice = nudTotalPrice.Value;
 
-                var shipmentItems = cart.Select(c => new ShipmentItem
+                    var shipmentItems = cart.Select(c => new ShipmentItem
                 {
                     Id = Guid.NewGuid(),
                     ProductId = c.ProductId,

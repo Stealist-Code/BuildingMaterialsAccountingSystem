@@ -619,4 +619,19 @@
   <data name="ReportSend" xml:space="preserve">
     <value>Отчет успешно экспортирован!</value>
   </data>
+  <data name="Or" xml:space="preserve">
+    <value>или</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="InvalidDate" xml:space="preserve">
+    <value>Указана неправильная дата</value>
+  </data>
+  <data name="AttentionShipment" xml:space="preserve">
+    <value>Внимание, отгрузка пойдет в убыток. Вы уверены, что хотите сделать отгрузку?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
 </root>

@@ -609,4 +609,19 @@
   <data name="ReportSend" xml:space="preserve">
     <value>The report has been successfully exported!</value>
   </data>
+  <data name="Or" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="InvalidDate" xml:space="preserve">
+    <value>The date is incorrect</value>
+  </data>
+  <data name="AttentionShipment" xml:space="preserve">
+    <value>Attention, the shipment will be at a loss. Are you sure you want to make a shipment?</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
 </root>

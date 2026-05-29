@@ -119,6 +119,12 @@ namespace StorageSystemBuildingMaterials.Forms
             labelDate.Text = Resources.Date;
             labelReport.Text = Resources.Reporting;
             btnExportReport.Text = Resources.ExportReport;
+            btnQuit.Text = Resources.Exit;
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

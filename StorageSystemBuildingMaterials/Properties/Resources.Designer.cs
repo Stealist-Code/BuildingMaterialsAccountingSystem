@@ -188,6 +188,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Внимание, отгрузка пойдет в убыток. Вы уверены, что хотите сделать отгрузку?.
+        /// </summary>
+        public static string AttentionShipment {
+            get {
+                return ResourceManager.GetString("AttentionShipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Авторизация.
         /// </summary>
         public static string Auth {
@@ -364,6 +373,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string Confirm {
             get {
                 return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Подтверждение.
+        /// </summary>
+        public static string Confirmation {
+            get {
+                return ResourceManager.GetString("Confirmation", resourceCulture);
             }
         }
         
@@ -630,6 +648,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Выйти.
+        /// </summary>
+        public static string Exit {
+            get {
+                return ResourceManager.GetString("Exit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Годен до.
         /// </summary>
         public static string ExpirationDate {
@@ -736,6 +763,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string Insurance {
             get {
                 return ResourceManager.GetString("Insurance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Указана неправильная дата.
+        /// </summary>
+        public static string InvalidDate {
+            get {
+                return ResourceManager.GetString("InvalidDate", resourceCulture);
             }
         }
         
@@ -952,6 +988,15 @@ namespace StorageSystemBuildingMaterials.Properties {
         public static string OpenApp {
             get {
                 return ResourceManager.GetString("OpenApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на или.
+        /// </summary>
+        public static string Or {
+            get {
+                return ResourceManager.GetString("Or", resourceCulture);
             }
         }
         

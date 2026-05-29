@@ -21,11 +21,11 @@ namespace StorageSystemBuildingMaterials.Forms
         private readonly CurrencyState _currencyState;
         private readonly Guid _userId;
 
-        public FormDelivery(IProductService productService, 
+        public FormDelivery(IProductService productService,
                             IShipmentService shipmentService,
-                            IDiscountService discountService, 
+                            IDiscountService discountService,
                             ICurrencyService currencyService,
-                            CurrencyState currencyState, 
+                            CurrencyState currencyState,
                             Guid userId)
         {
             InitializeComponent();
@@ -153,6 +153,11 @@ namespace StorageSystemBuildingMaterials.Forms
         {
             try
             {
+                if ( dtpExpirationDate.Value < DateTime.Now)
+                {
+                    MessageBox.Show(Resources.InvalidDate);
+                    return;
+                }
                 var productId = (Guid)cbProducts.SelectedValue;
                 var quantity = (int)nudQuantity.Value;
                 var purchasePrice = (decimal)nudPrice.Value;
@@ -200,6 +205,7 @@ namespace StorageSystemBuildingMaterials.Forms
                 );
 
                 MessageBox.Show(Resources.SupplySuccess);
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -223,6 +229,12 @@ namespace StorageSystemBuildingMaterials.Forms
             labelUploadFile.Text = Resources.UploadFile;
             btnCancel.Text = Resources.Cancel;
             btnCreate.Text = Resources.Create;
+            labelOr.Text = Resources.Or; 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

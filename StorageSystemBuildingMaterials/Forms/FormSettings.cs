@@ -85,6 +85,7 @@ namespace StorageSystemBuildingMaterials.Forms
             buttonBack.Text = Resources.BackButton;
             btnSave.Text = Resources.SaveButton;
             buttonSettings.Text = Resources.GeneralLabel;
+            btnClose.Text = Resources.Cancel;
 
             labelLanguage.Text = Resources.LanguageLabel;
             labelCurrency.Text = Resources.CurrencyLabel;
@@ -152,6 +153,11 @@ namespace StorageSystemBuildingMaterials.Forms
             comboBoxCurrency.DataSource = currencies;
             comboBoxCurrency.DisplayMember = "Name";
             comboBoxCurrency.ValueMember = "Code";
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

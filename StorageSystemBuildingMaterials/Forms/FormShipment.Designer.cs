@@ -183,7 +183,6 @@
             // dgvCart
             // 
             dgvCart.Anchor = AnchorStyles.None;
-            dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCart.BackgroundColor = Color.White;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
@@ -202,7 +201,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvCart.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvCart.Location = new Point(641, 161);
+            dgvCart.Location = new Point(694, 172);
             dgvCart.Margin = new Padding(2, 3, 2, 3);
             dgvCart.MultiSelect = false;
             dgvCart.Name = "dgvCart";
@@ -210,7 +209,7 @@
             dgvCart.RowHeadersWidth = 72;
             dgvCart.RowTemplate.Height = 31;
             dgvCart.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCart.Size = new Size(820, 455);
+            dgvCart.Size = new Size(689, 455);
             dgvCart.TabIndex = 23;
             // 
             // labelTextVisualPrice

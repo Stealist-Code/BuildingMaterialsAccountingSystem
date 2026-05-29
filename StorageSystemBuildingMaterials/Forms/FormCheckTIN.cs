@@ -36,7 +36,7 @@ namespace StorageSystemBuildingMaterials.Forms
 
         private async Task LoadAllInfoTIN()
         {
-            var tIN = tbTIN.Text;
+            var tIN = tbTIN.Text.Trim();
             var customer = await _tINService.GetInfoCustomer(tIN);
             if (customer is null)
             {
@@ -61,6 +61,7 @@ namespace StorageSystemBuildingMaterials.Forms
             dgvTIN.Columns["Email"].Visible = false;
             dgvTIN.Columns["AddressId"].Visible = false;
             dgvTIN.Columns["FullAddress"].Visible = false;
+            dgvTIN.Columns["TIN"].HeaderText = Resources.TIN;
             dgvTIN.Columns["Country"].HeaderText = Resources.Country;
             dgvTIN.Columns["Region"].HeaderText = Resources.Region;
             dgvTIN.Columns["City"].HeaderText = Resources.City;
