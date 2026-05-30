@@ -12,7 +12,12 @@ namespace StorageSystemBuildingMaterials.Services
         private readonly string _secretKey;
         private readonly HttpClient _httpClient;
         private readonly AppDbContext _db;
-      
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="db">бд</param>
+        /// <param name="httpClient">httpClient</param>
         public TINService(AppDbContext db, HttpClient httpClient)
         {
             _apiKey = ConfigurationManager.AppSettings["DaDataApiKey"];

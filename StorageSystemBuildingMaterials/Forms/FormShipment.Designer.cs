@@ -56,6 +56,7 @@
             // cbProduct
             // 
             cbProduct.Anchor = AnchorStyles.None;
+            cbProduct.DropDownStyle = ComboBoxStyle.DropDownList;
             cbProduct.Font = new Font("Microsoft Sans Serif", 15F);
             cbProduct.FormattingEnabled = true;
             cbProduct.Location = new Point(233, 255);

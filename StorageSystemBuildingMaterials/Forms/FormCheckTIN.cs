@@ -13,6 +13,14 @@
         private readonly IWeatherService _weatherService;
         private readonly Guid _userId;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="productService">сервис товаров</param>
+        /// <param name="shipmentService">сервис отгрузок</param>
+        /// <param name="shipmentValidation">валидация отгрузок</param>
+        /// <param name="tINService">сервис инн</param>
+        /// <param name="weatherService">сервис погоды</param>
         public FormCheckTIN(ITINService tINService, Guid currentUserId, IProductService productService, IShipmentService shipmentService, IShipmentValidation shipmentValidation, IWeatherService weatherService)
         {
             InitializeComponent();

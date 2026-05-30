@@ -8,6 +8,10 @@
         private readonly HttpClient _httpClient;
         private readonly string _weatherHttps = "https://api.open-meteo.com/v1/";
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="http">http</param>
         public WeatherService(HttpClient http)
         {
             _httpClient = http;

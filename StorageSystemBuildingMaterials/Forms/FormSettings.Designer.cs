@@ -62,6 +62,7 @@
             // 
             // buttonBack
             // 
+            buttonBack.Anchor = AnchorStyles.None;
             buttonBack.BackColor = Color.Transparent;
             buttonBack.FlatAppearance.BorderSize = 0;
             buttonBack.FlatStyle = FlatStyle.Flat;
@@ -89,6 +90,7 @@
             // 
             // buttonSettings
             // 
+            buttonSettings.Anchor = AnchorStyles.None;
             buttonSettings.BackColor = Color.Transparent;
             buttonSettings.FlatAppearance.BorderSize = 0;
             buttonSettings.FlatStyle = FlatStyle.Flat;
@@ -114,7 +116,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Arrow;
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = Resources.Arrow;
             pictureBox1.Location = new Point(14, 47);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
@@ -124,6 +127,7 @@
             // 
             // labelGeneral
             // 
+            labelGeneral.Anchor = AnchorStyles.None;
             labelGeneral.AutoSize = true;
             labelGeneral.BackColor = Color.Transparent;
             labelGeneral.Font = new Font("Segoe UI", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
@@ -135,6 +139,7 @@
             // 
             // comboBoxLanguage
             // 
+            comboBoxLanguage.Anchor = AnchorStyles.None;
             comboBoxLanguage.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxLanguage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             comboBoxLanguage.FormattingEnabled = true;
@@ -147,6 +152,7 @@
             // 
             // labelLanguage
             // 
+            labelLanguage.Anchor = AnchorStyles.None;
             labelLanguage.AutoSize = true;
             labelLanguage.BackColor = Color.Transparent;
             labelLanguage.Font = new Font("Segoe UI", 20F);
@@ -158,6 +164,7 @@
             // 
             // labelCurrency
             // 
+            labelCurrency.Anchor = AnchorStyles.None;
             labelCurrency.AutoSize = true;
             labelCurrency.BackColor = Color.Transparent;
             labelCurrency.Font = new Font("Segoe UI", 20F);
@@ -169,6 +176,7 @@
             // 
             // comboBoxCurrency
             // 
+            comboBoxCurrency.Anchor = AnchorStyles.None;
             comboBoxCurrency.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxCurrency.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             comboBoxCurrency.FormattingEnabled = true;

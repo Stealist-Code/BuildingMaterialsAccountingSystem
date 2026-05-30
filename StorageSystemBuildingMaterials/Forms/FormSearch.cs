@@ -24,6 +24,10 @@
         /// </summary>
         public Guid? CategoryId { get; private set; }
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="categoryService">сервис категорий</param>
         public FormSearch(ICategoryService categoryService)
         {
             InitializeComponent();

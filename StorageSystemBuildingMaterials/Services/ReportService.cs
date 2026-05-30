@@ -7,6 +7,10 @@
     {
         private readonly AppDbContext _db;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="db">бд</param>
         public ReportService(AppDbContext db)
         {
             _db = db;

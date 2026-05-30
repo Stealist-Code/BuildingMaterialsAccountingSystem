@@ -1,9 +1,16 @@
 ﻿namespace StorageSystemBuildingMaterials.Controls
 {
+    /// <summary>
+    /// Контроль рабочих
+    /// </summary>
     public partial class WorkersControl : UserControl
     {
         private readonly IUserService _userService;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="userService">сервис пользователей</param>
         public WorkersControl(IUserService userService)
         {
             InitializeComponent();

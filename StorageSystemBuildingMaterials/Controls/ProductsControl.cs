@@ -1,5 +1,8 @@
 ﻿namespace StorageSystemBuildingMaterials.Controls
 {
+    /// <summary>
+    /// Контроль товаров
+    /// </summary>
     public partial class ProductsControl : UserControl
     {
         private readonly IProductService _productService;
@@ -7,6 +10,12 @@
         private readonly ICategoryService _categoryService;
         private readonly ISupplyService _supplyService;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="productService">сервис товаров</param>
+        /// <param name="categoryService">сервис категорий</param>
+        /// <param name="supplyService">сервис поставок</param>
         public ProductsControl(IProductService productService, ICategoryService categoryService, ISupplyService supplyService)
         {
             InitializeComponent();
@@ -269,6 +278,8 @@
                 Article = selectedProduct.Article,
                 CategoryId = selectedProduct.CategoryId,
                 Unit = selectedProduct.Unit,
+                Insurance = selectedProduct.Insurance,
+                ThermalContainer = selectedProduct.ThermalContainer,
             };
 
             try

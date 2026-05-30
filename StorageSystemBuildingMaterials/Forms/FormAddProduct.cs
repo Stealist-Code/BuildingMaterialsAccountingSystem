@@ -14,6 +14,12 @@
         /// </summary>
         public Product ResultProduct { get; private set; }
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="mode">форма</param>
+        /// <param name="categoryService">сервис категорий</param>
+        /// <param name="product">товар</param>
         public FormAddProduct(FormAddProductsModeEnum mode, ICategoryService categoryService, Product product = null)
         {
             InitializeComponent();

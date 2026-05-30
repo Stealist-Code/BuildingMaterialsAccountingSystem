@@ -9,6 +9,11 @@
         private readonly AppDbContext _db;
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="db">бд</param>
+        /// <param name="categoryValidation">валидация категории</param>
         public CategoryService(AppDbContext db, ICategoryValidation categoryValidation)
         {
             _db = db;

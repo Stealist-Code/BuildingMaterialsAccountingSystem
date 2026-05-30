@@ -53,6 +53,7 @@
             // 
             // labelCheckTIN
             // 
+            labelCheckTIN.Anchor = AnchorStyles.None;
             labelCheckTIN.AutoSize = true;
             labelCheckTIN.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             labelCheckTIN.Location = new Point(343, 19);
@@ -63,6 +64,7 @@
             // 
             // labelTIN
             // 
+            labelTIN.Anchor = AnchorStyles.None;
             labelTIN.AutoSize = true;
             labelTIN.Location = new Point(343, 70);
             labelTIN.Name = "labelTIN";
@@ -72,6 +74,7 @@
             // 
             // tbTIN
             // 
+            tbTIN.Anchor = AnchorStyles.None;
             tbTIN.Location = new Point(400, 67);
             tbTIN.Name = "tbTIN";
             tbTIN.Size = new Size(190, 27);
@@ -79,6 +82,7 @@
             // 
             // buttonCancel
             // 
+            buttonCancel.Anchor = AnchorStyles.None;
             buttonCancel.BackColor = Color.Black;
             buttonCancel.FlatStyle = FlatStyle.Popup;
             buttonCancel.ForeColor = SystemColors.Control;
@@ -92,6 +96,7 @@
             // 
             // buttonSelect
             // 
+            buttonSelect.Anchor = AnchorStyles.None;
             buttonSelect.BackColor = Color.Black;
             buttonSelect.FlatStyle = FlatStyle.Popup;
             buttonSelect.ForeColor = SystemColors.Control;
@@ -105,6 +110,7 @@
             // 
             // buttonCheck
             // 
+            buttonCheck.Anchor = AnchorStyles.None;
             buttonCheck.BackColor = Color.Black;
             buttonCheck.FlatStyle = FlatStyle.Popup;
             buttonCheck.ForeColor = SystemColors.Control;

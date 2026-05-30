@@ -9,6 +9,11 @@
         private AppDbContext _db;
         private IShipmentValidation _shipmentValidation;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="db">бд</param>
+        /// <param name="shipmentValidation">валидация отгрузок</param>
         public ShipmentService(AppDbContext db, IShipmentValidation shipmentValidation)
         {
             _db = db;

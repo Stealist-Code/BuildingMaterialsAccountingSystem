@@ -10,6 +10,10 @@
         private readonly ISupplyService _supplyService;
         private readonly BindingSource _bindingSource = new BindingSource();
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="supplyService">сервис поставок</param>
         public FormWarehouseMap(ISupplyService supplyService)
         {
             _supplyService = supplyService;

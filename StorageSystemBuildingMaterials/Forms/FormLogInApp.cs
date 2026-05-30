@@ -1,5 +1,8 @@
 ﻿namespace StorageSystemBuildingMaterials.Forms
 {
+    /// <summary>
+    /// Начальная форма
+    /// </summary>
     public partial class FormLogInApp : Form
     {
         private readonly IAuthService _authService;
@@ -19,6 +22,24 @@
         private readonly IWindsorContainer _container;
         private readonly IConfigurationAppService _configurationAppService;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="authService">сервис авторизации</param>
+        /// <param name="authValidation">валидация авторизации</param>
+        /// <param name="categoryService">сервисс категорий</param>
+        /// <param name="productService">сервис товаров</param>
+        /// <param name="shipmentService">сервис отгрузок</param>
+        /// <param name="shipmentValidation">валидация отргузок</param>
+        /// <param name="reportService">сервис репортов</param>
+        /// <param name="userService">сервис пользователей</param>
+        /// <param name="currencyState">валюта</param>
+        /// <param name="currencyService">сервис валют</param>
+        /// <param name="supplyService">сервис поставок</param>
+        /// <param name="discountService">сервис скидок</param>
+        /// <param name="tINService">сервис инн</param>
+        /// <param name="weatherService">сервис погоды</param>
+        /// <param name="configurationAppService">сервис конфигурации</param>
         public FormLogInApp(IAuthService authService,
                          IAuthValidation authValidation,
                          ICategoryService categoryService,
@@ -82,6 +103,9 @@
             Application.Exit();
         }
 
+        /// <summary>
+        /// Локализация
+        /// </summary>
         public void ApplyLocalization()
         {
             labelText.Text = Resources.SystemAccountingBuildingMaterials;

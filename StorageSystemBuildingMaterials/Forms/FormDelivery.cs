@@ -12,6 +12,14 @@
         private readonly CurrencyState _currencyState;
         private readonly Guid _userId;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="productService">сервис товаров</param>
+        /// <param name="shipmentService">сервис отгрузок</param>
+        /// <param name="currencyState">валюта</param>
+        /// <param name="currencyService">сервис валют</param>
+        /// <param name="discountService">сервис скидок</param>
         public FormDelivery(IProductService productService,
                             IShipmentService shipmentService,
                             IDiscountService discountService,

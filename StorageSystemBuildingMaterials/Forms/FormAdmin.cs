@@ -9,6 +9,12 @@
         private readonly Func<ProductsControl> _productsFactory;
         private readonly Func<ShipmentsControl> _shipmentsFactory;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="workersFactory">factory рабочих</param>
+        /// <param name="productsFactory">factory товаров</param>
+        /// <param name="shipmentsFactory">factory отгрузок</param>
         public FormAdmin(Func<WorkersControl> workersFactory,
                         Func<ProductsControl> productsFactory,
                         Func<ShipmentsControl> shipmentsFactory)

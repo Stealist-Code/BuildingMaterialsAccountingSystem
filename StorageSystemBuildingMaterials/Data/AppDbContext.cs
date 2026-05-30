@@ -61,6 +61,10 @@
         /// </summary>
         public DbSet<ConfigurationApp> ConfigurationApps { get; set; }
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="options">настройки</param>
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
             try

@@ -1,5 +1,8 @@
 namespace StorageSystemBuildingMaterials
 {
+    /// <summary>
+    /// Точка входа
+    /// </summary>
     internal static class Program
     {
         private static IWindsorContainer container;

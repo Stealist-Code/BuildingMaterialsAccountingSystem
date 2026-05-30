@@ -8,6 +8,10 @@
         private readonly IReportService _reportService;
         private bool _isUpdating = false;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="reportService">сервис репортов</param>
         public FormReports(IReportService reportService)
         {
             InitializeComponent();
@@ -85,11 +89,11 @@
                     {
                         var lines = new List<string>();
 
-                        lines.Add("Дата;Клиент;Сумма;Прибыль;Email");
+                        lines.Add("Дата;Клиент;Сумма;Прибыль");
 
                         foreach (var r in reports)
                         {
-                            lines.Add($"{r.Date:dd.MM.yyyy};{r.CustomerName};{r.ShipmentAmount};{r.Profit};{r.CustomerEmail}");
+                            lines.Add($"{r.Date:dd.MM.yyyy};{r.CustomerName};{r.ShipmentAmount};{r.Profit}");
                         }
 
                         File.WriteAllLines(sfd.FileName, lines, System.Text.Encoding.UTF8);

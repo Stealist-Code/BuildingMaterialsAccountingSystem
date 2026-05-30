@@ -22,8 +22,21 @@
         private readonly IConfigurationAppService _configurationAppService;
 
         /// <summary>
-        /// Конструктор формы входа
+        /// Конструктор
         /// </summary>
+        /// <param name="categoryService">сервис категории</param>
+        /// <param name="productService">сервис товаров</param>
+        /// <param name="shipmentService">сервис отгрузок</param>
+        /// <param name="shipmentValidation">валидация отгрузок</param>
+        /// <param name="userService">сервис пользователей</param>
+        /// <param name="reportService">сервис репортов</param>
+        /// <param name="currencyState">валюта</param>
+        /// <param name="currencyService">сервис валют</param>
+        /// <param name="supplyService">сервис поставок</param>
+        /// <param name="discountService">сервис скидок</param>
+        /// <param name="tINService">сервис инн</param>
+        /// <param name="weatherService">сервис погоды</param>
+        /// <param name="configurationAppService">сервис конфигурации</param>
         public FormLogin(IAuthService authService,
                          IAuthValidation authValidation,
                          ICategoryService categoryService,

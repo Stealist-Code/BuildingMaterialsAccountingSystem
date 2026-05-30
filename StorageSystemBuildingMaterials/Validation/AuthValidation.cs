@@ -6,6 +6,7 @@
     public class AuthValidation : IAuthValidation
     {
         private static readonly string _pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
         /// <summary>
         /// Проверяет, является ли строка корректным email-адресом (с помощью регулярного выражения).
         /// </summary>
@@ -82,10 +83,10 @@
                 return false;
             }
 
-            bool hasDigit = false;
-            bool hasSpecial = false;
-            bool hasUpper = false;
-            bool hasLower = false;
+            var hasDigit = false;
+            var hasSpecial = false;
+            var hasUpper = false;
+            var hasLower = false;
 
             foreach (var ch in password)
             {

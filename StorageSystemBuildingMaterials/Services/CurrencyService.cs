@@ -10,6 +10,10 @@
         private DateTime? _currentRatesCacheTime;
         private static readonly TimeSpan _cacheDuration = TimeSpan.FromHours(1);
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="http">http</param>
         public CurrencyService(HttpClient http)
         {
             _httpClient = http;

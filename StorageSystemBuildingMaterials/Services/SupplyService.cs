@@ -10,6 +10,12 @@
         private readonly ICurrencyService _currencyService;
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="db">бд</param>
+        /// <param name="productValidation">валидайия товара</param>
+        /// <param name="currencyService">валидация цены</param>
         public SupplyService(AppDbContext db, IProductValidation productValidation, ICurrencyService currencyService)
         {
             _db = db;

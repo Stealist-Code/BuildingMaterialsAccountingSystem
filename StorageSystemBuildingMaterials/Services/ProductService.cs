@@ -9,6 +9,11 @@
         private readonly IProductValidation _productValidation;
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="db">бд</param>
+        /// <param name="productValidation">валидации товаров</param>
         public ProductService(AppDbContext db, IProductValidation productValidation)
         {
             _db = db;

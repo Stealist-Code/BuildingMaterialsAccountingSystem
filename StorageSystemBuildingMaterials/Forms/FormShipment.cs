@@ -16,6 +16,16 @@
         private readonly Form _formCheckTin;
         private List<CartItemDto> cart = new List<CartItemDto>();
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="currentUserId">id</param>
+        /// <param name="productService">сервис товаров</param>
+        /// <param name="shipmentService">сервис отгрузок</param>
+        /// <param name="shipmentValidation">валидация отгрузок</param>
+        /// <param name="customer">покупатель</param>
+        /// <param name="weather">погода</param>
+        /// <param name="formCheckTin">форма проверки инн</param>
         public FormShipment(Guid currentUserId, IProductService productService, IShipmentService shipmentService, IShipmentValidation shipmentValidation, Customer customer, string weather, Form formCheckTin)
         {
             InitializeComponent();
@@ -85,16 +95,18 @@
 
             var totalPrice = nudTotalPrice.Value;
 
-            DialogResult result = MessageBox.Show(
+            if (totalPrice == 0)
+            {
+                DialogResult result = MessageBox.Show(
                 Resources.AttentionShipment,
                 Resources.Confirmation,
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
                 );
-
-            if (result == DialogResult.No)
-            {
-                return;
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
             }
 
             try

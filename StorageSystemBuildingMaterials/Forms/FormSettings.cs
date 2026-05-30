@@ -10,6 +10,12 @@
         private readonly CurrencyState _currencyState;
         private readonly IConfigurationAppService _configurationAppService;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="currencyService">сервис валют</param>
+        /// <param name="currencyState">валюта state</param>
+        /// <param name="configurationAppService">сервис конфигурации</param>
         public FormSettings(ICurrencyService currencyService, CurrencyState currencyState, IConfigurationAppService configurationAppService)
         {
             InitializeComponent();

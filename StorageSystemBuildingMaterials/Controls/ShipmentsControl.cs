@@ -1,5 +1,8 @@
 ﻿namespace StorageSystemBuildingMaterials.Controls
 {
+    /// <summary>
+    /// Контроль отгрузок
+    /// </summary>
     public partial class ShipmentsControl : UserControl
     {
         private readonly IShipmentService _shipmentService;
@@ -7,6 +10,10 @@
         private DataGridView dgvItems;
         private List<ShipmentDto> _shipments;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="shipmentService">сервис отгрузок</param>
         public ShipmentsControl(IShipmentService shipmentService)
         {
             InitializeComponent();

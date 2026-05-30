@@ -10,6 +10,12 @@
         private readonly IHashService _hashService;
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="db">бд</param>
+        /// <param name="authValidation">сервис валидации</param>
+        /// <param name="hashService">сервис для работы с хэшами</param>
         public AuthService(AppDbContext db, IAuthValidation authValidation, IHashService hashService)
         {
             _db = db;

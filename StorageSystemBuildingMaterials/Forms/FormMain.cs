@@ -24,6 +24,24 @@
         private readonly BindingSource _bindingSource = new BindingSource();
         private Dictionary<string, Guid> _categoryIds;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="user">пользователь</param>
+        /// <param name="categoryService">сервис категории</param>
+        /// <param name="productService">сервис товаров</param>
+        /// <param name="shipmentService">сервис отгрузок</param>
+        /// <param name="shipmentValidation">валидация отгрузок</param>
+        /// <param name="userService">сервис пользователей</param>
+        /// <param name="reportService">сервис репортов</param>
+        /// <param name="loginForm">форма логина</param>
+        /// <param name="currencyState">валюта</param>
+        /// <param name="currencyService">сервис валют</param>
+        /// <param name="supplyService">сервис поставок</param>
+        /// <param name="discountService">сервис скидок</param>
+        /// <param name="tINService">сервис инн</param>
+        /// <param name="weatherService">сервис погоды</param>
+        /// <param name="configurationAppService">сервис конфигурации</param>
         public FormMain(User user,
                         ICategoryService categoryService,
                         IProductService productService,
